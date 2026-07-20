@@ -1714,11 +1714,43 @@
               {
                 id: 'construibles', label: 'Construibles', items: [
                   {
-                    id: 'blundergat', title: 'Blundergat gratis', html: `
-              <p>Alimenta a los tres Cerberos (cabezas de perro en la pared) matando zombis cerca de sus emblemas. Al llenarse los tres, aparece el Hell's Retriever cerca de la Cripta. Con él, lanza el hacha a los 5 cráneos azules repartidos por el mapa para conseguir el Blundergat gratis.</p>`},
+                    id: 'escudo', title: 'Escudo', html: `
+              <p>Para construirlo hay que obtener las tres piezas:</p>
+                <ul>
+                  <li>La primera pieza está en la el muelle.</li>
+                  <li>La segunda pieza está en la sala de generadores al lado del muelle.</li>
+                  <li>La tercera pieza está en la torre de subida del faro.</li>
+                </ul>
+              <p>Una vez obtenidas, se montan en cualquier mesa de crafteo del mapa.</p>            
+                `},
                   {
-                    id: 'spoon', title: 'La Cuchara (Golden Spork)', html: `
-              <p>Basta con la Cuchara básica (no hace falta subirla a Golden Spork) para completar el Easter Egg principal.</p>`}
+                    id: 'acidgat', title: 'Mejora Acid Gat', html: `
+              <p>Para mejorar la Blundergat a su versión de acido, es necesario montar el kit de mejora, que consta de 3 piezas:</p>
+                <ul>
+                  <li>La primera pieza está en una mesa nada más salir de la sala inicial, al bajar las escaleras de enfrente del perro de las celdas o en una esquina en la zona de justo antes de bajar a las duchas.</li>
+                  <li>La segunda pieza está en la sala de los baños donde se sube a la azotea.</li>
+                  <li>La tercera pieza está en la sala de Speed Cola.</li>
+                </ul>
+              <p>Una vez obtenidas, se montan en cualquier mesa de crafteo del mapa.</p>            
+                `},
+                  {
+                    id: 'tomahawk', title: 'Hell\'s Retriever', html: `
+              <p>Alimenta a los tres Cerberos (cabezas de perro en la pared) matando zombis cerca de sus emblemas. Al llenarse los tres, aparece el Hell's Retriever cerca de la Cripta.</p>`},
+                  
+                  {
+                    id: 'blundergat', title: 'Blundergat gratis', html: `
+              <p>Lanza el Hell's Retriever a los 5 cráneos azules repartidos por el mapa para conseguir el Blundergat gratis:
+                <ul>
+                  <li>Cráneo 1: En la celda que tiene una calavera nada mas salir de la sala inicial hacia el primer cerbero.</li>
+                  <li>Cráneo 2: En la azotea, al fondo a la izquierda en una esquina por fuera del mapa.</li>
+                  <li>Cráneo 3: En la sala de Speed Cola, en el primer poste de luz que hay al asomar por la ventana.</li>
+                  <li>Cráneo 4: En Juggernog, en la farola que hay justo encima de esa zona.</li>
+                  <li>Cráneo 5: En el muelle, en uno de los postes de madera de los que estan en el mar.</li>
+                </ul>
+              </p>`},
+                  {
+                    id: 'spoon', title: 'La Cuchara Dorada', html: `
+              <p>Primero hay que conseguir la cuchara normal. Para ello, hay que haber viajado en el avión una vez. Con esto y el Hell\'s Retriever hay que obtener la cuchara normal, que se coge en el modo Afterlife, detras de la celda que tiene un poster verde, cerca de la sala de Speed Cola, tras tirar el hacha a dicho poster. Una vez conseguida, aparecerá en una mesa en el comedor, a la que hay que lanzar el hacha para recogerla. Una vez obtenida, hay que meterla en la bañera de la última sala que hay subiendo a la azotea. Aparecerá una mano que la recoge y se sumerge en el agua de la bañera. Por último, tendremos que bajar a la lavandería y realizar bajas hasta escuchar un sonido de confirmación, que nos indicará que ya podemos volver a la bañera donde dejamos la cuchara a por la cuchara dorada. </p>`}
                 ]
               },
               {
@@ -1726,18 +1758,21 @@
                   { id: 'ee-intro', title: 'Antes de empezar', html: `<p>Se necesitan mínimo 2 jugadores; uno de ellos jugará el papel de Weasel. No se puede completar en solitario.</p>` },
                   {
                     id: 'paso1', num: '01', title: 'Prerrequisitos', html: `
-              <p>Consigue el Blundergat gratis y la Cuchara (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>).</p>`},
+              <p>Conseguir la Blundergat y la Cuchara (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>).</p>`},
                   {
-                    id: 'paso2', num: '02', title: 'Los números de los presos', html: `
+                    id: 'paso2', num: '02', title: 'Los tres ciclos', html: `
+              <p>Debes viajar en el avión 3 veces para poder continuar con el Easter Egg.</p>`},
+                  {
+                    id: 'paso3', num: '03', title: 'Los números de los presos', html: `
               <p>En el teclado numérico de los Túneles de la Ciudadela, introduce los cuatro números de los presos: <strong>101, 386, 872 y 481</strong> (uno por ronda, si es posible).</p>`},
                   {
-                    id: 'paso3', num: '03', title: 'Los auriculares', html: `
+                    id: 'paso4', num: '04', title: 'Los auriculares', html: `
               <p>Tras introducir los números, irán apareciendo power-ups con forma de auriculares por distintos puntos del mapa (escalera a la Ciudadela, junto a Double Tap, pasarela entre la Oficina del Alcaide y la cafetería, escalera a la enfermería y escalera al tejado). Recógelos y escúchalos enteros; no aparece el siguiente hasta terminar el actual.</p>`},
                   {
-                    id: 'paso4', num: '04', title: 'Sube al avión', html: `
+                    id: 'paso5', num: '05', title: 'Sube al avión', html: `
               <p>Con todas las narraciones escuchadas, sube al avión Ícaro en el modo Más Allá (Afterlife). El resto del equipo será arrastrado automáticamente a la misma zona; todos deben revivirse.</p>`},
                   {
-                    id: 'paso5', num: '05', title: 'El desenlace', html: `
+                    id: 'paso6', num: '06', title: 'El desenlace', html: `
               <p>A partir de aquí, el jugador de Weasel se convierte en objetivo hostil para el resto (y viceversa). Hay dos finales posibles, ambos otorgan el logro: que Weasel elimine a todo el equipo (se rompe el ciclo) o que el equipo elimine a Weasel (el ciclo continúa).</p>`}
                 ]
               },
@@ -2008,10 +2043,11 @@
                     id: 'bastones-final', title: 'Paso final para los 4 bastones', html: `
     <p>En la cámara inferior de la Excavación, mueve las 4 palancas para alinear los 4 anillos gigantes al color de tu bastón. Dispara al orbe brillante en la parte inferior para enviarlo al techo.</p>
     <p>Baja al <em>Crazy Place</em>, inserta tu bastón en su pedestal y mata a unos 20 zombis cerca para llenarlo de almas.</p>
-`},{
+`}, {
                     id: 'puños', title: 'Los Puños Elementales', html: `<p>Se obtienen en las cajas de recompensas de los desafíos tras llenar los 4 cajones de almas. Estos son fundamentales para el easter egg y para el paso de obtener los morteros.
             </p>`},
-            {id: 'morteros', title: 'Los Morteros', html: `<p>Para obtenerlos hay que limpiar las piedras de puño que se encuentran en la mesa del búnker del generador 2, al lado del panel eléctrico. Una vez que tenemos esta piedra, hay que depositarla en una especie de altar o pila con agua en la planta superior de la Iglesia, al lado del panel eléctrico. Una vez aquí, tenemos que matar a zombies con ataques cuerpo a cuerpo cerca para que se limpie la piedra. Una vez limpia, hay que llevarla de nuevo a la mesa de donde la recogimos al principio, pero es muy importante que en el camino de vuelta, no se nos ensucie, por lo que hay que evitar pisar el barro. Si se nos mancha en el intento, tenemos que volver a la pila a limpiarla (esta vez no hay que matar zombies al lado). Cuando ya la tengamos limpia y en su mesa de nuevo, hay que volver a realizar bajas con ataques cuerpo a cuerpo cerca de la mesa hasta que aparezcan los morteros flotando encima de esta.
+                  {
+                    id: 'morteros', title: 'Los Morteros', html: `<p>Para obtenerlos hay que limpiar las piedras de puño que se encuentran en la mesa del búnker del generador 2, al lado del panel eléctrico. Una vez que tenemos esta piedra, hay que depositarla en una especie de altar o pila con agua en la planta superior de la Iglesia, al lado del panel eléctrico. Una vez aquí, tenemos que matar a zombies con ataques cuerpo a cuerpo cerca para que se limpie la piedra. Una vez limpia, hay que llevarla de nuevo a la mesa de donde la recogimos al principio, pero es muy importante que en el camino de vuelta, no se nos ensucie, por lo que hay que evitar pisar el barro. Si se nos mancha en el intento, tenemos que volver a la pila a limpiarla (esta vez no hay que matar zombies al lado). Cuando ya la tengamos limpia y en su mesa de nuevo, hay que volver a realizar bajas con ataques cuerpo a cuerpo cerca de la mesa hasta que aparezcan los morteros flotando encima de esta.
             </p>`},
                   {
                     id: 'drone', title: 'El Dron de Maxis', html: `<p>Se construye con 3 piezas (cerebro, chasis y hélices) y ayuda a matar zombis, revivir y recoger power-ups. Las piezas se encuentran en:
