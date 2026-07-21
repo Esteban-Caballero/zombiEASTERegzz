@@ -1487,122 +1487,251 @@
         id: 'bo2-zombies', name: 'Black Ops 2: Zombies', status: 'active',
         maps: [
           {
-            id: 'tranzit-richtofen', name: 'TranZit', sub: 'Richtofen · Torre de Babel', status: 'active',
-            title: 'TranZit', subtitle: 'Torre de Babel — Richtofen',
-            desc: 'Lado de Richtofen del primer Easter Egg de Black Ops 2. Requiere dificultad Original y, para el paso final, mínimo 2 jugadores (idealmente 4).',
-            theme: { accent: '#3d7fc4', accentDim: '#2a5a8c', gold: '#8a9a6e', goldSoft: '#5f6f49', stone950: '#0e120f', stone900: '#161c17', stone800: '#202922', stone700: '#2d3a2f', stone600: '#42543f', line: '#33402f' },
-            tabs: [
-              {
-                id: 'construibles', label: 'Construibles', items: [
-                  {
-                    id: 'jetgun', title: 'El Jet Gun (Thrustodyne Model 23)', html: `
-              <p>Es el arma especial necesaria para el lado de Richtofen. Se monta con 4 piezas:</p>
+        id:'tranzit-richtofen', name:'TranZit', sub:'Richtofen · Torre de Babel', status:'active',
+        title:'TranZit', subtitle:'Torre de Babel — Richtofen',
+        desc:'Lado de Richtofen del primer Easter Egg de Black Ops 2. Requiere dificultad Original y, para el paso final, mínimo 2 jugadores (idealmente 4).',
+        theme:{accent:'#3d7fc4', accentDim:'#2a5a8c', gold:'#8a9a6e', goldSoft:'#5f6f49', stone950:'#0e120f', stone900:'#161c17', stone800:'#202922', stone700:'#2d3a2f', stone600:'#42543f', line:'#33402f'},
+        tabs:[
+          {id:'construibles', label:'Construibles', items:[
+            {id:'construibles-intro', title:'Cómo funcionan los construibles en TranZit', html:`
+              <p>Casi todo en TranZit se monta en una mesa de crafteo a partir de piezas sueltas: solo puedes llevar <strong>una pieza a la vez</strong>, así que tendrás que hacer varios viajes. La mayoría de las estructuras (Trampa Eléctrica, Torreta) necesitan además una <strong>Turbina</strong> cerca para funcionar, ya que no hay corriente permanente hasta que enciendes la energía en la Estación de Energía.</p>`},
+            {id:'turbina', title:'La Turbina', html:`
+              <p>Es el construible más importante del mapa: alimenta puertas, la Trampa Eléctrica, la Torreta, las máquinas de bebidas antes de encender la luz general, y la bóveda del banco donde está el Pack-a-Punch.</p>
+              <p>Sus 3 piezas están todas en la <strong>Sala de Autobuses</strong> (Bus Depot), la zona donde empiezas la partida:</p>
               <ul>
-                <li>En el túnel entre Bus Depot y el Diner, junto a la reja cerca del wallbuy del M16.</li>
-                <li>En el garaje del mecánico, dentro del Diner, encima de una taquilla.</li>
-                <li>En la Estación de Energía, en la pasarela metálica bajo la máquina de Tombstone.</li>
-                <li>En el edificio con forma de Nacht der Untoten, entre Farm y Power Station (se accede cruzando el maizal por la derecha).</li>
+                <li><strong>Aspa del ventilador:</strong> sobre los asientos.</li>
+                <li><strong>Torso de maniquí:</strong> apoyado contra un cartel.</li>
+                <li><strong>Carretilla:</strong> cerca de las taquillas.</li>
               </ul>
-              <p>Todas las piezas se llevan y se sueltan en la mesa de crafteo de Town, junto a Stamin-Up.</p>`}
-                ]
-              },
-              {
-                id: 'easterEgg', label: 'Easter Egg', items: [
-                  {
-                    id: 'ee-intro', title: 'Antes de empezar', html: `
+              <p>Móntala en la mesa de crafteo de esa misma sala.</p>
+              <figure class="shot" data-slot="tranzit-turbina">
+                <img src="../images/bo2/tranzit/turbina.jpg" alt="Piezas de la Turbina en la Sala de Autobuses" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                <figcaption>Piezas de la Turbina — Sala de Autobuses</figcaption>
+              </figure>`},
+            {id:'escudo-zombi', title:'El Escudo Zombi', html:`
+              <p>Sirve igual que el escudo de asalto normal: bloquea golpes por delante y no da puntos al matar zombis con él. Sus 2 piezas están en el <strong>Diner</strong>:</p>
+              <ul>
+                <li><strong>Puerta de coche:</strong> en la tienda de la gasolinera o en la sala junto al banco de trabajo.</li>
+                <li><strong>Carretilla:</strong> dentro del propio Diner.</li>
+              </ul>
+              <p>Se monta en el garaje del Diner.</p>`},
+            {id:'torreta', title:'La Torreta', html:`
+              <p>Ametralladora automática que dispara sola a los zombis que entren en su ángulo de tiro; útil para cubrir un pasillo o punto de acceso. Necesita una Turbina cerca para funcionar. Sus 3 piezas están en la <strong>Granja</strong> (Farm):</p>
+              <ul>
+                <li><strong>RPD:</strong> dentro de la casa o en el granero.</li>
+                <li><strong>Cortacésped:</strong> alrededor de la casa.</li>
+                <li><strong>Cartuchera:</strong> en el salón o la cocina de la casa.</li>
+              </ul>
+              <p>Se monta dentro de la casa de la granja.</p>`},
+            {id:'trampa-electrica', title:'La Trampa Eléctrica (Barrera Portátil)', html:`
+              <p>Electrocuta y aturde a los zombis que pasen cerca; también necesita una Turbina para activarse. Sus 3 piezas están en el edificio de ladrillo de la <strong>Estación de Energía</strong>:</p>
+              <ul>
+                <li><strong>Batería:</strong> sobre unos barriles.</li>
+                <li><strong>Varilla:</strong> junto a las ventanas de la planta de arriba, cerca del banco.</li>
+                <li><strong>Base / Bola de Tesla:</strong> junto a la máquina de Tombstone Soda.</li>
+              </ul>
+              <p>Se monta en ese mismo edificio.</p>`},
+            {id:'interruptor', title:'El Interruptor de Energía (alternativo)', html:`
+              <p>Además de la palanca normal de la Estación de Energía (750 puntos), existe una versión construible del interruptor con 3 piezas repartidas también por la Estación de Energía; se monta en la caseta (outhouse) exterior. No es necesario para el Easter Egg — con pagar los 750 puntos de la palanca ya activas la energía igualmente.</p>`},
+            {id:'mejoras-bus', title:'Mejoras del Autobús', html:`
+              <p>Hay 3 piezas opcionales que se pueden añadir al autobús para facilitar el desplazamiento entre paradas:</p>
+              <ul>
+                <li><strong>Escotilla:</strong> te deja caer directamente al interior del Diner sin abrir la puerta normal.</li>
+                <li><strong>Rejilla frontal:</strong> refuerza el parachoques.</li>
+                <li><strong>Escalera lateral:</strong> te permite subir al techo del autobús.</li>
+              </ul>
+              <p>Sus ubicaciones cambian cada partida, pero siempre están en zonas que ya puedes alcanzar con una Turbina. Ninguna es obligatoria para el Easter Egg.</p>`},
+            {id:'mesa-nav', title:'La Mesa de Tarjetas NAV (bajo el pilón)', html:`
+              <p>Es la mesa que <strong>hay que construir sí o sí antes de empezar cualquiera de los dos lados</strong> del Easter Egg: se monta pieza a pieza justo debajo del pilón (la torre metálica) del maizal, entre la Granja y la Estación de Energía. Tiene 4 piezas, cada una con dos ubicaciones posibles:</p>
+              <ul>
+                <li><strong>Roca / Meteorito 115:</strong> en la Sala de Autobuses, dentro de la barrera de zombis justo detrás de donde aparece la Caja Misteriosa (fuera de las puertas principales).</li>
+                <li><strong>Mesa de madera:</strong> en el túnel entre la Sala de Autobuses y el Diner (junto al wallbuy del M16), o en la Estación de Energía, al final de la pasarela metálica bajo la máquina de Tombstone Soda.</li>
+                <li><strong>Caja eléctrica:</strong> en la Granja, a la izquierda de la nevera, o en Town, junto al contenedor de basura donde aparece la Caja Misteriosa.</li>
+                <li><strong>Radio:</strong> en el garaje del mecánico del Diner, sobre una taquilla metálica, o dentro de Nacht der Untoten, sobre un archivador a la derecha al entrar.</li>
+              </ul>
+              <p>Ve colocando cada pieza directamente en la zona de construcción bajo el pilón (no hace falta llevarlas todas a la vez).</p>
+              <p class="note">Esta misma mesa es la que más adelante recibe la <strong>Tarjeta NAV</strong> (se consigue en el mapa Buried) para enlazar TranZit con Die Rise y Buried de cara al Súper Easter Egg. Para el Easter Egg de TranZit en sí, con tenerla construida es suficiente.</p>`},
+            {id:'jetgun', title:'El Jet Gun (Thrustodyne Model 23)', html:`
+              <p>Es el arma especial obligatoria para el lado de Richtofen. Aspira a los zombis hacia dentro y los tritura en sus aspas; a cambio, si mantienes el gatillo pulsado demasiado tiempo y el manómetro llega al rojo, el arma <strong>explota</strong> y tienes que volver a recoger sus piezas del suelo para montarla de nuevo. Tiene 4 piezas:</p>
+              <ul>
+                <li><strong>Motor / turbina:</strong> en el túnel entre la Sala de Autobuses y el Diner (varias posiciones posibles junto a las ventanas y los coches).</li>
+                <li><strong>Cables:</strong> en la sala de la máquina Tombstone Soda de la Estación de Energía — solo aparecen después de encender la energía.</li>
+                <li><strong>Manija / freno de mano:</strong> dentro del edificio con forma de Nacht der Untoten, entre la Granja y la Estación de Energía (se llega cruzando el maizal).</li>
+                <li><strong>Manómetro:</strong> en una caseta entre la Estación de Energía y Town, escondida en la niebla.</li>
+              </ul>
+              <p>Todas las piezas se llevan y se sueltan en la mesa de crafteo de Town, en el edificio de la izquierda, junto a Stamin-Up.</p>
+              <p class="note">Si una pieza cae en la lava (fuera del mapa), vuelve a su ubicación original. Si el autobús la atropella, desaparece del todo y no vuelve a aparecer esa partida.</p>`}
+          ]},
+          {id:'easterEgg', label:'Easter Egg', items:[
+            {id:'ee-intro', title:'Antes de empezar', html:`
               <p>Juega en dificultad <strong>Original</strong> (en Fácil el Easter Egg no funciona). Para oír las pistas de Richtofen, conviene jugar como Samuel J. Stuhlinger, el único que le escucha con la energía encendida.</p>`},
-                  {
-                    id: 'paso1', num: '01', title: 'Enciende la energía', html: `
+            {id:'prereq-navtable', title:'Prerrequisito · Construir la Mesa NAV', html:`
+              <p>Antes del paso 1, monta la <strong>Mesa de Tarjetas NAV</strong> bajo el pilón del maizal (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>). Si ya la construiste en una partida anterior en el mismo perfil, puede que siga ahí — comprueba igualmente que esté completa antes de empezar.</p>`},
+            {id:'paso1', num:'01', title:'Enciende la energía', html:`
               <p>Ve a la Estación de Energía (750 puntos) y activa el interruptor. Deja la energía encendida durante todo este lado del Easter Egg.</p>`},
-                  {
-                    id: 'paso2', num: '02', title: 'Construye el Jet Gun', html: `
+            {id:'paso2', num:'02', title:'Construye el Jet Gun', html:`
               <p>Consigue las 4 piezas (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>) y móntalo en la mesa de Town.</p>`},
-                  {
-                    id: 'paso3', num: '03', title: 'Calienta el pilón', html: `
+            {id:'paso3', num:'03', title:'Calienta el pilón', html:`
               <p>Lleva el Jet Gun bajo el pilón del maizal (frente al edificio tipo Nacht der Untoten, lado izquierdo) y dispara sobre él hasta que Richtofen le diga a Samuel que el primer paso está hecho.</p>`},
-                  {
-                    id: 'paso4', num: '04', title: 'Sobrecarga con explosivos', html: `
-              <p>Sigue matando zombis bajo el pilón, pero solo con armas explosivas (la Ray Gun normal cuenta). Continúa hasta que Richtofen avise de que la energía es demasiado alta.</p>`},
-                  {
-                    id: 'paso5', num: '05', title: 'Granadas EMP', html: `
+            {id:'paso4', num:'04', title:'Sobrecarga con explosivos', html:`
+              <p>Sigue matando zombis bajo el pilón, pero solo con armas explosivas (la Ray Gun de la Caja Misteriosa es la opción más fiable; evita el lanzagranadas o el RPG de cerca, porque el daño en área te puede matar a ti también). Necesitas unas <strong>25 bajas explosivas</strong> en total bajo el pilón, hasta que Richtofen avise de que la energía es demasiado alta.</p>`},
+            {id:'paso5', num:'05', title:'Granadas EMP', html:`
               <p>Consigue al menos 2 Granadas EMP en la Caja Misteriosa (lo ideal es que 4 jugadores tengan una cada uno).</p>`},
-                  {
-                    id: 'paso6', num: '06', title: 'Los 4 postes de luz', html: `
-              <p>Localiza los postes de luz verdes repartidos por el mapa (Bus Depot, Diner, Farm, Town...) y lanza una Granada EMP a cuatro de ellos <strong>al mismo tiempo</strong>. Con 4 jugadores es sencillo; con 2, hay que usar un denizen bajo un poste para teletransportarse y repetir la jugada rápido en el siguiente.</p>`},
-                  {
-                    id: 'paso7', num: '07', title: 'Confirmación', html: `
+            {id:'paso6', num:'06', title:'Los 4 postes de luz', html:`
+              <p>Hay varios postes de luz verdes repartidos por el mapa — más de los 4 que necesitas, así que podéis elegir los más cómodos según dónde estéis: Sala de Autobuses, Diner, en la niebla junto a la Estación de Energía, entre las dos zonas del maizal, a la salida de Town hacia Bus Depot, y entre Town y la Estación de Energía. Asignad un poste fijo a cada jugador para no liaros.</p>
+              <p>Con una cuenta atrás por voz o chat, lanza una Granada EMP a tu poste <strong>a la vez que el resto del equipo</strong>. Con 4 jugadores es sencillo; con 2 o 3, la ventana de tiempo es mucho más ajustada porque igualmente hacen falta 4 postes desactivados casi a la vez.</p>`},
+            {id:'paso7', num:'07', title:'Confirmación', html:`
               <p>Si se hace a tiempo, saldrá un orbe azul del poste hacia el pilón. El pilón brillará azul de forma permanente: el lado de Richtofen está completado.</p>`}
-                ]
-              },
-              {
-                id: 'secretos', label: 'Secretos', items: [
-                  { id: 'secretos-placeholder', title: 'Próximamente', html: `<p>Todavía no hay contenido recopilado sobre canciones, trofeos o desafíos secundarios de este mapa.</p>` }
-                ]
-              }
-            ],
-            sources: {
-              html: `<p>Guía contrastada con guías comunitarias públicas sobre TranZit.</p>
+          ]},
+          {id:'secretos', label:'Secretos', items:[
+            {id:'cancion-secreta', title:'Canción secreta: «Carrion»', html:`
+              <p>Hay tres ositos de peluche escondidos en el mapa. Interactúa con ellos <strong>en este orden</strong> para que suene la canción oculta del mapa, «Carrion»:</p>
+              <ol>
+                <li>En un banco fuera de la terminal de autobuses (Bus Depot).</li>
+                <li>En la planta de arriba de la casa de la Granja, sobre el colchón junto a la ventana.</li>
+                <li>En el bar de Town, dentro, a la derecha.</li>
+              </ol>`},
+            {id:'truco-banco', title:'Truco del banco: power-up de 1000 puntos', html:`
+              <p>En el banco de Town hay una caja fuerte cerrada. Ábrela golpeándola con las Galvaknuckles o con el Cuchillo Balístico ya mejorado en el Pack-a-Punch. Una vez abierta, deposita <strong>1100 puntos</strong> en la caja: sueltan un power-up especial de 1000 puntos que puede recoger cualquier jugador.</p>
+              <p class="note">Si alguien está justo en el punto donde va a caer el power-up, se pierde y nadie lo recibe — apártate antes de depositar los puntos.</p>`},
+            {id:'letrero-diner', title:'El letrero del Diner', html:`
+              <p>El cartel del Diner dice «North Highway Diner», pero solo se iluminan seis de sus letras: al fijarte, en realidad se lee <strong>«Now Die»</strong> («Muere ahora»).</p>`}
+          ]}
+        ],
+        sources:{
+          html:`<p>Guía contrastada con guías comunitarias públicas sobre TranZit.</p>
                 <ul>
                   <li><a href="https://gamerant.com/black-ops-2-tranzit-easter-egg-guide-richtofen-ps5/" target="_blank" rel="noopener">Guía escrita · Lado de Richtofen (GameRant)</a></li>
                   <li><a href="https://www.youtube.com/watch?v=1O9zRyVyLbM" target="_blank" rel="noopener">Vídeo · Guía completa Richtofen y Maxis</a></li>
                   <li><a href="https://callofduty.fandom.com/wiki/Tower_of_Babble" target="_blank" rel="noopener">Call of Duty Wiki · Tower of Babble</a></li>
+                  <li><a href="https://callofduty.fandom.com/wiki/TranZit" target="_blank" rel="noopener">Call of Duty Wiki · TranZit (construibles y secretos)</a></li>
+                  <li><a href="https://callofduty.fandom.com/wiki/Carrion" target="_blank" rel="noopener">Call of Duty Wiki · Carrion (canción secreta)</a></li>
                 </ul>
                 <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 2 y sus contenidos pertenecen a Activision / Treyarch.</p>`
-            }
-          },
-          {
-            id: 'tranzit-maxis', name: 'TranZit', sub: 'Maxis · Torre de Babel', status: 'active',
-            title: 'TranZit', subtitle: 'Torre de Babel — Maxis',
-            desc: 'Lado de Maxis del primer Easter Egg de Black Ops 2. Requiere dificultad Original y 4 jugadores para el paso final.',
-            theme: { accent: '#d97b2e', accentDim: '#a85a1c', gold: '#8a9a6e', goldSoft: '#5f6f49', stone950: '#0e120f', stone900: '#161c17', stone800: '#202922', stone700: '#2d3a2f', stone600: '#42543f', line: '#33402f' },
-            tabs: [
-              {
-                id: 'construibles', label: 'Construibles', items: [
-                  {
-                    id: 'turbina', title: 'La Turbina', html: `
-              <p>No hace falta ningún arma especial para el lado de Maxis, pero sí varias <strong>Turbinas</strong> (una por jugador). Se recogen ya construidas cerca de Bus Depot y sirven tanto para alimentar zonas con Turbina como para el paso final de los postes de luz.</p>`}
-                ]
-              },
-              {
-                id: 'easterEgg', label: 'Easter Egg', items: [
-                  { id: 'ee-intro', title: 'Antes de empezar', html: `<p>Juega en dificultad <strong>Original</strong>. Este lado requiere idealmente 4 jugadores, sobre todo para el paso final.</p>` },
-                  {
-                    id: 'paso1', num: '01', title: 'Enciende y apaga la energía', html: `
-              <p>Ve a la Estación de Energía y activa el interruptor. Después, vuelve a apagarlo: con la energía apagada las máquinas de bebidas no funcionan, así que compra tus perks antes de este paso.</p>`},
-                  {
-                    id: 'paso2', num: '02', title: 'Invoca al Avogadro', html: `
-              <p>Con al menos 2 Turbinas colocadas bajo el pilón del maizal, espera a que haya tormenta eléctrica en todo el cielo (no solo en una dirección) y remata al último zombi de la ronda. Esto invoca al Avogadro.</p>`},
-                  {
-                    id: 'paso3', num: '03', title: 'Elimina al Avogadro', html: `
-              <p>Mátalo bajo el pilón; una Granada EMP es la forma más rápida, aunque también puede caer a golpes.</p>`},
-                  {
-                    id: 'paso4', num: '04', title: 'Turbinas en los postes', html: `
-              <p>Dos jugadores mantienen sus Turbinas encendidas bajo el pilón. Los otros dos deben llevar Turbinas a postes de luz en distintos puntos de interés (por ejemplo, Bus Depot y el Diner) y activarlas.</p>`},
-                  {
-                    id: 'paso5', num: '05', title: 'Activación simultánea', html: `
-              <p>Todos los jugadores deben colocar sus Turbinas en sus puestos <strong>al mismo tiempo</strong>. Si se hace bien, el poste emite un orbe naranja hacia el pilón.</p>`},
-                  {
-                    id: 'paso6', num: '06', title: 'Confirmación', html: `
-              <p>El pilón queda brillando en naranja de forma permanente: el lado de Maxis está completado.</p>`}
-                ]
-              },
-              {
-                id: 'secretos', label: 'Secretos', items: [
-                  { id: 'secretos-placeholder', title: 'Próximamente', html: `<p>Todavía no hay contenido recopilado sobre canciones, trofeos o desafíos secundarios de este mapa.</p>` }
-                ]
-              }
-            ],
-            sources: {
-              html: `<p>Guía contrastada con guías comunitarias públicas sobre TranZit.</p>
+        }
+      },
+      {
+        id:'tranzit-maxis', name:'TranZit', sub:'Maxis · Torre de Babel', status:'active',
+        title:'TranZit', subtitle:'Torre de Babel — Maxis',
+        desc:'Lado de Maxis del primer Easter Egg de Black Ops 2. Requiere dificultad Original y 4 jugadores para el paso final.',
+        theme:{accent:'#d97b2e', accentDim:'#a85a1c', gold:'#8a9a6e', goldSoft:'#5f6f49', stone950:'#0e120f', stone900:'#161c17', stone800:'#202922', stone700:'#2d3a2f', stone600:'#42543f', line:'#33402f'},
+        tabs:[
+          {id:'construibles', label:'Construibles', items:[
+            {id:'construibles-intro', title:'Cómo funcionan los construibles en TranZit', html:`
+              <p>Casi todo en TranZit se monta en una mesa de crafteo a partir de piezas sueltas: solo puedes llevar <strong>una pieza a la vez</strong>, así que tendrás que hacer varios viajes. En el lado de Maxis no necesitas ningún arma especial, pero sí varias <strong>Turbinas</strong> — son, con diferencia, el construible más importante de este lado.</p>`},
+            {id:'turbina', title:'La Turbina', html:`
+              <p>Es el construible más importante del mapa en el lado de Maxis: alimenta puertas, la Trampa Eléctrica, la Torreta, las máquinas de bebidas antes de encender la luz general, la bóveda del banco con el Pack-a-Punch, y es la pieza clave de los dos últimos pasos del Easter Egg. Necesitarás <strong>varias Turbinas a la vez</strong> (idealmente una por jugador).</p>
+              <p>Sus 3 piezas están todas en la <strong>Sala de Autobuses</strong> (Bus Depot), la zona donde empiezas la partida:</p>
+              <ul>
+                <li><strong>Aspa del ventilador:</strong> sobre los asientos.</li>
+                <li><strong>Torso de maniquí:</strong> apoyado contra un cartel.</li>
+                <li><strong>Carretilla:</strong> cerca de las taquillas.</li>
+              </ul>
+              <p>Móntala en la mesa de crafteo de esa misma sala. Puedes repetir el proceso para construir varias.</p>
+              <figure class="shot" data-slot="tranzit-turbina-maxis">
+                <img src="../images/bo2/tranzit/turbina.jpg" alt="Piezas de la Turbina en la Sala de Autobuses" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                <figcaption>Piezas de la Turbina — Sala de Autobuses</figcaption>
+              </figure>`},
+            {id:'escudo-zombi', title:'El Escudo Zombi', html:`
+              <p>Sirve igual que el escudo de asalto normal: bloquea golpes por delante y no da puntos al matar zombis con él. Sus 2 piezas están en el <strong>Diner</strong>:</p>
+              <ul>
+                <li><strong>Puerta de coche:</strong> en la tienda de la gasolinera o en la sala junto al banco de trabajo.</li>
+                <li><strong>Carretilla:</strong> dentro del propio Diner.</li>
+              </ul>
+              <p>Se monta en el garaje del Diner.</p>`},
+            {id:'torreta', title:'La Torreta', html:`
+              <p>Ametralladora automática que dispara sola a los zombis que entren en su ángulo de tiro; útil para cubrir un pasillo o punto de acceso. Necesita una Turbina cerca para funcionar. Sus 3 piezas están en la <strong>Granja</strong> (Farm):</p>
+              <ul>
+                <li><strong>RPD:</strong> dentro de la casa o en el granero.</li>
+                <li><strong>Cortacésped:</strong> alrededor de la casa.</li>
+                <li><strong>Cartuchera:</strong> en el salón o la cocina de la casa.</li>
+              </ul>
+              <p>Se monta dentro de la casa de la granja.</p>`},
+            {id:'trampa-electrica', title:'La Trampa Eléctrica (Barrera Portátil)', html:`
+              <p>Electrocuta y aturde a los zombis que pasen cerca; también necesita una Turbina para activarse. Sus 3 piezas están en el edificio de ladrillo de la <strong>Estación de Energía</strong>:</p>
+              <ul>
+                <li><strong>Batería:</strong> sobre unos barriles.</li>
+                <li><strong>Varilla:</strong> junto a las ventanas de la planta de arriba, cerca del banco.</li>
+                <li><strong>Base / Bola de Tesla:</strong> junto a la máquina de Tombstone Soda.</li>
+              </ul>
+              <p>Se monta en ese mismo edificio.</p>`},
+            {id:'interruptor', title:'El Interruptor de Energía (alternativo)', html:`
+              <p>Además de la palanca normal de la Estación de Energía (750 puntos), existe una versión construible del interruptor con 3 piezas repartidas también por la Estación de Energía; se monta en la caseta (outhouse) exterior. No es necesario para el Easter Egg — con pagar los 750 puntos de la palanca ya activas la energía igualmente.</p>`},
+            {id:'mejoras-bus', title:'Mejoras del Autobús', html:`
+              <p>Hay 3 piezas opcionales que se pueden añadir al autobús para facilitar el desplazamiento entre paradas:</p>
+              <ul>
+                <li><strong>Escotilla:</strong> te deja caer directamente al interior del Diner sin abrir la puerta normal.</li>
+                <li><strong>Rejilla frontal:</strong> refuerza el parachoques.</li>
+                <li><strong>Escalera lateral:</strong> te permite subir al techo del autobús.</li>
+              </ul>
+              <p>Sus ubicaciones cambian cada partida, pero siempre están en zonas que ya puedes alcanzar con una Turbina. Ninguna es obligatoria para el Easter Egg.</p>`},
+            {id:'mesa-nav', title:'La Mesa de Tarjetas NAV (bajo el pilón)', html:`
+              <p>Es la mesa que <strong>hay que construir sí o sí antes de empezar cualquiera de los dos lados</strong> del Easter Egg: se monta pieza a pieza justo debajo del pilón (la torre metálica) del maizal, entre la Granja y la Estación de Energía. Tiene 4 piezas, cada una con dos ubicaciones posibles:</p>
+              <ul>
+                <li><strong>Roca / Meteorito 115:</strong> en la Sala de Autobuses, dentro de la barrera de zombis justo detrás de donde aparece la Caja Misteriosa (fuera de las puertas principales).</li>
+                <li><strong>Mesa de madera:</strong> en el túnel entre la Sala de Autobuses y el Diner (junto al wallbuy del M16), o en la Estación de Energía, al final de la pasarela metálica bajo la máquina de Tombstone Soda.</li>
+                <li><strong>Caja eléctrica:</strong> en la Granja, a la izquierda de la nevera, o en Town, junto al contenedor de basura donde aparece la Caja Misteriosa.</li>
+                <li><strong>Radio:</strong> en el garaje del mecánico del Diner, sobre una taquilla metálica, o dentro de Nacht der Untoten, sobre un archivador a la derecha al entrar.</li>
+              </ul>
+              <p>Ve colocando cada pieza directamente en la zona de construcción bajo el pilón (no hace falta llevarlas todas a la vez).</p>
+              <p class="note">Esta misma mesa es la que más adelante recibe la <strong>Tarjeta NAV</strong> (se consigue en el mapa Buried) para enlazar TranZit con Die Rise y Buried de cara al Súper Easter Egg. Para el Easter Egg de TranZit en sí, con tenerla construida es suficiente.</p>`},
+            {id:'jetgun', title:'El Jet Gun (Thrustodyne Model 23)', html:`
+              <p>No es obligatoria para completar el lado de Maxis, pero también puedes construirla en este mapa. Aspira a los zombis hacia dentro y los tritura en sus aspas; a cambio, si mantienes el gatillo pulsado demasiado tiempo y el manómetro llega al rojo, el arma <strong>explota</strong> y tienes que volver a recoger sus piezas del suelo para montarla de nuevo. Tiene 4 piezas:</p>
+              <ul>
+                <li><strong>Motor / turbina:</strong> en el túnel entre la Sala de Autobuses y el Diner (varias posiciones posibles junto a las ventanas y los coches).</li>
+                <li><strong>Cables:</strong> en la sala de la máquina Tombstone Soda de la Estación de Energía — solo aparecen después de encender la energía.</li>
+                <li><strong>Manija / freno de mano:</strong> dentro del edificio con forma de Nacht der Untoten, entre la Granja y la Estación de Energía (se llega cruzando el maizal).</li>
+                <li><strong>Manómetro:</strong> en una caseta entre la Estación de Energía y Town, escondida en la niebla.</li>
+              </ul>
+              <p>Todas las piezas se llevan y se sueltan en la mesa de crafteo de Town, en el edificio de la izquierda, junto a Stamin-Up.</p>
+              <p class="note">Si una pieza cae en la lava (fuera del mapa), vuelve a su ubicación original. Si el autobús la atropella, desaparece del todo y no vuelve a aparecer esa partida.</p>`}
+          ]},
+          {id:'easterEgg', label:'Easter Egg', items:[
+            {id:'ee-intro', title:'Antes de empezar', html:`
+              <p>Juega en dificultad <strong>Original</strong>. Este lado requiere idealmente 4 jugadores, sobre todo para el paso final, y necesitarás varias Turbinas a la vez, así que conviene construir más de una.</p>`},
+            {id:'prereq-navtable', title:'Prerrequisito · Construir la Mesa NAV', html:`
+              <p>Antes del paso 1, monta la <strong>Mesa de Tarjetas NAV</strong> bajo el pilón del maizal (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>). Si ya la construiste en una partida anterior en el mismo perfil, puede que siga ahí — comprueba igualmente que esté completa antes de empezar.</p>`},
+            {id:'paso1', num:'01', title:'Enciende y apaga la energía', html:`
+              <p>Ve a la Estación de Energía y activa el interruptor (750 puntos). Después, vuelve a apagarlo interactuando de nuevo: es la señal de que sigues el camino de Maxis. Con la energía apagada las máquinas de bebidas dejan de funcionar, así que compra tus perks <strong>antes</strong> de este paso.</p>`},
+            {id:'paso2', num:'02', title:'Invoca al Avogadro', html:`
+              <p>Coloca al menos 2 Turbinas encendidas bajo el pilón del maizal. Espera a que haya <strong>tormenta eléctrica en todo el cielo</strong> (no solo relámpagos en una dirección) y remata al último zombi de la ronda mientras dura la tormenta. Esto invoca al Avogadro, la criatura de niebla.</p>`},
+            {id:'paso3', num:'03', title:'Elimina al Avogadro con una EMP', html:`
+              <p>Consigue una <strong>Granada EMP</strong> de la Caja Misteriosa. Atrae al Avogadro hasta que quede justo debajo del pilón (Maxis avisará con la frase «Finish Him Now» o similar) y lánzale la EMP ahí mismo para eliminarlo. Es posible matarlo a golpes, pero la EMP es mucho más fiable y rápida.</p>`},
+            {id:'paso4', num:'04', title:'Reparte las Turbinas', html:`
+              <p>Necesitas 4 Turbinas en juego a la vez. Dos jugadores se quedan con las suyas encendidas bajo el pilón. Los otros dos deben llevar sus Turbinas hasta dos postes de luz verdes distintos — por ejemplo, uno en la Sala de Autobuses y otro en el Diner (también hay postes válidos en la niebla junto a la Estación de Energía, entre las dos zonas del maizal, y entre Town y la Estación de Energía).</p>`},
+            {id:'paso5', num:'05', title:'Activación simultánea', html:`
+              <p>Con cada jugador ya en su puesto, todos deben colocar sus Turbinas <strong>al mismo tiempo</strong> (cuenta atrás por voz o chat). Si se hace bien, los postes emiten un haz de energía naranja hacia el pilón.</p>`},
+            {id:'paso6', num:'06', title:'Confirmación', html:`
+              <p>El pilón queda brillando en naranja de forma permanente y se desbloquea el logro/trofeo correspondiente: el lado de Maxis está completado.</p>`}
+          ]},
+          {id:'secretos', label:'Secretos', items:[
+            {id:'cancion-secreta', title:'Canción secreta: «Carrion»', html:`
+              <p>Hay tres ositos de peluche escondidos en el mapa. Interactúa con ellos <strong>en este orden</strong> para que suene la canción oculta del mapa, «Carrion»:</p>
+              <ol>
+                <li>En un banco fuera de la terminal de autobuses (Bus Depot).</li>
+                <li>En la planta de arriba de la casa de la Granja, sobre el colchón junto a la ventana.</li>
+                <li>En el bar de Town, dentro, a la derecha.</li>
+              </ol>`},
+            {id:'truco-banco', title:'Truco del banco: power-up de 1000 puntos', html:`
+              <p>En el banco de Town hay una caja fuerte cerrada. Ábrela golpeándola con las Galvaknuckles o con el Cuchillo Balístico ya mejorado en el Pack-a-Punch. Una vez abierta, deposita <strong>1100 puntos</strong> en la caja: sueltan un power-up especial de 1000 puntos que puede recoger cualquier jugador.</p>
+              <p class="note">Si alguien está justo en el punto donde va a caer el power-up, se pierde y nadie lo recibe — apártate antes de depositar los puntos.</p>`},
+            {id:'letrero-diner', title:'El letrero del Diner', html:`
+              <p>El cartel del Diner dice «North Highway Diner», pero solo se iluminan seis de sus letras: al fijarte, en realidad se lee <strong>«Now Die»</strong> («Muere ahora»).</p>`}
+          ]}
+        ],
+        sources:{
+          html:`<p>Guía contrastada con guías comunitarias públicas sobre TranZit.</p>
                 <ul>
                   <li><a href="https://gamerant.com/black-ops-2-tranzit-easter-egg-guide-maxis-ps5/" target="_blank" rel="noopener">Guía escrita · Lado de Maxis (GameRant)</a></li>
                   <li><a href="https://www.youtube.com/watch?v=1O9zRyVyLbM" target="_blank" rel="noopener">Vídeo · Guía completa Richtofen y Maxis</a></li>
                   <li><a href="https://callofduty.fandom.com/wiki/Tower_of_Babble" target="_blank" rel="noopener">Call of Duty Wiki · Tower of Babble</a></li>
+                  <li><a href="https://callofduty.fandom.com/wiki/TranZit" target="_blank" rel="noopener">Call of Duty Wiki · TranZit (construibles y secretos)</a></li>
+                  <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=566239316" target="_blank" rel="noopener">Guía de Steam · Tower of Babble (guía completa)</a></li>
                 </ul>
                 <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 2 y sus contenidos pertenecen a Activision / Treyarch.</p>`
-            }
-          },
-          {
+        }
+      },
+      {
             id: 'dierise-richtofen', name: 'Die Rise', sub: 'Richtofen · Alto Mantenimiento', status: 'active',
             title: 'Die Rise', subtitle: 'Alto Mantenimiento — Richtofen',
             desc: 'Lado de Richtofen del segundo Easter Egg. Requiere dificultad Original y 4 jugadores.',
