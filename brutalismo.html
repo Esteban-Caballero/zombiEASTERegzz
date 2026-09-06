@@ -5,29 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>ZombiEASTERegzz</title>
+  <title>ZombiEASTERegzz · Brutalismo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
     rel="stylesheet">
   <style>
     :root {
-      --stone-950: #14110d;
-      --stone-900: #1b170f;
-      --stone-800: #241f16;
-      --stone-700: #332b1e;
-      --stone-600: #4a4030;
-      --line: #3c3423;
-      --parchment: #ede4d2;
-      --parchment-dim: #b6a98d;
-      --ember: #e2622b;
-      --ember-dim: #a8451c;
-      --gold: #c9a227;
-      --gold-soft: #8a7124;
-      --radius: 7px;
-      --font-display: 'Cinzel', serif;
-      --font-body: 'Public Sans', system-ui, -apple-system, sans-serif;
+      /* Paleta "Spaceland" — marcadas !important porque cada mapa aplica su
+         propio tema por JS (applyTheme) via estilo inline sobre <html>;
+         sin !important, entrar a una guía revertiría estos colores. */
+      --stone-950: #0d0221 !important;
+      --stone-900: #1b0b3f !important;
+      --stone-800: #2f1665 !important;
+      --stone-700: #3d1f80 !important;
+      --stone-600: #55299e !important;
+      --line: #00f0ff !important;
+      --parchment: #fdf6ff;
+      --parchment-dim: #c9a9ff;
+      --ember: #ff2ec4 !important;
+      --ember-dim: #c91da0 !important;
+      --gold: #fff200 !important;
+      --gold-soft: #d4cc00 !important;
+      --radius: 0px;
+      --font-display: 'Archivo Black', 'Space Grotesk', system-ui, sans-serif;
+      --font-body: 'Space Grotesk', system-ui, -apple-system, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
       --sidebar-w: 250px;
       --index-w: 230px;
@@ -1253,6 +1256,368 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ==========================================================
+       BRUTALISMO — skin override. Misma estructura y datos que
+       la versión clásica; solo cambia el lenguaje visual.
+       ========================================================== */
+
+    *,
+    *::before,
+    *::after {
+      border-radius: 0 !important;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      background-color: var(--stone-950);
+      background-image:
+        radial-gradient(rgba(0, 240, 255, .12) 1px, transparent 1px),
+        radial-gradient(rgba(255, 46, 196, .08) 1px, transparent 1px);
+      background-size: 22px 22px, 22px 22px;
+      background-position: 0 0, 11px 11px;
+    }
+
+    ::selection {
+      background: var(--ember);
+      color: var(--stone-950);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--ember);
+      outline-offset: 2px;
+    }
+
+    .carved {
+      letter-spacing: 0;
+      text-transform: uppercase;
+      text-shadow: 3px 3px 0 var(--ember);
+      color: var(--parchment);
+    }
+
+    /* ---- links / switch badge ---- */
+    .style-switch {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 60;
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      text-decoration: none;
+      padding: 9px 14px;
+      background: var(--stone-900);
+      color: var(--parchment) !important;
+      border: 2px solid var(--line);
+      box-shadow: 4px 4px 0 var(--line);
+      transition: transform .1s linear, box-shadow .1s linear;
+    }
+
+    .style-switch:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--line);
+    }
+
+    .style-switch:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0 var(--line);
+    }
+
+    /* ---- sidebar / nav ---- */
+    .sidebar {
+      border-right: 3px solid var(--line);
+    }
+
+    .brand {
+      border-bottom: 3px solid var(--line);
+      font-weight: 700;
+    }
+
+    .home-link {
+      border-bottom: 2px solid var(--line);
+      font-weight: 700;
+    }
+
+    .map-item.active {
+      box-shadow: inset 5px 0 0 var(--ember);
+      font-weight: 700;
+    }
+
+    .pill-soon {
+      border-width: 2px;
+      font-weight: 700;
+    }
+
+    /* ---- home hero ---- */
+    .home-hero {
+      border: 3px solid var(--line);
+      background: var(--stone-900);
+      box-shadow: 8px 8px 0 var(--line);
+    }
+
+    .home-hero::before {
+      background-image: radial-gradient(var(--line) 1.5px, transparent 1.5px);
+      background-size: 20px 20px;
+      opacity: .12;
+    }
+
+    .home-kicker::after {
+      background: var(--line);
+      height: 3px;
+      width: 60px;
+    }
+
+    .home-title {
+      background: none;
+      -webkit-background-clip: initial;
+      background-clip: initial;
+      -webkit-text-fill-color: initial;
+      color: var(--parchment);
+      text-shadow: 4px 4px 0 var(--ember);
+      text-transform: uppercase;
+    }
+
+    /* ---- popular cards ---- */
+    .popular-card {
+      border: 3px solid var(--line);
+      background: var(--stone-900);
+      box-shadow: 6px 6px 0 var(--line);
+      transition: transform .12s linear, box-shadow .12s linear, border-color .12s linear;
+    }
+
+    .popular-card::before {
+      height: 5px;
+    }
+
+    .popular-card::after {
+      display: none;
+    }
+
+    .popular-card:hover {
+      transform: translate(-3px, -3px);
+      border-color: var(--line);
+      box-shadow: 9px 9px 0 var(--card-accent, var(--line));
+    }
+
+    .popular-card:active {
+      transform: translate(1px, 1px);
+      box-shadow: 2px 2px 0 var(--line);
+    }
+
+    /* ---- home accordion / map list ---- */
+    .home-game {
+      border: 3px solid var(--line);
+      background: var(--stone-900);
+      box-shadow: 5px 5px 0 var(--line);
+      transition: box-shadow .12s linear;
+    }
+
+    .home-game[open] {
+      border-color: var(--line);
+      box-shadow: 2px 2px 0 var(--line);
+    }
+
+    .home-game summary:hover {
+      background: var(--stone-800);
+    }
+
+    .home-map {
+      border: 2px solid var(--line);
+      background: var(--stone-900);
+      box-shadow: 4px 4px 0 var(--line);
+      transition: transform .1s linear, box-shadow .1s linear;
+    }
+
+    .home-map:hover {
+      border-color: var(--line);
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--line);
+    }
+
+    .home-map:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0 var(--line);
+    }
+
+    /* ---- map guide view ---- */
+    .map-hero {
+      border: 3px solid var(--line);
+      background: var(--stone-900);
+      box-shadow: 8px 8px 0 var(--line);
+    }
+
+    .map-hero::before {
+      display: none;
+    }
+
+    .god-chip {
+      border-width: 2px;
+      border-color: var(--line);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .tabs {
+      border-bottom: 3px solid var(--line);
+    }
+
+    .tab-btn.active {
+      background: var(--ember);
+      color: var(--stone-950);
+      border-bottom-color: var(--ember);
+      box-shadow: 3px 3px 0 var(--line);
+    }
+
+    .step-card {
+      border: 3px solid var(--line);
+      background: var(--stone-900);
+      box-shadow: 6px 6px 0 var(--line);
+    }
+
+    .tag {
+      border-width: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .step-body .guide-section,
+    .step-body>h2 {
+      border-left-width: 5px;
+      background: var(--stone-800);
+    }
+
+    .step-body .guide-subsection,
+    .step-body>h3 {
+      border-bottom: 2px solid var(--line);
+    }
+
+    .step-body .guide-box,
+    .step-body .meta-box,
+    .step-body .guide-cheat,
+    .step-body .cheat-sheet,
+    .step-body .guide-image,
+    .step-body .img-frame,
+    .clip,
+    .shot {
+      border-width: 2px;
+      border-style: solid;
+      border-left-width: 5px;
+    }
+
+    .step-body .guide-table th,
+    .step-body>table th,
+    .step-body>div>table th {
+      background: var(--gold) !important;
+      color: var(--stone-950) !important;
+      font-weight: 700;
+    }
+
+    .link-btn {
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .ts-link {
+      border: 2px solid var(--line);
+      font-weight: 700;
+      box-shadow: 3px 3px 0 var(--line);
+      transition: transform .1s linear, box-shadow .1s linear, background .1s linear;
+    }
+
+    .ts-link:hover {
+      background: var(--stone-800);
+      border-color: var(--line);
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0 var(--line);
+    }
+
+    .ts-link:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0 var(--line);
+    }
+
+    .sources {
+      border-top: 3px solid var(--line);
+    }
+
+    /* ---- quick index ---- */
+    .quickindex {
+      border-left: 3px solid var(--line);
+    }
+
+    .qi-list li.active a {
+      border-left-width: 3px;
+      font-weight: 700;
+    }
+
+    /* ---- mobile toggles / scrim ---- */
+    .icon-btn {
+      border: 2px solid var(--line);
+      box-shadow: 3px 3px 0 var(--line);
+      background: var(--stone-900);
+      font-weight: 700;
+      transition: transform .1s linear, box-shadow .1s linear;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--line);
+    }
+
+    .icon-btn:active {
+      transform: translate(1px, 1px);
+      box-shadow: 0 0 0 var(--line);
+    }
+
+    /* ---- snappier, more mechanical motion ---- */
+    .tab-panel.active {
+      animation-duration: .12s;
+      animation-timing-function: linear;
+    }
+
+    .step-card {
+      animation-duration: .16s;
+      animation-timing-function: linear;
+    }
+
+    .step-card:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .step-card:nth-child(2) {
+      animation-delay: .02s;
+    }
+
+    .step-card:nth-child(3) {
+      animation-delay: .04s;
+    }
+
+    .step-card:nth-child(4) {
+      animation-delay: .06s;
+    }
+
+    .step-card:nth-child(5) {
+      animation-delay: .08s;
+    }
+
+    .step-card:nth-child(n+6) {
+      animation-delay: .08s;
+    }
+
+    .map-hero.hero-refresh {
+      animation-duration: .14s;
+      animation-timing-function: linear;
+    }
+
+    .home-kicker,
+    .home-title,
+    .home-lead {
+      animation-timing-function: linear;
+    }
   </style>
 </head>
 
@@ -1261,7 +1626,7 @@
   <button id="navToggle" class="icon-btn nav-toggle" aria-label="Abrir menú de juegos">☰ Juegos</button>
   <button id="indexToggle" class="icon-btn index-toggle" aria-label="Abrir índice rápido">≡ Índice</button>
   <div id="scrim" class="scrim"></div>
-  <a class="style-switch" href="brutalismo.html"> Cambiar estilo </a>
+  <a class="style-switch" href="index.html"> Cambiar estilo</a>
 
   <div class="app home-mode" id="app">
 
