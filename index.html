@@ -39,6 +39,7 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -62,6 +63,7 @@
       font-family: var(--font-body);
       line-height: 1.55;
       min-height: 100vh;
+      overflow-x: hidden;
       transition: background-color .4s ease;
     }
 
@@ -239,8 +241,25 @@
 
     .home-hero {
       text-align: center;
-      padding: 48px 20px 58px;
+      padding: 68px 24px 60px;
       position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at 50% -20%, color-mix(in srgb, var(--ember) 22%, transparent), transparent 60%),
+        radial-gradient(circle at 90% 115%, color-mix(in srgb, var(--gold) 14%, transparent), transparent 55%),
+        linear-gradient(160deg, var(--stone-800), var(--stone-900));
+    }
+
+    .home-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(color-mix(in srgb, var(--gold) 45%, transparent) 1px, transparent 1px);
+      background-size: 26px 26px;
+      opacity: .1;
+      pointer-events: none;
     }
 
     .home-kicker {
@@ -249,14 +268,40 @@
       font-size: .76rem;
       letter-spacing: .18em;
       text-transform: uppercase;
-      margin: 0 0 16px;
+      margin: 0;
+      position: relative;
+      animation: home-fade-in .5s ease both;
+    }
+
+    .home-kicker::after {
+      content: "";
+      display: block;
+      width: 44px;
+      height: 2px;
+      margin: 16px auto 0;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
 
     .home-title {
-      font-size: clamp(2.35rem, 7vw, 5.25rem);
-      line-height: 1;
-      margin: 0;
+      font-size: clamp(1.85rem, 8.6vw, 5.25rem);
+      line-height: 1.08;
+      margin: 18px 0 0;
+      overflow-wrap: anywhere;
+      position: relative;
       color: var(--parchment);
+      background: linear-gradient(180deg, var(--parchment) 40%, color-mix(in srgb, var(--gold) 65%, var(--parchment)) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+      animation: home-fade-in .6s ease .05s both;
+    }
+
+    @supports not (background-clip: text) {
+      .home-title {
+        -webkit-text-fill-color: initial;
+        color: var(--parchment);
+      }
     }
 
     .home-lead {
@@ -264,6 +309,20 @@
       margin: 22px auto 0;
       color: var(--parchment-dim);
       font-size: 1rem;
+      position: relative;
+      animation: home-fade-in .6s ease .1s both;
+    }
+
+    @keyframes home-fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .home-section {
@@ -292,6 +351,7 @@
     }
 
     .popular-card {
+      --card-accent: var(--ember);
       min-height: 190px;
       padding: 22px;
       text-align: left;
@@ -303,7 +363,18 @@
       position: relative;
       overflow: hidden;
       font: inherit;
-      transition: transform .2s ease, border-color .2s ease;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .popular-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--card-accent);
+      opacity: .9;
     }
 
     .popular-card::after {
@@ -311,18 +382,19 @@
       position: absolute;
       inset: auto -25% -65% 25%;
       height: 160px;
-      background: radial-gradient(circle, color-mix(in srgb, var(--ember) 22%, transparent), transparent 65%);
+      background: radial-gradient(circle, color-mix(in srgb, var(--card-accent) 24%, transparent), transparent 65%);
     }
 
     .popular-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--ember);
+      transform: translateY(-4px);
+      border-color: var(--card-accent);
+      box-shadow: 0 14px 28px -18px color-mix(in srgb, var(--card-accent) 70%, transparent);
     }
 
     .popular-game {
       display: block;
       font-family: var(--font-mono);
-      color: var(--ember);
+      color: var(--card-accent, var(--ember));
       font-size: .68rem;
       text-transform: uppercase;
       letter-spacing: .07em;
@@ -359,6 +431,11 @@
       border-radius: 9px;
       background: var(--stone-900);
       overflow: hidden;
+      transition: border-color .2s ease;
+    }
+
+    .home-game[open] {
+      border-color: var(--gold-soft);
     }
 
     .home-game summary {
@@ -370,6 +447,11 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
+      transition: background .2s ease;
+    }
+
+    .home-game summary:hover {
+      background: var(--stone-800);
     }
 
     .home-game summary::-webkit-details-marker {
@@ -403,10 +485,12 @@
       text-align: left;
       cursor: pointer;
       font: inherit;
+      transition: transform .15s ease, border-color .15s ease;
     }
 
     .home-map:hover {
       border-color: var(--gold-soft);
+      transform: translateY(-2px);
     }
 
     .home-map strong {
@@ -990,7 +1074,8 @@
       }
 
       .home-hero {
-        padding: 42px 4px 38px;
+        padding: 46px 18px 38px;
+        border-radius: 12px;
       }
 
       .popular-grid {
@@ -2338,7 +2423,7 @@
         return game ? { game, map: game.maps.find(m => m.id === mapId) } : null;
       };
       document.getElementById('popularMaps').innerHTML = POPULAR_MAPS.map(findMap).filter(x => x && x.map).map(({ game, map }) =>
-        `<button class="popular-card" data-game="${game.id}" data-map="${map.id}">
+        `<button class="popular-card" data-game="${game.id}" data-map="${map.id}" style="--card-accent:${(map.theme && map.theme.accent) || 'var(--ember)'}">
       <span class="popular-game">${game.name}</span><span class="popular-name">${map.name}</span>
       <span class="popular-sub">${map.sub || ''}</span><span class="popular-open">Abrir guía →</span>
     </button>`
