@@ -1261,7 +1261,7 @@
   <button id="navToggle" class="icon-btn nav-toggle" aria-label="Abrir menú de juegos">☰ Juegos</button>
   <button id="indexToggle" class="icon-btn index-toggle" aria-label="Abrir índice rápido">≡ Índice</button>
   <div id="scrim" class="scrim"></div>
-  <a class="style-switch" href="brutalismo.html"> Cambiar estilo </a>
+  <a class="style-switch" href="brutalismo.html">Cambiar estilo</a>
 
   <div class="app home-mode" id="app">
 
@@ -1274,7 +1274,7 @@
     <main class="main">
       <section class="home-view" id="homeView" aria-labelledby="homeTitle">
         <header class="home-hero">
-          <p class="home-kicker">Tu guía de bolsillo</p>
+          <p class="home-kicker">Tu guía de bolsillo.</p>
           <h1 class="home-title carved" id="homeTitle">ZombiEASTERegzz</h1>
           <p class="home-lead">Nuevos mapas y juegos próximamente.</p>
         </header>
@@ -1331,6 +1331,253 @@
     }
 
     // ---------------- DATA ----------------
+    const ORIGINS_MAP = {
+            id: 'origins', name: 'Origins', sub: 'Little Lost Girl', status: 'active',
+            title: 'Origins', subtitle: 'Little Lost Girl · Black Ops 2 y 3',
+            desc: 'Easter Egg único del mapa (sin lados de Richtofen/Maxis), disponible tanto en Black Ops 2 como, remasterizado, en Black Ops 3 (Zombies Chronicles) — es la misma guía para ambos juegos. Se puede completar en solitario, aunque es más llevadero con 2-4 jugadores.',
+            theme: { accent: '#6f7a4f', accentDim: '#4d5636', gold: '#c9a227', goldSoft: '#8a7124', stone950: '#0f0e0a', stone900: '#181510', stone800: '#221d16', stone700: '#332a1c', stone600: '#4a3d28', line: '#3d331f' },
+            tabs: [
+              {
+                id: 'construibles', label: 'Construibles', items: [
+                  {
+                    id: 'gramofono-intro', title: 'Preparativos · Gramófono y Disco Negro', html: `
+    <p class="note">Manual de construcción y puzles de mejora del Grupo 935.</p>
+    <div class="meta-box">
+        <p>Antes de poder construir cualquier bastón, necesitas acceder a la cámara inferior de la Excavación. Necesitas dos objetos:</p>
+        <ul>
+            <li><strong>El Gramófono:</strong> Siempre está en el Sitio de Excavación (en el suelo junto a la mesa, sobre escombros o maquinaria).</li>
+            <li><strong>El Disco Negro:</strong> Aparece en el Sitio de Excavación (carretilla al lado del Pack-a-Punch, cerca del motor detrás de la excavación, o en el camino hacia la iglesia).</li>
+        </ul>
+        <p>Coloca el Gramófono en la mesa de la Excavación para abrir las escaleras ocultas hacia la sala de los pedestales.</p>
+    </div>
+        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="images/bo2/origins/gramofono.jpg" alt="Piezas del gramófono" style="max-width: 40%; height: auto; border-radius: 4px;"></div>
+`},
+                  {
+                    id: 'baston-hielo', title: 'Bastón de Hielo (Ull\u2019s Arrow)', html: `
+    <h3>1. Construcción</h3>
+    <ul>
+        <li><strong>Disco Azul:</strong> En la Estación de Tanques del Generador 2 (estanterías cerca de la caja misteriosa o sobre la mesa).</li>
+        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="images/bo2/origins/discos_hielo.jpg" alt="Disco del bastón de hielo" style="max-width: 40%; height: auto; border-radius: 4px;"></div>
+        <li><strong>Piezas (3):</strong> Se consiguen <strong>EXCAVANDO</strong> montículos de tierra/huesos con una pala, <strong>ÚNICAMENTE cuando está nevando</strong>.</li>
+        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="images/bo2/origins/pieza_hielo.jpg" alt="Piezas del bastón de hielo" style="max-width: 40%; height: auto; border-radius: 4px;"></div>
+        <li><strong>Gema:</strong> Entra por el Túnel de Hielo (cerca del Generador 6 / Iglesia) usando el gramófono.</li>
+    </ul>
+
+    <h3>2. Mejora (Puzle del Crazy Place)</h3>
+    <p>Mira al techo azul. Verás un símbolo de puntos y círculos. Debes disparar con el bastón al panel de piedra de la pared que corresponda a la traducción de ese símbolo.</p>
+    <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="images/bo2/origins/mejora_baston_hielo_cp.png" alt="Chuleta del bastón de hielo" style="max-width: 100%; height: auto; border-radius: 4px;"></div>
+
+    <h3>3. Mejora (Paso Superficie)</h3>
+    <p>Congela 3 lápidas de agua disparándoles con el Bastón de Hielo y luego destrúyelas disparándoles con un arma de balas normal:</p>
+    <ol>
+        <li>Justo al lado del Generador 4 (Juggernog).</li>
+        <li>Entre el Sitio de Excavación y el Generador 4, en el barro donde pasa el robot.</li>
+        <li>Detrás del búnker del Generador 2 (cerca del inicio del tanque).</li>
+    </ol>
+`},
+                  {
+                    id: 'baston-viento', title: 'Bastón de Viento (Boreas\u2019 Fury)', html: `
+    <h3>1. Construcción</h3>
+    <ul>
+        <li><strong>Disco Amarillo:</strong> Zona del Generador 5 (cerca de Stamin-Up, en el túnel de viento o sobre cajas).</li>
+        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="images/bo2/origins/discos_viento.jpg" alt="Disco del Bastón de Viento" style="max-width: 40%; height: auto; border-radius: 4px;"></div>
+        <li><strong>Piezas (3):</strong> Debes entrar en la cabeza de los 3 Robots Gigantes (Odín, Thor, Freya). Dispárale al pie que tiene círculos iluminados cuando vaya a pisarte.</li>
+        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="images/bo2/origins/piezas_viento.jpg" alt="Piezas del Bastón de Viento" style="max-width: 60%; height: auto; border-radius: 4px;"></div>
+        <li><strong>Gema:</strong> Entra por el Túnel de Viento (cerca del Generador 4 / Juggernog).</li>
+    </ul>
+
+    <h3>2. Mejora (Puzle del Crazy Place)</h3>
+    <p>Verás 4 anillos concéntricos en el techo. Dispara a los anillos con el bastón para girarlos y alinearlos hacia el centro de la sala. El orden correcto de los símbolos (leyendo del anillo más interior al más exterior) es:</p>
+    <div class="cheat-sheet">
+        <strong>ALINEACIÓN DE ANILLOS DE VIENTO:</strong><br>
+        • Anillo 1 (Centro): <strong>I</strong><br>
+        • Anillo 2: <strong>I L</strong><br>
+        • Anillo 3: <strong>I I L</strong><br>
+        • Anillo 4 (Exterior): <strong>L</strong>
+    </div>
+    <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="images/bo2/origins/mejora_viento.jpg" alt="Chuleta del bastón de viento" style="max-width: 40%; height: auto; border-radius: 4px;"></div>
+
+    <h3>3. Mejora (Paso Superficie)</h3>
+    <p>Dispara a 3 esferas de piedra humeantes con el bastón para redirigir el humo hacia la excavación central:</p>
+    <ol>
+        <li>Junto al Generador 4 (mirando hacia la excavación).</li>
+        <li>En el camino de barro entre la Iglesia y el generador 5.</li>
+        <li>Detrás del Generador 5 (Stamin-Up), mirando hacia la excavación.</li>
+    </ol>
+`},
+                  {
+                    id: 'baston-rayo', title: 'Bastón de Rayo (Kimat\u2019s Bite)', html: `
+    <h3>1. Construcción</h3>
+    <ul>
+        <li><strong>Disco Morado:</strong> Zona del Generador 4 (sobre el carro junto a Juggernog, en la mesa del túnel de viento o cerca).</li>
+        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="images/bo2/origins/discos_rayo.jpg" alt="Disco del Bastón de Rayo" style="max-width: 20%; height: auto; border-radius: 4px;"></div>
+        <li><strong>Piezas (3):</strong> Viaja en el Tanque (500 pts). Durante el trayecto, debes saltar del tanque a 3 plataformas de madera inalcanzables a pie.</li>
+        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="images/bo2/origins/piezas_rayo.jpg" alt="Piezas del Bastón de Rayo" style="max-width: 20%; height: auto; border-radius: 4px;"></div>
+        <li><strong>Gema:</strong> Entra por el Túnel de Rayo (cerca del Generador 5 / Stamin-Up).</li>
+    </ul>
+
+    <h3>2. Mejora (Puzle del Crazy Place)</h3>
+    <p>Verás triángulos morados en la pared como un teclado de piano. Solo dispara a las notas de la <strong>fila inferior</strong>. Leyendo la fila inferior de izquierda a derecha (notas 1 a 7), toca estos acordes en orden:</p>
+    <div class="cheat-sheet">
+        <strong>ACORDES DE RAYO (Fila Inferior):</strong><br>
+        • Primer acorde: <strong>1 - 3 - 6</strong><br>
+        • Segundo acorde: <strong>3 - 5 - 7</strong><br>
+        • Tercer acorde: <strong>2 - 4 - 6</strong>
+    </div>
+
+    <h3>3. Mejora (Paso Superficie)</h3>
+    <p>Gira los diales de 7 paneles eléctricos que echan chispas por el mapa hasta que dejen de soltar chispas (Gen 5, Gen 4, Iglesia abajo, Iglesia arriba, Spawn, Gen 2 y detrás de Excavación).</p>
+    <div class="guide-split">
+    <table style="flex: 1; border-collapse: collapse;">
+    <tr>
+        <th style="background-color: #171d25; color: #66c0f4; border: 1px solid #2a475e; padding: 8px; text-align: left;">Ubicación del Panel</th>
+        <th style="background-color: #171d25; color: #66c0f4; border: 1px solid #2a475e; padding: 8px; text-align: center;">Posición</th>
+    </tr>
+    <tr><td style="border: 1px solid #2a475e; padding: 8px;">Generador 5 (Frente a Stamin-Up)</td><td style="border: 1px solid #2a475e; padding: 8px; text-align: center;">⬆️ Arriba</td></tr>
+    <tr><td style="border: 1px solid #2a475e; padding: 8px;">Iglesia (Planta baja detrás del tanque)</td><td style="border: 1px solid #2a475e; padding: 8px; text-align: center;">➡️ Derecha</td></tr>
+    <tr><td style="border: 1px solid #2a475e; padding: 8px;">Iglesia (Planta alta junto a la ventana)</td><td style="border: 1px solid #2a475e; padding: 8px; text-align: center;">⬇️ Abajo</td></tr>
+    <tr><td style="border: 1px solid #2a475e; padding: 8px;">Derecha de la entrada al Túnel de Viento (Amarillo)</td><td style="border: 1px solid #2a475e; padding: 8px; text-align: center;">⬇️ Abajo</td></tr>
+    <tr><td style="border: 1px solid #2a475e; padding: 8px;">Spawn Original en las escaleras (Generador 1)</td><td style="border: 1px solid #2a475e; padding: 8px; text-align: center;">➡️ Derecha</td></tr>
+    <tr><td style="border: 1px solid #2a475e; padding: 8px;">Estación del Tanque (Generador 2) en la puerta trasera</td><td style="border: 1px solid #2a475e; padding: 8px; text-align: center;">⬆️ Arriba</td></tr>
+    <tr><td style="border: 1px solid #2a475e; padding: 8px;">Detrás de Excavación cerca de escaleras a la Iglesia</td><td style="border: 1px solid #2a475e; padding: 8px; text-align: center;">⬇️ Abajo</td></tr>
+</table>
+    <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="images/bo2/origins/ejemplo_panel_mejora_rayo.jpg" alt="Ejemplo de panel de mejora de rayo" style="max-width: 100%; height: auto; border-radius: 4px;"></div>
+    </div>
+`},
+                  {
+                    id: 'baston-fuego', title: 'Bastón de Fuego (Kagutsuchi\u2019s Blood)', html: `
+    <h3>1. Construcción</h3>
+    <ul>
+        <li><strong>Disco Rojo:</strong> Iglesia (bancos de arriba, cajas de arriba o cerca del Generador 6).</li>
+        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="images/bo2/origins/discos_fuego.jpg" alt="Discos del bastón de fuego" style="max-width: 30%; height: auto; border-radius: 4px;"></div>
+        <li><strong>Piezas (3):</strong> Activar Gen 6, derribar el avión rojo brillante en el cielo, y matar al primer Panzersoldat en la Ronda 8.</li>
+        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="images/bo2/origins/piezas_fuego.jpg" alt="Piezas del bastón de fuego" style="max-width: 60%; height: auto; border-radius: 4px;"></div>
+        <li><strong>Gema:</strong> Entra por el Túnel de Fuego (cerca del Generador 3  = Presitidigitación).</li>
+    </ul>
+
+    <h3>2. Mejora (Puzle del Crazy Place)</h3>
+    <p>Mata zombis usando el Bastón de Fuego mientras están pisando las rejillas metálicas de la zona roja para encender los 4 calderos de piedra gigantes.</p>
+
+    <h3>3. Mejora (Paso Superficie)</h3>
+    <p>En la planta alta de la Iglesia, traduce los símbolos de sangre iluminados a números y dispara a las antorchas de la planta baja en ese orden (el 4 siempre es la antorcha con sangre).</p>
+    <table>
+        <tr><th>Símbolo de Sangre</th><th>Número</th></tr>
+        <tr><td>Tres círculos pequeños</td><td>3</td></tr>
+        <tr><td>Antorcha con sangre</td><td>4</td></tr>
+        <tr><td>Un círculo grande + un cuarto</td><td>5</td></tr>
+        <tr><td>Un círculo grande + medio</td><td>6</td></tr>
+        <tr><td>Un círculo grande + tres cuartos</td><td>7</td></tr>
+        <tr><td>Dos círculos grandes</td><td>8</td></tr>
+        <tr><td>Dos círculos grandes + un cuarto</td><td>9</td></tr>
+        <tr><td>Dos círculos grandes + tres cuartos</td><td>11</td></tr>
+    </table>
+    <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="images/bo2/origins/mejora_baston_fuego.jpg" alt="Ejemplo de panel de mejora de rayo" style="max-width: 100%; height: auto; border-radius: 4px;"></div>
+`},
+                  {
+                    id: 'bastones-final', title: 'Paso final para los 4 bastones', html: `
+    <p>En la cámara inferior de la Excavación, mueve las 4 palancas para alinear los 4 anillos gigantes al color de tu bastón. Dispara al orbe brillante en la parte inferior para enviarlo al techo.</p>
+    <p>Baja al <em>Crazy Place</em>, inserta tu bastón en su pedestal y mata a unos 20 zombis cerca para llenarlo de almas.</p>
+`}, {
+                    id: 'puños', title: 'Los Puños Elementales', html: `<p>Se obtienen en las cajas de recompensas de los desafíos tras llenar los 4 cajones de almas. Estos son fundamentales para el easter egg y para el paso de obtener los morteros.
+            </p>`},
+                  {
+                    id: 'morteros', title: 'Los Morteros', html: `<p>Para obtenerlos hay que limpiar las piedras de puño que se encuentran en la mesa del búnker del generador 2, al lado del panel eléctrico. Una vez que tenemos esta piedra, hay que depositarla en una especie de altar o pila con agua en la planta superior de la Iglesia, al lado del panel eléctrico. Una vez aquí, tenemos que matar a zombies con ataques cuerpo a cuerpo cerca para que se limpie la piedra. Una vez limpia, hay que llevarla de nuevo a la mesa de donde la recogimos al principio, pero es muy importante que en el camino de vuelta, no se nos ensucie, por lo que hay que evitar pisar el barro. Si se nos mancha en el intento, tenemos que volver a la pila a limpiarla (esta vez no hay que matar zombies al lado). Cuando ya la tengamos limpia y en su mesa de nuevo, hay que volver a realizar bajas con ataques cuerpo a cuerpo cerca de la mesa hasta que aparezcan los morteros flotando encima de esta.
+            </p>`},
+                  {
+                    id: 'drone', title: 'El Dron de Maxis', html: `<p>Se construye con 3 piezas (cerebro, chasis y hélices) y ayuda a matar zombis, revivir y recoger power-ups. Las piezas se encuentran en:
+              <ul>
+                <li>Cerebro: En la sala inicial, en una de las mesas.</li>
+                <li>Chasis: Por la zona de la Iglesia, al lado de los carteles con una calavera en uno de los caminos del tanque o en la entrada al Crazy Place por la zona de Hielo, justo a la izquierda antes de la mesa.</li>
+                <li>Hélices: En la excavación, justo enfrente de la carretilla de al lado del Pack-a-Punch, al lado de donde se recoge y coloca el gramófono o justo encima de los bastones en el último andamio de madera.</li>
+              </ul>
+            </p>`},
+                  {
+                    id: 'shield', title: 'El Escudo', html: `<p>Se construye con 3 piezas que se encuentran en:
+              <ul>
+                <li>Base: En la zona del generador 2, o bien en el hueco al lado de los escombros en llamas justo al abrir la puerta del inicio, en la carretilla del final del pasillo entre la puerta y el generador o en la zona del pie encima del bunker.</li>
+                <li>Visor: En la zona del generador 3, al abrir la puerta del inicio en el hueco que se queda enfrente de la entrada al túnel del portal de fuego, en el fondo del túnel del portal de fuego o al lado de una caja entre el generador y Speed Cola.</li>
+                <li>Cuerpo: Alrededor de la excavación, en las zonas donde pisan los gigantes.</li>
+              </ul>
+              <p>Una vez se obtengan todas las piezas, se puede montar en cualquier mesa de trabajo.</p>
+            </p>`},
+                  {
+                    id: 'pala-dorada', title: 'La Pala y el Casco Dorados', html: `
+              <p>Por todo el mapa aparecen montículos de huesos ("dig piles") que puedes excavar con una pala normal. Al excavar unos 30 montículos (aproximadamente hacia la ronda 10), la pala se convierte automáticamente en la <strong>Pala Dorada</strong>: aumenta la probabilidad de sacar objetos raros de los montículos y mejora la calidad del dinero enterrado que encuentres (billetes de 200-250 puntos en vez de 50-150).</p>
+              <p>Sigue excavando ya con la Pala Dorada y, con algo de suerte, uno de los montículos soltará el <strong>Casco Dorado</strong>: mientras lo llevas puesto, puedes quedar debajo de un Robot Gigante cuando pise sin morir ni caer al suelo (solo quedas aturdido unos segundos).</p>
+              <p class="note">Ambos objetos son acumulativos y permanecen toda la partida; no hace falta repetir el proceso si te bajan.</p>`},
+                  {
+                    id: 'sangre-zombie', title: 'Sangre de Zombi Gratis (con el Bastón de Hielo)', html: `
+              <p>Alrededor del Sitio de Excavación hay 3 carretillas en llamas. Dispárales con el <strong>Bastón de Hielo</strong> (no hace falta que esté mejorado) para apagarlas las tres.</p>
+              <p>Al apagar la tercera, aparecerá una Sangre de Zombi gratuita junto al andamio cercano a la máquina de Pack-a-Punch: corre a recogerla antes de que desaparezca.</p>
+              <p class="note">Puedes repetir esto una vez por ronda (las carretillas se vuelven a encender solas), salvo si está lloviendo en el mapa, que impide conseguirla.</p>`},
+                  {
+                    id: 'perks-extra', title: 'Huecos de Bebida Extra (Sangre de Zombi + Pala Dorada)', html: `
+              <p>Con la <strong>Pala Dorada</strong> ya obtenida, actívate la Sangre de Zombi (la gratuita de arriba sirve perfectamente) y fíjate en el suelo: durante esos segundos verás algún montículo de excavación brillando en naranja, distinto del resto.</p>
+              <p>Excava ese montículo concreto mientras la Sangre de Zombi siga activa y conseguirás un <strong>Botellín de Perk vacío</strong>, que te permite comprar una bebida más allá del límite normal de 4. Repitiendo el proceso ronda tras ronda puedes llegar hasta 9 bebidas en la misma partida.</p>
+              <p class="note">La ubicación del montículo brillante cambia cada vez y es completamente aleatoria por todo el mapa, así que conviene tener el mapa ya memorizado antes de intentarlo en serio.</p>`},
+                  {
+                    id: 'magna-collider', title: 'Arma Mejorada Gratis: el Magna Collider (con el Dron de Maxis)', html: `
+              <p>Con el <strong>Dron de Maxis</strong> ya construido, debes llevarlo (volando cerca de ti) a 4 ubicaciones del mapa donde hay un disco dorado brillante en el suelo. Acércate a cada disco con el dron desplegado para que lo recoja automáticamente:</p>
+              <ul>
+                <li>Frente a la Iglesia, sobre su tejado, junto al hueco del pie del Robot Gigante.</li>
+                <li>Cerca de la zona de aparición inicial, en los escombros en llamas junto a la puerta hacia el Generador 2.</li>
+                <li>En el tejado destruido junto al Generador 5.</li>
+                <li>Sobre el andamio frente a la máquina de Pack-a-Punch, en el lado opuesto.</li>
+              </ul>
+              <p>Al recoger el cuarto disco, el <strong>Magna Collider</strong> (una MG08/15 ya mejorada de fábrica en el Pack-a-Punch, con munición perforante que rebota) aparecerá flotando justo delante de la máquina de Pack-a-Punch, lista para recoger.</p>`}
+                ]
+              },
+              {
+                id: 'easterEgg', label: 'Easter Egg', items: [
+                  { id: 'ee-intro', title: 'Antes de empezar', html: `<p>No se puede completar en dificultad Fácil. Se recomienda construir los 4 Bastones y el Dron de Maxis antes de empezar los pasos finales.</p>` },
+                  {
+                    id: 'paso1', num: '01', title: 'Enciende los 6 generadores', html: `
+              <p>Activa los 6 generadores «115» repartidos por el mapa para desbloquear el Pack-a-Punch y la Caja Misteriosa.</p>`},
+                  {
+                    id: 'paso2', num: '02', title: 'Mejora los 4 bastones', html: `
+              <p>Construye y mejora los cuatro Bastones Elementales (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>) a su versión Definitiva.</p>`},
+                  {
+                    id: 'paso3', num: '03', title: 'Coloca los bastones', html: `
+              <p>Con los 4 generadores encendidos a la vez tras tener los bastones definitivos, aparecerán 4 pedestales: uno en la Sala de Bastones y uno dentro de la cabeza de cada uno de los tres Robots Gigantes. Coloca cada bastón en su pedestal.</p>`},
+                  {
+                    id: 'paso4', num: '04', title: 'Rompe el sello', html: `
+              <p>Ahora los 3 robots pasarán al mismo tiempo. Solo uno de ellos tendrá el pie iluminado. Entra en el que tenga el pie iluminado. En su interior y pulsa el botón rojo. Sal rápido y lanza un mortero sobre el sello señalado, junto al avión estrellado cerca del Generador 5, antes de que termine el tiempo. En cooperativo, puede tirar el mortero otro jugador diferente al que pulsa el botón.</p>`},
+                  {
+                    id: 'paso5', num: '05', title: 'Los Panzersoldat', html: `
+              <p>Despliega el Dron de Maxis junto al sello ya roto: liberará varios Panzersoldat (más cuantos más jugadores haya). Elimínalos a todos. Aquí son muy útiles los bastones mejorados, la ray gun mark 2 o la mauser mejorada.</p>`},
+                  {
+                    id: 'paso6', num: '06', title: 'El avión y el zombi invisible', html: `
+              <p>Consigue Sangre de Zombi y localiza el avión brillante en el cielo; derríbalo. Con la Sangre de Zombi activa, busca y elimina al zombi invisible que corre alrededor del yacimiento antes de que se acabe el power-up. Para hacerlo más sencillo, fijate bien como cae el zombi del cielo.</p>`},
+                  {
+                    id: 'paso7', num: '07', title: 'Mejorar los puños elementales', html: `
+              <p>Con los puños equipados, remata a golpes a los zombis Templarios que tienen una luz blanca brillante. Un truco es utilizar los bastones mejorados, pues su ataque cuerpo a cuerpo es muy poderoso hasta rondas altas.</p>`},
+                  {
+                    id: 'paso8', num: '08', title: 'Libera a Samantha', html: `
+              <p>Lleva los 4 bastones al Crazy Place y mata hasta que salga una luz blanca Despliega el Dron de Maxis en el centro de la sala: entrará en el portal. Mantén pulsado el botón de acción sobre la roca azul central para completar el Easter Egg.</p>`}
+                ]
+              },
+              {
+                id: 'secretos', label: 'Secretos', items: [
+                  {
+                    id: 'secretos-intro', title: 'Trucos y objetos secundarios del mapa', html: `
+              <p>Estos elementos no son necesarios para el Easter Egg principal, pero hacen las partidas largas mucho más llevaderas. Los detalles de cómo conseguirlos están explicados en la pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>: Pala y Casco Dorados, Sangre de Zombi gratis con el Bastón de Hielo, huecos de bebida extra, y el Magna Collider gratis con el Dron de Maxis.</p>`},
+                  { id: 'secretos-placeholder', title: 'Próximamente', html: `<p>Todavía no hay contenido recopilado sobre canciones ocultas ni trofeos/logros específicos de este mapa. En cuanto me pases una fuente sobre alguno de estos temas, lo añadimos aquí con el mismo formato que el resto de la guía.</p>` }
+                ]
+              }
+            ],
+            sources: {
+              html: `<p>Guía contrastada con guías comunitarias públicas sobre Origins.</p>
+                <ul>
+                  <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=581358245" target="_blank" rel="noopener">Guía de Steam · Origins Easter Egg Guide</a></li>
+                  <li><a href="https://callofduty.fandom.com/wiki/Little_Lost_Girl" target="_blank" rel="noopener">Call of Duty Wiki · Little Lost Girl</a></li>
+                  <li><a href="https://callofduty.fandom.com/wiki/Golden_Shovel" target="_blank" rel="noopener">Call of Duty Wiki · Golden Shovel / Helmet</a></li>
+                  <li><a href="https://callofduty.fandom.com/wiki/Maxis_Drone" target="_blank" rel="noopener">Call of Duty Wiki · Maxis Drone (Magna Collider)</a></li>
+                  <li><a href="https://callofduty.fandom.com/wiki/Zombie_Blood" target="_blank" rel="noopener">Call of Duty Wiki · Zombie Blood</a></li>
+                </ul>
+                <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 2 y sus contenidos pertenecen a Activision / Treyarch.</p>`
+            }
+          };
+
     const GAMES = [
       {
         id: 'bo2-zombies', name: 'Black Ops 2: Zombies', status: 'active',
@@ -1354,7 +1601,7 @@
               </ul>
               <p>Móntala en la mesa de crafteo de esa misma sala.</p>
               <figure class="shot" data-slot="tranzit-turbina">
-                <img src="../images/bo2/tranzit/turbina.jpg" alt="Piezas de la Turbina en la Sala de Autobuses" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                <img src="images/bo2/tranzit/turbina.jpg" alt="Piezas de la Turbina en la Sala de Autobuses" loading="lazy" onerror="this.closest('.shot').style.display='none'">
                 <figcaption>Piezas de la Turbina — Sala de Autobuses</figcaption>
               </figure>`},
             {id:'escudo-zombi', title:'El Escudo Zombi', html:`
@@ -1478,7 +1725,7 @@
               </ul>
               <p>Móntala en la mesa de crafteo de esa misma sala. Puedes repetir el proceso para construir varias.</p>
               <figure class="shot" data-slot="tranzit-turbina-maxis">
-                <img src="../images/bo2/tranzit/turbina.jpg" alt="Piezas de la Turbina en la Sala de Autobuses" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                <img src="images/bo2/tranzit/turbina.jpg" alt="Piezas de la Turbina en la Sala de Autobuses" loading="lazy" onerror="this.closest('.shot').style.display='none'">
                 <figcaption>Piezas de la Turbina — Sala de Autobuses</figcaption>
               </figure>`},
             {id:'escudo-zombi', title:'El Escudo Zombi', html:`
@@ -1875,252 +2122,7 @@
                 <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 2 y sus contenidos pertenecen a Activision / Treyarch.</p>`
             }
           },
-          {
-            id: 'origins', name: 'Origins', sub: 'Little Lost Girl', status: 'active',
-            title: 'Origins', subtitle: 'Little Lost Girl',
-            desc: 'Easter Egg único del mapa (sin lados de Richtofen/Maxis). Se puede completar en solitario, aunque es más llevadero con 2-4 jugadores.',
-            theme: { accent: '#6f7a4f', accentDim: '#4d5636', gold: '#c9a227', goldSoft: '#8a7124', stone950: '#0f0e0a', stone900: '#181510', stone800: '#221d16', stone700: '#332a1c', stone600: '#4a3d28', line: '#3d331f' },
-            tabs: [
-              {
-                id: 'construibles', label: 'Construibles', items: [
-                  {
-                    id: 'gramofono-intro', title: 'Preparativos · Gramófono y Disco Negro', html: `
-    <p class="note">Manual de construcción y puzles de mejora del Grupo 935.</p>
-    <div class="meta-box">
-        <p>Antes de poder construir cualquier bastón, necesitas acceder a la cámara inferior de la Excavación. Necesitas dos objetos:</p>
-        <ul>
-            <li><strong>El Gramófono:</strong> Siempre está en el Sitio de Excavación (en el suelo junto a la mesa, sobre escombros o maquinaria).</li>
-            <li><strong>El Disco Negro:</strong> Aparece en el Sitio de Excavación (carretilla al lado del Pack-a-Punch, cerca del motor detrás de la excavación, o en el camino hacia la iglesia).</li>
-        </ul>
-        <p>Coloca el Gramófono en la mesa de la Excavación para abrir las escaleras ocultas hacia la sala de los pedestales.</p>
-    </div>
-        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="../images/bo2/origins/gramofono.jpg" alt="Piezas del gramófono" style="max-width: 40%; height: auto; border-radius: 4px;"></div>
-`},
-                  {
-                    id: 'baston-hielo', title: 'Bastón de Hielo (Ull\u2019s Arrow)', html: `
-    <h3>1. Construcción</h3>
-    <ul>
-        <li><strong>Disco Azul:</strong> En la Estación de Tanques del Generador 2 (estanterías cerca de la caja misteriosa o sobre la mesa).</li>
-        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="../images/bo2/origins/discos_hielo.jpg" alt="Disco del bastón de hielo" style="max-width: 40%; height: auto; border-radius: 4px;"></div>
-        <li><strong>Piezas (3):</strong> Se consiguen <strong>EXCAVANDO</strong> montículos de tierra/huesos con una pala, <strong>ÚNICAMENTE cuando está nevando</strong>.</li>
-        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="../images/bo2/origins/pieza_hielo.jpg" alt="Piezas del bastón de hielo" style="max-width: 40%; height: auto; border-radius: 4px;"></div>
-        <li><strong>Gema:</strong> Entra por el Túnel de Hielo (cerca del Generador 6 / Iglesia) usando el gramófono.</li>
-    </ul>
-
-    <h3>2. Mejora (Puzle del Crazy Place)</h3>
-    <p>Mira al techo azul. Verás un símbolo de puntos y círculos. Debes disparar con el bastón al panel de piedra de la pared que corresponda a la traducción de ese símbolo.</p>
-    <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="../images/bo2/origins/mejora_baston_hielo_cp.png" alt="Chuleta del bastón de hielo" style="max-width: 100%; height: auto; border-radius: 4px;"></div>
-
-    <h3>3. Mejora (Paso Superficie)</h3>
-    <p>Congela 3 lápidas de agua disparándoles con el Bastón de Hielo y luego destrúyelas disparándoles con un arma de balas normal:</p>
-    <ol>
-        <li>Justo al lado del Generador 4 (Juggernog).</li>
-        <li>Entre el Sitio de Excavación y el Generador 4, en el barro donde pasa el robot.</li>
-        <li>Detrás del búnker del Generador 2 (cerca del inicio del tanque).</li>
-    </ol>
-`},
-                  {
-                    id: 'baston-viento', title: 'Bastón de Viento (Boreas\u2019 Fury)', html: `
-    <h3>1. Construcción</h3>
-    <ul>
-        <li><strong>Disco Amarillo:</strong> Zona del Generador 5 (cerca de Stamin-Up, en el túnel de viento o sobre cajas).</li>
-        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="../images/bo2/origins/discos_viento.jpg" alt="Disco del Bastón de Viento" style="max-width: 40%; height: auto; border-radius: 4px;"></div>
-        <li><strong>Piezas (3):</strong> Debes entrar en la cabeza de los 3 Robots Gigantes (Odín, Thor, Freya). Dispárale al pie que tiene círculos iluminados cuando vaya a pisarte.</li>
-        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="../images/bo2/origins/piezas_viento.jpg" alt="Piezas del Bastón de Viento" style="max-width: 60%; height: auto; border-radius: 4px;"></div>
-        <li><strong>Gema:</strong> Entra por el Túnel de Viento (cerca del Generador 4 / Juggernog).</li>
-    </ul>
-
-    <h3>2. Mejora (Puzle del Crazy Place)</h3>
-    <p>Verás 4 anillos concéntricos en el techo. Dispara a los anillos con el bastón para girarlos y alinearlos hacia el centro de la sala. El orden correcto de los símbolos (leyendo del anillo más interior al más exterior) es:</p>
-    <div class="cheat-sheet">
-        <strong>ALINEACIÓN DE ANILLOS DE VIENTO:</strong><br>
-        • Anillo 1 (Centro): <strong>I</strong><br>
-        • Anillo 2: <strong>I L</strong><br>
-        • Anillo 3: <strong>I I L</strong><br>
-        • Anillo 4 (Exterior): <strong>L</strong>
-    </div>
-    <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="../images/bo2/origins/mejora_viento.jpg" alt="Chuleta del bastón de viento" style="max-width: 40%; height: auto; border-radius: 4px;"></div>
-
-    <h3>3. Mejora (Paso Superficie)</h3>
-    <p>Dispara a 3 esferas de piedra humeantes con el bastón para redirigir el humo hacia la excavación central:</p>
-    <ol>
-        <li>Junto al Generador 4 (mirando hacia la excavación).</li>
-        <li>En el camino de barro entre la Iglesia y el generador 5.</li>
-        <li>Detrás del Generador 5 (Stamin-Up), mirando hacia la excavación.</li>
-    </ol>
-`},
-                  {
-                    id: 'baston-rayo', title: 'Bastón de Rayo (Kimat\u2019s Bite)', html: `
-    <h3>1. Construcción</h3>
-    <ul>
-        <li><strong>Disco Morado:</strong> Zona del Generador 4 (sobre el carro junto a Juggernog, en la mesa del túnel de viento o cerca).</li>
-        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="../images/bo2/origins/discos_rayo.jpg" alt="Disco del Bastón de Rayo" style="max-width: 20%; height: auto; border-radius: 4px;"></div>
-        <li><strong>Piezas (3):</strong> Viaja en el Tanque (500 pts). Durante el trayecto, debes saltar del tanque a 3 plataformas de madera inalcanzables a pie.</li>
-        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="../images/bo2/origins/piezas_rayo.jpg" alt="Piezas del Bastón de Rayo" style="max-width: 20%; height: auto; border-radius: 4px;"></div>
-        <li><strong>Gema:</strong> Entra por el Túnel de Rayo (cerca del Generador 5 / Stamin-Up).</li>
-    </ul>
-
-    <h3>2. Mejora (Puzle del Crazy Place)</h3>
-    <p>Verás triángulos morados en la pared como un teclado de piano. Solo dispara a las notas de la <strong>fila inferior</strong>. Leyendo la fila inferior de izquierda a derecha (notas 1 a 7), toca estos acordes en orden:</p>
-    <div class="cheat-sheet">
-        <strong>ACORDES DE RAYO (Fila Inferior):</strong><br>
-        • Primer acorde: <strong>1 - 3 - 6</strong><br>
-        • Segundo acorde: <strong>3 - 5 - 7</strong><br>
-        • Tercer acorde: <strong>2 - 4 - 6</strong>
-    </div>
-
-    <h3>3. Mejora (Paso Superficie)</h3>
-    <p>Gira los diales de 7 paneles eléctricos que echan chispas por el mapa hasta que dejen de soltar chispas (Gen 5, Gen 4, Iglesia abajo, Iglesia arriba, Spawn, Gen 2 y detrás de Excavación).</p>
-    <div class="guide-split">
-    <table style="flex: 1; border-collapse: collapse;">
-    <tr>
-        <th style="background-color: #171d25; color: #66c0f4; border: 1px solid #2a475e; padding: 8px; text-align: left;">Ubicación del Panel</th>
-        <th style="background-color: #171d25; color: #66c0f4; border: 1px solid #2a475e; padding: 8px; text-align: center;">Posición</th>
-    </tr>
-    <tr><td style="border: 1px solid #2a475e; padding: 8px;">Generador 5 (Frente a Stamin-Up)</td><td style="border: 1px solid #2a475e; padding: 8px; text-align: center;">⬆️ Arriba</td></tr>
-    <tr><td style="border: 1px solid #2a475e; padding: 8px;">Iglesia (Planta baja detrás del tanque)</td><td style="border: 1px solid #2a475e; padding: 8px; text-align: center;">➡️ Derecha</td></tr>
-    <tr><td style="border: 1px solid #2a475e; padding: 8px;">Iglesia (Planta alta junto a la ventana)</td><td style="border: 1px solid #2a475e; padding: 8px; text-align: center;">⬇️ Abajo</td></tr>
-    <tr><td style="border: 1px solid #2a475e; padding: 8px;">Derecha de la entrada al Túnel de Viento (Amarillo)</td><td style="border: 1px solid #2a475e; padding: 8px; text-align: center;">⬇️ Abajo</td></tr>
-    <tr><td style="border: 1px solid #2a475e; padding: 8px;">Spawn Original en las escaleras (Generador 1)</td><td style="border: 1px solid #2a475e; padding: 8px; text-align: center;">➡️ Derecha</td></tr>
-    <tr><td style="border: 1px solid #2a475e; padding: 8px;">Estación del Tanque (Generador 2) en la puerta trasera</td><td style="border: 1px solid #2a475e; padding: 8px; text-align: center;">⬆️ Arriba</td></tr>
-    <tr><td style="border: 1px solid #2a475e; padding: 8px;">Detrás de Excavación cerca de escaleras a la Iglesia</td><td style="border: 1px solid #2a475e; padding: 8px; text-align: center;">⬇️ Abajo</td></tr>
-</table>
-    <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="../images/bo2/origins/ejemplo_panel_mejora_rayo.jpg" alt="Ejemplo de panel de mejora de rayo" style="max-width: 100%; height: auto; border-radius: 4px;"></div>
-    </div>
-`},
-                  {
-                    id: 'baston-fuego', title: 'Bastón de Fuego (Kagutsuchi\u2019s Blood)', html: `
-    <h3>1. Construcción</h3>
-    <ul>
-        <li><strong>Disco Rojo:</strong> Iglesia (bancos de arriba, cajas de arriba o cerca del Generador 6).</li>
-        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="../images/bo2/origins/discos_fuego.jpg" alt="Discos del bastón de fuego" style="max-width: 30%; height: auto; border-radius: 4px;"></div>
-        <li><strong>Piezas (3):</strong> Activar Gen 6, derribar el avión rojo brillante en el cielo, y matar al primer Panzersoldat en la Ronda 8.</li>
-        <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="../images/bo2/origins/piezas_fuego.jpg" alt="Piezas del bastón de fuego" style="max-width: 60%; height: auto; border-radius: 4px;"></div>
-        <li><strong>Gema:</strong> Entra por el Túnel de Fuego (cerca del Generador 3  = Presitidigitación).</li>
-    </ul>
-
-    <h3>2. Mejora (Puzle del Crazy Place)</h3>
-    <p>Mata zombis usando el Bastón de Fuego mientras están pisando las rejillas metálicas de la zona roja para encender los 4 calderos de piedra gigantes.</p>
-
-    <h3>3. Mejora (Paso Superficie)</h3>
-    <p>En la planta alta de la Iglesia, traduce los símbolos de sangre iluminados a números y dispara a las antorchas de la planta baja en ese orden (el 4 siempre es la antorcha con sangre).</p>
-    <table>
-        <tr><th>Símbolo de Sangre</th><th>Número</th></tr>
-        <tr><td>Tres círculos pequeños</td><td>3</td></tr>
-        <tr><td>Antorcha con sangre</td><td>4</td></tr>
-        <tr><td>Un círculo grande + un cuarto</td><td>5</td></tr>
-        <tr><td>Un círculo grande + medio</td><td>6</td></tr>
-        <tr><td>Un círculo grande + tres cuartos</td><td>7</td></tr>
-        <tr><td>Dos círculos grandes</td><td>8</td></tr>
-        <tr><td>Dos círculos grandes + un cuarto</td><td>9</td></tr>
-        <tr><td>Dos círculos grandes + tres cuartos</td><td>11</td></tr>
-    </table>
-    <div class="img-frame" style="flex: 0 0 300px; margin: 0;"><img src="../images/bo2/origins/mejora_baston_fuego.jpg" alt="Ejemplo de panel de mejora de rayo" style="max-width: 100%; height: auto; border-radius: 4px;"></div>
-`},
-                  {
-                    id: 'bastones-final', title: 'Paso final para los 4 bastones', html: `
-    <p>En la cámara inferior de la Excavación, mueve las 4 palancas para alinear los 4 anillos gigantes al color de tu bastón. Dispara al orbe brillante en la parte inferior para enviarlo al techo.</p>
-    <p>Baja al <em>Crazy Place</em>, inserta tu bastón en su pedestal y mata a unos 20 zombis cerca para llenarlo de almas.</p>
-`}, {
-                    id: 'puños', title: 'Los Puños Elementales', html: `<p>Se obtienen en las cajas de recompensas de los desafíos tras llenar los 4 cajones de almas. Estos son fundamentales para el easter egg y para el paso de obtener los morteros.
-            </p>`},
-                  {
-                    id: 'morteros', title: 'Los Morteros', html: `<p>Para obtenerlos hay que limpiar las piedras de puño que se encuentran en la mesa del búnker del generador 2, al lado del panel eléctrico. Una vez que tenemos esta piedra, hay que depositarla en una especie de altar o pila con agua en la planta superior de la Iglesia, al lado del panel eléctrico. Una vez aquí, tenemos que matar a zombies con ataques cuerpo a cuerpo cerca para que se limpie la piedra. Una vez limpia, hay que llevarla de nuevo a la mesa de donde la recogimos al principio, pero es muy importante que en el camino de vuelta, no se nos ensucie, por lo que hay que evitar pisar el barro. Si se nos mancha en el intento, tenemos que volver a la pila a limpiarla (esta vez no hay que matar zombies al lado). Cuando ya la tengamos limpia y en su mesa de nuevo, hay que volver a realizar bajas con ataques cuerpo a cuerpo cerca de la mesa hasta que aparezcan los morteros flotando encima de esta.
-            </p>`},
-                  {
-                    id: 'drone', title: 'El Dron de Maxis', html: `<p>Se construye con 3 piezas (cerebro, chasis y hélices) y ayuda a matar zombis, revivir y recoger power-ups. Las piezas se encuentran en:
-              <ul>
-                <li>Cerebro: En la sala inicial, en una de las mesas.</li>
-                <li>Chasis: Por la zona de la Iglesia, al lado de los carteles con una calavera en uno de los caminos del tanque o en la entrada al Crazy Place por la zona de Hielo, justo a la izquierda antes de la mesa.</li>
-                <li>Hélices: En la excavación, justo enfrente de la carretilla de al lado del Pack-a-Punch, al lado de donde se recoge y coloca el gramófono o justo encima de los bastones en el último andamio de madera.</li>
-              </ul>
-            </p>`},
-                  {
-                    id: 'shield', title: 'El Escudo', html: `<p>Se construye con 3 piezas que se encuentran en:
-              <ul>
-                <li>Base: En la zona del generador 2, o bien en el hueco al lado de los escombros en llamas justo al abrir la puerta del inicio, en la carretilla del final del pasillo entre la puerta y el generador o en la zona del pie encima del bunker.</li>
-                <li>Visor: En la zona del generador 3, al abrir la puerta del inicio en el hueco que se queda enfrente de la entrada al túnel del portal de fuego, en el fondo del túnel del portal de fuego o al lado de una caja entre el generador y Speed Cola.</li>
-                <li>Cuerpo: Alrededor de la excavación, en las zonas donde pisan los gigantes.</li>
-              </ul>
-              <p>Una vez se obtengan todas las piezas, se puede montar en cualquier mesa de trabajo.</p>
-            </p>`},
-                  {
-                    id: 'pala-dorada', title: 'La Pala y el Casco Dorados', html: `
-              <p>Por todo el mapa aparecen montículos de huesos ("dig piles") que puedes excavar con una pala normal. Al excavar unos 30 montículos (aproximadamente hacia la ronda 10), la pala se convierte automáticamente en la <strong>Pala Dorada</strong>: aumenta la probabilidad de sacar objetos raros de los montículos y mejora la calidad del dinero enterrado que encuentres (billetes de 200-250 puntos en vez de 50-150).</p>
-              <p>Sigue excavando ya con la Pala Dorada y, con algo de suerte, uno de los montículos soltará el <strong>Casco Dorado</strong>: mientras lo llevas puesto, puedes quedar debajo de un Robot Gigante cuando pise sin morir ni caer al suelo (solo quedas aturdido unos segundos).</p>
-              <p class="note">Ambos objetos son acumulativos y permanecen toda la partida; no hace falta repetir el proceso si te bajan.</p>`},
-                  {
-                    id: 'sangre-zombie', title: 'Sangre de Zombi Gratis (con el Bastón de Hielo)', html: `
-              <p>Alrededor del Sitio de Excavación hay 3 carretillas en llamas. Dispárales con el <strong>Bastón de Hielo</strong> (no hace falta que esté mejorado) para apagarlas las tres.</p>
-              <p>Al apagar la tercera, aparecerá una Sangre de Zombi gratuita junto al andamio cercano a la máquina de Pack-a-Punch: corre a recogerla antes de que desaparezca.</p>
-              <p class="note">Puedes repetir esto una vez por ronda (las carretillas se vuelven a encender solas), salvo si está lloviendo en el mapa, que impide conseguirla.</p>`},
-                  {
-                    id: 'perks-extra', title: 'Huecos de Bebida Extra (Sangre de Zombi + Pala Dorada)', html: `
-              <p>Con la <strong>Pala Dorada</strong> ya obtenida, actívate la Sangre de Zombi (la gratuita de arriba sirve perfectamente) y fíjate en el suelo: durante esos segundos verás algún montículo de excavación brillando en naranja, distinto del resto.</p>
-              <p>Excava ese montículo concreto mientras la Sangre de Zombi siga activa y conseguirás un <strong>Botellín de Perk vacío</strong>, que te permite comprar una bebida más allá del límite normal de 4. Repitiendo el proceso ronda tras ronda puedes llegar hasta 9 bebidas en la misma partida.</p>
-              <p class="note">La ubicación del montículo brillante cambia cada vez y es completamente aleatoria por todo el mapa, así que conviene tener el mapa ya memorizado antes de intentarlo en serio.</p>`},
-                  {
-                    id: 'magna-collider', title: 'Arma Mejorada Gratis: el Magna Collider (con el Dron de Maxis)', html: `
-              <p>Con el <strong>Dron de Maxis</strong> ya construido, debes llevarlo (volando cerca de ti) a 4 ubicaciones del mapa donde hay un disco dorado brillante en el suelo. Acércate a cada disco con el dron desplegado para que lo recoja automáticamente:</p>
-              <ul>
-                <li>Frente a la Iglesia, sobre su tejado, junto al hueco del pie del Robot Gigante.</li>
-                <li>Cerca de la zona de aparición inicial, en los escombros en llamas junto a la puerta hacia el Generador 2.</li>
-                <li>En el tejado destruido junto al Generador 5.</li>
-                <li>Sobre el andamio frente a la máquina de Pack-a-Punch, en el lado opuesto.</li>
-              </ul>
-              <p>Al recoger el cuarto disco, el <strong>Magna Collider</strong> (una MG08/15 ya mejorada de fábrica en el Pack-a-Punch, con munición perforante que rebota) aparecerá flotando justo delante de la máquina de Pack-a-Punch, lista para recoger.</p>`}
-                ]
-              },
-              {
-                id: 'easterEgg', label: 'Easter Egg', items: [
-                  { id: 'ee-intro', title: 'Antes de empezar', html: `<p>No se puede completar en dificultad Fácil. Se recomienda construir los 4 Bastones y el Dron de Maxis antes de empezar los pasos finales.</p>` },
-                  {
-                    id: 'paso1', num: '01', title: 'Enciende los 6 generadores', html: `
-              <p>Activa los 6 generadores «115» repartidos por el mapa para desbloquear el Pack-a-Punch y la Caja Misteriosa.</p>`},
-                  {
-                    id: 'paso2', num: '02', title: 'Mejora los 4 bastones', html: `
-              <p>Construye y mejora los cuatro Bastones Elementales (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>) a su versión Definitiva.</p>`},
-                  {
-                    id: 'paso3', num: '03', title: 'Coloca los bastones', html: `
-              <p>Con los 4 generadores encendidos a la vez tras tener los bastones definitivos, aparecerán 4 pedestales: uno en la Sala de Bastones y uno dentro de la cabeza de cada uno de los tres Robots Gigantes. Coloca cada bastón en su pedestal.</p>`},
-                  {
-                    id: 'paso4', num: '04', title: 'Rompe el sello', html: `
-              <p>Ahora los 3 robots pasarán al mismo tiempo. Solo uno de ellos tendrá el pie iluminado. Entra en el que tenga el pie iluminado. En su interior y pulsa el botón rojo. Sal rápido y lanza un mortero sobre el sello señalado, junto al avión estrellado cerca del Generador 5, antes de que termine el tiempo. En cooperativo, puede tirar el mortero otro jugador diferente al que pulsa el botón.</p>`},
-                  {
-                    id: 'paso5', num: '05', title: 'Los Panzersoldat', html: `
-              <p>Despliega el Dron de Maxis junto al sello ya roto: liberará varios Panzersoldat (más cuantos más jugadores haya). Elimínalos a todos. Aquí son muy útiles los bastones mejorados, la ray gun mark 2 o la mauser mejorada.</p>`},
-                  {
-                    id: 'paso6', num: '06', title: 'El avión y el zombi invisible', html: `
-              <p>Consigue Sangre de Zombi y localiza el avión brillante en el cielo; derríbalo. Con la Sangre de Zombi activa, busca y elimina al zombi invisible que corre alrededor del yacimiento antes de que se acabe el power-up. Para hacerlo más sencillo, fijate bien como cae el zombi del cielo.</p>`},
-                  {
-                    id: 'paso7', num: '07', title: 'Mejorar los puños elementales', html: `
-              <p>Con los puños equipados, remata a golpes a los zombis Templarios que tienen una luz blanca brillante. Un truco es utilizar los bastones mejorados, pues su ataque cuerpo a cuerpo es muy poderoso hasta rondas altas.</p>`},
-                  {
-                    id: 'paso8', num: '08', title: 'Libera a Samantha', html: `
-              <p>Lleva los 4 bastones al Crazy Place y mata hasta que salga una luz blanca Despliega el Dron de Maxis en el centro de la sala: entrará en el portal. Mantén pulsado el botón de acción sobre la roca azul central para completar el Easter Egg.</p>`}
-                ]
-              },
-              {
-                id: 'secretos', label: 'Secretos', items: [
-                  {
-                    id: 'secretos-intro', title: 'Trucos y objetos secundarios del mapa', html: `
-              <p>Estos elementos no son necesarios para el Easter Egg principal, pero hacen las partidas largas mucho más llevaderas. Los detalles de cómo conseguirlos están explicados en la pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>: Pala y Casco Dorados, Sangre de Zombi gratis con el Bastón de Hielo, huecos de bebida extra, y el Magna Collider gratis con el Dron de Maxis.</p>`},
-                  { id: 'secretos-placeholder', title: 'Próximamente', html: `<p>Todavía no hay contenido recopilado sobre canciones ocultas ni trofeos/logros específicos de este mapa. En cuanto me pases una fuente sobre alguno de estos temas, lo añadimos aquí con el mismo formato que el resto de la guía.</p>` }
-                ]
-              }
-            ],
-            sources: {
-              html: `<p>Guía contrastada con guías comunitarias públicas sobre Origins.</p>
-                <ul>
-                  <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=581358245" target="_blank" rel="noopener">Guía de Steam · Origins Easter Egg Guide</a></li>
-                  <li><a href="https://callofduty.fandom.com/wiki/Little_Lost_Girl" target="_blank" rel="noopener">Call of Duty Wiki · Little Lost Girl</a></li>
-                  <li><a href="https://callofduty.fandom.com/wiki/Golden_Shovel" target="_blank" rel="noopener">Call of Duty Wiki · Golden Shovel / Helmet</a></li>
-                  <li><a href="https://callofduty.fandom.com/wiki/Maxis_Drone" target="_blank" rel="noopener">Call of Duty Wiki · Maxis Drone (Magna Collider)</a></li>
-                  <li><a href="https://callofduty.fandom.com/wiki/Zombie_Blood" target="_blank" rel="noopener">Call of Duty Wiki · Zombie Blood</a></li>
-                </ul>
-                <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 2 y sus contenidos pertenecen a Activision / Treyarch.</p>`
-            }
-          },
+          ORIGINS_MAP,
           {
             id: 'super-easter-egg', name: 'Súper Easter Egg', sub: 'TranZit + Die Rise + Buried', status: 'active',
             title: 'Súper Easter Egg', subtitle: 'El Final de Victis',
@@ -2295,7 +2297,125 @@
           { id: 'the-giant', name: 'The Giant', status: 'soon' },
           { id: 'der-eisendrache', name: 'Der Eisendrache', status: 'soon' },
           { id: 'zetsubou-no-shima', name: 'Zetsubou No Shima', status: 'soon' },
-          { id: 'gorod-krovi', name: 'Gorod Krovi', status: 'soon' },
+          {
+            id: 'gorod-krovi', name: 'Gorod Krovi', sub: 'Amor y Guerra', status: 'active',
+            title: 'Gorod Krovi', subtitle: 'Amor y Guerra',
+            desc: 'Guía de consulta rápida para domar al dragón, montar el Escudo de Fafnir y el Guantelete de Sigfrido, y derrotar a la Madre Dragón y a Nikolai 1.0 en la ciudad en ruinas de Gorod Krovi.',
+            theme: {
+              accent: '#c73a34', accentDim: '#8a2620', gold: '#b8a13a', goldSoft: '#8a7124',
+              stone950: '#120d0d', stone900: '#1c1414', stone800: '#2a1d1d', stone700: '#3d2a2a', stone600: '#5c4444', line: '#3d2a2a'
+            },
+            tabs: [
+              {
+                id: 'construibles', label: 'Construibles',
+                items: [
+                  {
+                    id: 'escudo-fafnir', title: 'El Escudo de Fafnir (Guard of Fafnir)', html: `
+                <p>Recoge las tres piezas del escudo, repartidas por la <strong>Enfermería</strong>, la <strong>Armería</strong> y el <strong>Búnker de Operaciones</strong> (la sala exacta dentro de cada zona varía entre partidas). Móntalas en el banco de crafteo del Búnker de Operaciones.</p>
+                <p>Es tu escudo especial: bloquea golpes cuerpo a cuerpo y también sirve como arma de melé.</p>`},
+                  {
+                    id: 'escudo-tiamat', title: 'Mejora · Fauces de Tiamat', html: `
+                <p>Consigue entre 30 y 50 muertes prendiendo zombis con el fuego del escudo. Cuando esté «caliente», quema los tres símbolos morados repartidos por el mapa:</p>
+                <ul>
+                  <li>Escaleras de <strong>Dragon Command</strong>.</li>
+                  <li>Tejado roto de <strong>Supply Depot</strong>.</li>
+                  <li>Hombro del robot de <strong>Tank Factory</strong>.</li>
+                </ul>
+                <p>Al quemar los tres, el escudo se transforma en <strong>Fauces de Tiamat</strong>, con más daño y alcance de fuego.</p>`},
+                  {
+                    id: 'gkz45', title: 'GKZ-45 Mk3 (arma especial)', html: `
+                <p>A diferencia de otras armas especiales, la GKZ-45 Mk3 <strong>no se construye</strong>: solo sale de la Caja Misteriosa. Es un arma de doble empuñadura que combina una nube ralentizadora con los disparos de la Ray Gun Mk3. Mejórala con el Pack-a-Punch para conseguir la <strong>Vorágine de Eris</strong>.</p>`}
+                ]
+              },
+              {
+                id: 'easterEgg', label: 'Easter Egg',
+                items: [
+                  {
+                    id: 'ee-intro', title: 'Antes de empezar', html: `
+                <p>El Easter Egg completo de Gorod Krovi es largo (entre 60 y 100 minutos) y exige moverte constantemente entre las tres zonas principales: <strong>Dragon Command</strong>, <strong>Supply Depot</strong> y <strong>Tank Factory</strong>. Es muy recomendable jugarlo en equipo de 4.</p>`},
+                  {
+                    id: 'paso1', num: '01', title: 'Enciende la energía', html: `
+                <p>Ve al edificio de Dragon Command (el que tiene monitores verdes y una estrella en el exterior) y activa el interruptor de la pared para dar corriente al mapa.</p>`},
+                  {
+                    id: 'paso2', num: '02', title: 'Cilindros de código y Red del Dragón', html: `
+                <p>Los zombis empiezan a soltar <strong>Cilindros de Código</strong> azules, amarillos y rojos. Llévalos a los <strong>Módulos Groph</strong> de Dragon Command, Supply Depot y Tank Factory e insértalos, defendiendo cada consola unos 30 segundos mientras se procesa.</p>
+                <p>El cilindro sale disparado al aire y cae en otro punto del mapa (síguelo con las balizas de humo); recupéralo ya mejorado en forma de <strong>Circuito de la Red del Dragón</strong> y repite el proceso para las tres zonas. Cuando tengas los tres circuitos, insértalos en la máquina del Búnker de Operaciones.</p>`},
+                  {
+                    id: 'paso3', num: '03', title: 'Cabalga al dragón y activa el Pack-a-Punch', html: `
+                <p>Con los tres circuitos instalados, interactúa con el terminal grande de Dragon Command para invocar al dragón. Súbete a él para volar directamente hasta la Incubadora (Hatchery), donde se encuentra el Pack-a-Punch.</p>
+                <p>Sobrevive al combate que se desata nada más aterrizar para asegurar la zona y activar la máquina.</p>`},
+                  {
+                    id: 'paso4', num: '04', title: 'El Huevo de Dragón', html: `
+                <p>Dispara al huevo que asoma por la entrada de una alcantarilla cercana a la Incubadora hasta soltarlo y recogerlo. Colócalo en la incubadora, junto al Pack-a-Punch, y elimina zombis para cargarlo de energía.</p>
+                <p>Sobrevive una oleada más para que se enfríe y recupéralo ya listo para usar.</p>`},
+                  {
+                    id: 'paso5', num: '05', title: 'El Guantelete de Sigfrido', html: `
+                <p>Con el huevo en tu poder, interactúa con las lápidas repartidas por el mapa para conseguir el <strong>Guantelete de Sigfrido</strong>, una nueva herramienta especial que necesitarás en varios pasos posteriores (incluida la recogida de algunas estatuas).</p>
+                <p class="note">Asegúrate también de tener montado el <button class="link-btn" onclick="switchTab('construibles')">Escudo de Fafnir</button> antes de continuar.</p>`},
+                  {
+                    id: 'paso6', num: '06', title: 'Activa el generador', html: `
+                <p>En la zona de incubación del huevo, elimina al dron Valkiria cercano y pulsa el botón oculto rojo/verde para atraer a otro dron. Deja que dispare contra el generador para activarlo.</p>`},
+                  {
+                    id: 'paso7', num: '07', title: 'Seis válvulas y el código KRONOS', html: `
+                <p>Busca y activa las seis válvulas repartidas por el mapa:</p>
+                <ul>
+                  <li>Zona superior de Dragon Command.</li>
+                  <li>Bajo una estantería en Supply Depot.</li>
+                  <li>Control del Puente.</li>
+                  <li>Tienda enfrente de la máquina Kuda.</li>
+                  <li>Exterior de Tank Factory.</li>
+                  <li>Bajo la máquina Stamin-Up.</li>
+                </ul>
+                <p>Déjalas en la combinación correcta (una en verde, las otras cinco en azul) para liberar un cilindro. Insértalo en la máquina S.O.P.H.I.A. y dispara a las letras de la rueda para deletrear <strong>KRONOS</strong>.</p>`},
+                  {
+                    id: 'paso8', num: '08', title: 'Recoge las seis estatuas', html: `
+                <p>Consíguelas repartidas por el mapa (el método varía para cada una):</p>
+                <ul>
+                  <li>Dispara a la luz roja de la salida de alcantarilla cerca del Pack-a-Punch y recoge la estatua del retrete.</li>
+                  <li>Rompe a golpes, con el Guantelete de Sigfrido, la caja fuerte del Búnker de Operaciones.</li>
+                  <li>Dispara a la estatua situada en el muro alto frente a Dragon Command.</li>
+                  <li>Usa el ataque Dragon Strike sobre el charco a las afueras de Supply Depot.</li>
+                  <li>Interactúa con la trampa Láser Gigante a las afueras de Supply Depot.</li>
+                  <li>Quema con el fuego del escudo la tubería exterior de Tank Factory.</li>
+                </ul>
+                <p>Coloca las seis en el módulo situado frente a S.O.P.H.I.A.</p>`},
+                  {
+                    id: 'paso9', num: '09', title: 'Los seis desafíos de S.O.P.H.I.A.', html: `
+                <p>Completa los seis minijuegos que se activan (el orden puede variar entre partidas):</p>
+                <ol>
+                  <li><strong>Defensa del Módulo Gersch:</strong> protégelo en Tank Factory durante 90 segundos.</li>
+                  <li><strong>Escolta al Mangler ruso</strong> desde Tank Factory hasta S.O.P.H.I.A.</li>
+                  <li><strong>Orbe amarilla:</strong> destrúyela guiándote por el sonido mientras se mueve.</li>
+                  <li><strong>Escolta al dron</strong> de poca vida desde su punto de aparición hasta S.O.P.H.I.A.</li>
+                  <li><strong>Desactiva las bombas</strong> en el orden que marca la pantalla.</li>
+                  <li><strong>Resiste la oleada de Manglers</strong> mientras insertas la tarjeta y esperas a que termine la descarga.</li>
+                </ol>`},
+                  {
+                    id: 'paso10', num: '10', title: 'Núcleo de energía y combate final', html: `
+                <p>Entrega la tarjeta a S.O.P.H.I.A. para obtener el núcleo de energía. Usa el Guantelete de Sigfrido para liberar al dragón y sitúate sobre la alcantarilla marcada con una estrella roja para descender a la arena final.</p>
+                <p>Derrota primero a la <strong>Madre Dragón</strong> y después a <strong>Nikolai 1.0</strong>: dispara a sus puntos débiles amarillos (mejillas, y los núcleos de energía de hombros, brazos, pecho y cabina) hasta destruirlos todos.</p>
+                <p>Al completarlo se desbloquea el logro/trofeo <strong>«Amor y Guerra» (Love and War)</strong> y termina el Easter Egg.</p>`}
+                ]
+              },
+              {
+                id: 'secretos', label: 'Secretos',
+                items: [
+                  { id: 'secretos-placeholder', title: 'Próximamente', html: `<p>Todavía no hay contenido recopilado sobre canciones, trofeos o desafíos secundarios de este mapa.</p>` }
+                ]
+              }
+            ],
+            sources: {
+              html: `<p>Guía contrastada entre Zombies Codex, SegmentNext y GameRant, además de la guía de Steam de referencia aportada.</p>
+                <ul>
+                  <li><a href="https://www.zombiescodex.com/black-ops-3/gorod-krovi/" target="_blank" rel="noopener">Zombies Codex · Gorod Krovi</a></li>
+                  <li><a href="https://segmentnext.com/black-ops-3-zombies-gorod-krovi-easter-egg-steps-guide/" target="_blank" rel="noopener">SegmentNext · Pasos del Easter Egg</a></li>
+                  <li><a href="https://gamerant.com/black-ops-3-gorod-krovi-easter-egg-guide/" target="_blank" rel="noopener">GameRant · Guía de Gorod Krovi</a></li>
+                  <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1716003126" target="_blank" rel="noopener">Guía de Steam de referencia (enlace original)</a></li>
+                </ul>
+                <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 3 y sus contenidos pertenecen a Activision / Treyarch.</p>`
+            }
+          },
+          ORIGINS_MAP,
           { id: 'revelations', name: 'Revelations', status: 'soon' }
         ]
       },
