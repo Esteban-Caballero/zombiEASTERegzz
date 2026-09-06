@@ -2394,6 +2394,147 @@
             }
           }
         ]
+      },
+      {
+        id: 'bo3-zombies', name: 'Black Ops 3: Zombies', status: 'active',
+        maps: [
+          {
+            id: 'shadows-of-evil', name: 'Shadows of Evil', sub: 'Apocalipsis Evitado', status: 'active',
+            title: 'Shadows of Evil', subtitle: 'Apocalipsis Evitado',
+            desc: 'Guía de consulta rápida para escapar de Morg City: la Llave de Invocación, el Apothicon Servant, las cuatro Espadas Apothicon y el ritual completo para atrapar a Shadowman.',
+            theme: {
+              accent: '#8a5cff', accentDim: '#5c3bb0', gold: '#c9a13a', goldSoft: '#8a7128',
+              stone950: '#0c0b14', stone900: '#14121f', stone800: '#1d1a2c', stone700: '#2a2542', stone600: '#3c3560', line: '#302a4a'
+            },
+            tags: {
+              magician: { label: 'El Mago (Nero)', color: '#8a6fd9' },
+              boxeador: { label: 'El Boxeador (Floyd)', color: '#d97a3d' },
+              detective: { label: 'El Detective (Jack)', color: '#5f8aa3' },
+              femme: { label: 'La Femme Fatale (Jessica)', color: '#c9508a' }
+            },
+            tabs: [
+              {
+                id: 'construibles', label: 'Construibles',
+                items: [
+                  {
+                    id: 'llave-invocacion', title: 'La Llave de Invocación (Summoning Key)', html: `
+                    <p>No se construye con piezas: está en el <strong>Junction</strong>, el cruce central del mapa, dentro de la caja de la parte trasera de un camión aparcado.</p>
+                    <p>Toca la vaina morada que hay justo delante para entrar en <strong>Modo Bestia</strong>, golpea la caja del camión para romperla, vuelve a forma humana y recoge la llave. La necesitarás en cada ritual y para atrapar al jefe final.</p>`
+                  },
+                  {
+                    id: 'escudo-cohete', title: 'El Escudo Cohete (Rocket Shield)', html: `
+                    <p>Tres piezas, una por distrito (la posición exacta dentro de cada sala varía entre partidas):</p>
+                    <ul>
+                      <li><strong>Canals</strong>: activa el fusible que da al Zandi's Smoke Lounge y busca la pieza en la sala.</li>
+                      <li><strong>Waterfront</strong>: en una de las salas del distrito.</li>
+                      <li><strong>Footlight</strong>: en una sala de esquina del distrito.</li>
+                    </ul>
+                    <p>Con las tres piezas, móntalo en cualquier mesa de crafteo (hay una en la zona de los canales).</p>`
+                  },
+                  {
+                    id: 'apothicon-servant', title: 'El Apothicon Servant', html: `
+                    <p>El arma especial del mapa. Dispara un pequeño agujero negro que arrastra y elimina zombis. Necesita tres componentes:</p>
+                    <ul>
+                      <li><strong>Tentáculo de Margwa</strong>: consigue el Fumigador (spray) cerca del spawn y úsalo sobre las vainas de cosecha Apothicon repartidas por la ciudad hasta que una madure y lo suelte.</li>
+                      <li><strong>Corazón de Margwa</strong>: derrota a un Margwa (destruye sus tres cabezas); suele aparecer a partir de la ronda 8.</li>
+                      <li><strong>Xenomateria</strong>: a partir de la ronda 10-12 aparecen proyectiles girando sueltos por Parásitos o Elementales de Insania; dispárales para tener opción de que suelten la muestra.</li>
+                    </ul>
+                    <p>Con la energía activada, ensámblalo en la mesa de crafteo correspondiente. En Shadows of Evil no se puede mejorar con Pack-a-Punch.</p>`
+                  },
+                  {
+                    id: 'protector-civil', title: 'El Protector Civil', html: `
+                    <p>Recoge un fusible en cada distrito (Canals, Waterfront y Footlight), normalmente al final de las pasarelas elevadas de los andenes de tranvía, en cajas o barandillas.</p>
+                    <p>Introduce los tres fusibles en la caja del Rift para instalarlo. Cuesta 2.000 puntos invocarlo cada vez que lo necesites.</p>`
+                  }
+                ]
+              },
+              {
+                id: 'easterEgg', label: 'Easter Egg',
+                items: [
+                  {
+                    id: 'ee-intro', title: 'Antes de empezar', html: `
+                    <p>Necesitas la <strong>Llave de Invocación</strong> (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>) y dominar el <strong>Modo Bestia</strong> (se activa tocando las vainas moradas repartidas por el mapa). El Easter Egg completo solo se puede terminar con <strong>4 jugadores</strong> en la partida — el paso final no se activa con menos.</p>`
+                  },
+                  {
+                    id: 'ritual-mago', num: '01', title: 'Ritual · El Mago (Nero)', tag: 'magician', html: `
+                    <p>En el apartamento sobre Easy Street, coge la <strong>pluma del abogado</strong> de la grúa-caja del exterior. En Modo Bestia, electrifica el contador para que la grúa balancee la caja hacia el interior y puedas recogerla. Llévala al altar de Nero para completar su ritual y obtener un Gateworm.</p>`
+                  },
+                  {
+                    id: 'ritual-boxeador', num: '02', title: 'Ritual · El Boxeador (Floyd)', tag: 'boxeador', html: `
+                    <p>En el gimnasio El Yunque (Waterfront), en Modo Bestia engancha el gancho hasta la plataforma y balancéate para tirar la caja con el <strong>cinturón de campeón</strong>. Llévalo al altar de Floyd.</p>`
+                  },
+                  {
+                    id: 'ritual-detective', num: '03', title: 'Ritual · El Detective (Jack)', tag: 'detective', html: `
+                    <p>En el club Ruby Rabbit (Canals), rompe en Modo Bestia la caja enrejada para liberar la <strong>placa de su compañero</strong> y electrifica el contador de voltios para abrir la reja. Llévala al altar de Jack.</p>`
+                  },
+                  {
+                    id: 'ritual-femme', num: '04', title: 'Ritual · La Femme Fatale (Jessica)', tag: 'femme', html: `
+                    <p>En El Encaje Negro (Footlight), cruza en Modo Bestia el hueco entre edificios y tira la caja con el <strong>peluquín del productor</strong> del borde. Llévalo al altar de Jessica.</p>
+                    <p>Puedes hacer los cuatro rituales en cualquier orden. Al completar cada uno recibes un Gateworm.</p>`
+                  },
+                  {
+                    id: 'lugar-sagrado', num: '05', title: 'El Lugar Sagrado', html: `
+                    <p>Con los cuatro Gateworms, entra en la nueva sección del metro que se abre y busca el altar subterráneo. Coloca los cuatro Gateworms en los cuatro pedestales (dos junto al altar, dos al otro lado de una grieta); el primero que coloques crea puentes para cruzar corriendo por la pared.</p>
+                    <p>Al completarlo, Shadowman aparece, se queda con la Llave de Invocación y se retira mientras invoca a un Margwa. Se activa el Pack-a-Punch, el cielo se tiñe de rojo sangre y aparece un Apothicon gigante a lo lejos.</p>`
+                  },
+                  {
+                    id: 'espada-apothicon', num: '06', title: 'La Espada Apothicon', html: `
+                    <p>Fíjate en los tres símbolos que se ven por las ventanillas del tranvía. Ve a la estación de metro opuesta al Lugar Sagrado y, en Modo Bestia, electrifica los tres símbolos que coincidan alrededor de la puerta (si fallas, tendrás que esperar a la ronda siguiente para reintentarlo). El muro se disuelve y revela una estatua con cuatro espadas y cuatro huevos.</p>
+                    <p>Coge un huevo y llévalo a una de las cuatro estatuas Apothicon repartidas por el mapa (callejón de Footlight bajo la máquina de Perks, detrás de las escaleras del Ruby Rabbit en Canals, edificio destruido de Waterfront tras la máquina de Perks, y frente a la propia estatua en el metro). Cada estatua absorbe hasta 12 almas y brilla en blanco al llenarse (la última, en azul).</p>
+                    <p>Devuelve el huevo ya brillante a la estatua original para recibir tu Espada Apothicon, con nombre distinto según el personaje.</p>`
+                  },
+                  {
+                    id: 'espada-renacida', num: '07', title: 'Espada Reborn', html: `
+                    <p>Vuelve al altar de tu ritual e interactúa con el espíritu Guardián que aparece sobre él para recibir un <strong>Arch-Ovum</strong>.</p>
+                    <p>Colócalo en el círculo ritual rojo cerca de cada uno de los cuatro distritos (frente al Encaje Negro en Footlight, entre el banco de crafteo y el Ruby Rabbit en Canals, frente al Yunque en Waterfront, y en la entrada de Easy Street). Aparecerán Margwas que solo atacan a quien activó el círculo; elimínalos para que el Arch-Ovum vuelva limpio.</p>
+                    <p>Cada jugador solo puede completar un círculo por ronda, y hacen falta los cuatro. Cuando tengas los cuatro completados, devuelve la espada mejorada al Guardián de tu altar para obtener la versión <strong>Reborn</strong>.</p>`
+                  },
+                  {
+                    id: 'captura-bandera', num: '08', title: 'Captura la Bandera', html: `
+                    <p>En la sala del ritual de Nero (Easy Street), interactúa con el libro abierto junto a las estanterías. A la ronda siguiente caerá una bandera envuelta en niebla morada junto al Vino de la Viuda.</p>
+                    <p>Recógela (esto elimina a todos los zombis y hace aparecer Elementales de Insania) y llévala a los puntos de energía morada marcados, defendiéndola de los ataques mientras Shadowman invoca parásitos. Hacen falta tres puntos por personaje (los dos primeros exigen defensa activa, el tercero —el altar de ritual— no) y hay que repetir la secuencia completa para los cuatro personajes.</p>
+                    <p>Lleva armas mejoradas con Pack-a-Punch, Juggernog y el Escudo Cohete o el Protector Civil a mano: si te derriban con la bandera cuenta como fallo, pero puedes recuperarla e intentarlo de nuevo sin límite de intentos por ronda.</p>
+                    <p>Al completar los cuatro recorridos, el espíritu Guardián de cada altar se vuelve sólido y se teletransporta bajo la zona del Rift.</p>`
+                  },
+                  {
+                    id: 'atrapa-hombre-sombra', num: '09', title: 'Atrapa a Shadowman', html: `
+                    <p>Los cuatro Guardianes, ya sólidos, custodian ahora los pedestales de Gateworm en el Lugar Sagrado. Cada jugador debe interactuar con su pedestal <strong>a la vez</strong> para quitar a Shadowman su escudo.</p>
+                    <p>Concentrad el fuego sobre él mientras se teletransporta por la sala y se acerca poco a poco a la mesa de invocación. Interactúa con la mesa en el momento justo para atraparlo dentro de la Llave de Invocación antes de que se recupere y el escudo vuelva (si eso pasa, los Guardianes se ponen morados y hay que activarlos todos de nuevo). Cada vez que rompes el escudo aparece un Margwa nuevo, y la sala no se puede abandonar hasta terminar.</p>
+                    <p>Al atraparlo, un Gateworm gigante se teletransporta al centro del mapa, sobre el nivel de superficie.</p>`
+                  },
+                  {
+                    id: 'evita-apocalipsis', num: '10', title: 'Evita el Apocalipsis', html: `
+                    <p>Empieza la fase final: los zombis normales desaparecen, los Margwas (con la cabeza ahora morada) aparecen sin parar, la ronda se detiene y los cuatro jugadores obtienen <strong>Modo Bestia infinito</strong> (solo dañado por los círculos morados y los Margwas). Cada cierto tiempo os «infectaréis» (aura alrededor de la pantalla): buscad una de las motas de luz repartidas por el mapa y atravesadla para limpiaros antes de que os derribe.</p>
+                    <p>Reparto de tareas: tres jugadores en Modo Bestia van a las tres estaciones de tranvía y electrifican el panel eléctrico del techo (distinto a los paneles de puertas o Perks). El cuarto jugador llama al tranvía desde cualquier estación. En cuanto lo llaméis, los tres de Modo Bestia corren al centro del mapa y electrifican a los tres Guardianes antes de que el gusano gigante reaparezca — hay que ser rápido.</p>
+                    <p>Si lo lográis, los Guardianes cargan un haz de energía conjunto contra el monstruo gigante del cielo, que desaparece. Un Guardián desciende con la Llave de Invocación; Richtofen la recoge, dice tener «un universo que enderezar», y desaparece por un portal. Termina el Modo Bestia, los Margwas se van y el mapa vuelve a la normalidad — la partida continúa con el Protector Civil mejorado el resto del juego.</p>
+                    <p class="note">Quien muera o quede derribado durante este último tramo revive automáticamente en cuanto se llama al tranvía en cualquier estación.</p>`
+                  }
+                ]
+              },
+              {
+                id: 'secretos', label: 'Secretos',
+                items: [
+                  { id: 'secretos-placeholder', title: 'Próximamente', html: `<p>Todavía no hay contenido recopilado sobre canciones, trofeos o desafíos secundarios de este mapa.</p>` }
+                ]
+              }
+            ],
+            sources: {
+              html: `<p>Guía contrastada entre la wiki oficial de Call of Duty, Zombies Codex y SegmentNext para confirmar nombres, ubicaciones y mecánicas.</p>
+                <ul>
+                  <li><a href="https://callofduty.fandom.com/wiki/Apocalypse_Averted" target="_blank" rel="noopener">Call of Duty Wiki · Apocalypse Averted</a></li>
+                  <li><a href="https://www.zombiescodex.com/black-ops-3/shadows-of-evil/" target="_blank" rel="noopener">Zombies Codex · Shadows of Evil</a></li>
+                  <li><a href="https://segmentnext.com/black-ops-3-zombies-shadow-of-evil-buildable-parts-locations-guide/" target="_blank" rel="noopener">SegmentNext · Piezas de construibles</a></li>
+                  <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1716003126" target="_blank" rel="noopener">Guía de Steam de referencia (enlace original)</a></li>
+                </ul>
+                <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 3 y sus contenidos pertenecen a Activision / Treyarch.</p>`
+            }
+          },
+          { id: 'the-giant', name: 'The Giant', status: 'soon' },
+          { id: 'der-eisendrache', name: 'Der Eisendrache', status: 'soon' },
+          { id: 'zetsubou-no-shima', name: 'Zetsubou No Shima', status: 'soon' },
+          { id: 'gorod-krovi', name: 'Gorod Krovi', status: 'soon' },
+          { id: 'revelations', name: 'Revelations', status: 'soon' }
+        ]
       }
     ];
 
