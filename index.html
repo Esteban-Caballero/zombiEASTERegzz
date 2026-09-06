@@ -562,13 +562,13 @@
     }
 
     .map-hero.hero-refresh {
-      animation: hero-fade-in .4s ease;
+      animation: hero-fade-in .3s cubic-bezier(.16, 1, .3, 1);
     }
 
     @keyframes hero-fade-in {
       from {
         opacity: 0;
-        transform: translateY(-6px);
+        transform: translateY(-4px);
       }
 
       to {
@@ -687,18 +687,16 @@
 
     .tab-panel.active {
       display: block;
-      animation: panel-fade-in .35s ease;
+      animation: panel-fade-in .18s cubic-bezier(.16, 1, .3, 1) both;
     }
 
     @keyframes panel-fade-in {
       from {
         opacity: 0;
-        transform: translateY(8px);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0);
       }
     }
 
@@ -715,13 +713,13 @@
       padding: 18px 20px 20px;
       scroll-margin-top: 20px;
       transition: background .4s ease, border-color .4s ease;
-      animation: card-fade-in .4s ease both;
+      animation: card-fade-in .28s cubic-bezier(.16, 1, .3, 1) both;
     }
 
     @keyframes card-fade-in {
       from {
         opacity: 0;
-        transform: translateY(12px);
+        transform: translateY(6px);
       }
 
       to {
@@ -731,51 +729,27 @@
     }
 
     .step-card:nth-child(1) {
-      animation-delay: .02s;
+      animation-delay: 0s;
     }
 
     .step-card:nth-child(2) {
-      animation-delay: .06s;
+      animation-delay: .03s;
     }
 
     .step-card:nth-child(3) {
-      animation-delay: .10s;
+      animation-delay: .06s;
     }
 
     .step-card:nth-child(4) {
-      animation-delay: .14s;
+      animation-delay: .09s;
     }
 
     .step-card:nth-child(5) {
-      animation-delay: .18s;
+      animation-delay: .12s;
     }
 
-    .step-card:nth-child(6) {
-      animation-delay: .22s;
-    }
-
-    .step-card:nth-child(7) {
-      animation-delay: .26s;
-    }
-
-    .step-card:nth-child(8) {
-      animation-delay: .30s;
-    }
-
-    .step-card:nth-child(9) {
-      animation-delay: .34s;
-    }
-
-    .step-card:nth-child(10) {
-      animation-delay: .38s;
-    }
-
-    .step-card:nth-child(11) {
-      animation-delay: .42s;
-    }
-
-    .step-card:nth-child(12) {
-      animation-delay: .46s;
+    .step-card:nth-child(n+6) {
+      animation-delay: .15s;
     }
 
     .step-head {
@@ -1331,402 +1305,6 @@
 
     // ---------------- DATA ----------------
     const GAMES = [
-      {
-        id: 'bo4-zombies', name: 'Black Ops 4: Zombies', status: 'active',
-        maps: [
-          {
-            id: 'ix', name: 'IX', sub: 'Guerrero Venerado', status: 'active',
-            title: 'IX', subtitle: 'Guerrero Venerado',
-            desc: 'Guía de consulta rápida para completar el Easter Egg principal, montar el escudo Toro Osado y conseguir la Muerte de Orión sin tener que pausar el vídeo en cada paso.',
-            theme: {
-              accent: '#e2622b', accentDim: '#a8451c', gold: '#c9a227', goldSoft: '#8a7124',
-              stone950: '#14110d', stone900: '#1b170f', stone800: '#241f16', stone700: '#332b1e', stone600: '#4a4030', line: '#3c3423'
-            },
-            tags: {
-              zeus: { label: 'Zeus', color: '#6fa3d8' },
-              odin: { label: 'Odín', color: '#93a6ac' },
-              ra: { label: 'Ra', color: '#e0a930' },
-              danu: { label: 'Danu', color: '#6f9a5f' }
-            },
-            tabs: [
-              {
-                id: 'construibles', label: 'Construibles',
-                items: [
-                  {
-                    id: 'escudo-resumen', title: 'El Escudo «Toro Osado»', html: `
-                <p>El <strong>Toro Osado</strong> es el escudo especial del mapa. Bloquea golpes cuerpo a cuerpo, sirve como arma de melé pesada y, manteniendo pulsado el gatillo, dispara bolas de fuego a distancia (te mueves más lento mientras apuntas).</p>
-                <p>Si se queda sin munición o se daña, puedes repararlo en cualquier mesa de crafteo por 250 puntos. Merece la pena montarlo pronto, aprovechando las rondas en las que ya te mueves entre las cuatro torres para activar el Pack-a-Punch.</p>`},
-                  {
-                    id: 'pieza-zeus', title: 'Pieza · Hoja de Zeus', tag: 'zeus', html: `
-                <p>Aparece en la <strong>Torre de Zeus</strong>, en una de estas tres zonas (solo estará en una por partida):</p>
-                <ul>
-                  <li>Sala del altar de Zeus, a los pies de la estatua principal.</li>
-                  <li>Piso superior de la torre, sobre una repisa o en la mano extendida de una estatua.</li>
-                  <li>Sótano / baños de Zeus, apoyada contra el mármol de una esquina.</li>
-                </ul>`},
-                  {
-                    id: 'pieza-odin', title: 'Pieza · Mango de Odín', tag: 'odin', html: `
-                <p>Aparece en la <strong>Torre de Odín</strong>, en una de estas tres zonas:</p>
-                <ul>
-                  <li>Sala del altar de Odín, junto al muro donde cuelgan los escudos decorativos.</li>
-                  <li>Piso superior, junto a un barril de madera.</li>
-                  <li>Sótano, en el suelo junto a una columna de piedra cerca del caldero.</li>
-                </ul>`},
-                  {
-                    id: 'pieza-ra', title: 'Pieza · Espada de Ra', tag: 'ra', html: `
-                <p>Aparece en la <strong>Torre de Ra</strong>, en una de estas tres zonas:</p>
-                <ul>
-                  <li>Sala del altar de Ra, en una esquina al subir las escaleras principales.</li>
-                  <li>Justo enfrente de esa ubicación, pegada a la pared del fondo.</li>
-                  <li>Zona subterránea de la torre, cerca de una esquina iluminada.</li>
-                </ul>`},
-                  {
-                    id: 'escudo-construccion', title: 'Ensamblaje en El Foso', html: `
-                <p>Con las tres piezas en tu poder, baja a <strong>El Foso</strong> (The Pit). En la sección subterránea que conecta las torres, cerca de la Caja Misteriosa, hay una mesa de crafteo. Interactúa con ella (coste aproximado: 1.500 puntos) para ensamblar el Toro Osado.</p>
-                <figure class="shot" data-slot="escudo-crafteo">
-                  <img src="img/escudo-crafteo.jpg" alt="Fabricación del escudo en la mesa de crafteo de El Foso" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>Mesa de crafteo en El Foso</figcaption>
-                </figure>`}
-                ]
-              },
-              {
-                id: 'easterEgg', label: 'Easter Egg',
-                items: [
-                  {
-                    id: 'ee-intro', title: 'Antes de empezar', html: `
-                <p>Necesitas el escudo <strong>Toro Osado</strong> (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>) y la <strong>Muerte de Orión</strong>. Esta última puede tocarte por azar en la Caja Misteriosa, o conseguirse gratis con estos cuatro pasos previos:</p>`},
-                  {
-                    id: 'arma-pap', title: 'Prerrequisito · Pack-a-Punch', html: `
-                <p>Toca el gong del altar en cada una de las cuatro torres (Zeus, Odín, Ra y Danu). Cada gong invoca a un campeón: elimínalo para que suelte una cabeza sacrificial. Cuando tengas las cuatro, baja al Templo subterráneo y colócalas en las picas alrededor del altar central para activar el Pack-a-Punch.</p>`},
-                  {
-                    id: 'arma-cabeza', title: 'Prerrequisito · Cabeza de Estatua', html: `
-                <p>De espaldas a la máquina de Pack-a-Punch, busca una reja de hierro a medio subir con un brasero encendido al fondo y dispárale para tirarlo. Sube al puente exterior que une la Torre de Danu con la de Ra y mira hacia abajo: una flecha de fuego señala en qué torre ha aparecido la cabeza de estatua (la ubicación cambia cada partida). Recógela.</p>`},
-                  {
-                    id: 'arma-jarron', title: 'Prerrequisito · Trampa de Ácido y Jarrón Dorado', html: `
-                <p>Consigue el engranaje y la cadena repartidos por el Templo para montar la trampa de ácido, y completa los tres primeros desafíos de los estandartes en la arena principal (se activan cortando las cuerdas que los sujetan) para que te entreguen el Jarrón Dorado.</p>
-                <p>Lleva la cabeza de piedra a cualquier entrada de trampa de ácido (por ejemplo, en la Torre de Ra), colócala en la rejilla inferior y activa la trampa. El ácido derretirá la piedra y dejará a la vista la Llave del Escorpión; recógela.</p>`},
-                  {
-                    id: 'arma-veneno', title: 'Prerrequisito · Veneno y Caja Envenenada', html: `
-                <p>Baja al Arboretum, en la planta inferior de la Torre de Danu. Busca el segundo árbol desde las escaleras: tiene un pequeño orificio. Golpéalo cuerpo a cuerpo para clavar la Llave del Escorpión, y coloca el Jarrón Dorado justo debajo para recoger la savia venenosa.</p>
-                <p>Espera una ronda completa y recupera el jarrón ya lleno. Por último, ve a la Caja Misteriosa y elige la opción <strong>«Envenenar Caja»</strong> en su lateral izquierdo: tu siguiente tirada te dará garantizada la Muerte de Orión.</p>
-                <figure class="shot" data-slot="jarron-arboretum">
-                  <img src="img/jarron-arboretum.jpg" alt="Jarrón Dorado recogiendo savia venenosa en el Arboretum de Danu" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>Jarrón Dorado bajo la savia ácida, Arboretum de Danu</figcaption>
-                </figure>`},
-                  {
-                    id: 'paso1', num: '01', title: 'Polvo de Calavera', time: 48, embed: true, html: `
-                <p>Busca entre los cientos de cráneos de la sala del Pack-a-Punch uno que tenga un jeroglífico azul en la frente. Dispárale con la Muerte de Orión para desprenderlo y llévalo a la máquina trituradora de la Cripta Inundada. Dispárale tres tiros cargados (dos si el arma está mejorada) para molerlo y recoger el polvo resultante.</p>`},
-                  {
-                    id: 'paso2', num: '02', title: 'Leño y Tributo', time: 153, embed: true, html: `
-                <ol>
-                  <li>Provoca a un gladiador para que lance su hacha contra los tablones de la arena; al impactar se desprende un leño especial. Recógelo.</li>
-                  <li>Colócalo en la hoguera de la Torre de Odín y espera tres rondas completas hasta que quede al rojo vivo.</li>
-                  <li>Baja al mínimo la afinidad del público lanzando granadas a las gradas, hasta que te arrojen estiércol.</li>
-                  <li>Lleva el leño, el estiércol y el polvo de calavera a los baños de Zeus y mézclalos. Espera 2-3 rondas hasta que la mezcla desprenda humo verde.</li>
-                  <li>Traslada la mezcla a las raíces de la Torre de Danu y déjala reposar una ronda más.</li>
-                </ol>`},
-                  {
-                    id: 'paso3', num: '03', title: 'La Dimensión de Danu', time: 284, embed: true, tag: 'danu', html: `
-                <p>Compra la mejora Bomba Incendiaria y consigue una muerte con fuego justo sobre la mezcla depositada en Danu. Se abrirá una grieta celeste bajo tus pies: entra en ella para viajar a una dimensión alternativa.</p>
-                <p>Ya dentro, revienta las pústulas que cuelgan de los árboles en cada uno de los tres pisos de la torre. Al completar el último piso, volverás automáticamente al mapa principal.</p>`},
-                  {
-                    id: 'paso4', num: '04', title: 'El Templo de Ra', time: 388, embed: true, tag: 'ra', html: `
-                <p>Con el fuego del escudo, dispara a los cuatro medallones rúnicos escondidos en los muros del mapa (sala del Pack-a-Punch, Torre de Danu, el puente y la cripta). Elimina después a los gladiadores pesados que custodian la Torre de Ra para encender el Obelisco.</p>
-                <p>Activa el tótem junto al obelisco: te mostrará una secuencia de cuatro zombis elementales. Elimínalos <strong>exactamente en ese orden</strong>, sin herir por accidente a ningún otro zombi elemental, y repite el desafío con una secuencia distinta una segunda vez para superarlo del todo.</p>`},
-                  {
-                    id: 'paso5', num: '05', title: 'Los Pararrayos de Zeus', time: 659, tag: 'zeus', embed: true, html: `
-                <p>Dispara desde las ventanas a los cuatro tornillos periféricos de la Torre de Zeus para levantarlos. Compra la mejora elemental <strong>Vatio Mortal</strong> y activa el evento desde el pedestal central de la arena.</p>
-                <p>Electrocuta a los zombis mientras están dentro de los círculos marcados en el suelo para cargar los generadores, y entra en la zona de confinamiento cuando se abra para limpiar la ronda.</p>`},
-                  {
-                    id: 'paso6', num: '06', title: 'Símbolos de Odín e Inundación', time: 792, embed: true, tag: 'odin', html: `
-                <p>Localiza los tres símbolos circulares en los muros exteriores del mapa (Cripta, El Foso y Danu) y dispárales con la Muerte de Orión.</p>
-                <p>Reúne después a todo el equipo sobre la rejilla de la sala del escudo para activar la inundación de supervivencia. Aguanta tres oleadas intensas sin que el agua os arrastre y, al terminar, recoge la Llave Dorada del suelo: con ella se abre la puerta de la arena final.</p>`},
-                  {
-                    id: 'paso7', num: '07', title: 'Enfrentamiento Final', html: `
-                <p>Cruza el portal que se abre en el centro de la arena para acceder al combate final. Aparecerán oleadas de enemigos normales mientras debes concentrarte en el primer elefante-jefe: dispara primero a su armadura lateral para romperla y después a su frente, que queda expuesta y brillante, hasta derribarlo.</p>
-                <p>Al caer, aparecerá un segundo elefante; repite la misma estrategia. Cuando ambos caigan, se disparará la escena final y el Easter Egg quedará completado.</p>
-                <p class="note">Este último tramo no aparece con marca de tiempo en el vídeo de referencia; el resumen está contrastado con varias guías comunitarias adicionales (ver Fuentes al final de la página).</p>`}
-                ]
-              },
-              {
-                id: 'secretos', label: 'Secretos',
-                items: [
-                  {
-                    id: 'secretos-placeholder', title: 'Próximamente', html: `
-                <p>Todavía no hay contenido recopilado sobre trofeos, desafíos secundarios o canciones ocultas de este mapa. En cuanto me pases una fuente sobre alguno de estos temas, lo añadimos aquí con el mismo formato que el resto de la guía.</p>`}
-                ]
-              }
-            ],
-            sources: {
-              html: `<p>Guía basada principalmente en el vídeo <a href="https://www.youtube.com/watch?v=y3VWQ-8pYMU" target="_blank" rel="noopener">«Guía completa Easter Egg IX — Guerrero Venerado, todos los pasos»</a>, del canal PokeR988TV. Los apartados del escudo, el arma especial y el enfrentamiento final se han contrastado además con guías comunitarias públicas sobre el mapa IX para completar detalles que el vídeo no cubre con marca de tiempo.</p>
-                <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
-            }
-          },
-          {
-            id: 'blood-of-the-dead', name: 'Blood of the Dead', sub: 'Fuga Total', status: 'active',
-            title: 'Blood of the Dead', subtitle: 'Fuga Total',
-            desc: 'Guía de consulta rápida para escapar de Alcatraz: escudo espectral, Blundergat con sus dos mejoras, y la cronología completa del Easter Egg de los cinco fantasmas.',
-            theme: {
-              accent: '#b3272c', accentDim: '#7a1a1d', gold: '#9c8355', goldSoft: '#6e5c3c',
-              stone950: '#0f0d10', stone900: '#1a1216', stone800: '#241419', stone700: '#3a1c22', stone600: '#54242b', line: '#4a2229'
-            },
-            tags: {
-              industrias: { label: 'Industrias', color: '#c97b3d' },
-              muelles: { label: 'Muelles', color: '#5f8aa3' },
-              tuneles: { label: 'Ciudadela', color: '#6f8f5f' },
-              pasarela: { label: 'Pasarela', color: '#c9b458' },
-              enfermeria: { label: 'Enfermería', color: '#8f6fa0' }
-            },
-            tabs: [
-              {
-                id: 'construibles', label: 'Construibles',
-                items: [
-                  {
-                    id: 'escudo-resumen', title: 'El Escudo Espectral', html: `
-                <p>El <strong>Escudo Espectral</strong> te permite ver objetos y enemigos ocultos con su visión (mantén pulsado el botón de apuntar) y disparar una ráfaga espiritual para interactuar con el entorno o dañar enemigos.</p>
-                <p>Necesita tres piezas repartidas por el mapa; en cada partida solo hay una ubicación posible de cada una:</p>`},
-                  {
-                    id: 'pieza-llave', title: 'Pieza · Llave del Alcaide', html: `
-                <p>Se obtiene derrotando al jefe <strong>Brutus</strong> cuando aparece, ya sea al encender los interruptores de la luz o por azar en rondas tempranas.</p>`},
-                  {
-                    id: 'pieza-esencia', title: 'Pieza · Esencia Azul', html: `
-                <p>Está dentro de una de las cajas de fusibles eléctricas repartidas por la prisión. La reconocerás por su brillo azulado; la caja concreta cambia cada partida.</p>`},
-                  {
-                    id: 'pieza-placa', tag: 'tuneles', title: 'Pieza · Placa de Metal', html: `
-                <p>Se encuentra en los <strong>Túneles de la Ciudadela</strong>, en el suelo junto a los muros de piedra o cerca de las rejas.</p>`},
-                  {
-                    id: 'escudo-construccion', title: 'Ensamblaje', html: `
-                <p>Con las tres piezas en tu poder, ve a la mesa de crafteo de los muelles inferiores o de la tercera planta de celdas para montar el Escudo Espectral.</p>
-                <figure class="shot" data-slot="escudo-botd">
-                  <img src="img/botd-escudo.jpg" alt="Mesa de crafteo del Escudo Espectral" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>Mesa de crafteo del Escudo Espectral</figcaption>
-                </figure>`}
-                ]
-              },
-              {
-                id: 'easterEgg', label: 'Easter Egg',
-                items: [
-                  {
-                    id: 'loadout', title: 'Equipo recomendado', html: `
-                <p>Arma especial de clase: <strong>Espada Path of Sorrows</strong> (Richtofen/Takeo) — su habilidad de nivel superior da invisibilidad temporal y velocidad extra, perfecta para huir de encerronas en los pasillos estrechos de la prisión. Granada recomendada: <strong>Fuego de Mono</strong> (más abajo tienes cómo conseguirlo gratis).</p>
-                <p>En bebidas, procura llevar <strong>Banda de la Victoria</strong> (evita que morir mientras usas el escudo te mate de verdad), <strong>Frío de Invierno</strong> (te da margen al recolectar almas) y <strong>Deseo de Morir</strong> (red de seguridad contra Brutus); si hay hueco, añade <strong>Stamin-Up</strong> para las carreras largas del mapa.</p>`},
-                  {
-                    id: 'ee-intro', title: 'Antes de empezar', html: `
-                <p>Necesitas el <strong>Escudo Espectral</strong> (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>), el Tomahawk, los Monos y la Cuchara de Plata, además del Blundergat con alguna de sus mejoras. Aquí tienes cómo conseguir cada uno gratis:</p>`},
-                  {
-                    id: 'arma-tomahawk', title: 'Prerrequisito · Tomahawk (Hell\u2019s Retriever)', videoId: 'ReOzj107TYE', embed: true, html: `
-                <p>Alimenta a los tres Perros de Fuego (Cerberos) matando zombis junto a sus emblemas en la pared:</p>
-                <ul>
-                  <li>Perro 1: bloque de celdas (New Industries / segunda planta).</li>
-                  <li>Perro 2: Túneles de la Ciudadela.</li>
-                  <li>Perro 3: Casa del Alcaide, fuera de la oficina.</li>
-                </ul>
-                <p>Cuando los tres se retiren a la pared, coge el viaje rápido subterráneo entre la Casa del Alcaide y las Duchas: a mitad de trayecto verás el Tomahawk flotando. Interactúa para recogerlo.</p>
-                <figure class="shot" data-slot="botd-perro">
-                  <img src="img/botd-perro.jpg" alt="Emblema del perro de fuego devorando un zombi" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>Emblema del perro de fuego en el muro de los túneles</figcaption>
-                </figure>`},
-                  {
-                    id: 'arma-monos', title: 'Prerrequisito · Monos Gratis', html: `
-                <p>Ve al Laboratorio de Richtofen (zona inicial) y espera a que aparezca una ronda de <strong>Brutus</strong>. Deja que golpee y destruya por completo la máquina de teletransporte o el panel eléctrico central del laboratorio. Al matarlo justo después de ese golpe, soltará el Fuego de Mono garantizado.</p>`},
-                  {
-                    id: 'arma-cuchara', title: 'Prerrequisito · Cuchara de Plata', html: `
-                <p>Con el Escudo Espectral equipado, ve a la Oficina del Alcaide y usa la visión espectral sobre los pilares: aparecerá un código de tres cifras.</p>
-                <ol>
-                  <li>Introduce ese código en el teclado numérico de la parte baja de la Ciudadela; el ascensor central bajará una jaula grande.</li>
-                  <li>Ve a los muelles e interactúa con el voltímetro usando una descarga espiritual del escudo para activar la grúa, que sacará una red del agua helada.</li>
-                  <li>Lánzale el Tomahawk a la red para cortarla: la Cuchara de Plata caerá sobre las cajas metálicas del muelle.</li>
-                </ol>
-                <figure class="shot" data-slot="botd-cuchara">
-                  <img src="img/botd-cuchara.jpg" alt="Cuchara de Plata sobre las cajas metálicas del muelle" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>Cuchara de Plata cayendo sobre el muelle</figcaption>
-                </figure>`},
-                  {
-                    id: 'arma-blundergat', title: 'Prerrequisito · Blundergat Gratis', videoId: 'ReOzj107TYE', html: `
-                <p>Con el Escudo Espectral, usa la visión espectral y el Tomahawk para recoger 5 cráneos invisibles repartidos por el mapa:</p>
-                <ul>
-                  <li>Celdas: en la barandilla de la escalera que sube desde las duchas.</li>
-                  <li>Oficina: ventana rota del Alcaide, sobre el poste de luz exterior.</li>
-                  <li>Muelles: flotando sobre un noray de amarre de barcos.</li>
-                  <li>Tejado (Pack-a-Punch): esquina derecha, sobre un cajón de madera roto.</li>
-                  <li>Pasarela exterior: sobre los cables/aisladores de alta tensión.</li>
-                </ul>
-                <p>Tras recoger los cinco, el Blundergat aparecerá flotando sobre la mesa del despacho del Alcaide.</p>`},
-                  {
-                    id: 'arma-magmagat', title: 'Mejora · Magmagat', videoId: 'ujmNtSsB2XE', embed: true, html: `
-                <p>Coloca el Blundergat en la chimenea encendida de la Casa del Alcaide y mata zombis en esa sala: sus almas llenan tres calaveras sobre la repisa. Cuando estén llenas, recoge el arma ya imbuida.</p>
-                <p>Empieza entonces una <strong>carrera contrarreloj</strong>: corre hasta las Industrias del Bloque Oeste tocando por el camino los barriles de fuego azul (Oficina, Recreo, Pasillos...) para no perder la llama. Al llegar, colócala en la prensa industrial y espera unos segundos para obtener el <strong>Magmagat</strong>.</p>
-                <figure class="shot" data-slot="botd-barril">
-                  <img src="img/botd-barril.jpg" alt="Barril de fuego azul en el patio de recreo" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>Barril azul para recargar el tiempo del Magmagat</figcaption>
-                </figure>`},
-                  {
-                    id: 'arma-acidgat', title: 'Mejora · Acidgat', html: `
-                <p>Reúne las 3 piezas del kit de ácido: el maletín (Enfermería), el motor (pasillos de celdas) y el jarrón químico (túneles inferiores). Llévalas a cualquier mesa de crafteo, ensambla el kit e introduce el Blundergat para convertirlo en el <strong>Acidgat</strong>.</p>`},
-                  {
-                    id: 'fase1-paso1', num: '01', title: 'El Laboratorio Secreto', videoId: 'L3yu30XU6Is', time: 597, embed: true, html: `
-                <p>Con la Cuchara de Plata y el escudo equipados, ve a la Oficina del Alcaide y golpea con la cuchara la pared oculta del fondo para revelar el laboratorio secreto.</p>`},
-                  {
-                    id: 'fase1-paso2', num: '02', title: 'El Libro de Crónicas', videoId: 'L3yu30XU6Is', time: 660, embed: true, html: `
-                <p>Ve a las duchas y busca el portal espectral; dale una ráfaga de escudo para que aparezca el Libro de Crónicas de Richtofen. Recógelo y llévalo a la mesa del despacho del Alcaide, colocándolo sobre el pedestal.</p>`},
-                  {
-                    id: 'fase2-intro', title: 'Los 5 Fantasmas Espectrales', html: `
-                <p>Al interactuar con el libro, los ojos del mapa parpadearán: los fantasmas se han liberado. Resuelve cada desafío recargando el escudo con almas constantemente:</p>`},
-                  {
-                    id: 'fantasma-industrias', num: '03', tag: 'industrias', title: 'Industrias Oeste · El Fantasma Mecánico', videoId: 'L3yu30XU6Is', time: 780, embed: true, html: `
-                <p>Usa el escudo para ver al fantasma operando las palancas de la maquinaria industrial. Dispárale una ráfaga espiritual para iniciar su ruta: escóltalo y defiéndelo del ataque de Brutus y los zombis mientras absorbe la energía de tres paneles eléctricos de la sala.</p>`},
-                  {
-                    id: 'fantasma-muelles', num: '04', tag: 'muelles', title: 'Los Muelles · El Fantasma de la Grúa', videoId: 'L3yu30XU6Is', time: 930, embed: true, html: `
-                <p>Introduce el código espiritual de 3 dígitos parpadeantes en el panel metálico de la grúa. El fantasma aparecerá colgado con una soga sobre el agua helada; dale una ráfaga espiritual para infundirle fuerza. La grúa sacará del fondo del mar un contenedor con la pieza ritual.</p>`},
-                  {
-                    id: 'fantasma-tuneles', num: '05', tag: 'tuneles', title: 'Túneles de la Ciudadela · Escolta del Prisionero', videoId: 'L3yu30XU6Is', time: 1080, embed: true, html: `
-                <p>Encuentra al espíritu del reo encadenado en la base de la espiral. Dispárale ráfagas espirituales continuamente para darle energía y guiarlo a través de los túneles angostos hasta las Duchas, limpiando los zombis que le corten el paso.</p>`},
-                  {
-                    id: 'fantasma-pasarela', num: '06', tag: 'pasarela', title: 'La Pasarela · Caza del Fantasma Veloz', videoId: 'L3yu30XU6Is', time: 1230, embed: true, html: `
-                <p>Un fantasma invisible correrá a toda velocidad por la pasarela exterior del inicio del mapa. Equipa Stamin-Up, persíguelo apuntando con el escudo y dispárale ráfagas espirituales consecutivas para frenarlo y absorberlo antes de que llegue al portón final de la prisión.</p>`},
-                  {
-                    id: 'fantasma-enfermeria', num: '07', tag: 'enfermeria', title: 'Enfermería y Cafetería · Sincronización de Palancas', videoId: 'L3yu30XU6Is', time: 1380, embed: true, html: `
-                <p>Tres interruptores espectrales se activan en las paredes de la Enfermería y la Cafetería. Todo el equipo debe coordinarse con la visión espectral para activar las tres palancas de forma estrictamente simultánea usando las descargas de sus escudos.</p>`},
-                  {
-                    id: 'fase3-sacrificio', num: '08', title: 'El Sacrificio', videoId: 'L3yu30XU6Is', time: 1530, embed: true, html: `
-                <p>Tras completar los cinco fantasmas, vuelve al laboratorio subterráneo de Richtofen. Un jugador debe interactuar obligatoriamente con la silla eléctrica del centro de la sala, sacrificándose de forma temporal.</p>`},
-                  {
-                    id: 'fase3-final', num: '09', title: 'Enfrentamiento Final', videoId: 'L3yu30XU6Is', time: 1620, embed: true, html: `
-                <p>El resto del equipo debe repeler una oleada masiva de Brutus y zombis mientras protege la sala. Al terminar el ritual, el portal central de Alcatraz se abre por completo: crúzalo para acceder a la arena exterior y destruye el mecanismo principal del Alcaide con vuestras armas especiales a máxima potencia para sellar la victoria.</p>`}
-                ]
-              },
-              {
-                id: 'secretos', label: 'Secretos',
-                items: [
-                  {
-                    id: 'secretos-placeholder', title: 'Próximamente', html: `
-                <p>Todavía no hay contenido recopilado sobre trofeos, desafíos secundarios o canciones ocultas de este mapa. En cuanto me pases una fuente sobre alguno de estos temas, lo añadimos aquí con el mismo formato que el resto de la guía.</p>`}
-                ]
-              }
-            ],
-            sources: {
-              html: `<p>Guía basada en tu manual de referencia sobre Blood of the Dead, contrastada con guías comunitarias públicas del mapa para confirmar nombres y mecánicas.</p>
-                <ul>
-                  <li><a href="https://www.youtube.com/watch?v=L3yu30XU6Is&t=597s" target="_blank" rel="noopener">Vídeo · Guía completa del Easter Egg</a></li>
-                  <li><a href="https://www.youtube.com/watch?v=ReOzj107TYE" target="_blank" rel="noopener">Vídeo · Cómo conseguir el Tomahawk y el Blundergat gratis</a></li>
-                  <li><a href="https://www.youtube.com/watch?v=ujmNtSsB2XE" target="_blank" rel="noopener">Vídeo · Cómo conseguir el Magmagat</a></li>
-                </ul>
-                <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
-            }
-          },
-          {
-            id: 'voyage-of-despair', name: 'Voyage of Despair', sub: 'Abandonar el Barco', status: 'active',
-            title: 'Voyage of Despair', subtitle: 'Abandonar el Barco',
-            desc: 'Guía de consulta rápida para el RMS Titanic: el Cetro de Ra, el Kraken y su mejora de hielo, y la travesía completa del Easter Egg hasta el Ojo de Odín.',
-            theme: {
-              accent: '#3f7ea6', accentDim: '#2a5772', gold: '#c2a45c', goldSoft: '#8a763f',
-              stone950: '#0a0f14', stone900: '#111a22', stone800: '#182530', stone700: '#223444', stone600: '#33505f', line: '#2c414f'
-            },
-            tags: {
-              agua: { label: 'Agua', color: '#4fa3d9' },
-              fuego: { label: 'Fuego', color: '#d97a3d' },
-              electrico: { label: 'Eléctrico', color: '#d9c94f' },
-              veneno: { label: 'Veneno', color: '#6fae5a' }
-            },
-            tabs: [
-              {
-                id: 'construibles', label: 'Construibles',
-                items: [
-                  {
-                    id: 'escudo-resumen', title: 'El Cetro de Ra', html: `
-                <p>El <strong>Cetro de Ra</strong> genera una cúpula de protección, imprescindible para sobrevivir a los ataques de muerte instantánea del Ojo gigante en la batalla final.</p>
-                <p>Se monta con tres piezas repartidas por el barco; en cada partida solo hay una ubicación posible de cada una:</p>`},
-                  {
-                    id: 'pieza-puente', title: 'Pieza 1 · Puente / Camarotes', html: `
-                <p>En una silla del Puente de Mando, o en los Camarotes de Lujo.</p>`},
-                  {
-                    id: 'pieza-provisiones', title: 'Pieza 2 · Provisiones / Cocina', html: `
-                <p>Sobre unas cajas en Provisiones, o en las mesas de la Cocina (Galley).</p>`},
-                  {
-                    id: 'pieza-tercera', title: 'Pieza 3 · 3ª Clase / Camarotes Inferiores', html: `
-                <p>En las barandillas de madera, o tirada cerca de la Gran Escalera Inferior.</p>`},
-                  {
-                    id: 'escudo-construccion', title: 'Ensamblaje', html: `
-                <p>Ensámblalo en la mesa de la Cubierta de Botes (Boat Deck) o en Provisiones.</p>
-                <figure class="shot" data-slot="vod-escudo">
-                  <img src="img/vod-escudo.jpg" alt="Mesa de construcción del Cetro de Ra" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>Mesa de construcción en el RMS Titanic</figcaption>
-                </figure>`}
-                ]
-              },
-              {
-                id: 'easterEgg', label: 'Easter Egg',
-                items: [
-                  {
-                    id: 'loadout', title: 'Equipo recomendado', html: `
-                <p>Arma obligatoria: <strong>Lanzacohetes Hellion Salvo</strong> mejorado al máximo — con él, el jefe final cae en segundos. Como secundaria, el <strong>Kraken de Hielo</strong> ayuda mucho a controlar oleadas. El Cetro de Ra (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>) es imprescindible para sobrevivir a los ataques de muerte instantánea del jefe final.</p>
-                <p>En bebidas, prioriza <strong>Deslizarse de Tortuga</strong> (inmunidad a tus propias explosiones si usas el Hellion Salvo de cerca), <strong>Deseo de Morir</strong> (salvavidas contra los Blightfather) y <strong>Banda de la Victoria</strong> para aguantar con el escudo en los pasillos estrechos; añade <strong>Stamin-Up</strong> si hay hueco, el barco es enorme.</p>`},
-                  {
-                    id: 'ee-intro', title: 'Antes de empezar', html: `
-                <p>Activa el <strong>Artefacto Centinela</strong> (la luz azul de la Cubierta de Toldos, al final del barco) y el <strong>Pack-a-Punch</strong>, interactuando con los cuatro pedestales de madera (Cubierta de Toldos, Gran Escalera Inferior, Bodega de Carga y Sala de Turbinas).</p>`},
-                  {
-                    id: 'arma-kraken', title: 'Prerrequisito · Kraken Gratis', html: `
-                <p>Mata a un <strong>Fogonero</strong> (Stoker, el zombi gigante que lanza carbón) disparando a sus puntos débiles brillantes: soltará una llave dorada.</p>
-                <p>Busca un cofre de madera cerrado (aparece en Salas de Correo, Sala de Turbinas, Provisiones, Camarotes o Cocina), ábrelo con la llave y mata zombis cerca para llenarlo de almas. El cofre se teletransportará dos veces más: llénalo en sus tres ubicaciones en total.</p>
-                <p>Al final soltará un objeto (brújula, telescopio...). Llévalo a las cubiertas exteriores y busca la caja de madera con el mismo símbolo: un tentáculo gigante la aplastará y te dejará el <strong>Kraken gratis</strong>.</p>
-                <figure class="shot" data-slot="vod-kraken">
-                  <img src="img/vod-kraken.jpg" alt="Tentáculo gigante soltando el Kraken en la cubierta" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>El tentáculo gigante entregando el Kraken</figcaption>
-                </figure>`},
-                  {
-                    id: 'arma-kraken-hielo', title: 'Mejora · Kraken de Hielo', html: `
-                <p>Recoge las tres piezas genéricas del kit de mejora (cámara, cañón y tubo) en la Bodega de Carga, la Sala de Turbinas y los pasillos de 1ª Clase. Mata después a un zombi elemental de hielo (los azules) con el Kraken: soltará un núcleo de hielo concentrado.</p>
-                <p>Llévalo a la mesa de crafteo de la Sala de Máquinas para convertirlo en el <strong>Kraken de Hielo</strong>, ideal para congelar pasillos enteros.</p>`},
-                  {
-                    id: 'paso1', num: '01', title: 'Relojes y Válvulas', html: `
-                <p>Por el barco hay 4 símbolos geométricos (triángulos apuntando arriba, abajo o con una línea) que representan los cuatro elementos. Busca junto a qué reloj de pared aparece cada uno y anota la hora que marca (ej.: triángulo de Agua = 11:30).</p>
-                <p>Ve al Puente de Mando (2 válvulas) y a la Sala de Máquinas (2 válvulas) y ajusta la hora de cada una para que coincida con la de su elemento. <strong>Atención:</strong> las válvulas de los minutos se mueven en intervalos de 5.</p>
-                <figure class="shot" data-slot="vod-reloj">
-                  <img src="img/vod-reloj.jpg" alt="Reloj de pared marcando la hora junto a un triángulo elemental" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>Reloj de pared junto a su símbolo elemental</figcaption>
-                </figure>`},
-                  {
-                    id: 'paso2', num: '02', title: 'Catalizadores Elementales', html: `
-                <p>Aparecerán 4 enchufes de colores repartidos por el barco, cada uno soltando un elemento (hielo, fuego, eléctrico, veneno). Lleva a un zombi catalizador de ese mismo elemento junto al enchufe correspondiente y mátalo ahí: se formará un círculo ritual en el suelo.</p>
-                <p>Ponte sobre el círculo para teletransportarte a una zona de supervivencia en escala de grises y aguanta la oleada de zombis. Repite el proceso para los cuatro elementos hasta conseguir el artefacto real.</p>
-                <figure class="shot" data-slot="vod-catalizador">
-                  <img src="img/vod-catalizador.jpg" alt="Zombi catalizador eliminado sobre el enchufe elemental" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>Zombi catalizador junto al enchufe elemental</figcaption>
-                </figure>`},
-                  {
-                    id: 'paso3', num: '03', title: 'El Sistema Solar', html: `
-                <p>Ve a la Bodega de Carga e interactúa con la maqueta del Sistema Solar: los planetas se iluminan en un orden aleatorio. Anota ese orden exacto.</p>
-                <p>Sal al exterior, busca en el cielo nocturno el primer planeta de tu lista y dispárale. Caerá como un orbe brillante en un punto concreto del barco; recógelo corriendo y devuélvelo a su posición en la maqueta antes de que se acabe el tiempo. Repite el proceso siguiendo tu orden para todos los planetas.</p>
-                <figure class="shot" data-slot="vod-planeta">
-                  <img src="img/vod-planeta.jpg" alt="Disparando a un planeta brillante en el cielo del Atlántico" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>Disparando al planeta real en el cielo nocturno</figcaption>
-                </figure>`},
-                  {
-                    id: 'paso4', num: '04', title: 'El Bloque de Hielo', html: `
-                <p>Lleva el Artefacto Real ya cargado a la Sala de Máquinas. Un bloque de hielo gigante bloquea una puerta: dispárale con el Kraken de Hielo (a ser posible mejorado en el Pack-a-Punch) hasta destrozarlo. Esto inunda temporalmente el barco y te lleva a la siguiente fase.</p>`},
-                  {
-                    id: 'paso5', num: '05', title: 'El Ojo de Odín', html: `
-                <p>Interactúa con el timón del Puente de Mando para acceder al combate final, dividido en 5 fases por distintas zonas del barco, contra un jefe con forma de ojo gigante congelado.</p>
-                <p>Cuando el Ojo empiece a brillar con fuerza (está cargando su ataque de muerte instantánea), lanza Homúnculos para distraer a los zombis, despliega el Cetro de Ra para protegerte y vacía el lanzacohetes Hellion Salvo directamente sobre la pupila. Su daño es tan alto que anula el ataque y acelera muchísimo el resto de fases.</p>
-                <p class="note">Este último tramo está contrastado con guías comunitarias adicionales, ya que tu documento no incluía marcas de tiempo de vídeo para esta parte (ver Fuentes).</p>`}
-                ]
-              },
-              {
-                id: 'secretos', label: 'Secretos',
-                items: [
-                  {
-                    id: 'secretos-placeholder', title: 'Próximamente', html: `
-                <p>Todavía no hay contenido recopilado sobre trofeos, desafíos secundarios o canciones ocultas de este mapa. En cuanto me pases una fuente sobre alguno de estos temas, lo añadimos aquí con el mismo formato que el resto de la guía.</p>`}
-                ]
-              }
-            ],
-            sources: {
-              html: `<p>Guía basada en tu manual de referencia sobre Voyage of Despair, contrastada con guías comunitarias públicas del mapa para confirmar nombres y mecánicas (por ejemplo, el jefe final «Ojo de Odín» y el papel del Hellion Salvo).</p>
-                <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
-            }
-          }
-        ]
-      },
       {
         id: 'bo2-zombies', name: 'Black Ops 2: Zombies', status: 'active',
         maps: [
@@ -2693,12 +2271,408 @@
           { id: 'gorod-krovi', name: 'Gorod Krovi', status: 'soon' },
           { id: 'revelations', name: 'Revelations', status: 'soon' }
         ]
+      },
+      {
+        id: 'bo4-zombies', name: 'Black Ops 4: Zombies', status: 'active',
+        maps: [
+          {
+            id: 'ix', name: 'IX', sub: 'Guerrero Venerado', status: 'active',
+            title: 'IX', subtitle: 'Guerrero Venerado',
+            desc: 'Guía de consulta rápida para completar el Easter Egg principal, montar el escudo Toro Osado y conseguir la Muerte de Orión sin tener que pausar el vídeo en cada paso.',
+            theme: {
+              accent: '#e2622b', accentDim: '#a8451c', gold: '#c9a227', goldSoft: '#8a7124',
+              stone950: '#14110d', stone900: '#1b170f', stone800: '#241f16', stone700: '#332b1e', stone600: '#4a4030', line: '#3c3423'
+            },
+            tags: {
+              zeus: { label: 'Zeus', color: '#6fa3d8' },
+              odin: { label: 'Odín', color: '#93a6ac' },
+              ra: { label: 'Ra', color: '#e0a930' },
+              danu: { label: 'Danu', color: '#6f9a5f' }
+            },
+            tabs: [
+              {
+                id: 'construibles', label: 'Construibles',
+                items: [
+                  {
+                    id: 'escudo-resumen', title: 'El Escudo «Toro Osado»', html: `
+                <p>El <strong>Toro Osado</strong> es el escudo especial del mapa. Bloquea golpes cuerpo a cuerpo, sirve como arma de melé pesada y, manteniendo pulsado el gatillo, dispara bolas de fuego a distancia (te mueves más lento mientras apuntas).</p>
+                <p>Si se queda sin munición o se daña, puedes repararlo en cualquier mesa de crafteo por 250 puntos. Merece la pena montarlo pronto, aprovechando las rondas en las que ya te mueves entre las cuatro torres para activar el Pack-a-Punch.</p>`},
+                  {
+                    id: 'pieza-zeus', title: 'Pieza · Hoja de Zeus', tag: 'zeus', html: `
+                <p>Aparece en la <strong>Torre de Zeus</strong>, en una de estas tres zonas (solo estará en una por partida):</p>
+                <ul>
+                  <li>Sala del altar de Zeus, a los pies de la estatua principal.</li>
+                  <li>Piso superior de la torre, sobre una repisa o en la mano extendida de una estatua.</li>
+                  <li>Sótano / baños de Zeus, apoyada contra el mármol de una esquina.</li>
+                </ul>`},
+                  {
+                    id: 'pieza-odin', title: 'Pieza · Mango de Odín', tag: 'odin', html: `
+                <p>Aparece en la <strong>Torre de Odín</strong>, en una de estas tres zonas:</p>
+                <ul>
+                  <li>Sala del altar de Odín, junto al muro donde cuelgan los escudos decorativos.</li>
+                  <li>Piso superior, junto a un barril de madera.</li>
+                  <li>Sótano, en el suelo junto a una columna de piedra cerca del caldero.</li>
+                </ul>`},
+                  {
+                    id: 'pieza-ra', title: 'Pieza · Espada de Ra', tag: 'ra', html: `
+                <p>Aparece en la <strong>Torre de Ra</strong>, en una de estas tres zonas:</p>
+                <ul>
+                  <li>Sala del altar de Ra, en una esquina al subir las escaleras principales.</li>
+                  <li>Justo enfrente de esa ubicación, pegada a la pared del fondo.</li>
+                  <li>Zona subterránea de la torre, cerca de una esquina iluminada.</li>
+                </ul>`},
+                  {
+                    id: 'escudo-construccion', title: 'Ensamblaje en El Foso', html: `
+                <p>Con las tres piezas en tu poder, baja a <strong>El Foso</strong> (The Pit). En la sección subterránea que conecta las torres, cerca de la Caja Misteriosa, hay una mesa de crafteo. Interactúa con ella (coste aproximado: 1.500 puntos) para ensamblar el Toro Osado.</p>
+                <figure class="shot" data-slot="escudo-crafteo">
+                  <img src="img/escudo-crafteo.jpg" alt="Fabricación del escudo en la mesa de crafteo de El Foso" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                  <figcaption>Mesa de crafteo en El Foso</figcaption>
+                </figure>`}
+                ]
+              },
+              {
+                id: 'easterEgg', label: 'Easter Egg',
+                items: [
+                  {
+                    id: 'ee-intro', title: 'Antes de empezar', html: `
+                <p>Necesitas el escudo <strong>Toro Osado</strong> (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>) y la <strong>Muerte de Orión</strong>. Esta última puede tocarte por azar en la Caja Misteriosa, o conseguirse gratis con estos cuatro pasos previos:</p>`},
+                  {
+                    id: 'arma-pap', title: 'Prerrequisito · Pack-a-Punch', html: `
+                <p>Toca el gong del altar en cada una de las cuatro torres (Zeus, Odín, Ra y Danu). Cada gong invoca a un campeón: elimínalo para que suelte una cabeza sacrificial. Cuando tengas las cuatro, baja al Templo subterráneo y colócalas en las picas alrededor del altar central para activar el Pack-a-Punch.</p>`},
+                  {
+                    id: 'arma-cabeza', title: 'Prerrequisito · Cabeza de Estatua', html: `
+                <p>De espaldas a la máquina de Pack-a-Punch, busca una reja de hierro a medio subir con un brasero encendido al fondo y dispárale para tirarlo. Sube al puente exterior que une la Torre de Danu con la de Ra y mira hacia abajo: una flecha de fuego señala en qué torre ha aparecido la cabeza de estatua (la ubicación cambia cada partida). Recógela.</p>`},
+                  {
+                    id: 'arma-jarron', title: 'Prerrequisito · Trampa de Ácido y Jarrón Dorado', html: `
+                <p>Consigue el engranaje y la cadena repartidos por el Templo para montar la trampa de ácido, y completa los tres primeros desafíos de los estandartes en la arena principal (se activan cortando las cuerdas que los sujetan) para que te entreguen el Jarrón Dorado.</p>
+                <p>Lleva la cabeza de piedra a cualquier entrada de trampa de ácido (por ejemplo, en la Torre de Ra), colócala en la rejilla inferior y activa la trampa. El ácido derretirá la piedra y dejará a la vista la Llave del Escorpión; recógela.</p>`},
+                  {
+                    id: 'arma-veneno', title: 'Prerrequisito · Veneno y Caja Envenenada', html: `
+                <p>Baja al Arboretum, en la planta inferior de la Torre de Danu. Busca el segundo árbol desde las escaleras: tiene un pequeño orificio. Golpéalo cuerpo a cuerpo para clavar la Llave del Escorpión, y coloca el Jarrón Dorado justo debajo para recoger la savia venenosa.</p>
+                <p>Espera una ronda completa y recupera el jarrón ya lleno. Por último, ve a la Caja Misteriosa y elige la opción <strong>«Envenenar Caja»</strong> en su lateral izquierdo: tu siguiente tirada te dará garantizada la Muerte de Orión.</p>
+                <figure class="shot" data-slot="jarron-arboretum">
+                  <img src="img/jarron-arboretum.jpg" alt="Jarrón Dorado recogiendo savia venenosa en el Arboretum de Danu" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                  <figcaption>Jarrón Dorado bajo la savia ácida, Arboretum de Danu</figcaption>
+                </figure>`},
+                  {
+                    id: 'paso1', num: '01', title: 'Polvo de Calavera', time: 48, embed: true, html: `
+                <p>Busca entre los cientos de cráneos de la sala del Pack-a-Punch uno que tenga un jeroglífico azul en la frente. Dispárale con la Muerte de Orión para desprenderlo y llévalo a la máquina trituradora de la Cripta Inundada. Dispárale tres tiros cargados (dos si el arma está mejorada) para molerlo y recoger el polvo resultante.</p>`},
+                  {
+                    id: 'paso2', num: '02', title: 'Leño y Tributo', time: 153, embed: true, html: `
+                <ol>
+                  <li>Provoca a un gladiador para que lance su hacha contra los tablones de la arena; al impactar se desprende un leño especial. Recógelo.</li>
+                  <li>Colócalo en la hoguera de la Torre de Odín y espera tres rondas completas hasta que quede al rojo vivo.</li>
+                  <li>Baja al mínimo la afinidad del público lanzando granadas a las gradas, hasta que te arrojen estiércol.</li>
+                  <li>Lleva el leño, el estiércol y el polvo de calavera a los baños de Zeus y mézclalos. Espera 2-3 rondas hasta que la mezcla desprenda humo verde.</li>
+                  <li>Traslada la mezcla a las raíces de la Torre de Danu y déjala reposar una ronda más.</li>
+                </ol>`},
+                  {
+                    id: 'paso3', num: '03', title: 'La Dimensión de Danu', time: 284, embed: true, tag: 'danu', html: `
+                <p>Compra la mejora Bomba Incendiaria y consigue una muerte con fuego justo sobre la mezcla depositada en Danu. Se abrirá una grieta celeste bajo tus pies: entra en ella para viajar a una dimensión alternativa.</p>
+                <p>Ya dentro, revienta las pústulas que cuelgan de los árboles en cada uno de los tres pisos de la torre. Al completar el último piso, volverás automáticamente al mapa principal.</p>`},
+                  {
+                    id: 'paso4', num: '04', title: 'El Templo de Ra', time: 388, embed: true, tag: 'ra', html: `
+                <p>Con el fuego del escudo, dispara a los cuatro medallones rúnicos escondidos en los muros del mapa (sala del Pack-a-Punch, Torre de Danu, el puente y la cripta). Elimina después a los gladiadores pesados que custodian la Torre de Ra para encender el Obelisco.</p>
+                <p>Activa el tótem junto al obelisco: te mostrará una secuencia de cuatro zombis elementales. Elimínalos <strong>exactamente en ese orden</strong>, sin herir por accidente a ningún otro zombi elemental, y repite el desafío con una secuencia distinta una segunda vez para superarlo del todo.</p>`},
+                  {
+                    id: 'paso5', num: '05', title: 'Los Pararrayos de Zeus', time: 659, tag: 'zeus', embed: true, html: `
+                <p>Dispara desde las ventanas a los cuatro tornillos periféricos de la Torre de Zeus para levantarlos. Compra la mejora elemental <strong>Vatio Mortal</strong> y activa el evento desde el pedestal central de la arena.</p>
+                <p>Electrocuta a los zombis mientras están dentro de los círculos marcados en el suelo para cargar los generadores, y entra en la zona de confinamiento cuando se abra para limpiar la ronda.</p>`},
+                  {
+                    id: 'paso6', num: '06', title: 'Símbolos de Odín e Inundación', time: 792, embed: true, tag: 'odin', html: `
+                <p>Localiza los tres símbolos circulares en los muros exteriores del mapa (Cripta, El Foso y Danu) y dispárales con la Muerte de Orión.</p>
+                <p>Reúne después a todo el equipo sobre la rejilla de la sala del escudo para activar la inundación de supervivencia. Aguanta tres oleadas intensas sin que el agua os arrastre y, al terminar, recoge la Llave Dorada del suelo: con ella se abre la puerta de la arena final.</p>`},
+                  {
+                    id: 'paso7', num: '07', title: 'Enfrentamiento Final', html: `
+                <p>Cruza el portal que se abre en el centro de la arena para acceder al combate final. Aparecerán oleadas de enemigos normales mientras debes concentrarte en el primer elefante-jefe: dispara primero a su armadura lateral para romperla y después a su frente, que queda expuesta y brillante, hasta derribarlo.</p>
+                <p>Al caer, aparecerá un segundo elefante; repite la misma estrategia. Cuando ambos caigan, se disparará la escena final y el Easter Egg quedará completado.</p>
+                <p class="note">Este último tramo no aparece con marca de tiempo en el vídeo de referencia; el resumen está contrastado con varias guías comunitarias adicionales (ver Fuentes al final de la página).</p>`}
+                ]
+              },
+              {
+                id: 'secretos', label: 'Secretos',
+                items: [
+                  {
+                    id: 'secretos-placeholder', title: 'Próximamente', html: `
+                <p>Todavía no hay contenido recopilado sobre trofeos, desafíos secundarios o canciones ocultas de este mapa. En cuanto me pases una fuente sobre alguno de estos temas, lo añadimos aquí con el mismo formato que el resto de la guía.</p>`}
+                ]
+              }
+            ],
+            sources: {
+              html: `<p>Guía basada principalmente en el vídeo <a href="https://www.youtube.com/watch?v=y3VWQ-8pYMU" target="_blank" rel="noopener">«Guía completa Easter Egg IX — Guerrero Venerado, todos los pasos»</a>, del canal PokeR988TV. Los apartados del escudo, el arma especial y el enfrentamiento final se han contrastado además con guías comunitarias públicas sobre el mapa IX para completar detalles que el vídeo no cubre con marca de tiempo.</p>
+                <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
+            }
+          },
+          {
+            id: 'blood-of-the-dead', name: 'Blood of the Dead', sub: 'Fuga Total', status: 'active',
+            title: 'Blood of the Dead', subtitle: 'Fuga Total',
+            desc: 'Guía de consulta rápida para escapar de Alcatraz: escudo espectral, Blundergat con sus dos mejoras, y la cronología completa del Easter Egg de los cinco fantasmas.',
+            theme: {
+              accent: '#b3272c', accentDim: '#7a1a1d', gold: '#9c8355', goldSoft: '#6e5c3c',
+              stone950: '#0f0d10', stone900: '#1a1216', stone800: '#241419', stone700: '#3a1c22', stone600: '#54242b', line: '#4a2229'
+            },
+            tags: {
+              industrias: { label: 'Industrias', color: '#c97b3d' },
+              muelles: { label: 'Muelles', color: '#5f8aa3' },
+              tuneles: { label: 'Ciudadela', color: '#6f8f5f' },
+              pasarela: { label: 'Pasarela', color: '#c9b458' },
+              enfermeria: { label: 'Enfermería', color: '#8f6fa0' }
+            },
+            tabs: [
+              {
+                id: 'construibles', label: 'Construibles',
+                items: [
+                  {
+                    id: 'escudo-resumen', title: 'El Escudo Espectral', html: `
+                <p>El <strong>Escudo Espectral</strong> te permite ver objetos y enemigos ocultos con su visión (mantén pulsado el botón de apuntar) y disparar una ráfaga espiritual para interactuar con el entorno o dañar enemigos.</p>
+                <p>Necesita tres piezas repartidas por el mapa; en cada partida solo hay una ubicación posible de cada una:</p>`},
+                  {
+                    id: 'pieza-llave', title: 'Pieza · Llave del Alcaide', html: `
+                <p>Se obtiene derrotando al jefe <strong>Brutus</strong> cuando aparece, ya sea al encender los interruptores de la luz o por azar en rondas tempranas.</p>`},
+                  {
+                    id: 'pieza-esencia', title: 'Pieza · Esencia Azul', html: `
+                <p>Está dentro de una de las cajas de fusibles eléctricas repartidas por la prisión. La reconocerás por su brillo azulado; la caja concreta cambia cada partida.</p>`},
+                  {
+                    id: 'pieza-placa', tag: 'tuneles', title: 'Pieza · Placa de Metal', html: `
+                <p>Se encuentra en los <strong>Túneles de la Ciudadela</strong>, en el suelo junto a los muros de piedra o cerca de las rejas.</p>`},
+                  {
+                    id: 'escudo-construccion', title: 'Ensamblaje', html: `
+                <p>Con las tres piezas en tu poder, ve a la mesa de crafteo de los muelles inferiores o de la tercera planta de celdas para montar el Escudo Espectral.</p>
+                <figure class="shot" data-slot="escudo-botd">
+                  <img src="img/botd-escudo.jpg" alt="Mesa de crafteo del Escudo Espectral" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                  <figcaption>Mesa de crafteo del Escudo Espectral</figcaption>
+                </figure>`}
+                ]
+              },
+              {
+                id: 'easterEgg', label: 'Easter Egg',
+                items: [
+                  {
+                    id: 'loadout', title: 'Equipo recomendado', html: `
+                <p>Arma especial de clase: <strong>Espada Path of Sorrows</strong> (Richtofen/Takeo) — su habilidad de nivel superior da invisibilidad temporal y velocidad extra, perfecta para huir de encerronas en los pasillos estrechos de la prisión. Granada recomendada: <strong>Fuego de Mono</strong> (más abajo tienes cómo conseguirlo gratis).</p>
+                <p>En bebidas, procura llevar <strong>Banda de la Victoria</strong> (evita que morir mientras usas el escudo te mate de verdad), <strong>Frío de Invierno</strong> (te da margen al recolectar almas) y <strong>Deseo de Morir</strong> (red de seguridad contra Brutus); si hay hueco, añade <strong>Stamin-Up</strong> para las carreras largas del mapa.</p>`},
+                  {
+                    id: 'ee-intro', title: 'Antes de empezar', html: `
+                <p>Necesitas el <strong>Escudo Espectral</strong> (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>), el Tomahawk, los Monos y la Cuchara de Plata, además del Blundergat con alguna de sus mejoras. Aquí tienes cómo conseguir cada uno gratis:</p>`},
+                  {
+                    id: 'arma-tomahawk', title: 'Prerrequisito · Tomahawk (Hell\u2019s Retriever)', videoId: 'ReOzj107TYE', embed: true, html: `
+                <p>Alimenta a los tres Perros de Fuego (Cerberos) matando zombis junto a sus emblemas en la pared:</p>
+                <ul>
+                  <li>Perro 1: bloque de celdas (New Industries / segunda planta).</li>
+                  <li>Perro 2: Túneles de la Ciudadela.</li>
+                  <li>Perro 3: Casa del Alcaide, fuera de la oficina.</li>
+                </ul>
+                <p>Cuando los tres se retiren a la pared, coge el viaje rápido subterráneo entre la Casa del Alcaide y las Duchas: a mitad de trayecto verás el Tomahawk flotando. Interactúa para recogerlo.</p>
+                <figure class="shot" data-slot="botd-perro">
+                  <img src="img/botd-perro.jpg" alt="Emblema del perro de fuego devorando un zombi" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                  <figcaption>Emblema del perro de fuego en el muro de los túneles</figcaption>
+                </figure>`},
+                  {
+                    id: 'arma-monos', title: 'Prerrequisito · Monos Gratis', html: `
+                <p>Ve al Laboratorio de Richtofen (zona inicial) y espera a que aparezca una ronda de <strong>Brutus</strong>. Deja que golpee y destruya por completo la máquina de teletransporte o el panel eléctrico central del laboratorio. Al matarlo justo después de ese golpe, soltará el Fuego de Mono garantizado.</p>`},
+                  {
+                    id: 'arma-cuchara', title: 'Prerrequisito · Cuchara de Plata', html: `
+                <p>Con el Escudo Espectral equipado, ve a la Oficina del Alcaide y usa la visión espectral sobre los pilares: aparecerá un código de tres cifras.</p>
+                <ol>
+                  <li>Introduce ese código en el teclado numérico de la parte baja de la Ciudadela; el ascensor central bajará una jaula grande.</li>
+                  <li>Ve a los muelles e interactúa con el voltímetro usando una descarga espiritual del escudo para activar la grúa, que sacará una red del agua helada.</li>
+                  <li>Lánzale el Tomahawk a la red para cortarla: la Cuchara de Plata caerá sobre las cajas metálicas del muelle.</li>
+                </ol>
+                <figure class="shot" data-slot="botd-cuchara">
+                  <img src="img/botd-cuchara.jpg" alt="Cuchara de Plata sobre las cajas metálicas del muelle" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                  <figcaption>Cuchara de Plata cayendo sobre el muelle</figcaption>
+                </figure>`},
+                  {
+                    id: 'arma-blundergat', title: 'Prerrequisito · Blundergat Gratis', videoId: 'ReOzj107TYE', html: `
+                <p>Con el Escudo Espectral, usa la visión espectral y el Tomahawk para recoger 5 cráneos invisibles repartidos por el mapa:</p>
+                <ul>
+                  <li>Celdas: en la barandilla de la escalera que sube desde las duchas.</li>
+                  <li>Oficina: ventana rota del Alcaide, sobre el poste de luz exterior.</li>
+                  <li>Muelles: flotando sobre un noray de amarre de barcos.</li>
+                  <li>Tejado (Pack-a-Punch): esquina derecha, sobre un cajón de madera roto.</li>
+                  <li>Pasarela exterior: sobre los cables/aisladores de alta tensión.</li>
+                </ul>
+                <p>Tras recoger los cinco, el Blundergat aparecerá flotando sobre la mesa del despacho del Alcaide.</p>`},
+                  {
+                    id: 'arma-magmagat', title: 'Mejora · Magmagat', videoId: 'ujmNtSsB2XE', embed: true, html: `
+                <p>Coloca el Blundergat en la chimenea encendida de la Casa del Alcaide y mata zombis en esa sala: sus almas llenan tres calaveras sobre la repisa. Cuando estén llenas, recoge el arma ya imbuida.</p>
+                <p>Empieza entonces una <strong>carrera contrarreloj</strong>: corre hasta las Industrias del Bloque Oeste tocando por el camino los barriles de fuego azul (Oficina, Recreo, Pasillos...) para no perder la llama. Al llegar, colócala en la prensa industrial y espera unos segundos para obtener el <strong>Magmagat</strong>.</p>
+                <figure class="shot" data-slot="botd-barril">
+                  <img src="img/botd-barril.jpg" alt="Barril de fuego azul en el patio de recreo" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                  <figcaption>Barril azul para recargar el tiempo del Magmagat</figcaption>
+                </figure>`},
+                  {
+                    id: 'arma-acidgat', title: 'Mejora · Acidgat', html: `
+                <p>Reúne las 3 piezas del kit de ácido: el maletín (Enfermería), el motor (pasillos de celdas) y el jarrón químico (túneles inferiores). Llévalas a cualquier mesa de crafteo, ensambla el kit e introduce el Blundergat para convertirlo en el <strong>Acidgat</strong>.</p>`},
+                  {
+                    id: 'fase1-paso1', num: '01', title: 'El Laboratorio Secreto', videoId: 'L3yu30XU6Is', time: 597, embed: true, html: `
+                <p>Con la Cuchara de Plata y el escudo equipados, ve a la Oficina del Alcaide y golpea con la cuchara la pared oculta del fondo para revelar el laboratorio secreto.</p>`},
+                  {
+                    id: 'fase1-paso2', num: '02', title: 'El Libro de Crónicas', videoId: 'L3yu30XU6Is', time: 660, embed: true, html: `
+                <p>Ve a las duchas y busca el portal espectral; dale una ráfaga de escudo para que aparezca el Libro de Crónicas de Richtofen. Recógelo y llévalo a la mesa del despacho del Alcaide, colocándolo sobre el pedestal.</p>`},
+                  {
+                    id: 'fase2-intro', title: 'Los 5 Fantasmas Espectrales', html: `
+                <p>Al interactuar con el libro, los ojos del mapa parpadearán: los fantasmas se han liberado. Resuelve cada desafío recargando el escudo con almas constantemente:</p>`},
+                  {
+                    id: 'fantasma-industrias', num: '03', tag: 'industrias', title: 'Industrias Oeste · El Fantasma Mecánico', videoId: 'L3yu30XU6Is', time: 780, embed: true, html: `
+                <p>Usa el escudo para ver al fantasma operando las palancas de la maquinaria industrial. Dispárale una ráfaga espiritual para iniciar su ruta: escóltalo y defiéndelo del ataque de Brutus y los zombis mientras absorbe la energía de tres paneles eléctricos de la sala.</p>`},
+                  {
+                    id: 'fantasma-muelles', num: '04', tag: 'muelles', title: 'Los Muelles · El Fantasma de la Grúa', videoId: 'L3yu30XU6Is', time: 930, embed: true, html: `
+                <p>Introduce el código espiritual de 3 dígitos parpadeantes en el panel metálico de la grúa. El fantasma aparecerá colgado con una soga sobre el agua helada; dale una ráfaga espiritual para infundirle fuerza. La grúa sacará del fondo del mar un contenedor con la pieza ritual.</p>`},
+                  {
+                    id: 'fantasma-tuneles', num: '05', tag: 'tuneles', title: 'Túneles de la Ciudadela · Escolta del Prisionero', videoId: 'L3yu30XU6Is', time: 1080, embed: true, html: `
+                <p>Encuentra al espíritu del reo encadenado en la base de la espiral. Dispárale ráfagas espirituales continuamente para darle energía y guiarlo a través de los túneles angostos hasta las Duchas, limpiando los zombis que le corten el paso.</p>`},
+                  {
+                    id: 'fantasma-pasarela', num: '06', tag: 'pasarela', title: 'La Pasarela · Caza del Fantasma Veloz', videoId: 'L3yu30XU6Is', time: 1230, embed: true, html: `
+                <p>Un fantasma invisible correrá a toda velocidad por la pasarela exterior del inicio del mapa. Equipa Stamin-Up, persíguelo apuntando con el escudo y dispárale ráfagas espirituales consecutivas para frenarlo y absorberlo antes de que llegue al portón final de la prisión.</p>`},
+                  {
+                    id: 'fantasma-enfermeria', num: '07', tag: 'enfermeria', title: 'Enfermería y Cafetería · Sincronización de Palancas', videoId: 'L3yu30XU6Is', time: 1380, embed: true, html: `
+                <p>Tres interruptores espectrales se activan en las paredes de la Enfermería y la Cafetería. Todo el equipo debe coordinarse con la visión espectral para activar las tres palancas de forma estrictamente simultánea usando las descargas de sus escudos.</p>`},
+                  {
+                    id: 'fase3-sacrificio', num: '08', title: 'El Sacrificio', videoId: 'L3yu30XU6Is', time: 1530, embed: true, html: `
+                <p>Tras completar los cinco fantasmas, vuelve al laboratorio subterráneo de Richtofen. Un jugador debe interactuar obligatoriamente con la silla eléctrica del centro de la sala, sacrificándose de forma temporal.</p>`},
+                  {
+                    id: 'fase3-final', num: '09', title: 'Enfrentamiento Final', videoId: 'L3yu30XU6Is', time: 1620, embed: true, html: `
+                <p>El resto del equipo debe repeler una oleada masiva de Brutus y zombis mientras protege la sala. Al terminar el ritual, el portal central de Alcatraz se abre por completo: crúzalo para acceder a la arena exterior y destruye el mecanismo principal del Alcaide con vuestras armas especiales a máxima potencia para sellar la victoria.</p>`}
+                ]
+              },
+              {
+                id: 'secretos', label: 'Secretos',
+                items: [
+                  {
+                    id: 'secretos-placeholder', title: 'Próximamente', html: `
+                <p>Todavía no hay contenido recopilado sobre trofeos, desafíos secundarios o canciones ocultas de este mapa. En cuanto me pases una fuente sobre alguno de estos temas, lo añadimos aquí con el mismo formato que el resto de la guía.</p>`}
+                ]
+              }
+            ],
+            sources: {
+              html: `<p>Guía basada en tu manual de referencia sobre Blood of the Dead, contrastada con guías comunitarias públicas del mapa para confirmar nombres y mecánicas.</p>
+                <ul>
+                  <li><a href="https://www.youtube.com/watch?v=L3yu30XU6Is&t=597s" target="_blank" rel="noopener">Vídeo · Guía completa del Easter Egg</a></li>
+                  <li><a href="https://www.youtube.com/watch?v=ReOzj107TYE" target="_blank" rel="noopener">Vídeo · Cómo conseguir el Tomahawk y el Blundergat gratis</a></li>
+                  <li><a href="https://www.youtube.com/watch?v=ujmNtSsB2XE" target="_blank" rel="noopener">Vídeo · Cómo conseguir el Magmagat</a></li>
+                </ul>
+                <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
+            }
+          },
+          {
+            id: 'voyage-of-despair', name: 'Voyage of Despair', sub: 'Abandonar el Barco', status: 'active',
+            title: 'Voyage of Despair', subtitle: 'Abandonar el Barco',
+            desc: 'Guía de consulta rápida para el RMS Titanic: el Cetro de Ra, el Kraken y su mejora de hielo, y la travesía completa del Easter Egg hasta el Ojo de Odín.',
+            theme: {
+              accent: '#3f7ea6', accentDim: '#2a5772', gold: '#c2a45c', goldSoft: '#8a763f',
+              stone950: '#0a0f14', stone900: '#111a22', stone800: '#182530', stone700: '#223444', stone600: '#33505f', line: '#2c414f'
+            },
+            tags: {
+              agua: { label: 'Agua', color: '#4fa3d9' },
+              fuego: { label: 'Fuego', color: '#d97a3d' },
+              electrico: { label: 'Eléctrico', color: '#d9c94f' },
+              veneno: { label: 'Veneno', color: '#6fae5a' }
+            },
+            tabs: [
+              {
+                id: 'construibles', label: 'Construibles',
+                items: [
+                  {
+                    id: 'escudo-resumen', title: 'El Cetro de Ra', html: `
+                <p>El <strong>Cetro de Ra</strong> genera una cúpula de protección, imprescindible para sobrevivir a los ataques de muerte instantánea del Ojo gigante en la batalla final.</p>
+                <p>Se monta con tres piezas repartidas por el barco; en cada partida solo hay una ubicación posible de cada una:</p>`},
+                  {
+                    id: 'pieza-puente', title: 'Pieza 1 · Puente / Camarotes', html: `
+                <p>En una silla del Puente de Mando, o en los Camarotes de Lujo.</p>`},
+                  {
+                    id: 'pieza-provisiones', title: 'Pieza 2 · Provisiones / Cocina', html: `
+                <p>Sobre unas cajas en Provisiones, o en las mesas de la Cocina (Galley).</p>`},
+                  {
+                    id: 'pieza-tercera', title: 'Pieza 3 · 3ª Clase / Camarotes Inferiores', html: `
+                <p>En las barandillas de madera, o tirada cerca de la Gran Escalera Inferior.</p>`},
+                  {
+                    id: 'escudo-construccion', title: 'Ensamblaje', html: `
+                <p>Ensámblalo en la mesa de la Cubierta de Botes (Boat Deck) o en Provisiones.</p>
+                <figure class="shot" data-slot="vod-escudo">
+                  <img src="img/vod-escudo.jpg" alt="Mesa de construcción del Cetro de Ra" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                  <figcaption>Mesa de construcción en el RMS Titanic</figcaption>
+                </figure>`}
+                ]
+              },
+              {
+                id: 'easterEgg', label: 'Easter Egg',
+                items: [
+                  {
+                    id: 'loadout', title: 'Equipo recomendado', html: `
+                <p>Arma obligatoria: <strong>Lanzacohetes Hellion Salvo</strong> mejorado al máximo — con él, el jefe final cae en segundos. Como secundaria, el <strong>Kraken de Hielo</strong> ayuda mucho a controlar oleadas. El Cetro de Ra (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>) es imprescindible para sobrevivir a los ataques de muerte instantánea del jefe final.</p>
+                <p>En bebidas, prioriza <strong>Deslizarse de Tortuga</strong> (inmunidad a tus propias explosiones si usas el Hellion Salvo de cerca), <strong>Deseo de Morir</strong> (salvavidas contra los Blightfather) y <strong>Banda de la Victoria</strong> para aguantar con el escudo en los pasillos estrechos; añade <strong>Stamin-Up</strong> si hay hueco, el barco es enorme.</p>`},
+                  {
+                    id: 'ee-intro', title: 'Antes de empezar', html: `
+                <p>Activa el <strong>Artefacto Centinela</strong> (la luz azul de la Cubierta de Toldos, al final del barco) y el <strong>Pack-a-Punch</strong>, interactuando con los cuatro pedestales de madera (Cubierta de Toldos, Gran Escalera Inferior, Bodega de Carga y Sala de Turbinas).</p>`},
+                  {
+                    id: 'arma-kraken', title: 'Prerrequisito · Kraken Gratis', html: `
+                <p>Mata a un <strong>Fogonero</strong> (Stoker, el zombi gigante que lanza carbón) disparando a sus puntos débiles brillantes: soltará una llave dorada.</p>
+                <p>Busca un cofre de madera cerrado (aparece en Salas de Correo, Sala de Turbinas, Provisiones, Camarotes o Cocina), ábrelo con la llave y mata zombis cerca para llenarlo de almas. El cofre se teletransportará dos veces más: llénalo en sus tres ubicaciones en total.</p>
+                <p>Al final soltará un objeto (brújula, telescopio...). Llévalo a las cubiertas exteriores y busca la caja de madera con el mismo símbolo: un tentáculo gigante la aplastará y te dejará el <strong>Kraken gratis</strong>.</p>
+                <figure class="shot" data-slot="vod-kraken">
+                  <img src="img/vod-kraken.jpg" alt="Tentáculo gigante soltando el Kraken en la cubierta" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                  <figcaption>El tentáculo gigante entregando el Kraken</figcaption>
+                </figure>`},
+                  {
+                    id: 'arma-kraken-hielo', title: 'Mejora · Kraken de Hielo', html: `
+                <p>Recoge las tres piezas genéricas del kit de mejora (cámara, cañón y tubo) en la Bodega de Carga, la Sala de Turbinas y los pasillos de 1ª Clase. Mata después a un zombi elemental de hielo (los azules) con el Kraken: soltará un núcleo de hielo concentrado.</p>
+                <p>Llévalo a la mesa de crafteo de la Sala de Máquinas para convertirlo en el <strong>Kraken de Hielo</strong>, ideal para congelar pasillos enteros.</p>`},
+                  {
+                    id: 'paso1', num: '01', title: 'Relojes y Válvulas', html: `
+                <p>Por el barco hay 4 símbolos geométricos (triángulos apuntando arriba, abajo o con una línea) que representan los cuatro elementos. Busca junto a qué reloj de pared aparece cada uno y anota la hora que marca (ej.: triángulo de Agua = 11:30).</p>
+                <p>Ve al Puente de Mando (2 válvulas) y a la Sala de Máquinas (2 válvulas) y ajusta la hora de cada una para que coincida con la de su elemento. <strong>Atención:</strong> las válvulas de los minutos se mueven en intervalos de 5.</p>
+                <figure class="shot" data-slot="vod-reloj">
+                  <img src="img/vod-reloj.jpg" alt="Reloj de pared marcando la hora junto a un triángulo elemental" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                  <figcaption>Reloj de pared junto a su símbolo elemental</figcaption>
+                </figure>`},
+                  {
+                    id: 'paso2', num: '02', title: 'Catalizadores Elementales', html: `
+                <p>Aparecerán 4 enchufes de colores repartidos por el barco, cada uno soltando un elemento (hielo, fuego, eléctrico, veneno). Lleva a un zombi catalizador de ese mismo elemento junto al enchufe correspondiente y mátalo ahí: se formará un círculo ritual en el suelo.</p>
+                <p>Ponte sobre el círculo para teletransportarte a una zona de supervivencia en escala de grises y aguanta la oleada de zombis. Repite el proceso para los cuatro elementos hasta conseguir el artefacto real.</p>
+                <figure class="shot" data-slot="vod-catalizador">
+                  <img src="img/vod-catalizador.jpg" alt="Zombi catalizador eliminado sobre el enchufe elemental" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                  <figcaption>Zombi catalizador junto al enchufe elemental</figcaption>
+                </figure>`},
+                  {
+                    id: 'paso3', num: '03', title: 'El Sistema Solar', html: `
+                <p>Ve a la Bodega de Carga e interactúa con la maqueta del Sistema Solar: los planetas se iluminan en un orden aleatorio. Anota ese orden exacto.</p>
+                <p>Sal al exterior, busca en el cielo nocturno el primer planeta de tu lista y dispárale. Caerá como un orbe brillante en un punto concreto del barco; recógelo corriendo y devuélvelo a su posición en la maqueta antes de que se acabe el tiempo. Repite el proceso siguiendo tu orden para todos los planetas.</p>
+                <figure class="shot" data-slot="vod-planeta">
+                  <img src="img/vod-planeta.jpg" alt="Disparando a un planeta brillante en el cielo del Atlántico" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                  <figcaption>Disparando al planeta real en el cielo nocturno</figcaption>
+                </figure>`},
+                  {
+                    id: 'paso4', num: '04', title: 'El Bloque de Hielo', html: `
+                <p>Lleva el Artefacto Real ya cargado a la Sala de Máquinas. Un bloque de hielo gigante bloquea una puerta: dispárale con el Kraken de Hielo (a ser posible mejorado en el Pack-a-Punch) hasta destrozarlo. Esto inunda temporalmente el barco y te lleva a la siguiente fase.</p>`},
+                  {
+                    id: 'paso5', num: '05', title: 'El Ojo de Odín', html: `
+                <p>Interactúa con el timón del Puente de Mando para acceder al combate final, dividido en 5 fases por distintas zonas del barco, contra un jefe con forma de ojo gigante congelado.</p>
+                <p>Cuando el Ojo empiece a brillar con fuerza (está cargando su ataque de muerte instantánea), lanza Homúnculos para distraer a los zombis, despliega el Cetro de Ra para protegerte y vacía el lanzacohetes Hellion Salvo directamente sobre la pupila. Su daño es tan alto que anula el ataque y acelera muchísimo el resto de fases.</p>
+                <p class="note">Este último tramo está contrastado con guías comunitarias adicionales, ya que tu documento no incluía marcas de tiempo de vídeo para esta parte (ver Fuentes).</p>`}
+                ]
+              },
+              {
+                id: 'secretos', label: 'Secretos',
+                items: [
+                  {
+                    id: 'secretos-placeholder', title: 'Próximamente', html: `
+                <p>Todavía no hay contenido recopilado sobre trofeos, desafíos secundarios o canciones ocultas de este mapa. En cuanto me pases una fuente sobre alguno de estos temas, lo añadimos aquí con el mismo formato que el resto de la guía.</p>`}
+                ]
+              }
+            ],
+            sources: {
+              html: `<p>Guía basada en tu manual de referencia sobre Voyage of Despair, contrastada con guías comunitarias públicas del mapa para confirmar nombres y mecánicas (por ejemplo, el jefe final «Ojo de Odín» y el papel del Hellion Salvo).</p>
+                <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
+            }
+          }
+        ]
       }
     ];
 
     // ---------------- estado ----------------
-    let currentGame = GAMES.find(g => g.status === 'active');
-    let currentMapObj = currentGame.maps.find(m => m.status === 'active');
+    let currentGame = GAMES.find(g => g.id === 'bo4-zombies') || GAMES.find(g => g.status === 'active');
+    let currentMapObj = currentGame.maps.find(m => m.id === 'ix') || currentGame.maps.find(m => m.status === 'active');
     let currentTab = currentMapObj.tabs[1] ? currentMapObj.tabs[1].id : currentMapObj.tabs[0].id;
 
     const POPULAR_MAPS = [
@@ -2727,8 +2701,8 @@
       <span class="popular-sub">${map.sub || ''}</span><span class="popular-open">Abrir guía →</span>
     </button>`
       ).join('');
-      document.getElementById('homeGameTree').innerHTML = GAMES.filter(g => g.status === 'active').map((game, index) =>
-        `<details class="home-game" ${index === 0 ? 'open' : ''}><summary>${game.name}</summary><div class="home-map-list">
+      document.getElementById('homeGameTree').innerHTML = GAMES.filter(g => g.status === 'active').map((game) =>
+        `<details class="home-game"><summary>${game.name}</summary><div class="home-map-list">
       ${game.maps.filter(m => m.status === 'active').map(m => `<button class="home-map" data-game="${game.id}" data-map="${m.id}"><strong>${m.name}</strong><span>${m.sub || 'Guía disponible'}</span></button>`).join('')}
     </div></details>`
       ).join('');
