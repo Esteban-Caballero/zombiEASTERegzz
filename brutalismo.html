@@ -42,7 +42,7 @@
 
     html {
       scroll-behavior: smooth;
-      overflow-x: hidden;
+      overflow-x: clip;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -66,7 +66,7 @@
       font-family: var(--font-body);
       line-height: 1.55;
       min-height: 100vh;
-      overflow-x: hidden;
+      overflow-x: clip;
       transition: background-color .4s ease;
     }
 
@@ -3070,7 +3070,7 @@
           {
             id: 'voyage-of-despair', name: 'Voyage of Despair', sub: 'Abandonar el Barco', status: 'active',
             title: 'Voyage of Despair', subtitle: 'Abandonar el Barco',
-            desc: 'Guía de consulta rápida para el RMS Titanic: el Cetro de Ra, el Kraken y su mejora de hielo, y la travesía completa del Easter Egg hasta el Ojo de Odín.',
+            desc: 'Guía de consulta rápida para Voyage of Despair.',
             theme: {
               accent: '#3f7ea6', accentDim: '#2a5772', gold: '#c2a45c', goldSoft: '#8a763f',
               stone950: '#0a0f14', stone900: '#111a22', stone800: '#182530', stone700: '#223444', stone600: '#33505f', line: '#2c414f'
@@ -3086,82 +3086,134 @@
                 id: 'construibles', label: 'Construibles',
                 items: [
                   {
-                    id: 'escudo-resumen', title: 'El Cetro de Ra', html: `
-                <p>El <strong>Cetro de Ra</strong> genera una cúpula de protección, imprescindible para sobrevivir a los ataques de muerte instantánea del Ojo gigante en la batalla final.</p>
-                <p>Se monta con tres piezas repartidas por el barco; en cada partida solo hay una ubicación posible de cada una:</p>`},
+                    id: 'escudo', title: 'Escudo', html: `
+                <p>Se monta con tres piezas repartidas por el barco:</p>
+                <ul>
+                  <li><strong>Primera parte:</strong> en los camarotes individuales.</li>
+                  <li><strong>Segunda parte:</strong> en el puente.</li>
+                  <li><strong>Tercera parte:</strong> en las literas de tercera clase.</li>
+                </ul>`},
                   {
-                    id: 'pieza-puente', title: 'Pieza 1 · Puente / Camarotes', html: `
-                <p>En una silla del Puente de Mando, o en los Camarotes de Lujo.</p>`},
+                    id: 'kraken-mejora', title: 'Máquina de mejora de la Kraken', html: `
+                <p>Se monta con tres piezas repartidas por el barco:</p>
+                <ul>
+                  <li><strong>Primera pieza:</strong> en la cocina.</li>
+                  <li><strong>Segunda pieza:</strong> en el muelle de carga.</li>
+                  <li><strong>Tercera pieza:</strong> en el salón de primera clase.</li>
+                </ul>
+                <p>Las mejoras elementales las sueltan los catalizadores.</p>`},
                   {
-                    id: 'pieza-provisiones', title: 'Pieza 2 · Provisiones / Cocina', html: `
-                <p>Sobre unas cajas en Provisiones, o en las mesas de la Cocina (Galley).</p>`},
-                  {
-                    id: 'pieza-tercera', title: 'Pieza 3 · 3ª Clase / Camarotes Inferiores', html: `
-                <p>En las barandillas de madera, o tirada cerca de la Gran Escalera Inferior.</p>`},
-                  {
-                    id: 'escudo-construccion', title: 'Ensamblaje', html: `
-                <p>Ensámblalo en la mesa de la Cubierta de Botes (Boat Deck) o en Provisiones.</p>
-                <figure class="shot" data-slot="vod-escudo">
-                  <img src="img/vod-escudo.jpg" alt="Mesa de construcción del Cetro de Ra" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>Mesa de construcción en el RMS Titanic</figcaption>
-                </figure>`}
+                    id: 'kraken-gratis', title: 'Obtener Kraken gratis', html: `
+                <p>Matar al Fogonero hasta que suelte una llave (no siempre la suelta a la primera). Con esa llave, buscar tres cofres del tesoro repartidos por el mapa y llenarlos. Las posibles ubicaciones son:</p>
+                <ul>
+                  <li>En la sala de correos.</li>
+                  <li>En la sala de turbinas, tras el Pack-a-Punch.</li>
+                  <li>En los camarotes individuales, cerca de la gran escalera inferior.</li>
+                  <li>En la cocina.</li>
+                  <li>En la despensa.</li>
+                </ul>
+                <p>Una vez se llenen, el último nos soltará un objeto que llevaremos a las cubiertas exteriores buscando una caja de madera que tenga el mismo objeto encima. Cuando encontremos la equivalente, aparecerá un tentáculo gigante que romperá la caja y nos soltará la Kraken gratis.</p>`}
                 ]
               },
               {
                 id: 'easterEgg', label: 'Easter Egg',
                 items: [
                   {
-                    id: 'loadout', title: 'Equipo recomendado', html: `
-                <p>Arma obligatoria: <strong>Lanzacohetes Hellion Salvo</strong> mejorado al máximo — con él, el jefe final cae en segundos. Como secundaria, el <strong>Kraken de Hielo</strong> ayuda mucho a controlar oleadas. El Cetro de Ra (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>) es imprescindible para sobrevivir a los ataques de muerte instantánea del jefe final.</p>
-                <p>En bebidas, prioriza <strong>Deslizarse de Tortuga</strong> (inmunidad a tus propias explosiones si usas el Hellion Salvo de cerca), <strong>Deseo de Morir</strong> (salvavidas contra los Blightfather) y <strong>Banda de la Victoria</strong> para aguantar con el escudo en los pasillos estrechos; añade <strong>Stamin-Up</strong> si hay hueco, el barco es enorme.</p>`},
+                    id: 'paso1', num: '01', title: 'Recoger el artefacto y activar el Pack-a-Punch', html: `
+                <p>Recoger el artefacto y activar el Pack-a-Punch. Para ello hay que activar los 4 pedestales que se encuentran en la cubierta de popa, el muelle de carga, la gran escalera inferior y la sala de calderas.</p>`},
                   {
-                    id: 'ee-intro', title: 'Antes de empezar', html: `
-                <p>Activa el <strong>Artefacto Centinela</strong> (la luz azul de la Cubierta de Toldos, al final del barco) y el <strong>Pack-a-Punch</strong>, interactuando con los cuatro pedestales de madera (Cubierta de Toldos, Gran Escalera Inferior, Bodega de Carga y Sala de Turbinas).</p>`},
-                  {
-                    id: 'arma-kraken', title: 'Prerrequisito · Kraken Gratis', html: `
-                <p>Mata a un <strong>Fogonero</strong> (Stoker, el zombi gigante que lanza carbón) disparando a sus puntos débiles brillantes: soltará una llave dorada.</p>
-                <p>Busca un cofre de madera cerrado (aparece en Salas de Correo, Sala de Turbinas, Provisiones, Camarotes o Cocina), ábrelo con la llave y mata zombis cerca para llenarlo de almas. El cofre se teletransportará dos veces más: llénalo en sus tres ubicaciones en total.</p>
-                <p>Al final soltará un objeto (brújula, telescopio...). Llévalo a las cubiertas exteriores y busca la caja de madera con el mismo símbolo: un tentáculo gigante la aplastará y te dejará el <strong>Kraken gratis</strong>.</p>
-                <figure class="shot" data-slot="vod-kraken">
-                  <img src="img/vod-kraken.jpg" alt="Tentáculo gigante soltando el Kraken en la cubierta" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>El tentáculo gigante entregando el Kraken</figcaption>
-                </figure>`},
-                  {
-                    id: 'arma-kraken-hielo', title: 'Mejora · Kraken de Hielo', html: `
-                <p>Recoge las tres piezas genéricas del kit de mejora (cámara, cañón y tubo) en la Bodega de Carga, la Sala de Turbinas y los pasillos de 1ª Clase. Mata después a un zombi elemental de hielo (los azules) con el Kraken: soltará un núcleo de hielo concentrado.</p>
-                <p>Llévalo a la mesa de crafteo de la Sala de Máquinas para convertirlo en el <strong>Kraken de Hielo</strong>, ideal para congelar pasillos enteros.</p>`},
-                  {
-                    id: 'paso1', num: '01', title: 'Relojes y Válvulas', html: `
-                <p>Por el barco hay 4 símbolos geométricos (triángulos apuntando arriba, abajo o con una línea) que representan los cuatro elementos. Busca junto a qué reloj de pared aparece cada uno y anota la hora que marca (ej.: triángulo de Agua = 11:30).</p>
-                <p>Ve al Puente de Mando (2 válvulas) y a la Sala de Máquinas (2 válvulas) y ajusta la hora de cada una para que coincida con la de su elemento. <strong>Atención:</strong> las válvulas de los minutos se mueven en intervalos de 5.</p>
+                    id: 'paso2', num: '02', title: 'El paso de los relojes', html: `
+                <p>Busca 4 símbolos geométricos que representan los cuatro elementos: un triángulo hacia arriba, un triángulo hacia arriba con raya horizontal, un triángulo invertido y un triángulo invertido con raya horizontal. Cada uno aparece junto a uno de los relojes de pared del barco.</p>
+                <div class="meta-box">
+                  <p><strong>Truco:</strong> todos los relojes marcan las 11:40 salvo los cuatro que tienen símbolo al lado esa partida. Comprueba la hora antes de ponerte a buscar el símbolo en cada sala, así no pierdes tiempo mirando las que no lo tienen.</p>
+                </div>
+                <p>Las 6 salas donde puede aparecer un reloj (solo 4 estarán activas por partida):</p>
+                <ul>
+                  <li><strong>Gran Escalera Superior:</strong> en el último piso, el reloj está en la pared de la escalera; el símbolo puede aparecer en la pared de enfrente, justo encima de la puerta izquierda hacia la cubierta.</li>
+                  <li><strong>Sala de Correos:</strong> el reloj está al bajar la escalera; el símbolo aparece debajo de esa misma escalera metálica.</li>
+                  <li><strong>Puente de Mando:</strong> el reloj está en la sala del timón; el símbolo se encuentra en un escritorio, en su parte interior.</li>
+                  <li><strong>Cocina:</strong> en la parte derecha (la del bowie), al fondo; al girarte, el reloj se ve en la pared de enfrente y el símbolo en el mueble de enfrente de la encimera.</li>
+                  <li><strong>Salón de Primera Clase:</strong> el reloj está en la chimenea; el símbolo puede aparecer a su derecha, en la esquina, dentro de un cubículo decorativo al que no se puede acceder.</li>
+                  <li><strong>Literas de 3ª Clase:</strong> el reloj está justo enfrente de la escalera que baja a la Despensa; el símbolo está enfrente del reloj, en la pared de esa escalera.</li>
+                </ul>
+                <p>Para cada símbolo, anota qué número marca la aguja de las <strong>horas</strong> y cuál marca la de los <strong>minutos</strong>.</p>
+                <p>Con los datos anotados, ve al Puente de Mando y a la Sala de Máquinas: en cada una hay válvulas que hay que interpretar como relojes de agujas (posición superior = 12:00). Coloca en cada válvula los <strong>minutos</strong> correspondientes al símbolo dibujado en ella.</p>
+                <p>Después baja a la <strong>Cubierta de Popa</strong> (donde se recoge el artefacto al inicio): en la válvula izquierda del timón pon la <strong>hora</strong> del triángulo normal con raya (el que apunta hacia arriba), y en la derecha la del triángulo invertido con raya (el que apunta hacia abajo). Baja luego a la <strong>Sala de Máquinas</strong>, a la columna de 4 válvulas frente a la 4ª bebida (solo se pueden mover la de más a la izquierda y la de más a la derecha): en la izquierda coloca la hora del triángulo normal y en la derecha la del invertido.</p>
+                <p class="note">Si está bien hecho sonará un tono de confirmación y podrás continuar con el siguiente paso.</p>
                 <figure class="shot" data-slot="vod-reloj">
                   <img src="img/vod-reloj.jpg" alt="Reloj de pared marcando la hora junto a un triángulo elemental" loading="lazy" onerror="this.closest('.shot').style.display='none'">
                   <figcaption>Reloj de pared junto a su símbolo elemental</figcaption>
                 </figure>`},
                   {
-                    id: 'paso2', num: '02', title: 'Catalizadores Elementales', html: `
-                <p>Aparecerán 4 enchufes de colores repartidos por el barco, cada uno soltando un elemento (hielo, fuego, eléctrico, veneno). Lleva a un zombi catalizador de ese mismo elemento junto al enchufe correspondiente y mátalo ahí: se formará un círculo ritual en el suelo.</p>
-                <p>Ponte sobre el círculo para teletransportarte a una zona de supervivencia en escala de grises y aguanta la oleada de zombis. Repite el proceso para los cuatro elementos hasta conseguir el artefacto real.</p>
-                <figure class="shot" data-slot="vod-catalizador">
-                  <img src="img/vod-catalizador.jpg" alt="Zombi catalizador eliminado sobre el enchufe elemental" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>Zombi catalizador junto al enchufe elemental</figcaption>
-                </figure>`},
+                    id: 'paso3', num: '03', title: 'Los enchufes elementales', html: `
+                <p>Hay que buscar 4 enchufes que desprendan chispas de diferentes elementos: Veneno, agua, electricidad y fuego. Hay 6 posibles ubicaciones de enchufes:</p>
+                <ul>
+                  <li>En las literas de 3ª clase, al lado de las primeras escaleras blancas para bajar.</li>
+                  <li>En la cubierta de popa, al subir desde la escalera del escudo veremos una ventana por la que aparecen zombies. Si miramos a esa ventana hay un enchufe. Si no tiene elemento no se ve bien, pero si lo tiene se ve claramente si esperamos lo suficiente a que eche las chispas.</li>
+                  <li>En la gran escalera superior, arriba del todo en la pared.</li>
+                  <li>En el salón de primera clase, en la columna de al lado de la bebida.</li>
+                  <li>En el comedor, detrás de un murito en uno de los lados. Al igual que pasa con el resto, si nos toca en este algún elemento, se oye un sonido de electricidad que nos ayudará a encontrarlo si no lo vemos bien.</li>
+                  <li>En los camarotes individuales, en el primero de la izquierda entrando desde el spawn.</li>
+                </ul>
+                <p>En este paso lo que tendremos que matar es un zombie catalizador del elemento correspondiente en cada enchufe para que se abra un portal naranja en el suelo. Ten en cuenta que solo se puede llenar un enchufe en cada ronda. Una vez tengamos los portales, hay que hacer una defensa en cada uno de ellos poniéndonos encima quietos y pulsando el botón de interacción.</p>
+                <div class="meta-box">
+                  <p><strong>IMPORTANTE:</strong> Estas defensas han de hacerse en un orden específico, por lo que es recomendable anotar el elemento de cada ubicación. El orden es: <strong>VENENO, AGUA, ELECTRICIDAD y FUEGO</strong>. En la primera y la tercera defensa nos darán una munición máxima.</p>
+                </div>`},
                   {
-                    id: 'paso3', num: '03', title: 'El Sistema Solar', html: `
-                <p>Ve a la Bodega de Carga e interactúa con la maqueta del Sistema Solar: los planetas se iluminan en un orden aleatorio. Anota ese orden exacto.</p>
-                <p>Sal al exterior, busca en el cielo nocturno el primer planeta de tu lista y dispárale. Caerá como un orbe brillante en un punto concreto del barco; recógelo corriendo y devuélvelo a su posición en la maqueta antes de que se acabe el tiempo. Repite el proceso siguiendo tu orden para todos los planetas.</p>
+                    id: 'paso4', num: '04', title: 'Tuberías azules', html: `
+                <p>Para este paso es necesario tener el arma especial de este mapa, la Kraken, con su mejora del elemento <strong>ÁCIDO</strong> (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>). Una vez la tengamos, tendremos que ir a la sala de calderas (donde está una de las ubicaciones del Pack-a-Punch) y disparar con el arma especial a 9 fugas de agua de las tuberías azules de esta habitación. Sabremos que lo hacemos bien porque dará hitmarker.</p>
+                <p>Cuando demos a todas, la sala se comenzará a inundar. Una vez se inunde, tendremos que interactuar con el Pack-a-Punch (si no está en esta ubicación, hay que pasar ronda hasta que aparezca en esta sala) que nos dejará mejorar el artefacto centinela y lo recogemos cuando termine.</p>`},
+                  {
+                    id: 'paso5', num: '05', title: 'Símbolos naranjas', html: `
+                <p>En este paso hay que buscar 9 símbolos naranjas que se encuentran repartidos por todo el mapa e interactuar con ellos hasta que desaparezcan. No se sabe si es necesario seguir un orden, pero se recomienda darlos en el siguiente orden:</p>
+                <ol>
+                  <li>En la punta de la proa, en el inicio, en una columnita abajo.</li>
+                  <li>En la sala de correos, justo enfrente de las escaleras al bajar.</li>
+                  <li>En los baños de los camarotes individuales, al lado del último espejo en la pared.</li>
+                  <li>En el puente, en la sala del timón en una mini habitación que tiene al lado de un mueble.</li>
+                  <li>En la gran escalera inferior, al lado de la ventana en la pared de la derecha de la escalera.</li>
+                  <li>En las suites millonarias, debajo del tocador de al lado de la cama.</li>
+                  <li>En las cubiertas de popa, en un salvavidas al que subes por el lateral derecho del barco.</li>
+                  <li>En la sala de máquinas, justo enfrente en el suelo de la 4ª bebida.</li>
+                  <li>En la sala de máquinas también, pero en este caso en la habitación superior de detrás de la 4ª bebida. En la pared a la altura del suelo que pisas.</li>
+                </ol>
+                <p>Una vez pulsados todos, en el muelle de carga aparecerá una maqueta del sistema solar al lado del teletransporte.</p>`},
+                  {
+                    id: 'paso6', num: '06', title: 'Planetas', html: `
+                <p>En este último paso antes de la batalla final hay que ir a la maqueta del sistema solar que ha aparecido en el muelle de carga e interactuar con ella. En este paso, se iluminarán los planetas en un orden aleatorio que hay que memorizar (se recomienda grabarlo con el teléfono y pausar la partida para apuntar el orden de los planetas). Ojo, una vez interactúes, no pararán de salir zombies infinitos que no nos darán puntos si los matamos. Si fallamos en este paso, tendremos que pasar de ronda y volver a interactuar con la maqueta en la ronda siguiente (el orden de los planetas será el mismo, no es necesario verlo de nuevo).</p>
+                <p>Estos son los planetas de la maqueta para poder traducirlo y obtener el orden:</p>
+                <figure class="shot" data-slot="vod-maqueta">
+                  <img src="images/bo4/voyage/maqueta_planetas.jpeg" alt="Maqueta del sistema solar con los planetas para memorizar el orden" loading="lazy">
+                  <figcaption>Maqueta del sistema solar (para traducir el orden de los planetas)</figcaption>
+                </figure>
+                <p>Una vez tengamos el orden de los planetas (que siempre acabará con el Sol), tendremos que salir al exterior y dispararlos en el orden que hemos anotado. Para destruirlos, hay que dispararlos con un arma mejorada (se recomienda que no sea ni el Kraken ni el Helion Salvo, pues es muy difícil darles a la mayoría).</p>
+                <p>Los planetas salen en el cielo aunque a veces se tapan con las nubes, es esperar y buscar bien. La única excepción será Neptuno, que se mueve por el agua y a veces lo tapan los icebergs que hay.</p>
+                <p>Para identificarlos, así se ve cada planeta en el cielo:</p>
                 <figure class="shot" data-slot="vod-planeta">
-                  <img src="img/vod-planeta.jpg" alt="Disparando a un planeta brillante en el cielo del Atlántico" loading="lazy" onerror="this.closest('.shot').style.display='none'">
-                  <figcaption>Disparando al planeta real en el cielo nocturno</figcaption>
-                </figure>`},
+                  <img src="images/bo4/voyage/planetas_cielo.jpeg" alt="Aspecto de cada planeta visible en el cielo" loading="lazy">
+                  <figcaption>Cómo se ve cada planeta en el cielo</figcaption>
+                </figure>
+                <p>Cada vez que disparemos a un planeta, una esfera azul caerá del cielo a una ubicación del mapa específica y tendremos que ir a por ella e interactuar para que desaparezca. Tendremos solamente 30 segundos desde que cae al suelo y las zonas estarán llenas de zombies.</p>
+                <p>Estas son las ubicaciones de las esferas de cada planeta, para que podamos ir lo más rápido posible a por ellas:</p>
+                <ul>
+                  <li><strong>Marte:</strong> En la sala de máquinas, detrás de la 4ª bebida en la habitación superior.</li>
+                  <li><strong>Venus:</strong> En suites millonarias, en una cama.</li>
+                  <li><strong>Urano:</strong> En los camarotes individuales, en los baños.</li>
+                  <li><strong>Neptuno:</strong> En una barca en la cubierta de popa en el lateral, por las escaleras de al lado del escudo.</li>
+                  <li><strong>Luna:</strong> En la ventana de la gran escalera inferior, al lado de donde sale el 5º símbolo del paso anterior.</li>
+                  <li><strong>Júpiter:</strong> En la sala de máquinas, saltando enfrente de la 4ª bebida.</li>
+                  <li><strong>Mercurio:</strong> En la sala de correo.</li>
+                  <li><strong>Saturno:</strong> En el puente, en la sala del timón.</li>
+                  <li><strong>Sol:</strong> En el spawn, arriba en la punta del barco.</li>
+                </ul>
+                <p>En el último orbe, el del Sol, tienen que interactuar a la vez todos los jugadores de la partida. Una vez interactúen todos, tendréis que ir corriendo a la otra punta del mapa, en la popa. Sin embargo, en el camino aparecerán unos icebergs que nos cortarán el paso, por lo que tendremos que romperlos con nuestras armas. Uno de ellos a mitad de camino nos soltará una munición máxima, por lo que la munición no debería preocuparnos.</p>
+                <p class="note">Para este paso es recomendado llevar armas como la Kraken, el Helion Salvo mejorado y el escudo como arma especial, que funciona especialmente bien contra el hielo.</p>
+                <p>Una vez destruyamos el último iceberg podremos acceder a la batalla final.</p>`},
                   {
-                    id: 'paso4', num: '04', title: 'El Bloque de Hielo', html: `
-                <p>Lleva el Artefacto Real ya cargado a la Sala de Máquinas. Un bloque de hielo gigante bloquea una puerta: dispárale con el Kraken de Hielo (a ser posible mejorado en el Pack-a-Punch) hasta destrozarlo. Esto inunda temporalmente el barco y te lleva a la siguiente fase.</p>`},
-                  {
-                    id: 'paso5', num: '05', title: 'El Ojo de Odín', html: `
-                <p>Interactúa con el timón del Puente de Mando para acceder al combate final, dividido en 5 fases por distintas zonas del barco, contra un jefe con forma de ojo gigante congelado.</p>
-                <p>Cuando el Ojo empiece a brillar con fuerza (está cargando su ataque de muerte instantánea), lanza Homúnculos para distraer a los zombis, despliega el Cetro de Ra para protegerte y vacía el lanzacohetes Hellion Salvo directamente sobre la pupila. Su daño es tan alto que anula el ataque y acelera muchísimo el resto de fases.</p>
-                <p class="note">Este último tramo está contrastado con guías comunitarias adicionales, ya que tu documento no incluía marcas de tiempo de vídeo para esta parte (ver Fuentes).</p>`}
+                    id: 'paso7', num: '07', title: 'Batalla Final', html: `
+                <p>Esta batalla consta de 5 fases en las que tendremos que aguantar y matar tanto a zombies normales como especiales. En las dos primeras rondas, el ojo no nos atacará ni podremos hacerle daño, simplemente hay que sobrevivir a la horda.</p>
+                <p>En la tercera y cuarta ronda, el ojo comenzará a lanzarnos un rayo cada cierto tiempo. Justo en ese momento tendremos que aprovechar para hacerle daño al ojo hasta pasar de fase cuando le hayamos hecho el daño suficiente.</p>
+                <p>En la quinta y última fase, tendremos que hacer lo mismo que en las dos anteriores, pero esta vez tendremos que tener en cuenta que cada cierto daño que le hagamos al ojo, este empezará a cargar un ataque especial mientras hecha niebla. Aquí tendremos que hacerle mucho daño rápidamente y evitar que termine de cargar ese ataque, pues de lo contrario te matará de forma instantánea. Una vez evites este ataque 3 veces, habrás conseguido completar la batalla final. ¡Suerte!</p>`}
                 ]
               },
               {
@@ -3174,7 +3226,7 @@
               }
             ],
             sources: {
-              html: `<p>Guía basada en tu manual de referencia sobre Voyage of Despair, contrastada con guías comunitarias públicas del mapa para confirmar nombres y mecánicas (por ejemplo, el jefe final «Ojo de Odín» y el papel del Hellion Salvo).</p>
+              html: `<p>Guía basada íntegramente en las notas escritas a mano por el propio autor de la web tras completar el Easter Egg de Voyage of Despair en partida.</p>
                 <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
             }
           }
