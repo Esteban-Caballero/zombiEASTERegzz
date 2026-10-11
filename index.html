@@ -1008,6 +1008,25 @@
       padding: 6px 10px;
     }
 
+    /* ---------- mapa esquemático de zonas (pestaña «Mapa») ---------- */
+    .zone-map {
+      margin: 4px 0 12px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--stone-950);
+      padding: 10px;
+    }
+
+    .zone-map svg { display: block; width: 100%; min-width: 600px; height: auto; }
+    .zone-map .zm-box { fill: none; stroke: var(--stone-600); stroke-width: 1.25; }
+    .zone-map .zm-hub { fill: color-mix(in srgb, var(--ember) 16%, transparent); stroke: var(--ember); stroke-width: 2; }
+    .zone-map .zm-link path { fill: none; stroke: var(--stone-600); stroke-width: 1.25; }
+    .zone-map .zm-name { fill: var(--parchment); font-family: var(--font-body); font-weight: 600; font-size: 13px; }
+    .zone-map .zm-line { fill: var(--parchment-dim); font-family: var(--font-body); font-size: 11.5px; }
+    .zone-map .zm-strong { fill: var(--parchment); }
+    .zone-map .zm-head { fill: var(--gold); font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; }
+
 
     .sources {
       margin-top: 34px;
@@ -2864,6 +2883,319 @@
             sources: {
               html: `<p>Guía basada íntegramente en las notas escritas a mano por el propio autor de la web tras completar el Easter Egg de Voyage of Despair en partida.</p>
                 <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
+            }
+          },
+          {
+            id:'dead-of-the-night', name:'Dead of the Night', sub:'Trial by Ordeal', status:'active',
+            title:'Dead of the Night', subtitle:'Trial by Ordeal',
+            desc:'Guía de consulta rápida para la mansión de Alistair Rhodes: Pack-a-Punch, escudo, Balas de Plata, las dos mejoras de Alistair’s Folly, las tres ramas de las losas y el Hombre Lobo de las Sombras. Se puede completar en solitario.',
+            theme:{
+              accent:'#b0405a', accentDim:'#7a2b3e', gold:'#bfa66a', goldSoft:'#857345',
+              stone950:'#100b10', stone900:'#181018', stone800:'#22161f', stone700:'#30202c', stone600:'#463043', line:'#3a2635'
+            },
+            tags:{
+              efigie:{label:'Efigie', color:'#d08a3c'},
+              telescopio:{label:'Telescopio', color:'#d6c25a'},
+              caballeros:{label:'Caballeros', color:'#5fb3c9'}
+            },
+            tabs:[
+              {
+                id:'construibles', label:'Construibles',
+                items:[
+                  {id:'escudo-resumen', title:'Escudo Balístico', html:`
+                    <p>No hace falta al principio, pero conviene montarlo pronto: lo necesitarás para la sala secreta de la Biblioteca, el telescopio y las chimeneas. Son tres piezas y cada una aparece en una de tres ubicaciones posibles por partida.</p>
+                    <p>La mesa de crafteo está en la <strong>Sala de Fumadores</strong>, justo a la izquierda de la entrada a la Sala de Billar.</p>`},
+                  {id:'pieza-placa', title:'Pieza · Placa principal', html:`
+                    <ul>
+                      <li>Balcón Este, apoyada en la barandilla a la izquierda del Saug 9mm.</li>
+                      <li>Gran Escalera, contra el pilar a la derecha del Artefacto Centinela.</li>
+                      <li>Balcón Oeste, al fondo, bajo la ventana alta de la izquierda.</li>
+                    </ul>`},
+                  {id:'pieza-ventana', title:'Pieza · Ventana del escudo', html:`
+                    <ul>
+                      <li>Estudio, en una mesa cuadrada a la derecha de la entrada desde Billar.</li>
+                      <li>Biblioteca, en una estantería rota de la esquina, junto a un jarrón enorme.</li>
+                      <li>Biblioteca, en el sofá que bloquea la escalera inaccesible.</li>
+                    </ul>`},
+                  {id:'pieza-contraplaca', title:'Pieza · Contraplaca', html:`
+                    <ul>
+                      <li>Pasillo Este, en una silla de la esquina junto a una mesa con lámpara.</li>
+                      <li>Comedor, bajo un candelabro doble de pared, a la derecha de la barra.</li>
+                      <li>Comedor, en el suelo a la izquierda de la puerta a la Terraza del Invernadero.</li>
+                    </ul>`},
+                  {id:'balas-plata', title:'Balas de Plata · Fase 1 (plata fundida)', html:`
+                    <p>Se necesitan seis piezas y dos mesas. En la mesa de la <strong>Bodega</strong>, las tres piezas de plata se convierten en «Plata Fundida».</p>
+                    <ul>
+                      <li><strong>Trofeo/copa de plata:</strong> Comedor o Biblioteca (junto al sofá).</li>
+                      <li><strong>Candelabro de plata:</strong> Recibidor (sobre una mesa), Sala de Billar, Bodega o Salón Principal (mesa junto al Mozu).</li>
+                      <li><strong>Plato de plata:</strong> siempre en la Bodega.</li>
+                    </ul>
+                    <p class="note">Las guías no coinciden en la última ubicación del candelabro (Bodega o Salón Principal); mira en las dos.</p>`},
+                  {id:'balas-polvora', title:'Balas de Plata · Fase 2 (pólvora)', html:`
+                    <p>Las otras tres piezas van a la mesa de la <strong>Biblioteca</strong>, a la derecha de la escalera que une los dos pisos:</p>
+                    <ul>
+                      <li><strong>Carbón:</strong> chimenea del Salón Principal (vale cualquier chimenea).</li>
+                      <li><strong>Excremento de vampiro:</strong> Cementerio, en la esquina opuesta a la Caja Misteriosa.</li>
+                      <li><strong>Cristal amarillo (azufre):</strong> Laboratorio del Invernadero, en la mesa de los libros.</li>
+                    </ul>
+                    <p>Equipa las Balas de Plata en tu mejor arma: las usarás contra los hombres lobo y en varios pasos del Easter Egg.</p>`},
+                  {id:'folly-gratis', title:'Alistair’s Folly gratis', html:`
+                    <p>El arma maravilla es un revólver de plasma verde. Puede tocarte en la Caja Misteriosa, pero se consigue gratis con un código de cuatro símbolos.</p>
+                    <p>Junto a cada máquina de perks aparece un pequeño símbolo de color, a menudo fuera del mapa jugable:</p>
+                    <ul>
+                      <li><strong>Azul:</strong> Cementerio o Mausoleo.</li>
+                      <li><strong>Verde:</strong> Terraza del Invernadero o Jardines.</li>
+                      <li><strong>Amarillo:</strong> Terraza del Bosque.</li>
+                      <li><strong>Rojo:</strong> Dormitorio Principal, Galería Este, Bodega o Comedor.</li>
+                    </ul>
+                    <p>Apunta los cuatro e introdúcelos en la máquina de la Biblioteca, bajo la vitrina del arma. Si suena la confirmación, cógela gratis.</p>`}
+                ]
+              },
+              {
+                id:'easterEgg', label:'Easter Egg',
+                items:[
+                  {id:'ee-intro', title:'Antes de empezar', html:`
+                    <p>Las tres ramas finales son independientes y se hacen en cualquier orden. Los objetos previos (escudo, Balas de Plata y arma maravilla) también se consiguen en cualquier momento. Necesitas el arma maravilla con sus dos mejoras: <strong>Chaos Theory</strong> y después <strong>Alistair’s Annihilator</strong>.</p>
+                    <p>Si no te ubicas en alguna sala, mira la pestaña <button class="link-btn" onclick="switchTab('mapa')">Mapa</button>. Lo que se construye está en <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>.</p>`},
+                  {id:'artefacto', title:'Prerrequisito · Artefacto Centinela', html:`
+                    <p>Está sobre un pilar roto de la <strong>Gran Escalera</strong>, mirando al Salón Principal. Al activarlo se abren todas las barreras rojas del mapa.</p>`},
+                  {id:'cristales', title:'Prerrequisito · Cristales (Pack-a-Punch 1/2)', html:`
+                    <p>Busca tres jarrones que echen humo de color (azul, verde o morado) y rómpelos con el cuchillo o a disparos para descubrir el cristal. Cada cristal se activa con unas cuatro muertes cerca.</p>
+                    <ul>
+                      <li>Dormitorio Principal: mesa a los pies de la cama.</li>
+                      <li>Estudio: mesa entre dos sillones.</li>
+                      <li>Biblioteca: escritorio a la derecha de la estatua.</li>
+                      <li>Bodega: mesa central o caja de madera con velas.</li>
+                      <li>Sala de Trofeos: mesa frente a la chimenea.</li>
+                      <li>Pasillo de Dormitorios: mesa frente al sofá.</li>
+                    </ul>`},
+                  {id:'diapasones', title:'Prerrequisito · Diapasones (Pack-a-Punch 2/2)', html:`
+                    <p>Al mirar en un cristal cargado aparece un objeto, distinto en cada partida, que decide el desafío:</p>
+                    <ul>
+                      <li><strong>Reloj</strong> (Billar, Salón Principal o Comedor): el que tiene las agujas girando. Aguanta dentro del círculo del suelo matando zombis.</li>
+                      <li><strong>Perk:</strong> ve a esa máquina. La pantalla pasa a blanco y negro y hay que sobrevivir a los vampiros.</li>
+                      <li><strong>Otro objeto:</strong> aparece un fantasma; síguelo hasta su destino (normalmente el Cementerio), donde aparece el diapasón.</li>
+                    </ul>
+                    <p>Ubicaciones de los objetos del tercer tipo:</p>
+                    <ul>
+                      <li>Soga: Bodega, en el respaldo de una silla alta.</li>
+                      <li>Cuadro de la niña: Galería Este.</li>
+                      <li>Cuadro del anciano con la niña: Sala de Fumadores.</li>
+                      <li>Cuadro de la mujer: Sala de Música.</li>
+                      <li>Muñeca: Recibidor, en la pared izquierda junto a un jarrón alto.</li>
+                      <li>Pergamino: Estudio, dentro de una caja en una estantería.</li>
+                    </ul>
+                    <p>Con los tres diapasones se abre el Bosque desde la <strong>Terraza del Bosque</strong>, y con él el Pack-a-Punch. Al abrirlo aparece siempre un hombre lobo.</p>`},
+                  {id:'prima-materia', title:'Prima Materia (primera)', html:`
+                    <p>Mata un hombre lobo con las Balas de Plata y te soltará «Material del Caos de Hombre Lobo». Llévalo a la máquina grande del centro del <strong>Laboratorio del Invernadero</strong>, espera unos segundos y recoge la Prima Materia.</p>`},
+                  {id:'chaos-theory', title:'Mejora 1 · Chaos Theory', html:`
+                    <p>En la Biblioteca, golpea con el escudo el libro que tiene un símbolo dorado: se abre una sala secreta con una pieza dentro.</p>
+                    <p>En el Laboratorio del Invernadero, usa la mesa de la olla para fabricar el «lodo» y completa la mejora en la mesa de al lado.</p>`},
+                  {id:'nosferatu', title:'Mejora 2 · Nosferatu Carmesí', html:`
+                    <p>Mata vampiros con disparos cargados de la Chaos Theory hasta reunir <strong>4 bilis amarillas</strong>. Luego interactúa por detrás con la lápida que brilla en rojo en el Cementerio.</p>
+                    <p>Aparecerá un vampiro especial cubierto de sangre: al matarlo suelta el «Material del Caos de Nosferatu».</p>`},
+                  {id:'murcielago', title:'Mejora 2 · Murciélago de las linternas', html:`
+                    <p>En la escalera del Mausoleo hay linternas encendidas. Dispara con el arma maravilla a la que tiene un tono ligeramente más anaranjado. Cada acierto enciende otra: tienes unos <strong>90 segundos</strong> para apagar cinco en orden.</p>
+                    <p>Al apagar la quinta sale un murciélago gigante. Persíguelo y dispárale hasta que baje a otra linterna y suelte el «Material del Caos de Murciélago».</p>`},
+                  {id:'annihilator', title:'Mejora 2 · Alistair’s Annihilator', html:`
+                    <p>En el Bosque hay montículos de tierra. Mata zombis junto a ellos con disparos cargados de la Chaos Theory para que los desentierren; uno esconde la última pieza.</p>
+                    <p>Procesa en la máquina del Laboratorio los materiales del Nosferatu y del murciélago para obtener Prima Materia, y fabrica el Annihilator en la mesa.</p>`},
+                  {id:'tres-ramas', title:'Las tres ramas', html:`
+                    <p>Vuelve a los cristales del Pack-a-Punch y míralos de nuevo. Esta vez verás una <strong>armadura de caballero</strong>, una <strong>efigie de ramas</strong> o una <strong>lente de telescopio</strong>: cada imagen corresponde a una rama.</p>
+                    <p>Cada rama termina en una losa de piedra, y las tres losas abren la pelea final.</p>`},
+                  {id:'rama-efigie', num:'01', title:'Rama de la Efigie', tag:'efigie', html:`
+                    <ol>
+                      <li>En el Cementerio, dispara a cinco ramas de abedul que estén soltando hojas y recógelas.</li>
+                      <li>Interactúa con tu tumba en el Cementerio, la que tiene 1912 como fecha de muerte. En cooperativo, debe hacerlo el jugador al que corresponde.</li>
+                      <li>Con un disparo cargado del Annihilator, prende fuego al suelo delante del espantapájaros. El jugador que entró en modo espíritu interactúa con él para morir y pasar al modo «más allá», en el que es invisible para el resto.</li>
+                      <li>Ese jugador busca al fantasma de la mujer dentro de la mansión y la escolta hasta el espantapájaros hasta que arda. Ella suelta la losa.</li>
+                      <li>Todos interactúan con la losa: quedáis encerrados en el Cementerio y hay que sobrevivir a una oleada de zombis, vampiros y hombres lobo. Al terminar, recoged la losa.</li>
+                    </ol>`},
+                  {id:'rama-telescopio', num:'02', title:'Rama del Telescopio', tag:'telescopio', html:`
+                    <ol>
+                      <li>En el Cementerio, dispara con Balas de Plata a la varilla metálica de lo alto del Mausoleo. En cooperativo, todos a la vez.</li>
+                      <li>En el puente del Atrio Norte (la zona de inicio), gira los tres diales hasta alinear los anillos con la luz. Cuando aciertes, el cristal se rompe y la luz llega al Laboratorio.</li>
+                      <li>Busca tres símbolos del zodiaco y, en la misma sala que cada uno, sus marcas de arañazos. Suma todos los arañazos de esa sala e introduce los tres símbolos en la máquina del Laboratorio, de menor a mayor total. Si fallas, los símbolos cambian.</li>
+                      <li>Saca el escudo, gira la manivela de la cúpula y, cuando esté abierta del todo, golpéala con el escudo para que se quede fija.</li>
+                      <li>Activa la trampa eléctrica del Laboratorio, carga el escudo con ella y golpead el telescopio a la vez. La losa aparece bajo la plataforma del telescopio: interactúa con ella y supera el asedio.</li>
+                    </ol>
+                    <p>Posibles ubicaciones de los símbolos del zodiaco:</p>
+                    <ul>
+                      <li>Recibidor: a la izquierda de la estatua de Danu, bajo la mesa sin muñeca.</li>
+                      <li>Billar: junto a la mesa de billar o bajo la mesa de ajedrez.</li>
+                      <li>Bodega: estante inferior del botellero.</li>
+                      <li>Biblioteca: detrás de la estatua/máscara egipcia.</li>
+                      <li>Sala de Trofeos: junto a la ventana, detrás de la lámpara.</li>
+                      <li>Estudio: en la pared junto a las escaleras.</li>
+                      <li>Comedor: pilar roto de la puerta al Invernadero.</li>
+                      <li>Salón Principal: detrás del candelabro, a la derecha de las escaleras.</li>
+                    </ul>
+                    <p class="note">Una guía antigua habla de 1, 2 y 3 arañazos; las más completas dicen que hay que sumar todos los de la sala. Esta guía sigue la suma.</p>`},
+                  {id:'rama-caballeros', num:'03', title:'Rama de los Caballeros', tag:'caballeros', html:`
+                    <ol>
+                      <li>Pon un Núcleo de Energía en una trampa de fuego (por ejemplo, la de la Biblioteca) y actívala. Dispara al fuego con un disparo cargado del Annihilator para que se vuelva azul y crúzalo con el escudo equipado.</li>
+                      <li>Con el escudo en llamas azules, golpea chimeneas apagadas para encenderlas. Hay tres tandas de cuatro chimeneas, el paso tiene tiempo límite y la chimenea equivocada no se queda encendida. Al acabar cada tanda, recoge la gema de la última chimenea.</li>
+                      <li>Interactúa con las tres estatuas de caballero, una cada vez: Cementerio (a la derecha de la entrada), Jardines (por el camino a la derecha del cenador) y Salón Principal (junto a la entrada al Pasillo Este).</li>
+                      <li>Cada estatua suelta un orbe de color. Escóltalo hasta el Bosque y llévalo al símbolo del suelo de su mismo color; si te alejas, se para.</li>
+                      <li>Los símbolos se convierten en caballeros holográficos. Mata unos 10 zombis junto a cada uno para cargarlos y avanzarán hacia el Pack-a-Punch. Cuando aparezcan hombres lobo, mata uno dentro del triángulo que forman los caballeros: soltará la losa. Supera el asedio.</li>
+                    </ol>
+                    <p>Orden de las chimeneas según las guías:</p>
+                    <ul>
+                      <li><strong>Tanda 1:</strong> Sala de Fumadores → Biblioteca (derecha) → Biblioteca (izquierda) → Billar.</li>
+                      <li><strong>Tanda 2:</strong> Salón Principal (este) → Galería Este → Salón Principal (oeste) → Galería Oeste.</li>
+                      <li><strong>Tanda 3:</strong> Sala de Trofeos → Dormitorio Principal → Sala de Música → Comedor.</li>
+                    </ul>
+                    <p class="note">Las salas de cada tanda coinciden en todas las guías, pero el orden podría variar: si una chimenea no se queda encendida, prueba otra de la misma tanda.</p>`},
+                  {id:'jefe-final', num:'04', title:'Enfrentamiento Final', html:`
+                    <p>Con las tres losas, id a la puerta de piedra del Bosque (en el camino de la derecha según se entra desde la Terraza) e interactuad todos a la vez. Lleva a las Ruinas, la arena del Hombre Lobo de las Sombras.</p>
+                    <ol>
+                      <li><strong>Fase 1:</strong> tres estatuas sostienen cristales. Gíralos hacia la baldosa verde hasta que pasen de blanco a verde. El lobo persigue a alguien bajo tierra: atráelo a la baldosa y, cuando salga, descarga todo lo que tengas. Repite hasta que se marche.</li>
+                      <li><strong>Fase 2:</strong> aguanta oleadas de hombres lobo, vampiros (normales y Nosferatu) y zombis.</li>
+                      <li><strong>Fase 3:</strong> igual que la fase 1, pero la baldosa está oculta: gira los cristales hasta que se pongan verdes y aparezca.</li>
+                    </ol>
+                    <p class="note">Truco: en las esquinas de la arena hay una Munición Máxima y un Carpintero.</p>`}
+                ]
+              },
+              {
+                id:'secretos', label:'Secretos',
+                items:[
+                  {id:'savage-impaler', title:'Savage Impaler (ballesta)', html:`
+                    <ol>
+                      <li>Apaga con el cuchillo seis velas pequeñas: Dormitorio Principal, Sala de Música, Galería Este, Estudio, Comedor (pasillo) y Bodega.</li>
+                      <li>En el Bosque, a la derecha del Pack-a-Punch, interactúa con la lápida que tiene una espiral. Entrarás en una «fiebre de sangre» temporal; solo puedes activarla una vez por ronda y por jugador.</li>
+                      <li>Busca a la dama fantasma en la mansión y escóltala hasta el Mausoleo.</li>
+                      <li>Mata a los zombis azules que invoca en este orden: arma normal, equipo, arma de especialista y escudo. Cada tipo de muerte suelta una pieza: reloj, collar, anillo y pendiente.</li>
+                      <li>Dentro del Mausoleo, coloca las piezas en los círculos blancos y mata seis vampiros encima antes de que se agote el tiempo.</li>
+                      <li>Abre la Cripta interactuando con la gran tumba junto a las escaleras del Cementerio. Al coger la ballesta empieza un breve encierro que tienes que superar.</li>
+                    </ol>`},
+                  {id:'cancion', title:'Canción secreta «Mystery»', html:`
+                    <p>Dispara a cuatro monedas de colores:</p>
+                    <ul>
+                      <li>Salón Principal: bajo la mesa frente al Mozu.</li>
+                      <li>Pasillo Este: detrás de la puerta al Comedor.</li>
+                      <li>Bodega: dentro del barril roto junto a las escaleras.</li>
+                      <li>Biblioteca: detrás de la estatua de Ra, mejor vista desde el balcón roto del Estudio.</li>
+                    </ul>`},
+                  {id:'billar', title:'Billar (recompensa gratis)', html:`
+                    <p>Mete las bolas en orden del 1 al 9 y ganas 500 puntos. Si las metes todas por el lado contrario a la chimenea, se abre una estantería con una SG12, un elixir o un power-up.</p>`},
+                  {id:'barriles', title:'Barriles de la Bodega', html:`
+                    <p>Golpea con el cuchillo los seis barriles que gotean, del más rápido al más lento. Solo tienes un intento. Al final se abre un mueble con Balas de Plata o 500 puntos.</p>`},
+                  {id:'susto', title:'Susto (jumpscare)', html:`
+                    <p>Interactúa varias veces seguidas con el mismo cristal del Pack-a-Punch.</p>`}
+                ]
+              },
+              {
+                id:'mapa', label:'Mapa',
+                items:[
+                  {id:'mapa-zonas', title:'Mapa de zonas', html:`
+                    <p>El Salón Principal es el centro: de él salen el Bosque al norte, el ala oeste por el Pasillo Oeste y el ala este por el Pasillo Este. Cada caja recoge, con los nombres de la guía, lo que se hace allí.</p>
+                    <div class="zone-map">
+                      <svg viewBox="0 56 760 680" role="img" aria-label="Mapa esquemático de Dead of the Night: Bosque al norte, Cementerio al oeste, Invernadero al este">
+                        <text class="zm-head" x="24" y="172">ALA OESTE</text>
+                        <text class="zm-head" x="540" y="172">ALA ESTE</text>
+                        <g class="zm-link">
+                          <path d="M380 160V184 M380 240V264 M380 336V360 M380 416V440"/>
+                          <path d="M478 388H498V596H478"/>
+                          <path d="M282 320H262V684H282"/>
+                          <path d="M122 240V264 M122 352V376 M122 416V440 M220 300H282"/>
+                          <path d="M638 256V280 M638 336V360 M638 400V424 M736 380H750V556H736 M478 308H540"/>
+                        </g>
+                        <text class="zm-line" x="251" y="292" text-anchor="middle">P. Oeste</text>
+                        <text class="zm-line" x="519" y="300" text-anchor="middle">P. Este</text>
+
+                        <rect class="zm-box" x="282" y="72" width="196" height="88" rx="8"/>
+                        <text class="zm-name" x="294" y="96">Bosque</text>
+                        <text class="zm-line" x="294" y="112">Pack-a-Punch · montículos</text>
+                        <text class="zm-line" x="294" y="128">Símbolos de caballeros</text>
+                        <text class="zm-line" x="294" y="144">Puerta a las Ruinas (jefe)</text>
+
+                        <rect class="zm-box" x="282" y="184" width="196" height="56" rx="8"/>
+                        <text class="zm-name" x="294" y="208">Terraza del Bosque</text>
+                        <text class="zm-line" x="294" y="224">Se abre con 3 diapasones</text>
+
+                        <rect class="zm-hub" x="282" y="264" width="196" height="72" rx="8"/>
+                        <text class="zm-name" x="294" y="288">Salón Principal</text>
+                        <text class="zm-line zm-strong" x="294" y="304">Carbón · caballero</text>
+                        <text class="zm-line zm-strong" x="294" y="320">Reloj · zodiaco · moneda</text>
+
+                        <rect class="zm-box" x="282" y="360" width="196" height="56" rx="8"/>
+                        <text class="zm-name" x="294" y="384">Gran Escalera</text>
+                        <text class="zm-line" x="294" y="400">Artefacto Centinela</text>
+
+                        <rect class="zm-box" x="282" y="440" width="196" height="104" rx="8"/>
+                        <text class="zm-name" x="294" y="464">Planta alta (inicio)</text>
+                        <text class="zm-line" x="294" y="480">Atrio Norte: 3 diales</text>
+                        <text class="zm-line" x="294" y="496">Galerías Este y Oeste</text>
+                        <text class="zm-line" x="294" y="512">Balcones · Sala de Música</text>
+                        <text class="zm-line" x="294" y="528">Sala de Fumadores: escudo</text>
+
+                        <rect class="zm-box" x="282" y="568" width="196" height="56" rx="8"/>
+                        <text class="zm-name" x="294" y="592">Recibidor</text>
+                        <text class="zm-line" x="294" y="608">Altar de Danu · muñeca</text>
+
+                        <rect class="zm-box" x="282" y="648" width="196" height="72" rx="8"/>
+                        <text class="zm-name" x="294" y="672">Bodega</text>
+                        <text class="zm-line" x="294" y="688">Mesa de plata · plato</text>
+                        <text class="zm-line" x="294" y="704">Cristal · barriles · soga</text>
+
+                        <rect class="zm-box" x="24" y="184" width="196" height="56" rx="8"/>
+                        <text class="zm-name" x="36" y="208">Sala de Billar</text>
+                        <text class="zm-line" x="36" y="224">Reloj · zodiaco · billar</text>
+
+                        <rect class="zm-box" x="24" y="264" width="196" height="88" rx="8"/>
+                        <text class="zm-name" x="36" y="288">Biblioteca y Estudio</text>
+                        <text class="zm-line" x="36" y="304">Mesa balas · vitrina Folly</text>
+                        <text class="zm-line" x="36" y="320">Libro dorado · cristal</text>
+                        <text class="zm-line" x="36" y="336">Trampa de fuego · moneda</text>
+
+                        <rect class="zm-box" x="24" y="376" width="196" height="40" rx="8"/>
+                        <text class="zm-name" x="36" y="400">Camino del Cementerio</text>
+
+                        <rect class="zm-box" x="24" y="440" width="196" height="104" rx="8"/>
+                        <text class="zm-name" x="36" y="464">Cementerio y Mausoleo</text>
+                        <text class="zm-line" x="36" y="480">Excremento · lápida roja</text>
+                        <text class="zm-line" x="36" y="496">Tumba 1912 · espantapájaros</text>
+                        <text class="zm-line" x="36" y="512">Linternas · varilla</text>
+                        <text class="zm-line" x="36" y="528">Caballero · Cripta</text>
+
+                        <rect class="zm-box" x="540" y="184" width="196" height="72" rx="8"/>
+                        <text class="zm-name" x="552" y="208">Pasillo de Dormitorios</text>
+                        <text class="zm-line" x="552" y="224">Dormitorio Principal</text>
+                        <text class="zm-line" x="552" y="240">Sala de Trofeos</text>
+
+                        <rect class="zm-box" x="540" y="280" width="196" height="56" rx="8"/>
+                        <text class="zm-name" x="552" y="304">Comedor</text>
+                        <text class="zm-line" x="552" y="320">Contraplaca · copa plata</text>
+
+                        <rect class="zm-box" x="540" y="360" width="196" height="40" rx="8"/>
+                        <text class="zm-name" x="552" y="384">Terraza del Invernadero</text>
+
+                        <rect class="zm-box" x="540" y="424" width="196" height="56" rx="8"/>
+                        <text class="zm-name" x="552" y="448">Jardines</text>
+                        <text class="zm-line" x="552" y="464">Caballero · perk</text>
+
+                        <rect class="zm-box" x="540" y="504" width="196" height="104" rx="8"/>
+                        <text class="zm-name" x="552" y="528">Lab. del Invernadero</text>
+                        <text class="zm-line" x="552" y="544">Máquina Prima Materia</text>
+                        <text class="zm-line" x="552" y="560">Mesas de mejoras</text>
+                        <text class="zm-line" x="552" y="576">Telescopio · cúpula</text>
+                        <text class="zm-line" x="552" y="592">Trampa eléctrica · azufre</text>
+                      </svg>
+                    </div>
+                    <p class="note">Esquema sin escala, montado a partir de cómo la wiki describe las conexiones entre salas. Los portales del Laboratorio, el Mausoleo y el Bosque llevan al Salón Principal.</p>`}
+                ]
+              }
+            ],
+            sources:{
+              html:`<p>Guía contrastada entre varias guías comunitarias públicas. Donde no coinciden, se indica en la propia tarjeta.</p>
+                    <ul>
+                      <li><a href="https://gameranx.com/features/id/166803/article/black-ops-4-zombies-dead-of-the-night-the-complete-easter-egg-guide-step-by-step-walkthrough/" target="_blank" rel="noopener">Gameranx · Complete Easter Egg Guide</a></li>
+                      <li><a href="https://www.accelerated-ideas.com/news/dead-of-the-night-zombies-all-easter-egg-steps.aspx" target="_blank" rel="noopener">Accelerated Ideas · All Easter Egg Steps</a></li>
+                      <li><a href="https://www.accelerated-ideas.com/news/dead-of-the-night-zombies-side-easter-eggs.aspx" target="_blank" rel="noopener">Accelerated Ideas · Side Easter Eggs</a></li>
+                      <li><a href="https://segmentnext.com/black-ops-4-zombies-dead-of-the-night-easter-egg/" target="_blank" rel="noopener">SegmentNext · Dead of the Night Easter Egg Guide</a></li>
+                      <li><a href="https://callofduty.fandom.com/wiki/Dead_of_the_Night" target="_blank" rel="noopener">Call of Duty Wiki · Dead of the Night</a></li>
+                    </ul>
+                    <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
             }
           }
         ]
