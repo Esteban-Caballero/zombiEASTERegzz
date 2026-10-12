@@ -3201,6 +3201,269 @@
             }
           },
           {
+            id:'ancient-evil', name:'Ancient Evil', sub:'Greek Tragedy', status:'active',
+            title:'Ancient Evil', subtitle:'Greek Tragedy',
+            desc:'Guía de consulta rápida para la Delfos subterránea: Pegaso, Pack-a-Punch, escudo Voluntad de Apolo, las cuatro Manos de los Dioses y su mejora Redimida, y el jefe final contra el Pegaso corrupto y Perseo.',
+            theme:{
+              accent:'#d49a3a', accentDim:'#9a6a22', gold:'#e0c070', goldSoft:'#9a8448',
+              stone950:'#120f0a', stone900:'#1b1610', stone800:'#251e15', stone700:'#34291c', stone600:'#4b3c28', line:'#3e3221'
+            },
+            tags:{
+              caronte:{label:'Caronte', color:'#a07ac0'},
+              gaia:{label:'Gaia', color:'#6fae5a'},
+              hemera:{label:'Hemera', color:'#e0c060'},
+              urano:{label:'Urano', color:'#5fa3d9'}
+            },
+            tabs:[
+              {
+                id:'construibles', label:'Construibles',
+                items:[
+                  {id:'escudo', title:'Escudo «Voluntad de Apolo»', html:`
+                    <p>Es escudo y lanza a la vez, y la lanza es clave en el Easter Egg. Se fabrica en el <strong>Mercado</strong>, en la mesa junto al 9mm de pared.</p>
+                    <ul>
+                      <li><strong>Correa:</strong> Camino Superior, bajo el puente o al final de él.</li>
+                      <li><strong>Lanza:</strong> Estoa de los Atenienses o Cruce de los Tesoros.</li>
+                      <li><strong>Escudo:</strong> lo suelta un <strong>Gegenees</strong> (el gigante de seis brazos). Para forzar que aparezca hay que activar a Pegaso con la Brida Dorada.</li>
+                    </ul>`},
+                  {id:'golpe-trueno', title:'Golpe del Trueno (Pegasus Strike)', html:`
+                    <p>Arma especial para invocar a Pegaso; también puede salir en la Caja Misteriosa. Se monta en la <strong>forja azul</strong> de las Ruinas del Acantilado. Piezas, en el lado oscuro:</p>
+                    <ul>
+                      <li><strong>Río del Dolor:</strong> junto a los troncos caídos.</li>
+                      <li><strong>Paso de la Pitón:</strong> al pie de la escalera de entrada.</li>
+                      <li><strong>Ruinas del Acantilado:</strong> junto a un pilar grande.</li>
+                    </ul>
+                    <p class="note">Accelerated Ideas las llama yunque, martillo y púas, y cuenta la Brida Dorada como cuarta pieza.</p>`},
+                  {id:'manos', title:'Manos de los Dioses', html:`
+                    <ol>
+                      <li><strong>Mano dormida:</strong> golpea jarrones o montículos rodeados de gas morado. Hay unos 18, por ejemplo en la Estoa (banco, lado derecho del barco), el Cruce de los Tesoros (junto a la espada), el Monumento Espartano, el Río del Dolor, el Centro del Mundo y las Ruinas del Acantilado (junto a la jaula).</li>
+                      <li>Según GameRevolution, primero hay que cargarla matando zombis en un sitio de ritual.</li>
+                      <li>Llévala al altar del dios que quieras y supera el pequeño encierro:
+                        <ul>
+                          <li><strong>Caronte:</strong> Paso de la Pitón.</li>
+                          <li><strong>Urano:</strong> Centro del Mundo.</li>
+                          <li><strong>Hemera:</strong> Monumento de Crátero.</li>
+                          <li><strong>Gaia:</strong> Monumento Espartano.</li>
+                        </ul>
+                      </li>
+                    </ol>`},
+                  {id:'redimida-caronte', title:'Redimida · Caronte', tag:'caronte', html:`
+                    <p>Mata zombis con ella en el Río del Dolor. Bebe del río: la pantalla se pone roja y no regeneras vida. En el inframundo recoge tres monedas auténticas (hay falsas) y vuelve al altar.</p>`},
+                  {id:'redimida-urano', title:'Redimida · Urano', tag:'urano', html:`
+                    <p>Lanza zombis contra las tres flechas gigantes: Centro del Mundo (a la izquierda del Pack-a-Punch, junto a un pilar), Paso de la Pitón (junto al círculo ritual) y Ruinas del Acantilado (sobre el balcón). Coge las tres plumas azules, llévalas al altar y supera el desafío del portal.</p>`},
+                  {id:'redimida-hemera', title:'Redimida · Hemera', tag:'hemera', html:`
+                    <p>En el Camino Superior, dispara a los tres escudos dorados para girarlos y rebota el disparo en el cuenco cercano. Con los tres encendidos, golpea el cuenco, vuelve al altar y usa el portal.</p>`},
+                  {id:'redimida-gaia', title:'Redimida · Gaia', tag:'gaia', html:`
+                    <p>Dispara a las plantas de hojas rojas (Terraza del Templo, Cruce de los Tesoros y Estoa de los Atenienses) hasta que suelten una semilla. Lleva las tres al altar del Monumento Espartano y supera el portal.</p>
+                    <p class="note">La versión Redimida tiene 40 de munición y disparo cargado. El Easter Egg necesita las cuatro.</p>`}
+                ]
+              },
+              {
+                id:'easterEgg', label:'Easter Egg',
+                items:[
+                  {id:'ee-intro', title:'Antes de empezar', html:`
+                    <p>Necesitas el Pack-a-Punch, el escudo, el Golpe del Trueno y las <strong>cuatro Manos de los Dioses Redimidas</strong> (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>). En cooperativo, cada jugador lleva una mano distinta.</p>
+                    <p>Según Accelerated Ideas se puede hacer en solitario (aparece un bot en los pasos de varios jugadores). Gameranx pide jugar online, en modo Estándar y sin mutadores. Si no te ubicas, mira la pestaña <button class="link-btn" onclick="switchTab('mapa')">Mapa</button>.</p>`},
+                  {id:'artefacto', title:'Prerrequisito · Artefacto Centinela', html:`
+                    <p>Sal del Templo de Apolo y abre puertas hasta el <strong>Anfiteatro</strong>. El artefacto cuelga del brazo de una estatua femenina sin cabeza, con una estatua de rey detrás. Interactúa, sobrevive al encierro y recógelo.</p>`},
+                  {id:'pegaso', title:'Prerrequisito · Pegaso', html:`
+                    <ol>
+                      <li>Busca la <strong>Brida Dorada</strong> en un pedestal del <strong>Cruce de los Tesoros</strong> o de la <strong>Estoa de los Atenienses</strong> y mata al jefe que aparece.</li>
+                      <li>Id todos al círculo del <strong>Monumento Espartano</strong>: Pegaso os lleva al lado oscuro, al <strong>Río del Dolor</strong>.</li>
+                    </ol>`},
+                  {id:'pap', title:'Prerrequisito · Pack-a-Punch', html:`
+                    <ol>
+                      <li>En el <strong>Paso de la Pitón</strong>, dispara a la jaula colgante para tirarla y libera el águila con tu arma de especialista. Aparece un Gegenees.</li>
+                      <li>En las <strong>Ruinas del Acantilado</strong>, libera la segunda águila con el arma de especialista.</li>
+                      <li>Ve al <strong>Centro del Mundo</strong>: las águilas atacan el cristal rojo. Aguanta la oleada de esqueletos y aparece el Pack-a-Punch.</li>
+                    </ol>
+                    <p>A partir de aquí hay portales entre la ciudad y el lado oscuro.</p>`},
+                  {id:'paso1', num:'01', title:'Fuego azul y manchas de aceite', html:`
+                    <ol>
+                      <li>En el <strong>Templo de Apolo</strong>, completa tributos del Oráculo en rango Épico hasta que la llama se vuelva azul (según la guía, entre 2 y 6).</li>
+                      <li>Golpea la llama azul con el escudo: la lanza se enciende.</li>
+                      <li>Lanza la lanza contra las tres manchas de aceite tornasoladas:
+                        <ul>
+                          <li><strong>Cruce de los Tesoros:</strong> pared junto a la tienda roja.</li>
+                          <li><strong>Camino Superior:</strong> subiendo la escalera, roca entre estatuas.</li>
+                          <li><strong>Monumento Espartano:</strong> pared junto a la estatua.</li>
+                        </ul>
+                      </li>
+                    </ol>`},
+                  {id:'paso2', num:'02', title:'Mirar a los muertos a los ojos', tag:'caronte', html:`
+                    <ol>
+                      <li>En la fila de estatuas del <strong>Monumento Espartano</strong>, el jugador con <strong>Caronte Redimida</strong> dispara al proyectil de sangre del suelo. La pantalla cambia de filtro.</li>
+                      <li>Mata zombis y dispara a la estatua cuyos ojos brillen.</li>
+                      <li>Repite hasta que no quede ninguna.</li>
+                    </ol>
+                    <p class="note">Accelerated Ideas dice disparo cargado a los ojos azules; Gameranx, sin cargar a los ojos rojos. Prueba los dos.</p>`},
+                  {id:'paso3', num:'03', title:'Alinear a los ciudadanos (engranajes)', html:`
+                    <ol>
+                      <li>Con armas mejoradas, rompe las paredes donde unos ladrillos brillan un poco azules. Detrás hay engranajes:
+                        <ul>
+                          <li><strong>Cruce de los Tesoros:</strong> pared lateral de la tumba, detrás de la tienda roja.</li>
+                          <li><strong>Monumento Espartano:</strong> pared junto a la estatua de la lanza.</li>
+                          <li><strong>Cruce de los Tesoros:</strong> a la izquierda del Auger de pared, en la casa de fuera del mapa.</li>
+                        </ul>
+                      </li>
+                      <li>Clava la lanza en el engranaje pequeño cuando esté alineado con el grande: la estatua cercana gira.</li>
+                      <li>Con las tres estatuas mirando hacia dentro, lanza la lanza ardiendo por delante del pilar de cristal al engranaje grande de la sala del templo (mejor desde la <strong>Estoa de los Atenienses</strong>). El cristal sube y los rayos se cruzan.</li>
+                    </ol>`},
+                  {id:'paso4', num:'04', title:'El Ankh y la estatua de Ra', tag:'hemera', html:`
+                    <ol>
+                      <li>Atrae a un <strong>Gegenees</strong> al <strong>Cruce de los Tesoros</strong> y atúrdelo con el escudo para que dispare al cristal rojo: sale el <strong>Ankh</strong>.</li>
+                      <li>Pon el Ankh y la <strong>Hemera Redimida</strong> en la estatua de Ra de los <strong>Baños del Gimnasio</strong>.</li>
+                      <li>Ra proyecta un rayo contra una pared: defiéndelo de los esqueletos unos 45 segundos.</li>
+                      <li>La pared se abre: coge el <strong>Cetro</strong> y colócalo en la estatua. El rayo apunta al estanque y sube un pilar.</li>
+                    </ol>`},
+                  {id:'paso5', num:'05', title:'El ritual de Danu y el reloj de sol', tag:'gaia', html:`
+                    <ol>
+                      <li>En la <strong>Ofrenda de los Atálidas</strong>, dispara con <strong>Gaia Redimida</strong> al símbolo de la pared a la izquierda de la estatua de Danu y luego a los símbolos que se van encendiendo, en orden (1, 2, 3).</li>
+                      <li>Aparece un Gegenees con un bastón: mátalo y coge el bastón.</li>
+                      <li>Pon el bastón en el centro del reloj de sol.</li>
+                      <li>Mata un <strong>zombi eléctrico</strong> encima del reloj: se enciende el primer símbolo azul.</li>
+                      <li>Mata otro: gira un dial con símbolos naranjas y azules. Páralo cuando su azul quede junto al otro azul. Cuenta las vueltas, porque bajo tierra no se ve.</li>
+                      <li>Dos aciertos alinean los tres azules. Si fallas, la pantalla destella y repites.</li>
+                    </ol>
+                    <p class="note">Accelerated Ideas hace este paso antes que el de Ra y habla de enredaderas negras en la pared en vez de símbolos numerados.</p>`},
+                  {id:'paso6', num:'06', title:'Acierta tu color (galería de tiro)', html:`
+                    <ol>
+                      <li>En la sala interior del <strong>Anfiteatro</strong> hay cuatro símbolos de colores, uno por mano: cada jugador se pone en el suyo.</li>
+                      <li>Van apareciendo círculos de colores: el jugador de ese color se mete y mata zombis o dispara con su mano.</li>
+                      <li>Hay que ganar 3 de 5 rondas.</li>
+                    </ol>`},
+                  {id:'paso7', num:'07', title:'La puerta y la balista', html:`
+                    <ol>
+                      <li>En el <strong>Río del Dolor</strong>, junto al Spitfire de pared, dispara a los símbolos de la puerta en el orden de la escena inicial para que brillen en azul. Según Accelerated Ideas: número 14, círculo con una línea vertical, «a», «o», tres circulitos y triángulo.</li>
+                      <li>El jugador que lleve a <strong>Shaw</strong> se pone delante de la puerta: escena.</li>
+                      <li>Sube la escalera y pon el <strong>Golpe del Trueno</strong> en el símbolo azul: aparecen Pegaso y una balista gigante abajo.</li>
+                    </ol>`},
+                  {id:'paso8', num:'08', title:'Disparar la balista', tag:'urano', html:`
+                    <ol>
+                      <li>Desde el símbolo azul, dispara cargado con <strong>Urano Redimida</strong> al engranaje bajo la balista hasta que apunte a la pitón.</li>
+                      <li>Enciende la lanza en azul en el cuenco del <strong>Templo de Apolo</strong>.</li>
+                      <li>Pásala por la trampa de veneno del <strong>Paso de la Pitón</strong> para que se vuelva verde.</li>
+                      <li>Golpea la balista: dispara el virote verde y se abre el portal del <strong>Centro del Mundo</strong>, en el huevo.</li>
+                    </ol>`},
+                  {id:'paso9', num:'09', title:'Jefe final en el Olimpo', html:`
+                    <p>Entrad todos por el portal. La arena tiene tres zonas: la Fuente, las Columnas y el Bosque.</p>
+                    <ol>
+                      <li><strong>Fase 1, Pegaso corrupto:</strong> dispárale hasta que aterrice y usa el arma de especialista. Repite hasta que la arena se corrompa.</li>
+                      <li><strong>Fase 2, Perseo</strong> (soldado gigante con escudo y espada), en las Columnas: dispárale hasta que se arrodille y usa los especialistas mientras está en el suelo.</li>
+                      <li>Al caer suelta una llave y empieza la escena final.</li>
+                    </ol>`}
+                ]
+              },
+              {
+                id:'secretos', label:'Secretos',
+                items:[
+                  {id:'cancion', title:'Canción «Stormbound»', html:`
+                    <p>Dispara a cuatro monedas brillantes, en cualquier orden. No funciona sin conexión.</p>
+                    <ol>
+                      <li><strong>Mercado:</strong> al fondo a la izquierda, pasada la entrada del Templo de Apolo, en la mesa que forma una ventana de zombis, a la izquierda de la mesa del escudo.</li>
+                      <li><strong>Monumento Espartano:</strong> en el patio pequeño con una estatua, bajando desde la puerta de la Estoa. Mira a la barandilla sobre la ventana de zombis ensangrentada.</li>
+                      <li><strong>Río del Dolor:</strong> sigue la pared derecha hasta una estatua femenina; la moneda morada está detrás, a la izquierda.</li>
+                      <li><strong>Ruinas del Acantilado:</strong> bajo una mesa de la sala de la forja. Tírate al suelo a la derecha de la forja para verla.</li>
+                    </ol>`},
+                  {id:'tributos', title:'Tributos del Oráculo', html:`
+                    <p>En el <strong>Templo de Apolo</strong> el Oráculo pide tributos. Hacen falta en rango Épico para el paso 01 del Easter Egg.</p>
+                    <p class="note">No he encontrado otros secretos contrastados de este mapa.</p>`}
+                ]
+              },
+              {
+                id:'mapa', label:'Mapa',
+                items:[
+                  {id:'mapa-zonas', title:'Mapa de zonas', html:`
+                    <p>El Monumento Espartano es la puerta al lado oscuro: Pegaso os lleva de ahí al Río del Dolor. El portal al jefe final se abre en el Centro del Mundo.</p>
+                    <div class="zone-map">
+                      <svg viewBox="0 60 760 492" role="img" aria-label="Mapa esquemático de Ancient Evil: la ciudad de Delfos y el lado oscuro, unidos por Pegaso">
+                        <defs><marker id="ae-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="zm-arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+                        <rect class="zm-group" x="24" y="72" width="448" height="468" rx="10"/>
+                        <rect class="zm-group" x="496" y="72" width="240" height="372" rx="10"/>
+                        <text class="zm-head" x="40" y="94">DELFOS (LA CIUDAD)</text>
+                        <text class="zm-head" x="512" y="94">LADO OSCURO</text>
+                        <g class="zm-link">
+                          <path d="M456 136H510" marker-end="url(#ae-arrow)"/>
+                          <path d="M616 428V466" marker-end="url(#ae-arrow)"/>
+                        </g>
+                        <text class="zm-line" x="484" y="128" text-anchor="middle">Pegaso</text>
+                        <text class="zm-line" x="626" y="452">portal</text>
+
+                        <rect class="zm-box" x="40" y="108" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="132">Templo de Apolo</text>
+                        <text class="zm-line" x="52" y="148">Inicio · Oráculo · llama azul</text>
+                        <rect class="zm-hub" x="256" y="108" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="268" y="132">Monumento Espartano</text>
+                        <text class="zm-line zm-strong" x="268" y="148">Pegaso · Gaia · estatuas</text>
+
+                        <rect class="zm-box" x="40" y="180" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="204">Mercado</text>
+                        <text class="zm-line" x="52" y="220">Mesa del escudo · moneda</text>
+                        <rect class="zm-box" x="256" y="180" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="268" y="204">Anfiteatro</text>
+                        <text class="zm-line" x="268" y="220">Artefacto · galería de colores</text>
+
+                        <rect class="zm-box" x="40" y="252" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="276">Cruce de los Tesoros</text>
+                        <text class="zm-line" x="52" y="292">Brida · Ankh · aceite</text>
+                        <rect class="zm-box" x="256" y="252" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="268" y="276">Estoa de los Atenienses</text>
+                        <text class="zm-line" x="268" y="292">Brida · lanza · tiro final</text>
+
+                        <rect class="zm-box" x="40" y="324" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="348">Camino Superior</text>
+                        <text class="zm-line" x="52" y="364">Correa · aceite · escudos</text>
+                        <rect class="zm-box" x="256" y="324" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="268" y="348">Monumento de Crátero</text>
+                        <text class="zm-line" x="268" y="364">Altar de Hemera</text>
+
+                        <rect class="zm-box" x="40" y="396" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="420">Baños del Gimnasio</text>
+                        <text class="zm-line" x="52" y="436">Estatua de Ra</text>
+                        <rect class="zm-box" x="256" y="396" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="268" y="420">Ofrenda de los Atálidas</text>
+                        <text class="zm-line" x="268" y="436">Danu · reloj de sol</text>
+
+                        <rect class="zm-box" x="40" y="468" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="492">Terraza del Templo</text>
+                        <text class="zm-line" x="52" y="508">Planta de Gaia</text>
+
+                        <rect class="zm-box" x="512" y="108" width="208" height="72" rx="8"/>
+                        <text class="zm-name" x="524" y="132">Río del Dolor</text>
+                        <text class="zm-line" x="524" y="148">Llegada de Pegaso</text>
+                        <text class="zm-line" x="524" y="164">Caronte · puerta · balista</text>
+                        <rect class="zm-box" x="512" y="196" width="208" height="72" rx="8"/>
+                        <text class="zm-name" x="524" y="220">Paso de la Pitón</text>
+                        <text class="zm-line" x="524" y="236">Jaula · altar de Caronte</text>
+                        <text class="zm-line" x="524" y="252">Trampa de veneno</text>
+                        <rect class="zm-box" x="512" y="284" width="208" height="56" rx="8"/>
+                        <text class="zm-name" x="524" y="308">Ruinas del Acantilado</text>
+                        <text class="zm-line" x="524" y="324">Forja · jaula · moneda</text>
+                        <rect class="zm-box" x="512" y="356" width="208" height="72" rx="8"/>
+                        <text class="zm-name" x="524" y="380">Centro del Mundo</text>
+                        <text class="zm-line" x="524" y="396">Pack-a-Punch · Urano</text>
+                        <text class="zm-line" x="524" y="412">Portal al Olimpo</text>
+                        <rect class="zm-box" x="512" y="468" width="208" height="56" rx="8"/>
+                        <text class="zm-name" x="524" y="492">Olimpo (jefe final)</text>
+                        <text class="zm-line" x="524" y="508">Pegaso corrupto · Perseo</text>
+                      </svg>
+                    </div>
+                    <p class="note">Esquema por zonas, sin escala. Tras el Pack-a-Punch, los portales conectan las dos mitades. Las conexiones a pie no están dibujadas porque ninguna fuente las describe enteras.</p>`}
+                ]
+              }
+            ],
+            sources:{
+              html:`<p>Guía contrastada entre Accelerated Ideas, Gameranx y GameRevolution. Donde no coinciden, se indica en la propia tarjeta.</p>
+                    <ul>
+                      <li><a href="https://www.accelerated-ideas.com/news/ancient-evil-zombies-easter-egg-guide.aspx" target="_blank" rel="noopener">Accelerated Ideas · All Easter Egg Steps</a></li>
+                      <li><a href="https://gameranx.com/features/id/172361/article/black-ops-4-zombies-ancient-evil-how-to-complete-the-main-easter-egg-quest-full-step-by-step-guide/" target="_blank" rel="noopener">Gameranx · Main Easter Egg Quest</a></li>
+                      <li><a href="https://gameranx.com/features/id/172467/article/black-ops-4-zombies-ancient-evil-secret-song-easter-egg-guide/" target="_blank" rel="noopener">Gameranx · Secret Song</a></li>
+                      <li><a href="https://www.gamerevolution.com/?p=516377" target="_blank" rel="noopener">GameRevolution · Ancient Evil Easter eggs</a></li>
+                      <li><a href="https://callofduty.fandom.com/wiki/Ancient_Evil" target="_blank" rel="noopener">Call of Duty Wiki · Ancient Evil</a></li>
+                    </ul>
+                    <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
+            }
+          },
+          {
             id:'tag-der-toten', name:'Tag der Toten', sub:'Salvation Lies Above', status:'active',
             title:'Tag der Toten', subtitle:'Salvation Lies Above',
             desc:'Guía de consulta rápida para el final del Éter: tirolinas, Pack-a-Punch Dorado, Wunderwaffe DG, Caja de Música de Samantha y los 12 pasos hasta entregar el Dispositivo Agarthano al Ermitaño. No tiene jefe final.',
