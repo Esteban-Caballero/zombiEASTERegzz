@@ -1026,6 +1026,8 @@
     .zone-map .zm-line { fill: var(--parchment-dim); font-family: var(--font-body); font-size: 11.5px; }
     .zone-map .zm-strong { fill: var(--parchment); }
     .zone-map .zm-head { fill: var(--gold); font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; }
+    .zone-map .zm-arrowhead { fill: var(--stone-600); }
+    .zone-map .zm-group { fill: none; stroke: var(--line); stroke-width: 1.25; }
 
 
     .sources {
@@ -3194,6 +3196,323 @@
                       <li><a href="https://www.accelerated-ideas.com/news/dead-of-the-night-zombies-side-easter-eggs.aspx" target="_blank" rel="noopener">Accelerated Ideas · Side Easter Eggs</a></li>
                       <li><a href="https://segmentnext.com/black-ops-4-zombies-dead-of-the-night-easter-egg/" target="_blank" rel="noopener">SegmentNext · Dead of the Night Easter Egg Guide</a></li>
                       <li><a href="https://callofduty.fandom.com/wiki/Dead_of_the_Night" target="_blank" rel="noopener">Call of Duty Wiki · Dead of the Night</a></li>
+                    </ul>
+                    <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
+            }
+          },
+          {
+            id:'tag-der-toten', name:'Tag der Toten', sub:'Salvation Lies Above', status:'active',
+            title:'Tag der Toten', subtitle:'Salvation Lies Above',
+            desc:'Guía de consulta rápida para el final del Éter: tirolinas, Pack-a-Punch Dorado, Wunderwaffe DG, Caja de Música de Samantha y los 12 pasos hasta entregar el Dispositivo Agarthano al Ermitaño. No tiene jefe final.',
+            theme:{
+              accent:'#5fb0d4', accentDim:'#3d7c99', gold:'#c9b98a', goldSoft:'#8a7f5c',
+              stone950:'#0b1013', stone900:'#11181d', stone800:'#182229', stone700:'#22303a', stone600:'#334652', line:'#2a3a44'
+            },
+            tabs:[
+              {
+                id:'construibles', label:'Construibles',
+                items:[
+                  {id:'escudo', title:'Escudo', html:`
+                    <p>Tres piezas. Se monta en el banco de la <strong>Estación del Faro</strong>; el otro banco del mapa está en la <strong>Pasarela</strong> del barco.</p>
+                    <ul>
+                      <li><strong>Cuerpo / placa:</strong> Muelles (zona de inicio), contra las rocas nevadas junto a la entrada al pasadizo submarino. Otras opciones en la misma zona: a la izquierda del interruptor de energía contra el bote, en un surtidor de gasolina o en un palé.</li>
+                      <li><strong>Ventana:</strong> Grieta Helada, sobre la plataforma de hielo elevada (se llega saltando por las rampas). Gfinity la sitúa también tras los escombros de la izquierda del inicio o cerca de la Caja Misteriosa.</li>
+                      <li><strong>Asa:</strong> dentro del faro: planta 1 a la derecha de la entrada, planta 2 junto a la pared o la ventana, o planta 3 junto a la escalera.</li>
+                    </ul>
+                    <p class="note">Las fuentes no dan las mismas ubicaciones; aquí van las dos versiones.</p>`},
+                  {id:'dinamita', title:'Dinamita', html:`
+                    <p>Abre las barricadas de madera marcadas con una <strong>X roja</strong> (atajos y zonas cerradas).</p>
+                    <ol>
+                      <li>Congela a un <strong>zombi de fuego</strong> (bola de nieve, Tundra Gun o mucho rato en el agua) y mátalo: suelta una pieza.</li>
+                      <li>Repite hasta tener tres piezas.</li>
+                      <li>Fabrícala en cualquiera de los dos bancos. Cada fabricación da una sola dinamita.</li>
+                    </ol>`},
+                  {id:'bolas-nieve', title:'Bolas de nieve', html:`
+                    <p>Se cogen de los montoncitos de nieve repartidos por el mapa. Sirven para congelar zombis de fuego, para el Tundra Gun y para los orbes de sangre del Easter Egg.</p>`},
+                  {id:'paquete-calor', title:'Paquete de calor', html:`
+                    <p>Mejora permanente: no te congelas en el agua y nadas más rápido. Necesitas la tirolina y una dinamita.</p>
+                    <ol>
+                      <li>Vuela la barricada X de la <strong>Pasarela Exterior</strong> (base de la montaña).</li>
+                      <li>Coge la caja de cambios rota de la catapulta amarilla.</li>
+                      <li>Déjala en el montaplatos del <strong>nivel 4 del faro</strong>; el Ermitaño la arregla.</li>
+                      <li>Vuelve a colocarla en la catapulta.</li>
+                      <li>Lánzate por la izquierda, por la derecha y por el centro: en cada aterrizaje aparece una pieza.</li>
+                      <li>Fabrícalo en un banco.</li>
+                    </ol>`},
+                  {id:'wunderwaffe', title:'Wunderwaffe DG gratis', html:`
+                    <p>En la Caja Misteriosa cuesta 950 puntos. Gratis:</p>
+                    <ol>
+                      <li>Busca el carámbano con una llave dentro: sobre la entrada de la cueva bajo la cascada, en la barandilla de la plataforma del faro o en la escalera que sube al faro. Dispárale para tirarlo.</li>
+                      <li>Llévalo a la olla del <strong>Castillo de Proa</strong> y espera a que se derrita para coger la llave.</li>
+                      <li>Con la tirolina, sube a la base y abre la caja fuerte del <strong>Almacén de Especímenes</strong>.</li>
+                      <li>Dentro está el dispositivo Vril (barra dorada): mata unos 10 zombis para cargarlo.</li>
+                      <li>Entrégaselo al Ermitaño en el <strong>nivel 4 del faro</strong>: te da una llave.</li>
+                      <li>Abre con ella el baúl de esa misma sala.</li>
+                    </ol>
+                    <p>Mejorada en el Pack-a-Punch se llama <strong>Wunderwaffe DG-Funkenschütze</strong>.</p>`},
+                  {id:'caja-musica', title:'Caja de Música de Samantha', html:`
+                    <p>Granada especial; la necesitarás varias veces en el Easter Egg. Requiere la tirolina y la energía de Infusión Humana encendida.</p>
+                    <ol>
+                      <li><strong>Tarjeta perforada 1</strong>, en Descontaminación: en el lavabo, en una secadora o en la estación lavaojos.</li>
+                      <li><strong>Tarjeta perforada 2</strong>, en el Almacén de Especímenes: junto al váter, junto al correo o en el estante de bombonas.</li>
+                      <li>Mete las dos en el panel del <strong>Vestíbulo de Seguridad</strong>, espera a que salgan y recógelas.</li>
+                      <li>En <strong>Infusión Humana</strong>, mete una en cada ranura a los lados de la cámara acorazada.</li>
+                      <li>Sobrevive al encierro y coge la Caja de Música de la cámara.</li>
+                    </ol>`}
+                ]
+              },
+              {
+                id:'easterEgg', label:'Easter Egg',
+                items:[
+                  {id:'ee-intro', title:'Antes de empezar', html:`
+                    <p>Según la wiki, antes del paso 01 necesitas dos tótems de desafío completados, el Pack-a-Punch Dorado accesible, la Wunderwaffe DG, la Caja de Música y todas las barricadas X voladas (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>). Pon los subtítulos: las pistas del paso 02 llegan por voz.</p>
+                    <p>Si no te ubicas, mira la pestaña <button class="link-btn" onclick="switchTab('mapa')">Mapa</button>.</p>`},
+                  {id:'energia', title:'Prerrequisito · Energía', html:`
+                    <p>Dos interruptores: uno en la sala de inicio de los <strong>Muelles</strong> y otro en la sala de control del <strong>Puente</strong>, en lo alto del barco encallado.</p>`},
+                  {id:'pap', title:'Prerrequisito · Pack-a-Punch', html:`
+                    <p>En la cueva azulada del <strong>Acceso al Faro</strong> (entre el faro y la playa) golpea o dispara al fragmento de roca azul brillante, recógelo y déjalo en el montaplatos del <strong>nivel 4 del faro</strong>.</p>
+                    <p>El Pack-a-Punch cambia de sitio: está donde apunte el haz del faro (Playa, Laguna, Camino Hundido o Casa de Botes).</p>`},
+                  {id:'tirolina', title:'Prerrequisito · Tirolina', html:`
+                    <ol>
+                      <li><strong>Manivela 1, Popa:</strong> en la salita interior, junto a un barril amarillo en el saliente que da a la playa, o junto al montón de nieve de la puerta interior.</li>
+                      <li><strong>Manivela 2, Castillo de Proa:</strong> frente a la olla apoyada en una bobina de cable gigante, en el suelo a la izquierda del Auger de pared o junto al contenedor rojo.</li>
+                      <li>Pon una en el agujero de la <strong>Cubierta Solar</strong> y la otra en el del <strong>Castillo de Proa</strong>, y gira hasta tensar el cable.</li>
+                      <li>Vuelve al <strong>nivel 4 del faro</strong>: el montaplatos te baja el asa. Con ella llegas a la base de la montaña.</li>
+                    </ol>`},
+                  {id:'pap-dorado', title:'Prerrequisito · Pack-a-Punch Dorado', html:`
+                    <ol>
+                      <li>En <strong>Infusión Humana</strong> (base de la montaña), activa el interruptor de energía.</li>
+                      <li>Id todos a la vez a la catapulta de la <strong>Cubierta Solar</strong>: os lanza a la <strong>isla del iceberg</strong>.</li>
+                    </ol>
+                    <p>Mejora las armas al máximo y más barato. Te quedas un rato en la isla antes de volver.</p>
+                    <p class="note">La wiki habla de reparar la catapulta; Gameranx solo de activar la energía. Si no funciona, mira si le falta una pieza.</p>`},
+                  {id:'totems', title:'Prerrequisito · Tótems de desafío', html:`
+                    <p>Cinco tótems de tres desafíos cada uno: Grieta Helada, Estación del Faro, Playa, Castillo de Proa y Almacén de Especímenes. Para el Easter Egg bastan dos; con los cinco consigues el Thundergun (pestaña <button class="link-btn" onclick="switchTab('secretos')">Secretos</button>).</p>`},
+                  {id:'paso1', num:'01', title:'Los diales', html:`
+                    <ol>
+                      <li>Con dos tótems hechos, sube al <strong>nivel 4 del faro</strong>: el Ermitaño te da cuatro diales de colores.</li>
+                      <li>Ve al <strong>Almacén de Artefactos</strong> (sala de control superior), donde está la Sangre del Apothicon.</li>
+                      <li>Pon los diales en las cuatro ranuras de la pared y gira cada uno hasta que se ilumine y suene.</li>
+                    </ol>
+                    <p>Los números cambian en cada partida. Pistas: Bodega de Carga (azul), Castillo de Proa (naranja), Popa (morado) y Cubierta Solar (amarillo).</p>`},
+                  {id:'paso2', num:'02', title:'Tres ofrendas', html:`
+                    <p>La Sangre pide tres ofrendas de carne o hueso; cada pista de voz señala un sitio:</p>
+                    <ul>
+                      <li><em>Where Lungs Close</em>: Muelles, pasadizo submarino.</li>
+                      <li><em>Where Preservation Freezes</em>: Castillo de Proa, salvavidas.</li>
+                      <li><em>Where North Is Found</em>: Puente, frente al interruptor de energía.</li>
+                      <li><em>Where Lightning Aims</em>: vestíbulo de la base, junto al plano de la Wunderwaffe.</li>
+                      <li><em>Where Falls Freeze</em>: Bodega de Carga, junto a la escalera.</li>
+                      <li><em>Where Feet Slip</em>: tobogán de hielo, cueva detrás de la Casa de Botes.</li>
+                      <li><em>Where One Mysteries</em>: faro nivel 1, junto a la Caja Misteriosa.</li>
+                      <li><em>Where Thirst Dawns</em>: Castillo de Proa, junto a la máquina de bebida.</li>
+                      <li><em>Where Earth Crumbles</em>: Procesamiento Geológico, sala de las vagonetas.</li>
+                      <li><em>Where Filth Cleanses</em>: Descontaminación.</li>
+                      <li><em>Where Fire Sinks</em>: Camino Hundido, junto al fuego.</li>
+                      <li><em>Where Lines Berth</em>: Muelles, junto a la tirolina al faro.</li>
+                      <li><em>Where Madness Sleeps</em>: celdas de la base de la montaña.</li>
+                      <li><em>Where Power Ends</em>: Infusión Humana, junto al interruptor.</li>
+                      <li><em>Where The Hidden Burns</em>: Bodega de Carga, bajando desde el fuego.</li>
+                      <li><em>Where Bounded Sleep</em>: Popa, junto a la máquina de bebida.</li>
+                      <li><em>Where Crows Roost</em>: Castillo de Proa, barriles frente a la olla.</li>
+                      <li><em>Where Mountains Throw</em>: Pasarela Exterior, junto a la catapulta.</li>
+                      <li><em>Where Helixes Peak</em>: faro nivel 4.</li>
+                    </ul>
+                    <p class="note">La wiki añade otros sitios (cueva submarina de la Laguna, cama del Almacén de Especímenes, banco del Vestíbulo, grúa de la Popa, generador del Camino Oculto). Si una pista no encaja, mira ahí.</p>`},
+                  {id:'paso3', num:'03', title:'El recipiente Vril', html:`
+                    <p>La Sangre pide ahora el recipiente Vril con otra pista. Opciones:</p>
+                    <ul>
+                      <li>Tablón de anuncios del <strong>Almacén de Especímenes</strong>.</li>
+                      <li>Tabla de madera de la <strong>Gruta de Hielo</strong>.</li>
+                      <li>Corcho con dibujos infantiles del <strong>Procesamiento Geológico</strong>.</li>
+                      <li>Mapa enmarcado o corcho de la sala sin salida de la <strong>Casa de Botes</strong>.</li>
+                    </ul>
+                    <p>Golpea el sitio correcto: aparece una caja fuerte. Ábrela con una dinamita y coge el recipiente.</p>`},
+                  {id:'paso4', num:'04', title:'Los orbes de sangre', html:`
+                    <ol>
+                      <li>Vuelve al Almacén de Artefactos y espera a que la Sangre flote.</li>
+                      <li>Dispárale hasta que un orbe naranja salga volando a un punto aleatorio.</li>
+                      <li>Búscalo, tírale una bola de nieve para volverlo azul y dispárale para mandarlo de vuelta. No te acerques demasiado o huye.</li>
+                      <li>Tres veces; después recoge el <strong>Sello de la Dualidad</strong>.</li>
+                    </ol>`},
+                  {id:'paso5', num:'05', title:'La hoguera', html:`
+                    <p>Pon el Sello en la hoguera del <strong>Camino Hundido</strong> y lanza una <strong>Caja de Música</strong> al fuego: se vuelve azul. Recoge el Sello.</p>`},
+                  {id:'paso6', num:'06', title:'Las piedras de esteatita', html:`
+                    <ol>
+                      <li>El Ermitaño (nivel 4 del faro) te da dos piedras.</li>
+                      <li>Pon una en la trampa de fuego de la <strong>Casa de Botes</strong> (Gameranx dice la del <strong>Anexo del Faro</strong>) y actívala para calentarla.</li>
+                      <li>Pon la otra en la trampa de hielo de <strong>Descontaminación</strong> (entre Descontaminación y la Pasarela Superior) y actívala para congelarla.</li>
+                      <li><strong>Sin pisar el agua</strong>, ve a <strong>Infusión Humana</strong>, colócalas en el panel y coge el fusible.</li>
+                    </ol>`},
+                  {id:'paso7', num:'07', title:'El fusible y la puerta', html:`
+                    <ol>
+                      <li>Pon el fusible en el panel junto a la puerta metálica de la <strong>Estación del Faro</strong>. Nikolai dice que falta energía.</li>
+                      <li>Dispárale con la Wunderwaffe a la batería roja que cuelga de las torres eléctricas, cerca de la entrada de la base y de la Plataforma de Carga.</li>
+                      <li>Mata zombis eléctricos junto a los tres generadores: Estación del Faro (plataforma superior, junto a un barril), Acceso al Faro (junto al MX9 de pared) y Casa de Botes (junto a la trampa).</li>
+                      <li>Se abre la puerta: coge el <strong>Fragmento Elemental</strong>.</li>
+                    </ol>`},
+                  {id:'paso8', num:'08', title:'Segunda purificación', html:`
+                    <p>Repite los orbes de sangre (paso 04) y la hoguera con otra Caja de Música (paso 05).</p>`},
+                  {id:'paso9', num:'09', title:'El encierro del Ermitaño', html:`
+                    <p>Lleva el Sello al montaplatos del <strong>nivel 4 del faro</strong>. Empieza un encierro: sobrevive y recupera el Sello.</p>`},
+                  {id:'paso10', num:'10', title:'Cargar en los Pack-a-Punch', html:`
+                    <p>Pon el Sello en el Pack-a-Punch de la <strong>Playa</strong>, la <strong>Laguna</strong>, el <strong>Camino Hundido</strong> y la <strong>Casa de Botes</strong> (el haz del faro dice cuál está activo) y mata zombis cerca hasta cargarlo en cada uno.</p>
+                    <p class="note">Gameranx añade otra vuelta de Sangre y hoguera después; la wiki no. Si no avanza, prueba esa versión.</p>`},
+                  {id:'paso11', num:'11', title:'Pack-a-Punch Dorado y el mar de lava', html:`
+                    <ol>
+                      <li>Pon el Sello en el <strong>Pack-a-Punch Dorado</strong> de la isla y cárgalo matando zombis.</li>
+                      <li>Se convierte en un escudo rojo que te protege mientras estés dentro. El agua se vuelve lava.</li>
+                      <li>Escóltalo hasta <strong>Infusión Humana</strong> sin salir del escudo. Cuando se pare, mata zombis para que siga.</li>
+                      <li>Al llegar, el escudo se encoge: aguanta hasta que desaparezca.</li>
+                    </ol>`},
+                  {id:'paso12', num:'12', title:'Final', html:`
+                    <ol>
+                      <li>Recoge el <strong>Dispositivo Agarthano</strong> y déjalo en el montaplatos del <strong>nivel 4 del faro</strong>.</li>
+                      <li>El dispositivo abre un portal que se lleva al Ermitaño. Gameranx dice que todos los jugadores deben estar en la <strong>Cubierta Solar</strong>.</li>
+                      <li>El dispositivo baja flotando al <strong>Castillo de Proa</strong>, junto a la olla: cógelo para ver la escena final.</li>
+                      <li>Después controlas a Samantha y al pequeño Edward Richtofen: caminad juntos hasta salir del Éter Oscuro.</li>
+                    </ol>`}
+                ]
+              },
+              {
+                id:'secretos', label:'Secretos',
+                items:[
+                  {id:'thundergun', title:'Thundergun', html:`
+                    <p>Completa los cinco tótems de desafío y sube al <strong>nivel 4 del faro</strong>: el Ermitaño te da una llave para el cofre del Grupo Ascension del faro.</p>`},
+                  {id:'tundra', title:'Tundra Gun', html:`
+                    <p>Dale con una bola de nieve a cinco dianas antes de que se acabe el tiempo:</p>
+                    <ol>
+                      <li>Encima de la puerta de la base del Grupo 935, junto a la Plataforma de Carga.</li>
+                      <li>En una pared de la Gruta de Hielo.</li>
+                      <li>Junto a la catapulta de la Cubierta Solar.</li>
+                      <li>En el pilar de la escalera del nivel 3 del faro.</li>
+                      <li>En un pilar de la Bodega de Carga.</li>
+                    </ol>
+                    <p>Se abre un cofre junto a la última diana, en la Bodega de Carga.</p>`},
+                  {id:'nieve-dorada', title:'Bolas de nieve doradas', html:`
+                    <ol>
+                      <li>Dale con una bola de nieve a los cuatro títeres de calcetín: Camino Hundido, Cubierta Solar, faro y Procesamiento Geológico.</li>
+                      <li>Carga las tres hogueras azules (cajas de almas) de la Playa, la Casa de Botes y la Grieta Helada.</li>
+                      <li>En <strong>Infusión Humana</strong>, dispara al bote del bazo del Ermitaño y cógelo. Empieza una cuenta atrás; el agua la ralentiza.</li>
+                      <li>Llévaselo al Ermitaño al faro: te da las bolas de nieve doradas.</li>
+                    </ol>`},
+                  {id:'figuritas', title:'Power-up de bebida gratis (figuritas)', html:`
+                    <ol>
+                      <li>Recoge cinco figuritas de madera, cada una junto a un Pack-a-Punch mientras está activo: ciervo almizclero (Casa de Botes), pájaro (Playa), ardilla (Laguna), Apothicon (Camino Hundido) y Margwa (Pack-a-Punch Dorado).</li>
+                      <li>Mételas en la maleta de la <strong>Playa</strong>.</li>
+                      <li>En la ronda siguiente salen zombis eléctricos: mátalos todos y aparece un power-up de bebida junto a la maleta.</li>
+                    </ol>`},
+                  {id:'cancion-light', title:'Canción «A Light from the Shore»', html:`
+                    <p>Interactúa con tres armas que recuerdan a la intro de Call of the Dead:</p>
+                    <ul>
+                      <li>La hoz de la <strong>Gruta de Hielo</strong>.</li>
+                      <li>El machete al final del <strong>Camino Oculto</strong>, cerca de la Playa.</li>
+                      <li>La horquilla de paja de la <strong>Plataforma de Carga</strong> de la base.</li>
+                    </ul>`},
+                  {id:'cancion-reflections', title:'Canción «Reflections»', html:`
+                    <p>Interactúa tres veces con la puerta metálica donde estaba encerrado el equipo Ultimis en Call of the Dead.</p>`},
+                  {id:'congelacion', title:'Modo congelación (ronda 200+)', html:`
+                    <ol>
+                      <li>Deja que te congele del todo el agua y libérate a golpes en las diez zonas de agua: Muelles, Grieta Helada, Laguna, Gruta de Hielo, Ensenada del Faro, Bodega de Carga, Camino Oculto, Playa, Almacén de Artefactos y Camino Hundido.</li>
+                      <li>Aparece un botón junto a un bloque de hielo en la zona de inicio. Al pulsarlo os quedáis encerrados y Samantha dice «Don't freeze!».</li>
+                      <li>Termina la ronda corriendo sin parar. El juego salta a la ronda 200 o más.</li>
+                    </ol>`},
+                  {id:'zona-secreta', title:'Zona secreta de la catapulta', html:`
+                    <ol>
+                      <li>En la <strong>Pasarela Exterior</strong>, acércate agachado a la esquina trasera izquierda de la catapulta, entrando por la izquierda.</li>
+                      <li>Gira en el sentido de las agujas del reloj: te lanza a la zona secreta.</li>
+                      <li>Hay que nadar un túnel largo: lleva el Paquete de calor y el Piolet (recompensa de desafío).</li>
+                    </ol>`},
+                  {id:'romero', title:'Gafas de Romero', html:`
+                    <p>En una mesa de la <strong>Estación del Faro</strong>. Interactuar da 500 puntos y un homenaje a George A. Romero.</p>`}
+                ]
+              },
+              {
+                id:'mapa', label:'Mapa',
+                items:[
+                  {id:'mapa-zonas', title:'Mapa de zonas', html:`
+                    <p>El faro es el centro del Easter Egg: el Ermitaño del nivel 4 te da y te arregla casi todo. La tirolina de su cima lleva a la base de la montaña, y la catapulta de la Cubierta Solar, a la isla del Pack-a-Punch Dorado.</p>
+                    <div class="zone-map">
+                      <svg viewBox="0 64 760 384" role="img" aria-label="Mapa esquemático de Tag der Toten: el faro en el centro, tirolinas a los muelles y a la base, catapulta a la isla">
+                        <defs><marker id="tdt-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="zm-arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+                        <g class="zm-link">
+                          <path d="M216 116H278" marker-end="url(#tdt-arrow)"/>
+                          <path d="M472 184H534" marker-end="url(#tdt-arrow)"/>
+                          <path d="M472 352H534" marker-end="url(#tdt-arrow)"/>
+                        </g>
+                        <text class="zm-line" x="248" y="108" text-anchor="middle">tirolina</text>
+                        <text class="zm-line" x="504" y="176" text-anchor="middle">tirolina</text>
+                        <text class="zm-line" x="504" y="344" text-anchor="middle">catapulta</text>
+
+                        <rect class="zm-box" x="24" y="80" width="192" height="72" rx="8"/>
+                        <text class="zm-name" x="36" y="104">Muelles (inicio)</text>
+                        <text class="zm-line" x="36" y="120">Energía 1 · pieza escudo</text>
+                        <text class="zm-line" x="36" y="136">Tirolina al faro</text>
+
+                        <rect class="zm-hub" x="280" y="80" width="192" height="136" rx="8"/>
+                        <text class="zm-name" x="292" y="104">Faro</text>
+                        <text class="zm-line zm-strong" x="292" y="120">Estación: banco · fusible</text>
+                        <text class="zm-line zm-strong" x="292" y="136">puerta metálica · gafas</text>
+                        <text class="zm-line zm-strong" x="292" y="152">Acceso: roca azul · MX9</text>
+                        <text class="zm-line zm-strong" x="292" y="168">Niveles 1–3: asa escudo</text>
+                        <text class="zm-line zm-strong" x="292" y="184">Nivel 4: Ermitaño</text>
+                        <text class="zm-line zm-strong" x="292" y="200">montaplatos · cofres</text>
+
+                        <rect class="zm-box" x="536" y="80" width="192" height="136" rx="8"/>
+                        <text class="zm-name" x="548" y="104">Base del Grupo 935</text>
+                        <text class="zm-line" x="548" y="120">Infusión Humana: energía</text>
+                        <text class="zm-line" x="548" y="136">cámara Caja de Música</text>
+                        <text class="zm-line" x="548" y="152">Especímenes: caja fuerte</text>
+                        <text class="zm-line" x="548" y="168">Descontaminación: tarjeta</text>
+                        <text class="zm-line" x="548" y="184">Vestíbulo: panel tarjetas</text>
+                        <text class="zm-line" x="548" y="200">P. Exterior: catapulta</text>
+
+                        <rect class="zm-box" x="24" y="264" width="192" height="136" rx="8"/>
+                        <text class="zm-name" x="36" y="288">Agua y cuevas</text>
+                        <text class="zm-line" x="36" y="304">Playa: PaP · maleta</text>
+                        <text class="zm-line" x="36" y="320">Laguna: PaP</text>
+                        <text class="zm-line" x="36" y="336">Camino Hundido: PaP</text>
+                        <text class="zm-line" x="36" y="352">hoguera azul</text>
+                        <text class="zm-line" x="36" y="368">Grieta Helada: escudo</text>
+                        <text class="zm-line" x="36" y="384">Gruta de Hielo · C. Oculto</text>
+
+                        <rect class="zm-box" x="280" y="264" width="192" height="168" rx="8"/>
+                        <text class="zm-name" x="292" y="288">Barco (Tugarin)</text>
+                        <text class="zm-line" x="292" y="304">Puente: energía 2</text>
+                        <text class="zm-line" x="292" y="320">C. de Proa: olla · manivela</text>
+                        <text class="zm-line" x="292" y="336">Popa: manivela</text>
+                        <text class="zm-line" x="292" y="352">Cubierta Solar: catapulta</text>
+                        <text class="zm-line" x="292" y="368">Pasarela: banco</text>
+                        <text class="zm-line" x="292" y="384">Bodega · C. de Botes (PaP)</text>
+                        <text class="zm-line" x="292" y="400">Almacén de Artefactos:</text>
+                        <text class="zm-line" x="292" y="416">Sangre del Apothicon</text>
+
+                        <rect class="zm-box" x="536" y="264" width="192" height="104" rx="8"/>
+                        <text class="zm-name" x="548" y="288">Isla del iceberg</text>
+                        <text class="zm-line" x="548" y="304">Pack-a-Punch Dorado</text>
+                        <text class="zm-line" x="548" y="320">Se llega en catapulta</text>
+                        <text class="zm-line" x="548" y="336">desde la Cubierta Solar</text>
+                        <text class="zm-line" x="548" y="352">(todos a la vez)</text>
+                      </svg>
+                    </div>
+                    <p class="note">Esquema por zonas, sin escala. Solo se dibujan los viajes especiales; a pie las zonas se conectan entre sí. El Acceso al Faro es la cueva que une el faro con la playa.</p>`}
+                ]
+              }
+            ],
+            sources:{
+              html:`<p>Guía contrastada entre la wiki de Call of Duty (base), Gameranx y Gfinity. Donde no coinciden, se indica en la propia tarjeta.</p>
+                    <ul>
+                      <li><a href="https://callofduty.fandom.com/wiki/Salvation_Lies_Above" target="_blank" rel="noopener">Call of Duty Wiki · Salvation Lies Above</a></li>
+                      <li><a href="https://callofduty.fandom.com/wiki/Tag_der_Toten" target="_blank" rel="noopener">Call of Duty Wiki · Tag der Toten</a></li>
+                      <li><a href="https://gameranx.com/features/id/183196/article/black-ops-4-zombies-tag-der-toten-how-to-complete-the-main-easter-egg-salvation-lies-above-guide/" target="_blank" rel="noopener">Gameranx · Main Easter Egg</a></li>
+                      <li><a href="https://gameranx.com/features/id/182146/article/black-ops-4-tag-der-toten-how-to-unlock-the-golden-pack-a-punch-gun-upgrade-guide/" target="_blank" rel="noopener">Gameranx · Golden Pack-a-Punch</a></li>
+                      <li><a href="https://gameranx.com/features/id/182181/article/black-ops-4-zombies-tag-der-toten-how-to-get-the-riot-shield-locations-guide/" target="_blank" rel="noopener">Gameranx · Riot Shield</a></li>
+                      <li><a href="https://gameranx.com/features/id/182267/article/black-ops-4-zombies-tag-der-toten-how-to-craft-dynamite-bombs-destroy-x-barriers/" target="_blank" rel="noopener">Gameranx · Dynamite</a></li>
+                      <li><a href="https://gameranx.com/features/id/182268/article/black-ops-4-zombies-tag-der-toten-how-to-get-the-wunderwaffe-dg-wonder-weapon-guide/" target="_blank" rel="noopener">Gameranx · Wunderwaffe DG</a></li>
+                      <li><a href="https://gameranx.com/features/id/183260/article/black-ops-4-zombies-tag-der-toten-how-to-get-samanthas-music-box-unlocking-the-vault-guide/" target="_blank" rel="noopener">Gameranx · Samantha’s Music Box</a></li>
+                      <li><a href="https://gameranx.com/features/id/183261/article/black-ops-4-zombies-tag-der-toten-how-to-craft-heat-packs-earn-immunity-to-freezing/" target="_blank" rel="noopener">Gameranx · Heat Packs</a></li>
+                      <li><a href="https://www.gfinityesports.com/article/tag-der-toten-how-to-get-a-free-wunderwaffe-in-black-ops-4-s-dlc-4-call-of-the-dead-remake" target="_blank" rel="noopener">Gfinity · Free Wunderwaffe</a></li>
+                      <li><a href="https://www.gfinityesports.com/article/tag-der-toten-how-to-build-the-riot-shield-in-black-ops-4-s-dlc-4-call-of-the-dead-remake" target="_blank" rel="noopener">Gfinity · Riot Shield</a></li>
                     </ul>
                     <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
             }
