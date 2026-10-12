@@ -3829,6 +3829,252 @@
             }
           },
           {
+            id:'alpha-omega', name:'Alpha Omega', sub:'Electromagnetic Awakening Party', status:'active',
+            title:'Alpha Omega', subtitle:'Electromagnetic Awakening Party',
+            desc:'Guía de consulta rápida para Nuketown ampliado: energía, Pack-a-Punch, escudo, telepads y los 9 pasos guiados por el ordenador Rushmore hasta el jefe final contra el Avogadro. Solo funciona online y sin mutadores.',
+            theme:{
+              accent:'#86c23a', accentDim:'#5c8a24', gold:'#d8c25a', goldSoft:'#958540',
+              stone950:'#0d100a', stone900:'#141810', stone800:'#1c2216', stone700:'#283020', stone600:'#3a452e', line:'#2f3826'
+            },
+            tabs:[
+              {
+                id:'construibles', label:'Construibles',
+                items:[
+                  {id:'escudo', title:'Escudo', html:`
+                    <p>Se monta en el dormitorio de la planta de arriba de la <strong>Casa Verde</strong> (lado izquierdo del cul-de-sac). Absorbe los ataques eléctricos del Avogadro en el jefe final.</p>
+                    <ul>
+                      <li><strong>Base:</strong> cul-de-sac, apoyada en el coche verde frente al garaje de la Casa Verde o en el frontal del autobús destrozado.</li>
+                      <li><strong>Ventana:</strong> Dormitorios del búnker, junto a una cómoda cerca del túnel al Salón, en la estantería metálica junto al túnel al Generador o en un sofá amarillo de lunares junto a una estantería caída.</li>
+                      <li><strong>Asa:</strong> Operaciones, en la mesa bajo la pared de monitores junto a la escalera, o en el suelo del garaje apoyada en los archivadores.</li>
+                    </ul>`},
+                  {id:'telepads', title:'Amplificadores de telepad', html:`
+                    <p>Una fabricación da dos amplificadores; pon uno en cada telepad que quieras usar. Se monta en el banco del <strong>Control APD</strong> (búnker).</p>
+                    <ul>
+                      <li><strong>Pieza 1, Centro de Transfusión:</strong> taquilla abierta a la izquierda de la puerta, bajo la silla de operaciones o en el patio.</li>
+                      <li><strong>Pieza 2, Casa Verde:</strong> junto a la puerta principal, en la cocina o en el balcón de la segunda planta.</li>
+                      <li><strong>Pieza 3, Generador:</strong> esquina del fondo a la izquierda junto a los barriles azules, o frente a la máquina de bebida.</li>
+                    </ul>
+                    <p>Cada telepad se usa una vez por ronda. El paso 05 del Easter Egg los necesita en la <strong>Casa de la Energía</strong> y la <strong>Entrada del Recinto</strong>.</p>
+                    <p class="note">SegmentNext dice que se pueden montar en cualquier banco.</p>`},
+                  {id:'raygun', title:'Ray Gun Mark II', html:`
+                    <p>No hace falta para el Easter Egg. Solo se desbloquea online y sin modificadores.</p>
+                    <ol>
+                      <li>Reúne tres piezas y ponlas en el banco de la <strong>segunda planta de Operaciones</strong>:
+                        <ul>
+                          <li><strong>Tubo de plástico:</strong> Casa Amarilla, estantería de la segunda planta o mesa de la cocina.</li>
+                          <li><strong>Bote metálico:</strong> Almacén, en los barriles a la derecha de la escalera de salida o en la esquina de una estantería.</li>
+                          <li><strong>Líquido blanco:</strong> Aislamiento (mesa del maniquí femenino) o Control APD (a la izquierda de los ordenadores o en el borde de la pirámide).</li>
+                        </ul>
+                      </li>
+                      <li>Con el Pack-a-Punch activado, usa <strong>Rushmore</strong> (primera planta de Operaciones, junto a la puerta del patio).</li>
+                      <li>Busca cuatro teles con nieve: Cafetería, Control APD, patio de la Casa Amarilla y Entrada del Recinto. Interactúa con cada una y mata zombis cerca hasta que muestre un número. El orden en que las cargues forma el código.</li>
+                      <li>Mete el código en Rushmore: se abre un armario con los armazones. Úsalos en el banco de Operaciones.</li>
+                    </ol>
+                    <p class="note">Tiene cuatro variantes mejoradas; ninguna fuente que haya podido abrir las nombra.</p>`}
+                ]
+              },
+              {
+                id:'easterEgg', label:'Easter Egg',
+                items:[
+                  {id:'ee-intro', title:'Antes de empezar', html:`
+                    <p>Juega online y sin mutadores. Necesitas la energía, el Pack-a-Punch, las <strong>Galvaknuckles</strong> (5000 puntos, en la caja del camión rojo junto al autobús amarillo del cul-de-sac), los amplificadores de telepad y un arma mejorada con la munición <strong>Brain Rot</strong>. Conviene llevar el escudo y Stamin-Up.</p>
+                    <p>Si no te ubicas, mira la pestaña <button class="link-btn" onclick="switchTab('mapa')">Mapa</button>.</p>`},
+                  {id:'energia', title:'Prerrequisito · Energía', html:`
+                    <p>Desde el <strong>Control de Seguridad</strong> (inicio) ve a la <strong>Entrada del Recinto</strong>, sigue por Operaciones o por Interrogatorio APD hasta la <strong>Calle Central</strong> y el <strong>cul-de-sac</strong>. Al fondo, en la <strong>Casa de la Energía</strong>, sube la palanca y acaba con la oleada de perros eléctricos.</p>`},
+                  {id:'pap', title:'Prerrequisito · Pack-a-Punch', html:`
+                    <p>Está en los <strong>Dormitorios</strong> del búnker y cuesta 5000 puntos por arma.</p>
+                    <ol>
+                      <li>Baja al búnker por el patio de la <strong>Casa Amarilla</strong> o de la <strong>Casa Verde</strong> y sigue las señales al <strong>Generador</strong>.</li>
+                      <li>Usa el panel de la turbina central y aguanta un minuto de zombis catalizadores.</li>
+                      <li>Repara cuatro ventilaciones de las seis casas de la superficie (las rotas echan gas verde y tienen baba verde). Quédate quieto junto a cada una; puedes moverte sin perder el progreso.</li>
+                      <li>Vuelve a los Dormitorios.</li>
+                    </ol>`},
+                  {id:'paso1', num:'01', title:'Activar Rushmore', html:`
+                    <p>Interactúa con el ordenador <strong>Rushmore</strong>, en la primera planta de Operaciones.</p>
+                    <p class="note">SegmentNext mete aquí cuatro códigos de autorización; la wiki dice que sirven para el Sargento A.D.A.M. (pestaña <button class="link-btn" onclick="switchTab('secretos')">Secretos</button>). Si Rushmore no avanza, mételos.</p>`},
+                  {id:'paso2', num:'02', title:'El código de los relojes', html:`
+                    <p>Todo este paso, en la misma ronda.</p>
+                    <ol>
+                      <li>Mata un zombi con las Galvaknuckles junto a la tele con nieve encendida (Dormitorios, Salón o Cafetería) e interactúa con ella: sale una letra y cuatro números.</li>
+                      <li>Ve a la casa cuyo buzón tiene esa letra y pon su reloj a esa hora (C1245 = las 12:45).</li>
+                      <li>Repite con cada código.</li>
+                      <li>Ve a la casa que no ha salido: su reloj gira. Apunta la hora a la que se para (SegmentNext dice que hay que golpearlo).</li>
+                      <li>Mete esa hora en Rushmore como cuatro cifras (las 4:15 son 0415).</li>
+                    </ol>`},
+                  {id:'paso3', num:'03', title:'Escoltar al reptante rojo', html:`
+                    <p>Interactúa con Rushmore: aparece un zombi reptante rojo brillante (Nova 6). Llévalo hasta el <strong>Centro de Transfusión</strong> sin que muera, hasta que trepe una barrera y Rushmore te avise. Si muere, espera una ronda y repítelo.</p>`},
+                  {id:'paso4', num:'04', title:'El bote de 115', html:`
+                    <ol>
+                      <li>Activa a <strong>A.D.A.M.</strong> en el <strong>Almacén</strong> del búnker (gratis la primera vez; después 3000 puntos).</li>
+                      <li>Llévalo al pasillo entre el patio de la Casa Verde y la Cafetería y golpea la puerta metálica: Marlton te da el <strong>bote de 115</strong>.</li>
+                      <li>Ponlo en la repisa especial del <strong>Centro de Transfusión</strong> y vuelve a Rushmore.</li>
+                    </ol>`},
+                  {id:'paso5', num:'05', title:'El núcleo de energía', html:`
+                    <ol>
+                      <li>Pon los amplificadores en los telepads de la <strong>Casa de la Energía</strong> y de la <strong>Entrada del Recinto</strong>.</li>
+                      <li>Coge el núcleo de la Casa de la Energía y llévalo al hueco del servidor de <strong>Operaciones</strong>.</li>
+                      <li>Haz que un reptante eléctrico le dispare al servidor para cargarlo.</li>
+                      <li>Corre con el núcleo usando los telepads antes de que se acabe el tiempo. Si fallas, puedes repetirlo.</li>
+                    </ol>`},
+                  {id:'paso6', num:'06', title:'Los cuadros envenenados', html:`
+                    <ol>
+                      <li>Tres cuadros echan gas verde. Según Gameranx: <strong>Cafetería</strong>, escalera del <strong>Salón</strong> y <strong>Dormitorios</strong>. Según SegmentNext: Dormitorios, Salón y planta de arriba de la <strong>Casa Verde</strong>.</li>
+                      <li>Con munición Brain Rot controla a un zombi, llévalo hasta el cuadro, tíralo y apunta el código de detrás.</li>
+                      <li>Mete los tres códigos en Rushmore, rápido. Si sale bien, se va la luz en todo el mapa.</li>
+                    </ol>`},
+                  {id:'paso7', num:'07', title:'Devolver la energía', html:`
+                    <ol>
+                      <li>En el búnker, mueve los seis interruptores en este orden, hasta que se encienda en verde la luz de encima de cada uno:
+                        <ol>
+                          <li>Almacén: abajo.</li>
+                          <li>Generador: arriba.</li>
+                          <li>Aislamiento: abajo.</li>
+                          <li>Dormitorios: arriba.</li>
+                          <li>Cafetería: arriba.</li>
+                          <li>Salón: abajo.</li>
+                        </ol>
+                      </li>
+                      <li>Sube la palanca de la <strong>Casa de la Energía</strong> y vuelve a Rushmore.</li>
+                    </ol>
+                    <p class="note">Este orden solo lo da SegmentNext.</p>`},
+                  {id:'paso8', num:'08', title:'El maniquí y el orbe elemental', html:`
+                    <ol>
+                      <li>Busca maniquíes que brillen en azul. Cuando todo el equipo interactúa con uno empieza un encierro: aguanta hasta que se rompa y coge la pieza.</li>
+                      <li>Tres veces: dos brazos y una cabeza.</li>
+                      <li>Pónselos al maniquí roto de la silla de <strong>Interrogatorio APD</strong>.</li>
+                      <li>Vuelve a Rushmore. Aparece un <strong>orbe elemental</strong> azul en un sitio aleatorio (búscalo por su sonido o su brillo): escóltalo hasta ese maniquí.</li>
+                    </ol>`},
+                  {id:'paso9', num:'09', title:'Jefe final: el Avogadro', html:`
+                    <ol>
+                      <li><strong>Liberarlo:</strong> todos interactuad con las pantallas del <strong>Control APD</strong>. Matad los maniquíes que llegan corriendo junto al bote de almas hasta llenarlo: se abre la pirámide y sale el Avogadro.</li>
+                      <li><strong>Los botes de almas:</strong> una bomba nuclear os deja encerrados en el búnker. En el <strong>Almacén</strong>, los <strong>Dormitorios</strong>, el <strong>Salón</strong> y la <strong>Cafetería</strong> hay botes vacíos: entrad todos, seleccionadlo y llenadlo matando zombis. El Avogadro se vuelve más agresivo con cada bote; el escudo absorbe sus ataques.</li>
+                      <li><strong>Devolverlo a la pirámide:</strong> en el Control APD, dispara o golpea con las Galvaknuckles al Avogadro para empujarlo por la puerta abierta hasta que la pirámide lo absorba.</li>
+                      <li>Tras una escena corta, entrad en la cámara y coged el <strong>Fragmento Elemental</strong> para ver el final.</li>
+                    </ol>`}
+                ]
+              },
+              {
+                id:'secretos', label:'Secretos',
+                items:[
+                  {id:'sargento-adam', title:'Sargento A.D.A.M.', html:`
+                    <p>Robot aliado, como el Protector Civil de Shadows of Evil. Se desbloquea metiendo cuatro códigos de autorización en Rushmore:</p>
+                    <ul>
+                      <li><strong>Toy Soldier:</strong> en una mesa junto al soldado de juguete de Operaciones.</li>
+                      <li><strong>Pernell:</strong> coge la llave de Aislamiento y abre un cajón de la planta de arriba de la Casa Amarilla.</li>
+                      <li><strong>Sawyer:</strong> en Interrogatorio APD (mesa con silla, bajo la escalera o mesa de arriba).</li>
+                      <li><strong>McCain:</strong> dispara a los papeles del Control APD.</li>
+                    </ul>`},
+                  {id:'bebida-gratis', title:'Bebida gratis', html:`
+                    <p>Dispara a todas las cabezas de A.D.A.M. del mapa. La ronda siguiente es solo de A.D.A.M.: superada, aparece una bebida gratis junto al cartel de Nuketown.</p>`},
+                  {id:'autorreanimacion', title:'Autorreanimación', html:`
+                    <p>Golpea con el cuchillo todas las cabezas de A.D.A.M.: aparece un A.D.A.M. que te sigue. Reúnelo con el A.D.A.M. femenino del Generador y en el cobertizo de arriba aparece una autorreanimación.</p>`},
+                  {id:'cancion-well', title:'Canción «I Am The Well»', html:`
+                    <p>Interactúa con tres cabezas de A.D.A.M.</p>
+                    <p class="note">Ninguna fuente que haya podido abrir dice cuáles.</p>`},
+                  {id:'cancion-frequency', title:'Canción «Frequency»', html:`
+                    <p>Mete <strong>7283</strong> (RAVE) en Rushmore: los Dormitorios del búnker se convierten en una discoteca.</p>`},
+                  {id:'sustos', title:'Sustos', html:`
+                    <ul>
+                      <li>Golpea todas las cabezas de A.D.A.M. con las Galvaknuckles: junto al Pack-a-Punch aparece un A.D.A.M. que te asusta al apuntarle.</li>
+                      <li>Detrás de la Casa Verde, en el desierto, hay un A.D.A.M. solitario que te asusta si lo miras con mira de francotirador.</li>
+                    </ul>`}
+                ]
+              },
+              {
+                id:'mapa', label:'Mapa',
+                items:[
+                  {id:'mapa-zonas', title:'Mapa de zonas', html:`
+                    <p>Operaciones tiene el ordenador Rushmore: casi todos los pasos empiezan o terminan ahí. El Pack-a-Punch y el jefe final están en el búnker.</p>
+                    <div class="zone-map">
+                      <svg viewBox="0 60 760 564" role="img" aria-label="Mapa esquemático de Alpha Omega: superficie y búnker">
+                        <defs><marker id="ao-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="zm-arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+                        <rect class="zm-group" x="24" y="72" width="448" height="396" rx="10"/>
+                        <rect class="zm-group" x="496" y="72" width="240" height="540" rx="10"/>
+                        <text class="zm-head" x="40" y="94">SUPERFICIE</text>
+                        <text class="zm-head" x="512" y="94">BÚNKER</text>
+                        <g class="zm-link">
+                          <path d="M456 208H484V280H456"/>
+                          <path d="M484 244H510" marker-end="url(#ao-arrow)"/>
+                        </g>
+
+                        <rect class="zm-box" x="40" y="108" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="132">Control de Seguridad</text>
+                        <text class="zm-line" x="52" y="148">Inicio</text>
+                        <rect class="zm-hub" x="256" y="108" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="268" y="132">Operaciones</text>
+                        <text class="zm-line zm-strong" x="268" y="148">Rushmore · banco (planta 2)</text>
+
+                        <rect class="zm-box" x="40" y="180" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="204">Entrada del Recinto</text>
+                        <text class="zm-line" x="52" y="220">Telepad · tele con nieve</text>
+                        <rect class="zm-box" x="256" y="180" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="268" y="204">Casa Verde</text>
+                        <text class="zm-line" x="268" y="220">Banco del escudo · pieza</text>
+
+                        <rect class="zm-box" x="40" y="252" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="276">Calle Central</text>
+                        <text class="zm-line" x="52" y="292">Paso al cul-de-sac</text>
+                        <rect class="zm-box" x="256" y="252" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="268" y="276">Casa Amarilla</text>
+                        <text class="zm-line" x="268" y="292">Tubo de la Ray Gun · cajón</text>
+
+                        <rect class="zm-box" x="40" y="324" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="348">Cul-de-sac</text>
+                        <text class="zm-line" x="52" y="364">Galvaknuckles · cartel</text>
+                        <rect class="zm-box" x="256" y="324" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="268" y="348">Centro de Transfusión</text>
+                        <text class="zm-line" x="268" y="364">Reptante · repisa del 115</text>
+
+                        <rect class="zm-box" x="40" y="396" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="420">Casa de la Energía</text>
+                        <text class="zm-line" x="52" y="436">Palanca · telepad · núcleo</text>
+                        <rect class="zm-box" x="256" y="396" width="200" height="56" rx="8"/>
+                        <text class="zm-name" x="268" y="420">Interrogatorio APD</text>
+                        <text class="zm-line" x="268" y="436">Maniquí de la silla</text>
+
+                        <rect class="zm-box" x="512" y="108" width="208" height="56" rx="8"/>
+                        <text class="zm-name" x="524" y="132">Dormitorios</text>
+                        <text class="zm-line" x="524" y="148">Pack-a-Punch · tele · cuadro</text>
+                        <rect class="zm-box" x="512" y="180" width="208" height="56" rx="8"/>
+                        <text class="zm-name" x="524" y="204">Salón</text>
+                        <text class="zm-line" x="524" y="220">Tele · cuadro · billar</text>
+                        <rect class="zm-box" x="512" y="252" width="208" height="56" rx="8"/>
+                        <text class="zm-name" x="524" y="276">Cafetería</text>
+                        <text class="zm-line" x="524" y="292">Tele · puerta de A.D.A.M.</text>
+                        <rect class="zm-box" x="512" y="324" width="208" height="56" rx="8"/>
+                        <text class="zm-name" x="524" y="348">Generador</text>
+                        <text class="zm-line" x="524" y="364">Turbina · pieza de telepad</text>
+                        <rect class="zm-box" x="512" y="396" width="208" height="56" rx="8"/>
+                        <text class="zm-name" x="524" y="420">Almacén</text>
+                        <text class="zm-line" x="524" y="436">A.D.A.M. · bote de almas</text>
+                        <rect class="zm-box" x="512" y="468" width="208" height="56" rx="8"/>
+                        <text class="zm-name" x="524" y="492">Aislamiento</text>
+                        <text class="zm-line" x="524" y="508">Llave · interruptor</text>
+                        <rect class="zm-box" x="512" y="540" width="208" height="56" rx="8"/>
+                        <text class="zm-name" x="524" y="564">Control APD</text>
+                        <text class="zm-line" x="524" y="580">Pirámide · jefe · banco</text>
+                      </svg>
+                    </div>
+                    <p class="note">Esquema por zonas, sin escala. Al búnker se baja por los patios de la Casa Verde y la Casa Amarilla. Las conexiones a pie entre casas no están dibujadas.</p>`}
+                ]
+              }
+            ],
+            sources:{
+              html:`<p>Guía contrastada entre Gameranx, SegmentNext y la wiki de Call of Duty. Donde no coinciden, se indica en la propia tarjeta.</p>
+                    <ul>
+                      <li><a href="https://gameranx.com/features/id/176567/article/black-ops-4-zombies-alpha-omega-complete-easter-egg-guide-how-to-fight-the-final-boss/" target="_blank" rel="noopener">Gameranx · Complete Easter Egg Guide</a></li>
+                      <li><a href="https://segmentnext.com/black-ops-4-zombies-alpha-omega-easter-egg-steps-guide/" target="_blank" rel="noopener">SegmentNext · Alpha Omega Easter Egg Guide</a></li>
+                      <li><a href="https://callofduty.fandom.com/wiki/Alpha_Omega" target="_blank" rel="noopener">Call of Duty Wiki · Alpha Omega</a></li>
+                      <li><a href="https://gameranx.com/features/id/176502/article/black-ops-4-zombies-alpha-omega-how-to-turn-on-the-power-first-step-guide/" target="_blank" rel="noopener">Gameranx · Power</a></li>
+                      <li><a href="https://gameranx.com/features/id/176504/article/black-ops-4-zombies-alpha-omega-how-to-unlock-the-pack-a-punch-upgrade-guide/" target="_blank" rel="noopener">Gameranx · Pack-a-Punch</a></li>
+                      <li><a href="https://gameranx.com/features/id/176505/article/black-ops-4-zombies-alpha-omega-how-to-build-the-riot-shield-part-locations-guide/" target="_blank" rel="noopener">Gameranx · Riot Shield</a></li>
+                      <li><a href="https://gameranx.com/features/id/176562/article/black-ops-4-zombies-alpha-omega-how-get-the-ray-gun-mk-ii-wonder-weapon-guide/" target="_blank" rel="noopener">Gameranx · Ray Gun Mk. II</a></li>
+                      <li><a href="https://gameranx.com/features/id/176563/article/black-ops-4-zombies-alpha-omega-how-to-unlock-telepads-portal-parts-guide/" target="_blank" rel="noopener">Gameranx · Telepads</a></li>
+                    </ul>
+                    <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
+            }
+          },
+          {
             id:'tag-der-toten', name:'Tag der Toten', sub:'Salvation Lies Above', status:'active',
             title:'Tag der Toten', subtitle:'Salvation Lies Above',
             desc:'Guía de consulta rápida para el final del Éter: tirolinas, Pack-a-Punch Dorado, Wunderwaffe DG, Caja de Música de Samantha y los 12 pasos hasta entregar el Dispositivo Agarthano al Ermitaño. No tiene jefe final.',
