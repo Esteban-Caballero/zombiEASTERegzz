@@ -2888,6 +2888,211 @@
             }
           },
           {
+            id:'classified', name:'Classified', sub:'Proyecto Skadi', status:'active',
+            title:'Classified', subtitle:'Proyecto Skadi',
+            desc:'Guía de consulta rápida para el Pentágono: energía, DEFCON 5, Pack-a-Punch en Groom Lake y el Proyecto Skadi, que da el Winter’s Howl y el logro Cold War Remedy. No hay Easter Egg principal clásico: la escena final se ve al llegar a la ronda 150.',
+            theme:{
+              accent:'#d4554a', accentDim:'#9a3a32', gold:'#c8b27a', goldSoft:'#8a7a52',
+              stone950:'#0f0f10', stone900:'#171719', stone800:'#202023', stone700:'#2c2c31', stone600:'#404047', line:'#35353b'
+            },
+            tabs:[
+              {
+                id:'construibles', label:'Construibles',
+                items:[
+                  {id:'energia', title:'Energía', html:`
+                    <p>Baja en ascensor desde la sala de inicio a la <strong>Sala de Guerra</strong> y, en otro ascensor, a los <strong>Laboratorios</strong>. El interruptor está en la segunda sala a la izquierda; activa los teletransportadores de los laboratorios.</p>`},
+                  {id:'defcon', title:'Interruptores DEFCON', html:`
+                    <p>Cuatro en la Sala de Guerra. Con todos puestos se activa DEFCON 5 y se enciende el teletransportador central. Orden según PowerPyx:</p>
+                    <ol>
+                      <li>Nivel superior, el del fondo junto al Spitfire de pared.</li>
+                      <li>Sala de Servidores (nivel inferior, al fondo a la izquierda, tras una puerta).</li>
+                      <li>Nivel superior, el segundo (a la derecha nada más bajar la escalera).</li>
+                      <li>Nivel inferior, al pie de la escalera de la izquierda.</li>
+                    </ol>
+                    <p>Sin el amplificador, el teletransportador lleva a la <strong>Sala del Pánico</strong>; con el amplificador, a <strong>Groom Lake</strong>.</p>
+                    <p class="note">Accelerated Ideas habla de cinco interruptores; PowerPyx y GamesHedge, de cuatro.</p>`},
+                  {id:'amplificador', title:'Amplificador de señal (Pack-a-Punch)', html:`
+                    <p>Se monta en el banco de <strong>Pruebas de Armas</strong> o en el de <strong>Archivo Central</strong>.</p>
+                    <ul>
+                      <li><strong>Carcasa metálica:</strong> Oficinas Principales: al fondo junto a la máquina de bebida (bajo la bandera colgada), en la mesa del centro, junto a la máquina de refrescos o en la zona pequeña manchada de sangre.</li>
+                      <li><strong>Dispositivo con cables:</strong> Morgue: en una estantería metálica junto a la cabeza de un cadáver entre los pulmones de acero, en una mesa cerca de la puerta del pasillo o en la silla del despacho.</li>
+                      <li><strong>Pieza metálica / tapa:</strong> Sala del Pánico. Activa DEFCON 5, entra por el teletransportador central y cógela tras la puerta secreta que se abre.</li>
+                    </ul>`},
+                  {id:'pap', title:'Pack-a-Punch', html:`
+                    <ol>
+                      <li>Pon el amplificador en la base del teletransportador central de la Sala de Guerra (nivel inferior).</li>
+                      <li>Vuelve a activar los interruptores DEFCON.</li>
+                      <li>El teletransportador te lleva a <strong>Groom Lake (Área 51)</strong>, donde está el Pack-a-Punch de Moon. Cada mejora cuesta 5000 puntos.</li>
+                      <li>Para volver, usa el teletransportador del fondo. Para ir otra vez, reactiva los DEFCON.</li>
+                    </ol>`},
+                  {id:'escudo', title:'Escudo', html:`
+                    <p>Se monta en cualquier banco. Las fuentes no llaman igual a las piezas, pero coinciden en las zonas:</p>
+                    <ul>
+                      <li><strong>Pieza de Archivo Central:</strong> a la izquierda nada más entrar desde el Pasillo Lateral, en la esquina del fondo a la derecha contra dos ventanas o apoyada en los archivadores del centro.</li>
+                      <li><strong>Escudo:</strong> nivel inferior de la Sala de Guerra: contra la jaula bajo la escalera, a la derecha del teletransportador central o al fondo a la derecha tras el ordenador.</li>
+                      <li><strong>Pieza de los Laboratorios:</strong> frente al interruptor de energía, junto al teletransportador morado del fondo a la derecha (al lado de un carro con cajas, bajo una ventana rota), o en el Laboratorio Norte junto a una ventana de zombis, siguiendo el cable hasta el teletransportador del fondo.</li>
+                    </ul>`},
+                  {id:'winters-howl', title:'Winter’s Howl', html:`
+                    <p>Sale en la Caja Misteriosa o gratis con el Proyecto Skadi (pestaña <button class="link-btn" onclick="switchTab('easterEgg')">Easter Egg</button>).</p>`}
+                ]
+              },
+              {
+                id:'easterEgg', label:'Easter Egg',
+                items:[
+                  {id:'ee-intro', title:'Antes de empezar', html:`
+                    <p>Elige el <strong>Welling</strong> como arma inicial y lleva granadas de fragmentación o bombas de ácido (pasos 04 y 07). Necesitas la energía y el Pack-a-Punch (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>).</p>
+                    <p>Cada código aparece junto a un cuadro de un mapa antiguo. Los números de ejemplo son de la partida de PowerPyx y pueden cambiar en la tuya: lo que importa es el mapa del cuadro, que marca el orden del paso 08. Si no te ubicas, mira la pestaña <button class="link-btn" onclick="switchTab('mapa')">Mapa</button>.</p>`},
+                  {id:'paso1', num:'01', title:'Samantha', html:`
+                    <p>En las <strong>Oficinas Principales</strong>, interactúa cinco veces con la ventana cerrada entre el Escargot de pared y la máquina de Brew. A la quinta, Samantha habla y aparecen reptantes de gas Nova 6: mátalos a golpes.</p>
+                    <p class="note">La wiki habla de la puerta del despacho de McNamara en vez de una ventana.</p>`},
+                  {id:'paso2', num:'02', title:'La llave', html:`
+                    <p>En el <strong>nivel inferior de la Sala de Guerra</strong>, baja por la escalera derecha y gira a la derecha. Entre la máquina de refrescos y el ICR-7 de pared, frente a la entrada al Pack-a-Punch, hay una cajita de llaves: coge la llave.</p>`},
+                  {id:'paso3', num:'03', title:'Código del cajón (Der Riese)', html:`
+                    <p>En las <strong>Oficinas Principales</strong>, abre el cajón grande de la mesa con la taza de café y apunta el código del cuadro (Der Riese, 2272 en el ejemplo).</p>`},
+                  {id:'paso4', num:'04', title:'Código de la ventana (Shangri-La)', html:`
+                    <p>Con la energía encendida, ve al <strong>teletransportador 3</strong> en <strong>Pruebas de Armas</strong>. Tapa la ventana de zombis y lanza una granada o bomba de ácido detrás del contenedor grande marcado «Attention». El Wraith Fire no sirve. Aparece el código junto a un cuadro de Shangri-La (6413 en el ejemplo).</p>`},
+                  {id:'paso5', num:'05', title:'DEFCON 5', html:`
+                    <p>Activa los cuatro interruptores DEFCON de la Sala de Guerra y entra en la <strong>Sala del Pánico</strong> por el teletransportador central.</p>`},
+                  {id:'paso6', num:'06', title:'Código de la tele (Kino der Toten)', html:`
+                    <p>En la Sala del Pánico, interactúa con la tele que parpadea en la fila de abajo de la pared izquierda (la segunda empezando por el extremo): cuadro de Kino der Toten con su código (6727 en el ejemplo).</p>`},
+                  {id:'paso7', num:'07', title:'Código de los presidentes (Shi No Numa)', html:`
+                    <ol>
+                      <li>Mejora el <strong>Welling</strong> en el Pack-a-Punch.</li>
+                      <li>En el <strong>Pasillo Desierto</strong> de la planta superior, dispara a los cuatro retratos de presidentes en uno de estos órdenes:
+                        <ul>
+                          <li>Franklin, Lincoln, Hamilton, Franklin.</li>
+                          <li>Washington, Hamilton, Franklin, Lincoln.</li>
+                        </ul>
+                      </li>
+                      <li>Se abre la placa de Washington con el código de Shi No Numa (6044 en el ejemplo).</li>
+                    </ol>
+                    <p class="note">PowerPyx avisa de que el orden no está del todo confirmado. Accelerated Ideas sugiere Franklin, Hamilton, Lincoln o, si no va, al azar.</p>`},
+                  {id:'paso8', num:'08', title:'Meter los códigos', html:`
+                    <p>En el panel central del <strong>nivel inferior de la Sala de Guerra</strong>, dispara a los números para cambiarlos y mantén pulsado confirmar. Orden:</p>
+                    <ol>
+                      <li>Shi No Numa (placa de Washington).</li>
+                      <li>Der Riese (cajón de la oficina).</li>
+                      <li>Shangri-La (ventana de Pruebas de Armas).</li>
+                      <li>Kino der Toten (tele de la Sala del Pánico).</li>
+                    </ol>
+                    <p>El locutor del Pentágono confirma que se ha recuperado el Proyecto Skadi.</p>`},
+                  {id:'paso9', num:'09', title:'Sobrevivir en el Área 51', html:`
+                    <p>Ve a <strong>Groom Lake</strong> y aguanta tres rondas sin salir de la zona. Se abren las barricadas a la izquierda del Pack-a-Punch y aparece un maletín con el <strong>Winter’s Howl</strong>. Solo quien lo coge consigue el logro <em>Cold War Remedy</em>.</p>
+                    <p class="note">Según un comentario sin verificar en PowerPyx, todos deben estar en el Área 51 y los bots no pueden entrar en la zona del Pack-a-Punch.</p>`},
+                  {id:'final', title:'Final · Ronda 150', html:`
+                    <p>La escena final se ve al <strong>sobrevivir hasta la ronda 150</strong>. No da logro.</p>
+                    <p class="note">En 2018 las guías avisaban de que el juego se colgaba a menudo en rondas muy altas; Accelerated Ideas recomendaba activar el modo dibujos animados (Cartoon Mode). No he podido comprobar si se arregló después.</p>`}
+                ]
+              },
+              {
+                id:'secretos', label:'Secretos',
+                items:[
+                  {id:'cancion', title:'Canción «Shockwave»', html:`
+                    <p>Mantén pulsado interactuar delante de tres botellas de vodka (no sale aviso en pantalla):</p>
+                    <ol>
+                      <li><strong>Sala de Guerra, nivel inferior:</strong> al fondo a la derecha, bajo el ordenador.</li>
+                      <li><strong>Archivo Central:</strong> entra por la puerta del Pasillo Lateral y ve al fondo; última fila de archivadores.</li>
+                      <li><strong>Investigación Porcina:</strong> armario abierto del fondo a la izquierda del laboratorio.</li>
+                    </ol>`},
+                  {id:'susto', title:'Susto', html:`
+                    <p>En <strong>Groom Lake</strong>, apunta con un rifle de francotirador a una luz de un edificio de la izquierda: aparece una imagen de Richtofen (Primis).</p>
+                    <p class="note">No he encontrado recompensas gratis ni otros secretos contrastados de este mapa.</p>`}
+                ]
+              },
+              {
+                id:'mapa', label:'Mapa',
+                items:[
+                  {id:'mapa-zonas', title:'Mapa de zonas', html:`
+                    <p>El nivel inferior de la Sala de Guerra es el centro: panel de códigos y teletransportador central. Con DEFCON 5 lleva a la Sala del Pánico; con el amplificador puesto, a Groom Lake.</p>
+                    <div class="zone-map">
+                      <svg viewBox="0 60 760 700" role="img" aria-label="Mapa esquemático de Classified por plantas, con la Sala de Guerra en el centro">
+                        <defs><marker id="cl-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="zm-arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+                        <rect class="zm-group" x="24" y="72" width="472" height="180" rx="10"/>
+                        <rect class="zm-group" x="24" y="276" width="472" height="196" rx="10"/>
+                        <rect class="zm-group" x="24" y="496" width="472" height="252" rx="10"/>
+                        <text class="zm-head" x="40" y="94">PLANTAS DE ARRIBA</text>
+                        <text class="zm-head" x="40" y="298">SALA DE GUERRA</text>
+                        <text class="zm-head" x="40" y="518">LABORATORIOS</text>
+                        <g class="zm-link">
+                          <path d="M254 252V274" marker-end="url(#cl-arrow)"/>
+                          <path d="M254 472V494" marker-end="url(#cl-arrow)"/>
+                          <path d="M480 340H566" marker-end="url(#cl-arrow)"/>
+                          <path d="M480 364H524V444H566" marker-end="url(#cl-arrow)"/>
+                        </g>
+                        <text class="zm-line" x="262" y="268">ascensor</text>
+                        <text class="zm-line" x="262" y="488">ascensor</text>
+
+                        <rect class="zm-box" x="40" y="108" width="212" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="132">Sala de inicio</text>
+                        <text class="zm-line" x="52" y="148">Ascensor a la Sala de Guerra</text>
+                        <rect class="zm-box" x="268" y="108" width="212" height="56" rx="8"/>
+                        <text class="zm-name" x="280" y="132">Oficinas Principales</text>
+                        <text class="zm-line" x="280" y="148">Ventana · cajón (Der Riese)</text>
+                        <rect class="zm-box" x="40" y="180" width="212" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="204">Archivo Central</text>
+                        <text class="zm-line" x="52" y="220">Banco · escudo · vodka</text>
+                        <rect class="zm-box" x="268" y="180" width="212" height="56" rx="8"/>
+                        <text class="zm-name" x="280" y="204">Pasillo Desierto</text>
+                        <text class="zm-line" x="280" y="220">Retratos (Shi No Numa)</text>
+
+                        <rect class="zm-box" x="40" y="312" width="212" height="72" rx="8"/>
+                        <text class="zm-name" x="52" y="336">Nivel superior</text>
+                        <text class="zm-line" x="52" y="352">Dos interruptores DEFCON</text>
+                        <rect class="zm-hub" x="268" y="312" width="212" height="72" rx="8"/>
+                        <text class="zm-name" x="280" y="336">Nivel inferior</text>
+                        <text class="zm-line zm-strong" x="280" y="352">Panel de códigos · llave</text>
+                        <text class="zm-line zm-strong" x="280" y="368">Teletransportador central</text>
+                        <rect class="zm-box" x="40" y="400" width="212" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="424">Sala de Servidores</text>
+                        <text class="zm-line" x="52" y="440">Interruptor DEFCON</text>
+
+                        <rect class="zm-box" x="40" y="532" width="212" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="556">Laboratorio Sur</text>
+                        <text class="zm-line" x="52" y="572">Energía · pieza del escudo</text>
+                        <rect class="zm-box" x="268" y="532" width="212" height="56" rx="8"/>
+                        <text class="zm-name" x="280" y="556">Pruebas de Armas</text>
+                        <text class="zm-line" x="280" y="572">Banco · ventana (Shangri-La)</text>
+                        <rect class="zm-box" x="40" y="604" width="212" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="628">Investigación Porcina</text>
+                        <text class="zm-line" x="52" y="644">Botella de vodka</text>
+                        <rect class="zm-box" x="268" y="604" width="212" height="56" rx="8"/>
+                        <text class="zm-name" x="280" y="628">Morgue</text>
+                        <text class="zm-line" x="280" y="644">Pieza del amplificador</text>
+                        <rect class="zm-box" x="40" y="676" width="212" height="56" rx="8"/>
+                        <text class="zm-name" x="52" y="700">Laboratorio Norte</text>
+                        <text class="zm-line" x="52" y="716">Pieza del escudo</text>
+
+                        <rect class="zm-box" x="568" y="312" width="168" height="72" rx="8"/>
+                        <text class="zm-name" x="580" y="336">Sala del Pánico</text>
+                        <text class="zm-line" x="580" y="352">Con DEFCON 5</text>
+                        <text class="zm-line" x="580" y="368">Tele del código · pieza</text>
+                        <rect class="zm-box" x="568" y="400" width="168" height="88" rx="8"/>
+                        <text class="zm-name" x="580" y="424">Groom Lake</text>
+                        <text class="zm-line" x="580" y="440">Con el amplificador</text>
+                        <text class="zm-line" x="580" y="456">Área 51 · Pack-a-Punch</text>
+                        <text class="zm-line" x="580" y="472">Winter’s Howl (paso 09)</text>
+                      </svg>
+                    </div>
+                    <p class="note">Esquema por plantas, sin escala. Los teletransportadores de los laboratorios no están dibujados.</p>`}
+                ]
+              }
+            ],
+            sources:{
+              html:`<p>Guía contrastada entre PowerPyx, Accelerated Ideas, la wiki de Call of Duty, Gameranx y GamesHedge. Donde no coinciden, se indica en la propia tarjeta.</p>
+                    <ul>
+                      <li><a href="https://www.powerpyx.com/cod-black-ops-4-classified-easter-egg-guide/" target="_blank" rel="noopener">PowerPyx · Classified Easter Egg Guide</a></li>
+                      <li><a href="https://www.accelerated-ideas.com/news/zombies-classified-all-easter-egg-steps-black-ops-4.aspx" target="_blank" rel="noopener">Accelerated Ideas · All Easter Egg Steps</a></li>
+                      <li><a href="https://callofduty.fandom.com/wiki/Classified" target="_blank" rel="noopener">Call of Duty Wiki · Classified</a></li>
+                      <li><a href="https://gameranx.com/features/id/164894/article/black-ops-4-zombies-classified-how-to-complete-the-main-easter-egg-quest-ending-cutscene-guide/" target="_blank" rel="noopener">Gameranx · Ending Cutscene</a></li>
+                      <li><a href="https://gameranx.com/features/id/163227/article/black-ops-4-zombies-classified-how-to-pack-a-punch-upgrade-guide/" target="_blank" rel="noopener">Gameranx · Pack-a-Punch</a></li>
+                      <li><a href="https://gameranx.com/features/id/163178/article/black-ops-4-zombies-how-to-build-the-zombie-shield-all-maps-classified-ix-blood/" target="_blank" rel="noopener">Gameranx · Zombie Shield</a></li>
+                      <li><a href="https://gameranx.com/features/id/163368/article/black-ops-4-zombies-classified-how-to-unlock-the-shockwave-easter-egg-secret-song-guide/" target="_blank" rel="noopener">Gameranx · «Shockwave»</a></li>
+                      <li><a href="https://www.gameshedge.com/call-of-duty-black-ops-4-zombies-classified-map-guide/" target="_blank" rel="noopener">GamesHedge · Classified Map Guide</a></li>
+                    </ul>
+                    <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
+            }
+          },
+          {
             id:'dead-of-the-night', name:'Dead of the Night', sub:'Trial by Ordeal', status:'active',
             title:'Dead of the Night', subtitle:'Trial by Ordeal',
             desc:'Guía de consulta rápida para la mansión de Alistair Rhodes: Pack-a-Punch, escudo, Balas de Plata, las dos mejoras de Alistair’s Folly, las tres ramas de las losas y el Hombre Lobo de las Sombras. Se puede completar en solitario.',
