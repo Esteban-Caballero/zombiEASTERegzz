@@ -2725,165 +2725,287 @@
             }
           },
           {
-            id: 'voyage-of-despair', name: 'Voyage of Despair', sub: 'Abandonar el Barco', status: 'active',
-            title: 'Voyage of Despair', subtitle: 'Abandonar el Barco',
-            desc: 'Guía de consulta rápida para Voyage of Despair.',
-            theme: {
-              accent: '#3f7ea6', accentDim: '#2a5772', gold: '#c2a45c', goldSoft: '#8a763f',
-              stone950: '#0a0f14', stone900: '#111a22', stone800: '#182530', stone700: '#223444', stone600: '#33505f', line: '#2c414f'
+            id:'voyage-of-despair', name:'Voyage of Despair', sub:'Abandonar el Barco', status:'active',
+            title:'Voyage of Despair', subtitle:'Abandonar el Barco',
+            desc:'El Titanic se hunde con el Artefacto Centinela a bordo. Escudo y su mejora, Destilería, Kraken gratis y el Easter Egg completo (relojes, enchufes, tuberías y planetas) hasta el ojo gigante del final, más el truco del Pack-a-Punch en las 4 posiciones.',
+            theme:{
+              accent:'#3f7ea6', accentDim:'#2a5772', gold:'#c2a45c', goldSoft:'#8a763f',
+              stone950:'#0a0f14', stone900:'#111a22', stone800:'#182530', stone700:'#223444', stone600:'#33505f', line:'#2c414f'
             },
-            tags: {
-              agua: { label: 'Agua', color: '#4fa3d9' },
-              fuego: { label: 'Fuego', color: '#d97a3d' },
-              electrico: { label: 'Eléctrico', color: '#d9c94f' },
-              veneno: { label: 'Veneno', color: '#6fae5a' }
+            tags:{
+              agua:{label:'Agua', color:'#4fa3d9'},
+              fuego:{label:'Fuego', color:'#d97a3d'},
+              electrico:{label:'Eléctrico', color:'#d9c94f'},
+              veneno:{label:'Veneno', color:'#6fae5a'}
             },
-            tabs: [
+            tabs:[
               {
-                id: 'construibles', label: 'Construibles',
-                items: [
-                  {
-                    id: 'escudo', title: 'Escudo', html: `
-                <p>Se monta con tres piezas repartidas por el barco:</p>
+                id:'construibles', label:'Construibles',
+                items:[
+                  {id:'zonas', title:'Nombres de las zonas', html:`
+                <p>La guía usa los nombres en castellano de las notas de partida. Entre paréntesis, cómo los llaman las guías y vídeos en inglés:</p>
                 <ul>
-                  <li><strong>Primera parte:</strong> en los camarotes individuales.</li>
-                  <li><strong>Segunda parte:</strong> en el puente.</li>
-                  <li><strong>Tercera parte:</strong> en las literas de tercera clase.</li>
+                  <li><strong>Proa</strong> (Forecastle): el spawn, con el altar de Danu.</li>
+                  <li><strong>Puente de Mando</strong> (Bridge), con la sala del timón y el camarote del capitán.</li>
+                  <li><strong>Camarotes Individuales</strong> (State Rooms) y <strong>Suites Millonarias</strong> (Millionaire Suites).</li>
+                  <li><strong>Gran Escalera Superior / Inferior</strong> (Upper / Lower Grand Staircase).</li>
+                  <li><strong>Salón de Primera Clase</strong> (1st Class Lounge), con el altar de Zeus, y <strong>Comedor</strong> (Dining Hall), con el de Ra.</li>
+                  <li><strong>Cocina</strong> (Galley), <strong>Despensa</strong> (Provisions) y <strong>Literas de 3ª Clase</strong> (3rd Class Berths).</li>
+                  <li><strong>Sala de Correos</strong> (Mail Rooms) y <strong>Muelle de Carga</strong> (Cargo Hold).</li>
+                  <li><strong>Sala de Máquinas</strong> (Engine Room), con la 4ª bebida y el altar de Odín.</li>
+                  <li><strong>Sala de Calderas</strong>: la sala de las tuberías azules y del Pack-a-Punch de fuego. Unas guías la llaman Turbine Room y otras Boiler Room.</li>
+                  <li><strong>Cubierta de Popa</strong> (Poop Deck): el extremo trasero, con el Artefacto y el banco del escudo. Las guías llaman <strong>Aft Deck</strong> a la cubierta exterior pegada a ella; en las notas de partida las dos son «cubierta de popa».</li>
                 </ul>`},
-                  {
-                    id: 'kraken-mejora', title: 'Máquina de mejora de la Kraken', html: `
-                <p>Se monta con tres piezas repartidas por el barco:</p>
+                  {id:'escudo', title:'Escudo Balístico', html:`
+                <p>Tres piezas, cada una en uno de tres sitios posibles (solo una por partida). Se monta en el banco de la <strong>Cubierta de Popa</strong>. Mantén TAB (PC) para ver cuáles llevas.</p>
                 <ul>
-                  <li><strong>Primera pieza:</strong> en la cocina.</li>
-                  <li><strong>Segunda pieza:</strong> en el muelle de carga.</li>
-                  <li><strong>Tercera pieza:</strong> en el salón de primera clase.</li>
-                </ul>
-                <p>Las mejoras elementales las sueltan los catalizadores.</p>`},
-                  {
-                    id: 'kraken-gratis', title: 'Obtener Kraken gratis', html: `
-                <p>Matar al Fogonero hasta que suelte una llave (no siempre la suelta a la primera). Con esa llave, buscar tres cofres del tesoro repartidos por el mapa y llenarlos. Las posibles ubicaciones son:</p>
+                  <li><strong>Pieza superior, en el Puente:</strong> en la salita de mantenimiento al fondo del pasillo que sale del timón; en la barandilla del pasillo estrecho entre el Puente y la Gran Escalera, detrás del wallbuy de la RK7; o fuera, sobre la barandilla a la izquierda del Puente mirando hacia el spawn.</li>
+                  <li><strong>Empuñadura, en los Camarotes Individuales:</strong> en la estantería de un armario de suministros junto a unas toallas (sala frente al wallbuy de la Saug); sobre una silla mirando a la puerta, en la sala de la izquierda entrando desde el spawn; o sobre una silla de ruedas, en la sala junto al wallbuy de la MOG.</li>
+                  <li><strong>Pieza inferior, en la Despensa o las Literas de 3ª:</strong> sobre una caja junto a los cajones de manzanas, a la izquierda del wallbuy de la ICR; contra la pared, sobre unas cajas detrás de la escalera que baja a las Literas de 3ª; o en las Literas de 3ª, sobre una barandilla de pared blanca, a la derecha de la escalera que sube a la Cubierta de Popa (junto a uno de los relojes).</li>
+                </ul>`},
+                  {id:'escudo-mejorado', title:'Escudo mejorado (Sylvann Guard)', html:`
+                <p>Más aguante y balas que congelan. Es lo mejor que hay contra los Blightfathers del jefe final. Necesitas el Escudo Balístico en la mano.</p>
+                <ol>
+                  <li><strong>Descifrador:</strong> en la <strong>Sala de Correos</strong> hay una caja fuerte mediana en el suelo con un aparato con forma de cangrejo encima. Golpéalo con el escudo para tirarlo y recógelo.</li>
+                  <li><strong>Huesos y códigos:</strong> en las salas de alrededor hay 4 huesos (cráneo, hueso largo, mano y pie), cada uno con un papel con su código al lado. Apunta qué código va con cada hueso. Los códigos posibles son <strong>1404, 1912, 2340 y 4250</strong>. El del cráneo cuesta leerlo: rompe las botellas que lo tapan o usa un arma con mira.</li>
+                  <li><strong>Cajas fuertes:</strong> pon el descifrador en una de las 4 cajas, mira el código que sale, vuelve a por el hueso de ese código y mételo en esa caja. Solo una caja por ronda. Las cajas están en:
+                    <ul>
+                      <li>Salón de Primera Clase: pasillo pequeño y oscuro entre Zeus y la Gran Escalera.</li>
+                      <li>Suites Millonarias: sala grande antes del dormitorio.</li>
+                      <li>Literas de 3ª: pasillo entre la escalera a la Despensa y la escalera a la Cubierta de Popa.</li>
+                      <li>Puente: camarote del capitán, dormitorio pequeño junto al baño.</li>
+                    </ul>
+                  </li>
+                  <li><strong>Coche:</strong> con los 4 huesos colocados, ve al <strong>Muelle de Carga</strong> y usa el coche de la caja, a la izquierda del portal al pie de las escaleras. Se hunde y empieza a volar por el cielo. Si desaparece, se puede volver a activar.</li>
+                  <li><strong>Viales:</strong> dispara a un vial verde dentro de un tubo de correo (tuberías largas y curvas en ventanas o puertas rotas). Solo cae un vial por ronda, así que empieza pronto. Tubos donde disparar:
+                    <ul>
+                      <li>Puente: a la izquierda del timón, o a la izquierda del wallbuy de la RK7.</li>
+                      <li>Aft Deck: en un salón entre la Cubierta de Popa y la Cocina (se oye música por las ventanas).</li>
+                      <li>Salón de Primera Clase: puerta rota a la izquierda del altar de Zeus.</li>
+                      <li>Literas de 3ª: abajo, al pie de las escaleras, junto a uno de los relojes.</li>
+                    </ul>
+                    El vial sale por otro tubo: Suites Millonarias (a la izquierda del teletransporte), Sala de Correos (frente a las escaleras, a la derecha de la entrada al Muelle de Carga) o Sala de Máquinas (a la izquierda de la entrada desde la Despensa, frente a la Destilería).</li>
+                  <li><strong>Fuegos artificiales:</strong> mete el vial en uno de los 4 tubos blancos de cubierta y dispárale para lanzar el cohete contra el coche. En la Proa: a la derecha de Danu o a la izquierda del wallbuy de la Strafe. En la Cubierta de Popa: delante o detrás del banco del escudo. Hace falta al menos un vial; puede que necesites hasta cuatro.</li>
+                </ol>
+                <p>Cuando aciertas, el coche se estrella contra un iceberg y un trozo de hielo azul vuela al banco del escudo. El escudo que llevas no se mejora solo: coge el nuevo en el banco (es gratis).</p>
+                <div class="meta-box">
+                  <p><strong>Cuidado:</strong> si metes un hueso equivocado, tienes que llenar las cajas que quedan y terminar la ronda para reiniciar. Si coges el hueso que no era, déjalo en su sitio interactuando con él.</p>
+                </div>`},
+                  {id:'destileria', title:'Destilería (mejoras de la Kraken)', html:`
+                <p>Banco para darle un elemento a la Kraken. La <strong>mejora de Ácido es obligatoria</strong> para las tuberías del Easter Egg. Tres piezas, cada una en uno de dos sitios:</p>
                 <ul>
-                  <li>En la sala de correos.</li>
-                  <li>En la sala de turbinas, tras el Pack-a-Punch.</li>
-                  <li>En los camarotes individuales, cerca de la gran escalera inferior.</li>
-                  <li>En la cocina.</li>
-                  <li>En la despensa.</li>
+                  <li><strong>Cocina:</strong> entrando desde Ra / la Gran Escalera, a la izquierda sobre una encimera en llamas, o a la derecha en las estanterías de la pared del fondo.</li>
+                  <li><strong>Muelle de Carga:</strong> en el centro, sobre unas cajas ardiendo y jarras de leche (a la izquierda de un farol), o a la derecha de la válvula de drenaje.</li>
+                  <li><strong>Salón de Primera Clase:</strong> salta la puerta caída al salir de la Gran Escalera. Es una olla en la primera mesa de la derecha, o en una mesita a la vuelta de la esquina a la izquierda.</li>
                 </ul>
-                <p>Una vez se llenen, el último nos soltará un objeto que llevaremos a las cubiertas exteriores buscando una caja de madera que tenga el mismo objeto encima. Cuando encontremos la equivalente, aparecerá un tentáculo gigante que romperá la caja y nos soltará la Kraken gratis.</p>`}
+                <p>Se monta en el banco de madera de la Sala de Máquinas, encima de la Sala de Calderas.</p>
+                <p>Para cada elemento, mata con la Kraken a un catalizador de ese elemento y recoge lo que suelte (no siempre sale a la primera):</p>
+                <table class="guide-table">
+                  <tr><th>Catalizador</th><th>Suelta</th></tr>
+                  <tr><td>Fuego</td><td>Plasma Concentrado</td></tr>
+                  <tr><td><strong>Ácido / Veneno</strong> (el de las tuberías)</td><td>Descomposición Concentrada</td></tr>
+                  <tr><td>Agua / Hielo</td><td>Pureza Concentrada</td></tr>
+                  <tr><td>Eléctrico</td><td>Resplandor Concentrado</td></tr>
+                </table>
+                <p class="note">Los nombres de las piezas son traducciones de los nombres en inglés (Concentrated Plasma, Decay, Purity y Radiance); puede que en el juego en castellano se llamen algo distinto.</p>`},
+                  {id:'kraken-gratis', title:'Kraken gratis', html:`
+                <p>La Kraken puede salir en la Caja Misteriosa, pero también se consigue gratis con el cofre:</p>
+                <ol>
+                  <li>Mata a un <strong>Fogonero</strong> (el zombi grande de fuego con la pala) hasta que suelte una llave. No siempre la suelta a la primera.</li>
+                  <li>Abre el cofre con la llave. Está en uno de estos 5 sitios:
+                    <ul>
+                      <li>Sala de Correos: justo a la derecha de la escalera, antes del Muelle de Carga.</li>
+                      <li>Sala de Calderas: detrás del Pack-a-Punch, a la derecha.</li>
+                      <li>Camarotes Individuales: en la entradita cerca de la Gran Escalera que lleva a las Suites Millonarias.</li>
+                      <li>Cocina: en una esquina, en el lado contrario al del reloj.</li>
+                      <li>Despensa: en la cámara frigorífica.</li>
+                    </ul>
+                  </li>
+                  <li>Mata zombis cerca del cofre hasta llenarlo (verás orbes azules volar hacia él). Se cierra y aparece en otro de los sitios. Hay que llenarlo tres veces en total.</li>
+                  <li>El último cofre suelta un objeto. Llévalo a la caja de madera de cubierta que tenga ese mismo objeto encima:
+                    <ul>
+                      <li><strong>Prismáticos:</strong> Proa, subiendo la escalera a la derecha del altar de Danu.</li>
+                      <li><strong>Brújula:</strong> Cubierta de Botes (Boat Deck), arriba, cerca de lo alto de la Gran Escalera.</li>
+                      <li><strong>Telescopio:</strong> Cubierta de Popa, junto al Artefacto y el banco del escudo.</li>
+                      <li><strong>Globo terráqueo:</strong> Cubierta Media (Mid Deck), cerca de la salida a la Cocina.</li>
+                      <li><strong>Tenazas:</strong> Aft Deck.</li>
+                    </ul>
+                  </li>
+                </ol>
+                <p>Un tentáculo gigante rompe la caja y deja la Kraken. La puede coger cualquier jugador.</p>`}
                 ]
               },
               {
-                id: 'easterEgg', label: 'Easter Egg',
-                items: [
-                  {
-                    id: 'paso1', num: '01', title: 'Recoger el artefacto y activar el Pack-a-Punch', html: `
-                <p>Recoger el artefacto y activar el Pack-a-Punch. Para ello hay que activar los 4 pedestales que se encuentran en la cubierta de popa, el muelle de carga, la gran escalera inferior y la sala de calderas.</p>`},
-                  {
-                    id: 'paso2', num: '02', title: 'El paso de los relojes', html: `
-                <p>Busca 4 símbolos geométricos que representan los cuatro elementos: un triángulo hacia arriba, un triángulo hacia arriba con raya horizontal, un triángulo invertido y un triángulo invertido con raya horizontal. Cada uno aparece junto a uno de los relojes de pared del barco.</p>
-                <div class="meta-box">
-                  <p><strong>Truco:</strong> todos los relojes marcan las 11:40 salvo los cuatro que tienen símbolo al lado esa partida. Comprueba la hora antes de ponerte a buscar el símbolo en cada sala, así no pierdes tiempo mirando las que no lo tienen.</p>
-                </div>
-                <p>Las 6 salas donde puede aparecer un reloj (solo 4 estarán activas por partida):</p>
+                id:'easterEgg', label:'Easter Egg',
+                items:[
+                  {id:'antes', title:'Antes de empezar', html:`
                 <ul>
-                  <li><strong>Gran Escalera Superior:</strong> en el último piso, el reloj está en la pared de la escalera; el símbolo puede aparecer en la pared de enfrente, justo encima de la puerta izquierda hacia la cubierta.</li>
-                  <li><strong>Sala de Correos:</strong> el reloj está al bajar la escalera; el símbolo aparece debajo de esa misma escalera metálica.</li>
-                  <li><strong>Puente de Mando:</strong> el reloj está en la sala del timón; el símbolo se encuentra en un escritorio, en su parte interior.</li>
-                  <li><strong>Cocina:</strong> en la parte derecha (la del bowie), al fondo; al girarte, el reloj se ve en la pared de enfrente y el símbolo en el mueble de enfrente de la encimera.</li>
-                  <li><strong>Salón de Primera Clase:</strong> el reloj está en la chimenea; el símbolo puede aparecer a su derecha, en la esquina, dentro de un cubículo decorativo al que no se puede acceder.</li>
-                  <li><strong>Literas de 3ª Clase:</strong> el reloj está justo enfrente de la escalera que baja a la Despensa; el símbolo está enfrente del reloj, en la pared de esa escalera.</li>
+                  <li><strong>Jugadores:</strong> los pasos salen en solitario, pero el jefe final en solo es muy duro. Con 4 salen más Blightfathers. Lo ideal son 3.</li>
+                  <li><strong>Obligatorio:</strong> la <strong>Kraken con mejora de Ácido</strong> para las tuberías (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>).</li>
+                  <li><strong>Muy recomendable:</strong> el escudo, y mejor el mejorado. Para el final: <strong>Hellion Salvo</strong> mejorado, una Kraken elemental por jugador (mejor la de Hielo) y el <strong>Cetro de Ra</strong> como arma especial.</li>
+                  <li><strong>Aprende el barco:</strong> es enorme y varios pasos van contrarreloj. Mira la tarjeta «Nombres de las zonas» en Construibles.</li>
+                </ul>`},
+                  {id:'paso1', num:'01', title:'El Artefacto y el Pack-a-Punch', html:`
+                <p>Desde la Proa, abre puertas hasta llegar a la <strong>Cubierta de Popa</strong>. Fuera, trepa por los escombros que cuelgan del lateral derecho del barco (es fácil no verlos), paga el paso bloqueado por la carga que sube a la pasarela y cruza hasta el final: el objeto azul que flota es el <strong>Artefacto Centinela</strong>. Interactúa con él.</p>
+                <p>Ahora activa los 4 pedestales elementales. Siempre están en los mismos sitios:</p>
+                <ul>
+                  <li><strong>Tierra:</strong> Cubierta de Popa, justo debajo del Artefacto.</li>
+                  <li><strong>Agua:</strong> Muelle de Carga. Entra desde la Sala de Correos y baja al agua; está en el lado contrario al portal.</li>
+                  <li><strong>Aire:</strong> Gran Escalera Inferior, bajando hasta el fondo.</li>
+                  <li><strong>Fuego:</strong> Sala de Calderas. Cruza el portal de las Suites Millonarias, sigue recto pasando la tela rasgada, salta al agua y nada hasta el pasadizo.</li>
                 </ul>
-                <p>Para cada símbolo, anota qué número marca la aguja de las <strong>horas</strong> y cuál marca la de los <strong>minutos</strong>.</p>
-                <p>Con los datos anotados, ve al Puente de Mando y a la Sala de Máquinas: en cada una hay válvulas que hay que interpretar como relojes de agujas (posición superior = 12:00). Coloca en cada válvula los <strong>minutos</strong> correspondientes al símbolo dibujado en ella.</p>
-                <p>Después baja a la <strong>Cubierta de Popa</strong> (donde se recoge el artefacto al inicio): en la válvula izquierda del timón pon la <strong>hora</strong> del triángulo normal con raya (el que apunta hacia arriba), y en la derecha la del triángulo invertido con raya (el que apunta hacia abajo). Baja luego a la <strong>Sala de Máquinas</strong>, a la columna de 4 válvulas frente a la 4ª bebida (solo se pueden mover la de más a la izquierda y la de más a la derecha): en la izquierda coloca la hora del triángulo normal y en la derecha la del invertido.</p>
-                <p class="note">Si está bien hecho sonará un tono de confirmación y podrás continuar con el siguiente paso.</p>
+                <p>El Pack-a-Punch aparece en el último pedestal que actives.</p>
+                <div class="meta-box">
+                  <p><strong>El Pack-a-Punch no se queda quieto:</strong> cambia de pedestal de una ronda a otra. Para saber dónde está, acércate a cualquier pedestal y lee el texto en pantalla, o fíjate en qué símbolo elemental está encendido.</p>
+                </div>`},
+                  {id:'drenar', title:'Drenar las salas inundadas', html:`
+                <p>La Sala de Máquinas y el Muelle de Carga empiezan inundados. En cada una hay una <strong>válvula de pared bajo el agua, bien iluminada</strong>: gírala para vaciar la sala. Se aguanta mal la respiración con zombis encima, pero es rápido.</p>
+                <p class="note">Después de las tuberías (paso 04) las salas vuelven a inundarse; se vacían otra vez con las mismas válvulas.</p>`},
+                  {id:'paso2', num:'02', title:'Los relojes', html:`
+                <p>Al activar el Artefacto aparecen relojes con un símbolo cerca en <strong>4 de estas 6 salas</strong>. Los símbolos son los de los cuatro elementos:</p>
+                <ul>
+                  <li><strong>Fuego:</strong> triángulo hacia arriba.</li>
+                  <li><strong>Agua:</strong> triángulo invertido.</li>
+                  <li><strong>Aire:</strong> triángulo hacia arriba con raya horizontal.</li>
+                  <li><strong>Tierra:</strong> triángulo invertido con raya horizontal.</li>
+                </ul>
+                <div class="meta-box">
+                  <p><strong>Truco:</strong> todos los relojes marcan las 11:40 salvo los cuatro que tienen símbolo esa partida. Mira la hora antes de ponerte a buscar el símbolo.</p>
+                </div>
+                <p>Las 6 salas posibles:</p>
+                <ul>
+                  <li><strong>Gran Escalera Superior:</strong> en el último piso, el reloj está en la pared al empezar la escalera. El símbolo, en la pared de enfrente, encima de la puerta izquierda que sale a cubierta (a la izquierda del wallbuy de la Scorpion).</li>
+                  <li><strong>Sala de Correos:</strong> el reloj está al bajar la escalera, a la derecha de la entrada más a la derecha del Muelle de Carga. El símbolo, debajo de esa escalera metálica, detrás de unas cajas.</li>
+                  <li><strong>Puente de Mando:</strong> el reloj, encima del timón. El símbolo, en el escritorio a la derecha del timón, por la parte de dentro.</li>
+                  <li><strong>Cocina:</strong> en la parte derecha entrando desde el Comedor (la del wallbuy del Bowie). Ve hasta el final y gírate: el reloj está en la pared, junto a una ventana en llamas, y el símbolo en el mueble del centro, frente a la encimera.</li>
+                  <li><strong>Salón de Primera Clase:</strong> el reloj, en la repisa de la chimenea frente al altar de Zeus. El símbolo, a su derecha en la esquina, dentro de un hueco decorativo al que no se puede entrar.</li>
+                  <li><strong>Literas de 3ª Clase:</strong> el reloj, al pie de la escalera que baja hacia la Despensa, a la izquierda de una ventana con un esqueleto. El símbolo, enfrente, en la pared de la escalera, detrás del equipaje.</li>
+                </ul>
+                <p>Apunta, para cada símbolo, la <strong>hora</strong> y los <strong>minutos</strong> que marca su reloj.</p>
                 <figure class="shot" data-slot="vod-reloj">
-                  <img src="img/vod-reloj.jpg" alt="Reloj de pared marcando la hora junto a un triángulo elemental" loading="lazy" onerror="this.closest('.shot').style.display='none'">
+                  <img src="images/bo4/voyage/reloj.jpg" alt="Reloj de pared junto a un símbolo elemental" loading="lazy" onerror="this.closest('.shot').style.display='none'">
                   <figcaption>Reloj de pared junto a su símbolo elemental</figcaption>
                 </figure>`},
-                  {
-                    id: 'paso3', num: '03', title: 'Los enchufes elementales', html: `
-                <p>Hay que buscar 4 enchufes que desprendan chispas de diferentes elementos: Veneno, agua, electricidad y fuego. Hay 6 posibles ubicaciones de enchufes:</p>
+                  {id:'paso3', num:'03', title:'Las válvulas', html:`
+                <p>Hay 8 válvulas en 3 sitios. Léelas como un reloj de agujas (arriba son las 12). Cada pulsación avanza 5 minutos en las de minutos y 1 hora en las de horas.</p>
+                <table class="guide-table">
+                  <tr><th>Dónde</th><th>Válvula</th><th>Pon</th></tr>
+                  <tr><td>Puente de Mando, sala exterior</td><td>Las 4, cada una con su símbolo grabado</td><td>Minutos de cada elemento</td></tr>
+                  <tr><td>Cubierta de Popa, junto al timón</td><td>Izquierda</td><td>Hora de Aire</td></tr>
+                  <tr><td>Cubierta de Popa, junto al timón</td><td>Derecha</td><td>Hora de Tierra</td></tr>
+                  <tr><td>Sala de Máquinas, columna frente a la 4ª bebida</td><td>Abajo a la izquierda</td><td>Hora de Fuego</td></tr>
+                  <tr><td>Sala de Máquinas, columna frente a la 4ª bebida</td><td>Arriba a la derecha</td><td>Hora de Agua</td></tr>
+                </table>
+                <p>En la Sala de Máquinas la columna tiene 4 válvulas, pero solo se mueven esas dos. Las del Puente no mueven la aguja de las horas: las horas van siempre en la Cubierta de Popa y la Sala de Máquinas.</p>
+                <p class="note">Si está bien, suena un tono grave y las válvulas dejan de girar.</p>`},
+                  {id:'paso4', num:'04', title:'Los enchufes y los portales', html:`
+                <p>Solo funciona si ya has hecho las válvulas. Hay 6 enchufes; <strong>4 echan chispas</strong> de un elemento (veneno, agua, eléctrico y fuego). Quédate mirando unos segundos para ver cuál es cuál: si tiene elemento, se oye un chisporroteo que ayuda a encontrarlo.</p>
                 <ul>
-                  <li>En las literas de 3ª clase, al lado de las primeras escaleras blancas para bajar.</li>
-                  <li>En la cubierta de popa, al subir desde la escalera del escudo veremos una ventana por la que aparecen zombies. Si miramos a esa ventana hay un enchufe. Si no tiene elemento no se ve bien, pero si lo tiene se ve claramente si esperamos lo suficiente a que eche las chispas.</li>
-                  <li>En la gran escalera superior, arriba del todo en la pared.</li>
-                  <li>En el salón de primera clase, en la columna de al lado de la bebida.</li>
-                  <li>En el comedor, detrás de un murito en uno de los lados. Al igual que pasa con el resto, si nos toca en este algún elemento, se oye un sonido de electricidad que nos ayudará a encontrarlo si no lo vemos bien.</li>
-                  <li>En los camarotes individuales, en el primero de la izquierda entrando desde el spawn.</li>
+                  <li><strong>Literas de 3ª Clase:</strong> al pie de las primeras escaleras blancas que bajan desde la Cubierta de Popa, a la izquierda.</li>
+                  <li><strong>Aft Deck:</strong> al subir desde la escalera del escudo, mirando a la ventana por la que entran zombis. Está tras una puerta, a la izquierda de un generador.</li>
+                  <li><strong>Gran Escalera Superior:</strong> arriba del todo, en la pared (delante de donde sale la Spitfire).</li>
+                  <li><strong>Salón de Primera Clase:</strong> en la columna junto a la bebida, a la izquierda del altar de Zeus.</li>
+                  <li><strong>Comedor:</strong> detrás de un murete, a la izquierda del altar de Ra.</li>
+                  <li><strong>Camarotes Individuales:</strong> en la primera sala de la izquierda entrando desde el spawn, junto a unos cuadros sin colgar.</li>
                 </ul>
-                <p>En este paso lo que tendremos que matar es un zombie catalizador del elemento correspondiente en cada enchufe para que se abra un portal naranja en el suelo. Ten en cuenta que solo se puede llenar un enchufe en cada ronda. Una vez tengamos los portales, hay que hacer una defensa en cada uno de ellos poniéndonos encima quietos y pulsando el botón de interacción.</p>
+                <p>Mata a un <strong>catalizador del mismo elemento</strong> junto a su enchufe: se abre un portal naranja en el suelo. Solo se puede abrir <strong>un portal por ronda</strong>.</p>
+                <p>Para cada portal, poneos todos encima y mantened interactuar: os lleva a una zona cerrada donde hay que matar a todo lo que salga. Al terminar, <strong>recoge el Artefacto</strong>, que queda flotando; si se te olvida, toca repetir los portales.</p>
                 <div class="meta-box">
-                  <p><strong>IMPORTANTE:</strong> Estas defensas han de hacerse en un orden específico, por lo que es recomendable anotar el elemento de cada ubicación. El orden es: <strong>VENENO, AGUA, ELECTRICIDAD y FUEGO</strong>. En la primera y la tercera defensa nos darán una munición máxima.</p>
+                  <p><strong>Orden obligatorio: VENENO → AGUA → ELÉCTRICO → FUEGO.</strong> Apunta el elemento de cada enchufe. Si los haces en otro orden no obtienes el Artefacto bueno. Las zonas de veneno y eléctrico tienen una Munición Máxima.</p>
                 </div>`},
-                  {
-                    id: 'paso4', num: '04', title: 'Tuberías azules', html: `
-                <p>Para este paso es necesario tener el arma especial de este mapa, la Kraken, con su mejora del elemento <strong>ÁCIDO</strong> (pestaña <button class="link-btn" onclick="switchTab('construibles')">Construibles</button>). Una vez la tengamos, tendremos que ir a la sala de calderas (donde está una de las ubicaciones del Pack-a-Punch) y disparar con el arma especial a 9 fugas de agua de las tuberías azules de esta habitación. Sabremos que lo hacemos bien porque dará hitmarker.</p>
-                <p>Cuando demos a todas, la sala se comenzará a inundar. Una vez se inunde, tendremos que interactuar con el Pack-a-Punch (si no está en esta ubicación, hay que pasar ronda hasta que aparezca en esta sala) que nos dejará mejorar el artefacto centinela y lo recogemos cuando termine.</p>`},
-                  {
-                    id: 'paso5', num: '05', title: 'Símbolos naranjas', html: `
-                <p>En este paso hay que buscar 9 símbolos naranjas que se encuentran repartidos por todo el mapa e interactuar con ellos hasta que desaparezcan. No se sabe si es necesario seguir un orden, pero se recomienda darlos en el siguiente orden:</p>
+                  {id:'paso5', num:'05', title:'Las tuberías azules', html:`
+                <p>Con el Artefacto restaurado y la <strong>Kraken de Ácido</strong>, ve a la <strong>Sala de Calderas</strong> y dispara a las <strong>9 fugas</strong> de las tuberías azules (sabrás que aciertas porque da hitmarker). Con la última, la sala vuelve a inundarse.</p>
+                <p>Mejora el Artefacto en el Pack-a-Punch de esta sala y recógelo cuando termine. Si el Pack-a-Punch no está aquí, pasa rondas hasta que llegue.</p>
+                <div class="meta-box">
+                  <p><strong>Ojo con el Pack-a-Punch en las 4 posiciones</strong> (pestaña <button class="link-btn" onclick="switchTab('secretos')">Secretos</button>): hazlo <strong>después</strong> de las tuberías. Si lo haces antes, el Pack-a-Punch se puede quedar atascado en un solo sitio durante varias rondas y no podrás mejorar el Artefacto hasta que vuelva a la Sala de Calderas.</p>
+                </div>`},
+                  {id:'paso6', num:'06', title:'Los 9 símbolos naranjas', html:`
+                <p>Busca 9 símbolos naranjas (7 planetas, el Sol y la Luna) e interactúa con cada uno hasta que desaparezca. No está claro que haga falta un orden, pero este es cómodo:</p>
                 <ol>
-                  <li>En la punta de la proa, en el inicio, en una columnita abajo.</li>
-                  <li>En la sala de correos, justo enfrente de las escaleras al bajar.</li>
-                  <li>En los baños de los camarotes individuales, al lado del último espejo en la pared.</li>
-                  <li>En el puente, en la sala del timón en una mini habitación que tiene al lado de un mueble.</li>
-                  <li>En la gran escalera inferior, al lado de la ventana en la pared de la derecha de la escalera.</li>
-                  <li>En las suites millonarias, debajo del tocador de al lado de la cama.</li>
-                  <li>En las cubiertas de popa, en un salvavidas al que subes por el lateral derecho del barco.</li>
-                  <li>En la sala de máquinas, justo enfrente en el suelo de la 4ª bebida.</li>
-                  <li>En la sala de máquinas también, pero en este caso en la habitación superior de detrás de la 4ª bebida. En la pared a la altura del suelo que pisas.</li>
+                  <li><strong>Sol:</strong> en la punta de la Proa, en una columnita abajo, junto a unos barriles.</li>
+                  <li><strong>Mercurio:</strong> Sala de Correos, justo enfrente de las escaleras al bajar.</li>
+                  <li><strong>Urano:</strong> baños de los Camarotes Individuales (suelo de baldosas blancas y negras), al lado del último espejo, detrás de una planta.</li>
+                  <li><strong>Saturno:</strong> Puente de Mando, en la salita junto al timón, en el lateral de un mueble de madera.</li>
+                  <li><strong>Luna:</strong> Gran Escalera Inferior, junto a la ventana, en la pared blanca de la derecha de la escalera.</li>
+                  <li><strong>Venus:</strong> Suites Millonarias, debajo del tocador junto a la cama.</li>
+                  <li><strong>Neptuno:</strong> Aft Deck, en el centro de un salvavidas del suelo; se sube por el lateral derecho del barco.</li>
+                  <li><strong>Júpiter:</strong> Sala de Máquinas, en el suelo justo enfrente de la 4ª bebida.</li>
+                  <li><strong>Marte:</strong> Sala de Máquinas, en la sala de arriba, detrás de la 4ª bebida, en la pared a la altura del suelo.</li>
                 </ol>
-                <p>Una vez pulsados todos, en el muelle de carga aparecerá una maqueta del sistema solar al lado del teletransporte.</p>`},
-                  {
-                    id: 'paso6', num: '06', title: 'Planetas', html: `
-                <p>En este último paso antes de la batalla final hay que ir a la maqueta del sistema solar que ha aparecido en el muelle de carga e interactuar con ella. En este paso, se iluminarán los planetas en un orden aleatorio que hay que memorizar (se recomienda grabarlo con el teléfono y pausar la partida para apuntar el orden de los planetas). Ojo, una vez interactúes, no pararán de salir zombies infinitos que no nos darán puntos si los matamos. Si fallamos en este paso, tendremos que pasar de ronda y volver a interactuar con la maqueta en la ronda siguiente (el orden de los planetas será el mismo, no es necesario verlo de nuevo).</p>
-                <p>Estos son los planetas de la maqueta para poder traducirlo y obtener el orden:</p>
+                <p>Con los 9, aparece una maqueta del sistema solar en el <strong>Muelle de Carga</strong>, junto al teletransporte (a la izquierda del coche de la caja).</p>`},
+                  {id:'paso7', num:'07', title:'Los planetas', html:`
+                <p>Interactúa con la maqueta: los planetas se encienden en un orden aleatorio que hay que apuntar (lo más fácil es grabarlo con el móvil). <strong>El último siempre es el Sol.</strong> Al tocarla empiezan a salir zombis sin parar que no dan puntos.</p>
+                <p>Estos son los planetas de la maqueta, para traducir el orden:</p>
                 <figure class="shot" data-slot="vod-maqueta">
                   <img src="images/bo4/voyage/maqueta_planetas.jpeg" alt="Maqueta del sistema solar con los planetas para memorizar el orden" loading="lazy">
                   <figcaption>Maqueta del sistema solar (para traducir el orden de los planetas)</figcaption>
                 </figure>
-                <p>Una vez tengamos el orden de los planetas (que siempre acabará con el Sol), tendremos que salir al exterior y dispararlos en el orden que hemos anotado. Para destruirlos, hay que dispararlos con un arma mejorada (se recomienda que no sea ni el Kraken ni el Helion Salvo, pues es muy difícil darles a la mayoría).</p>
-                <p>Los planetas salen en el cielo aunque a veces se tapan con las nubes, es esperar y buscar bien. La única excepción será Neptuno, que se mueve por el agua y a veces lo tapan los icebergs que hay.</p>
-                <p>Para identificarlos, así se ve cada planeta en el cielo:</p>
+                <p>Sal a cubierta y dispara a los planetas del cielo en ese orden con un arma mejorada (ni la Kraken ni el Hellion Salvo: cuesta mucho acertar con ellas). A veces las nubes los tapan; espera. Neptuno es la excepción: se mueve por el agua y a veces lo tapan los icebergs.</p>
                 <figure class="shot" data-slot="vod-planeta">
                   <img src="images/bo4/voyage/planetas_cielo.jpeg" alt="Aspecto de cada planeta visible en el cielo" loading="lazy">
                   <figcaption>Cómo se ve cada planeta en el cielo</figcaption>
                 </figure>
-                <p>Cada vez que disparemos a un planeta, una esfera azul caerá del cielo a una ubicación del mapa específica y tendremos que ir a por ella e interactuar para que desaparezca. Tendremos solamente 30 segundos desde que cae al suelo y las zonas estarán llenas de zombies.</p>
-                <p>Estas son las ubicaciones de las esferas de cada planeta, para que podamos ir lo más rápido posible a por ellas:</p>
+                <p>Cada planeta suelta una esfera azul que cae junto a su símbolo del paso anterior. Tienes <strong>30 segundos</strong> para llegar e interactuar, y cada disparo trae otra horda:</p>
                 <ul>
-                  <li><strong>Marte:</strong> En la sala de máquinas, detrás de la 4ª bebida en la habitación superior.</li>
-                  <li><strong>Venus:</strong> En suites millonarias, en una cama.</li>
-                  <li><strong>Urano:</strong> En los camarotes individuales, en los baños.</li>
-                  <li><strong>Neptuno:</strong> En una barca en la cubierta de popa en el lateral, por las escaleras de al lado del escudo.</li>
-                  <li><strong>Luna:</strong> En la ventana de la gran escalera inferior, al lado de donde sale el 5º símbolo del paso anterior.</li>
-                  <li><strong>Júpiter:</strong> En la sala de máquinas, saltando enfrente de la 4ª bebida.</li>
-                  <li><strong>Mercurio:</strong> En la sala de correo.</li>
-                  <li><strong>Saturno:</strong> En el puente, en la sala del timón.</li>
-                  <li><strong>Sol:</strong> En el spawn, arriba en la punta del barco.</li>
+                  <li><strong>Mercurio:</strong> Sala de Correos.</li>
+                  <li><strong>Venus:</strong> Suites Millonarias, en una cama.</li>
+                  <li><strong>Luna:</strong> Gran Escalera Inferior, en la ventana junto al símbolo.</li>
+                  <li><strong>Marte:</strong> Sala de Máquinas, en la sala de arriba detrás de la 4ª bebida.</li>
+                  <li><strong>Júpiter:</strong> Sala de Máquinas, saltando enfrente de la 4ª bebida.</li>
+                  <li><strong>Saturno:</strong> Puente de Mando, en la sala del timón.</li>
+                  <li><strong>Urano:</strong> Camarotes Individuales, en los baños.</li>
+                  <li><strong>Neptuno:</strong> en una barca del Aft Deck, por las escaleras junto al escudo.</li>
+                  <li><strong>Sol:</strong> en el spawn, arriba en la punta de la Proa.</li>
                 </ul>
-                <p>En el último orbe, el del Sol, tienen que interactuar a la vez todos los jugadores de la partida. Una vez interactúen todos, tendréis que ir corriendo a la otra punta del mapa, en la popa. Sin embargo, en el camino aparecerán unos icebergs que nos cortarán el paso, por lo que tendremos que romperlos con nuestras armas. Uno de ellos a mitad de camino nos soltará una munición máxima, por lo que la munición no debería preocuparnos.</p>
-                <p class="note">Para este paso es recomendado llevar armas como la Kraken, el Helion Salvo mejorado y el escudo como arma especial, que funciona especialmente bien contra el hielo.</p>
-                <p>Una vez destruyamos el último iceberg podremos acceder a la batalla final.</p>`},
-                  {
-                    id: 'paso7', num: '07', title: 'Batalla Final', html: `
-                <p>Esta batalla consta de 5 fases en las que tendremos que aguantar y matar tanto a zombies normales como especiales. En las dos primeras rondas, el ojo no nos atacará ni podremos hacerle daño, simplemente hay que sobrevivir a la horda.</p>
-                <p>En la tercera y cuarta ronda, el ojo comenzará a lanzarnos un rayo cada cierto tiempo. Justo en ese momento tendremos que aprovechar para hacerle daño al ojo hasta pasar de fase cuando le hayamos hecho el daño suficiente.</p>
-                <p>En la quinta y última fase, tendremos que hacer lo mismo que en las dos anteriores, pero esta vez tendremos que tener en cuenta que cada cierto daño que le hagamos al ojo, este empezará a cargar un ataque especial mientras hecha niebla. Aquí tendremos que hacerle mucho daño rápidamente y evitar que termine de cargar ese ataque, pues de lo contrario te matará de forma instantánea. Una vez evites este ataque 3 veces, habrás conseguido completar la batalla final. ¡Suerte!</p>`}
+                <p>Si fallas el orden o se te escapa una esfera, hay que volver a empezar desde la maqueta. Según las notas de partida, tienes que esperar a la ronda siguiente, y el orden no cambia, así que no hace falta volver a verlo.</p>
+                <div class="meta-box">
+                  <p><strong>No dispares al Sol hasta estar listos para el tramo final.</strong> La esfera del Sol la tienen que tocar <strong>todos los jugadores a la vez</strong>, y en cuanto lo hacéis empieza el paso siguiente.</p>
+                </div>`},
+                  {id:'paso8', num:'08', title:'El barco congelado', html:`
+                <p>El barco se congela, cada puerta queda tapada por un bloque de hielo y salen zombis sin parar. Corre hasta la <strong>Cubierta de Popa</strong> rompiendo los bloques por el camino. Uno de los de mitad de camino suelta una Munición Máxima; si hace falta, que alguien se quede atrás para cogerla.</p>
+                <p>Ignora las hordas y los minijefes: deja que el escudo aguante los golpes y sigue. El <strong>Cetro de Ra</strong> funciona muy bien contra el hielo. Al romper el último bloque, en la Cubierta de Popa, hay una cinemática y se abre el portal al jefe.</p>
+                <p class="note">GameRant recogió casos de un fallo de pantalla azul que rompía la partida al entrar en el portal. Es de 2018 y no sabemos si sigue pasando.</p>`},
+                  {id:'paso9', num:'09', title:'Batalla final: el ojo', html:`
+                <p>Un ojo gigante flota sobre el barco. Su rayo te tumba de un golpe. Son <strong>5 fases</strong> y al acabar cada una os lleva a otra zona:</p>
+                <ol>
+                  <li><strong>Exterior del barco:</strong> el ojo todavía no ataca ni recibe daño. Aguanta la horda.</li>
+                  <li><strong>Sala de Máquinas:</strong> igual, pero <strong>mata primero a los Blightfathers</strong>.</li>
+                  <li><strong>Camarotes Individuales:</strong> el ojo empieza a lanzar el rayo cada cierto tiempo. Aprovecha esos momentos para dañarlo hasta pasar de fase.</li>
+                  <li><strong>Paseo de estribor</strong> (Promenade Starboard Deck): lo mismo que en la fase 3.</li>
+                  <li><strong>Cubierta de Popa:</strong> cada cierto daño, el ojo echa niebla y carga un ataque que te mata si lo termina. Cuando chispee en rojo, mételo todo para cortarlo. Si te atrapa el hielo, sal a golpes cuerpo a cuerpo. Córtale ese ataque 3 veces y se acaba.</li>
+                </ol>
+                <p>El ojo se desintegra y empieza la cinemática final: Easter Egg completado.</p>
+                <p class="note">Las zonas de cada fase vienen de Accelerated Ideas. Lo que hace el ojo en cada fase viene de las notas de partida.</p>`}
                 ]
               },
               {
-                id: 'secretos', label: 'Secretos',
-                items: [
-                  {
-                    id: 'secretos-placeholder', title: 'Próximamente', html: `
-                <p>Todavía no hay contenido recopilado sobre trofeos, desafíos secundarios o canciones ocultas de este mapa.</p>`}
+                id:'secretos', label:'Secretos',
+                items:[
+                  {id:'pap-cuatro', title:'Pack-a-Punch en las 4 posiciones', html:`
+                <p>Durante una ronda, el Pack-a-Punch está en los 4 pedestales a la vez. Cuesta 5000 puntos y además <strong>te rellena la munición</strong> del arma. Necesitas una Kraken elemental.</p>
+                <ol>
+                  <li>En la <strong>Sala de Máquinas</strong>, dispara con la Kraken a los <strong>4 pistones</strong> que se mueven en el centro. Echan humo y se paran.</li>
+                  <li>Encima hay <strong>ruedas rojas</strong> con una luz cada una, más arriba (12 en total). Gira solo las ruedas cuya luz parpadea, que deberían ser 6. Si alguna no gira, mantén pulsado interactuar.</li>
+                  <li>Al final, la barra de cada rueda tiene que apuntar <strong>en dirección contraria</strong> a su luz si esa luz parpadea, y <strong>hacia la luz</strong> si la luz está fija.</li>
+                  <li>Ve a la <strong>Sala de Calderas</strong> y tira de la palanca de la pared de la derecha.</li>
+                </ol>
+                <p>Al acabar la ronda, el Pack-a-Punch vuelve a ir cambiando de sitio como siempre.</p>
+                <div class="meta-box">
+                  <p><strong>Bug:</strong> si haces esto <strong>antes</strong> del paso de las tuberías del Easter Egg, el Pack-a-Punch se puede quedar atascado en una sola posición durante varias rondas, y no podrás mejorar el Artefacto en la Sala de Calderas hasta que vuelva. Haz primero las tuberías.</p>
+                </div>`}
                 ]
               }
             ],
-            sources: {
-              html: `<p>Guía basada íntegramente en las notas escritas a mano por el propio autor de la web tras completar el Easter Egg de Voyage of Despair en partida.</p>
+            sources:{
+              html:`<p>Guía hecha a partir de las notas de partida del autor de la web, completada y contrastada con estas fuentes:</p>
+                <ul>
+                  <li><a href="https://codzombies.info/voyage/" target="_blank" rel="noopener">codzombies.info · Voyage of Despair</a>: todas las ubicaciones, escudo mejorado, Pack-a-Punch en las 4 posiciones y aviso del bug.</li>
+                  <li><a href="https://www.accelerated-ideas.com/news/voyage-of-despair-all-easter-egg-steps.aspx" target="_blank" rel="noopener">Accelerated Ideas · Voyage of Despair, All Easter Egg Steps</a>: símbolos de los planetas y fases del jefe.</li>
+                  <li><a href="https://gamerant.com/black-ops-voyage-despair-easter-egg/" target="_blank" rel="noopener">GameRant · Voyage of Despair Easter Egg</a>: pedestales, tuberías y el fallo del portal.</li>
+                  <li><a href="https://www.youtube.com/watch?v=x5RnJ3bjhrI" target="_blank" rel="noopener">Vídeo · MrDalekJD, guía completa del Easter Egg</a></li>
+                  <li><a href="https://www.youtube.com/watch?v=FAuAoYyEsUU" target="_blank" rel="noopener">Vídeo · CodeNamePizza, Easter Egg en solitario y jefe final</a></li>
+                </ul>
+                <p class="note">Las fuentes no coinciden en el nombre de la sala de las tuberías: codzombies.info y GameRant la llaman Turbine Room y Accelerated Ideas, Boiler Room. Aquí es la Sala de Calderas, como en las notas de partida.</p>
                 <p class="fine">Proyecto personal, sin ánimo de lucro ni redistribución pública. Call of Duty: Black Ops 4 y sus contenidos pertenecen a Activision / Treyarch; este sitio solo describe, con palabras propias, cómo completar sus retos.</p>`
             }
           },
